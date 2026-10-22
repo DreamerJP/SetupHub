@@ -1,0 +1,12 @@
+/.build/
+/SetupHub-*-Instalador.exe
+**/bin/
+**/obj/
+*.log
+*.tmp
+*.user
+*.suo
+.vs/
+.idea/
+.DS_Store
+Thumbs.db
