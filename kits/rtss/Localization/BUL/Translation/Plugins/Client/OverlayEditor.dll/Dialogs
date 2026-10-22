@@ -1,0 +1,430 @@
+#src Add embedded object
+#dst Добавете вграден обект
+#end
+#src Data source
+#dst Източник на данни
+#end
+#src Text table
+#dst Текстова таблица
+#end
+#src Add label
+#dst Добавeте надпис
+#end
+#src Add current value macro
+#dst Добавете макрос за текуща стойност
+#end
+#src Add embedded graph
+#dst Добавяне на вградена графика
+#end
+#src Add embedded image
+#dst Добавете вградено изображение
+#end
+#src use current template
+#dst използвайте текущия шаблон
+#end
+#src use custom template
+#dst използвайте персонализиран шаблон
+#end
+#src use static image
+#dst използвайте статично изображение
+#end
+
+#src Embedded animated image settings
+#dst Вградени настройки за анимирани изображения
+#end
+#src Image template
+#dst Шаблон за изображение
+#end
+#src Image template properties
+#dst Свойства на шаблона за изображение
+#end
+#src Image width, in pixels or symbols if negative
+#dst Ширина, в пиксели или знаци, ако е по-малка от 0
+#end 
+#src Image height, in pixels or symbols if negative
+#dst Височина, в пиксели или знаци, ако е по-малка от 0
+#end
+#src Sprite animation minimum, in data source units
+#dst Минимална анимация на спрея, в единици източник на данни
+#end
+#src Sprite animation maximum, in data source units
+#dst Максимална анимация на спрея, в единици източник на данни
+#end
+#src Sprite animation bias
+#dst Смесване на спрей анимация
+#end
+#src Minimum rotation angle
+#dst Минимален ъгъл на завъртане
+#end
+#src Maximum rotation angle
+#dst Максимален ъгъл на завъртане
+#end
+#src Sprite X, in pixels
+#dst Спрей X, в пиксели
+#end
+#src Sprite Y, in pixels
+#dst Спрей Y, в пиксели
+#end
+#src Sprite width, in pixels
+#dst Ширина спрайта, в пикселях
+#end
+#src Sprite height, in pixels
+#dst Височина на спрея, в пиксели
+#end
+#src Rotation angle
+#dst Ъгъл на завъртане
+#end
+#src Sprites number
+#dst Номер на спрейовете
+#end
+#src Sprites number per line
+#dst Брой спрейове на ред
+#end
+#src Resize image to layer extent
+#dst Преоразмерете изображението до размера на слоя
+#end
+
+#src Embedded graph settings
+#dst Вградени настройки на графиката
+#end
+#src Graph template
+#dst Шаблон на графика
+#end
+#src Graph template properties
+#dst Свойства на шаблона на графика
+#end
+#src Graph width, in pixels or symbols if negative
+#dst Ширина, в пиксели или знаци, ако е по-малка от 0
+#end 
+#src Graph height, in pixels or symbols if negative
+#dst Височина, в пиксели или знаци, ако е по-малка от 0
+#end
+#src Graph margin, in pixels
+#dst Марж на графиката, в пиксели
+#end
+#src Graph minimum, in data source units
+#dst Минимална графика, в единици източник на данни
+#end
+#src Graph maximum, in data source units
+#dst Максимална графика, в единици източник на данни
+#end
+#src Range minimum, in data source units
+#dst Минимален диапазон, в единици източник на данни
+#end
+#src Range maximum, in data source units
+#dst Максимален диапазон, в единици източник на данниа
+#end
+#src Autoscale graph
+#dst Графика с автоматично мащабиране
+#end
+#src Graph style
+#dst Графичен стил
+#end
+#src graph
+#dst графика
+#end
+#src diagram
+#dst диаграма
+#end
+#src barchart
+#dst стълбовидна диаграма
+#end
+#src bar range
+#dst диапазон
+#end
+#src Graph background
+#dst Фон на графиката
+#end
+#src enabled
+#dst активиран
+#end
+#src disabled
+#dst дезактивиран
+#end
+#src Graph orientation
+#dst Ориентация на графиката
+#end
+#src horizontal
+#dst хоризонтална
+#end
+#src vertical
+#dst вертикална
+#end
+#src Graph direction
+#dst Посока на графиката
+#end
+#src normal
+#dst нормално
+#end
+#src mirrored
+#dst огледален
+#end
+#src Resize graph to layer extent
+#dst Преоразмерете графиката до размера на слоя
+#end
+
+#src Embedded image settings
+#dst Настройки на вграденото изображение
+#end
+
+#src Layer properties
+#dst Свойства на слоя
+#end
+#src Name
+#dst Име
+#end 
+#src Visibility source
+#dst Източник на видимост
+#end
+#src Hypertext
+#dst Хипертекст
+#end 
+#src Use custom text color
+#dst Използвайте персонализиран цвят на текст
+#end
+#src Use custom background color
+#dst Използвайте персонализиран цвят на фона
+#end
+#src Border, in pixels, inner or outer if negative
+#dst Граница, в пиксели, вътрешна или външна, ако е по-малка от 0
+#end
+#src Text size, in percents
+#dst Размер на текста, в проценти
+#end
+#src Text alignment, in symbols, left or right if negative
+#dst Подравняване на текста, в символи, ляво или дясно, ако е по-малко от 0
+#end
+#src Use fixed size alignment
+#dst Използвайте подравняване с фиксиран размер
+#end
+#src Resize layer to content
+#dst Преоразмерете слоя, за да пасне на съдържанието
+#end
+#src Manual extent origin
+#dst Ръчен размер за начало
+#end
+#src Sticky layer position
+#dst Поставете слой
+#end
+#src Margins
+#dst Маржове
+#end
+
+#src Apply
+#dst Приложи
+#end
+
+#src Add new data sources
+#dst Добавете нови източници на данни
+#end
+#src Data provider
+#dst Доставчик на данни
+#end
+#src Export
+#dst Експортиране
+#end
+
+#src Data source settings
+#dst Настройки на източника на данни
+#end
+#src AIDA64 sensor properties
+#dst Свойства на сензора AIDA64	
+#end
+#src ID
+#dst Идентификатор
+#end
+#src Overlay data source properties
+#dst Свойства на източника на данни на оверлея
+#end
+#src Name
+#dst Име
+#end
+#src Units
+#dst Едининици
+#end
+#src Format
+#dst Формат
+#end
+#src Correction formula
+#dst Формула за корекция
+#end
+
+#src HWiNFO64 sensor properties
+#dst Свойства на сензора HWiNFO64	
+#end
+#src Type
+#dst Тип
+#end
+#src Instance
+#dst Екземпляр
+#end
+
+#src MSI Afterburner sensor properties
+#dst Свойства на сензора MSI Afterburner
+#end
+
+#src HAL sensor properties
+#dst Свойства на HAL сензора
+#end
+
+#src Performance counter properties
+#dst Свойства на брояча на производителността
+#end
+#src Object name
+#dst Име на обекта
+#end
+#src Instance name or index
+#dst Име или индекс на екземпляр
+#end
+#src Counter name
+#dst Име на брояча
+#end
+#src Enable dynamic mode
+#dst Активирайте динамичния режим
+#end
+
+#src Instance name
+#dst Име на екземпляра
+#end
+#src Use instance index instead of name
+#dst Използвайте индекс на екземпляра вместо име
+#end
+
+#src Overlay data sources
+#dst Източник на данни на оверлея
+#end
+#src Setup
+#dst Настройка
+#end
+#src Add
+#dst Добави
+#end
+#src Remove
+#dst Премахване
+#end
+
+#src Ovelay editor
+#dst Редактор на оверлея
+#end
+
+#src Overlay properties
+#dst Свойства на оверлея
+#end
+#src Environment variables
+#dst Променливи на средата
+#end
+#src Refresh period, in milliseconds
+#dst Период на опресняване, в милисекунди
+#end
+#src Master settings
+#dst Главни настройки
+#end
+#src Embedded image
+#dst Вградено изображение
+#end
+#src Ping address
+#dst Адрес на пинга
+#end
+
+#src Ovelay editor
+#dst Редактор на оверлея
+#end
+
+#src Select sprite
+#dst Изберете спрей
+#end
+
+#src Text tables
+#dst Текстови таблици
+#end
+
+#src Text table properties
+#dst Свойства на текстовата таблица
+#end
+#src Value
+#dst Стойност
+#end
+#src Units
+#dst Единици
+#end
+#src Cell size, in percents
+#dst Размер на клетката, в проценти
+#end
+#src Cell alignment, in symbols
+#dst Подравняване на клетките, в символи
+#end
+#src Table edit mode
+#dst Режим на редактиране на таблица
+#end
+#src lines
+#dst линии
+#end
+#src cells
+#dst клетки
+#end
+
+#src Text table cell properties
+#dst Свойства на клетката на текстовата таблица
+#end
+#src Line name
+#dst Име на реда
+#end
+#src Use custom line text color
+#dst Използвайте персонализиран цвят на текста на реда
+#end
+#src Use custom cell text color
+#dst Използвайте персонализиран цвят на текста на клетката
+#end
+#src Cell data source
+#dst Източник на данни на клетката
+#end
+#src Cell text
+#dst Текст на клетка
+#end
+
+#src Add new text table cells
+#dst Добавяне на нови клетки от текстова таблица
+#end
+#src Add cells to new line
+#dst Добавете клетки към нов ред
+#end
+#src Add separator
+#dst Добавяне на разделител
+#end
+
+#src Overlay layers
+#dst Слой на оверлея
+#end
+
+#src Dynamic color
+#dst Динамичен цвят
+#end
+#src Min
+#dst Мин
+#end
+#src Max
+#dst Макс
+#end
+#src Preview
+#dst Преглед
+#end
+#src Blend colors
+#dst Смесете цветовете
+#end
+#src Embed formula
+#dst Вграждане на формула
+#end
+
+#src Internal HAL properties
+#dst Вътрешни HAL свойства
+#end
+#src Enable low-level IO driver
+#dst Активирайте IO драйвер на ниско ниво
+#end
+#src Enable SMART monitoring
+#dst Активиране на SMART наблюдение
+#end
+
+#src LibreHardwareMonitor sensor properties
+#dst Свойства на сензора LibreHardwareMonitor	
+#end

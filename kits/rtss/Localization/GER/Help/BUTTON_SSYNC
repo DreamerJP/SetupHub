@@ -1,0 +1,13 @@
+Scanline-Synchronisierungsmodus
+Ermöglicht das Umschalten zwischen Einzel-, Doppel- und Halbscanline-Synchronisationsmodi.
+Im Einzel-Scanline-Synchronisationsmodus wird die Framerate bei jeder Anzeigeaktualisierungsperiode mit der Rasterizer-Position synchronisiert. Mit anderen Worten: Sie begrenzen die Framerate auf die Refreshrate und erzielen den VSync-ON-Effekt mit einer Bruchlinie an einer festen Position. Die Bruchlinie kann nach unten verschoben und im vertikalen Austastintervall ausgeblendet werden.
+Im Doppel-Scanline-Synchronisationsmodus wird die Framerate zweimal pro Anzeigeaktualisierungsperiode mit der Rasterizer-Position synchronisiert. Mit anderen Worten: Sie begrenzen die Framerate auf die doppelte Refreshrate und erzielen den VSync ON-Effekt mit zwei Bruchlinien an festen Positionen. Beide Bruchlinien können nach unten verschoben werden und eine davon kann in der vertikalen Austastlücke ausgeblendet werden.
+Im Halb-Scanline-Synchronisationsmodus wird die Framerate einmal pro zwei Anzeigeaktualisierungsperioden mit der Rasterizer-Position synchronisiert. Mit anderen Worten: Sie begrenzen die Framerate auf die Hälfte der Refreshrate und erzielen den VSync-On-Effekt mit einer Bruchlinie an einer festen Position. In diesem Fall kann die Bruchlinie nach unten verschoben und im vertikalen Austastintervall ausgeblendet werden.
+
+Hinweise:
+- Für eine ordnungsgemäße Scanline-Synchronisierungsfunktion muss VSync deaktiviert werden.
+- Sie können die Scanline-Synchronisierung in Verbindung mit dem Framerate-Limiter im Modus "synchron mit Front-Edge"/"synchron mit Back-Edge" aktivieren, um den Hybrid-Scanline-Synchronisierungsmodus zu aktivieren. In diesem Fall wird die echte Synchronisierung mit der Ziel-Scanlinie nur einmal zu Beginn durchgeführt und die anschließende Stabilisierung der Position der Bruchlinie wird durch die Synchronisierung mit dem Systemtakt sichergestellt.
+- Sie können das FCAT-Overlay im Modus <Bewegender Balken> als visuelle Anzeige der Position der Bruchlinie verwenden.
+- Sie können einen negativen Scanline-Index angeben, um den Offset von der Gesamtzahl der Scanlines festzulegen.
+- Sie können mit der rechten Maustaste auf dieses Feld klicken, um die Zielanzeige für die Scanline-Synchronisierung in einer Multi-Monitor-Umgebung auszuwählen.
+- Tooltips können in der Registerkarte <Benutzeroberfläche> in den erweiterten Einstellungen deaktiviert werden.

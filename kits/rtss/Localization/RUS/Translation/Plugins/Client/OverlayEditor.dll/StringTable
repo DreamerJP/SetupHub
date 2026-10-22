@@ -1,0 +1,12 @@
+#src Undo / Redo
+#dst Отмена / Повтор
+#end
+#src Layer info
+#dst Информация о слое
+#end
+#src Hypertext info
+#dst Информация о гипертексте
+#end
+#src Sprite dimensions
+#dst Размеры спрайта
+#end

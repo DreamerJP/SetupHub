@@ -1,0 +1,5 @@
+Mittelungsintervall der Framerate
+Naturgemäß ist die augenblickliche Framerate selten statisch, selbst in Szenarios mit Bildratenbegrenzung schwankt die augenblickliche Bildrate normalerweise um den Zielwert. Um diese unerwünschten Schwankungen herauszufiltern, zeigen Framerate-Monitore normalerweise eine durchschnittliche Framerate an. Mit dieser Option können Sie das Mittelungsintervall festlegen oder auf 0 setzen, um die Mittelung vollständig zu deaktivieren.
+
+Hinweis:
+- Tooltips können in der Registerkarte <Benutzeroberfläche> in den erweiterten Einstellungen deaktiviert werden.

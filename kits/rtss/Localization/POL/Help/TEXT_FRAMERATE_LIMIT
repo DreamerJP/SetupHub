@@ -1,0 +1,7 @@
+Limit klatek na sekundê
+Allows defining framerate limit for 3D applications. Limiting the framerate during gaming can help to reduce the power consumption as well as it can improve gaming experience due to removing unwanted microstutteing effect caused by framerate fluctuations. Set it to zero to disable the limit.
+This option is profile specific, so you can configure it independently for different applications.
+
+Wskazówki:
+- It is strongly recommended to disable VSync for proper framerate limiting functionality.
+- Mo¿esz wy³¹czyæ wskazówki interfejsu u¿ytkownika w ustawieniach na zak³adce <Interfejs u¿ytkownika>.

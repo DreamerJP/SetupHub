@@ -1,0 +1,230 @@
+#src General
+#dst Основні
+#end
+#src General properties
+#dst Основні властивості
+#end
+#src Start minimized
+#dst Запускати мінімізованим
+#end
+#src Hide pre-created profiles
+#dst Сховати вбудовані профілі
+#end
+#src Update checking properties
+#dst Властивості системи пошуку оновлень
+#end
+#src Check for available product updates
+#dst Перевіряти наявність оновлень
+#end
+#src Check for available product beta versions
+#dst Перевіряти наявність бета-версій
+#end
+#src never
+#dst ніколи
+#end
+#src on startup
+#dst при завантаженнi
+#end
+#src on startup daily
+#dst щодня
+#end
+#src on startup weekly
+#dst щотижня
+#end
+#src on startup monthly
+#dst щомісяця
+#end
+#src Check now
+#dst Перевірити
+#end
+#src FCAT properties
+#dst Властивості системи FCAT
+#end
+#src Enable frame color indicator
+#dst Увімкнути колірну індикацію кадрів
+#end
+#src color sequence
+#dst колірний ряд
+#end
+#src 2 bars
+#dst 2 смужки
+#end
+#src 3 bars
+#dst 3 смужки
+#end
+#src 4 bars
+#dst 4 смужки
+#end
+#src moving bar
+#dst смужка, що біжить
+#end
+#src latency marker
+#dst мітка затримки
+#end
+#src Statistics properties
+#dst Властивості статистики
+#end
+#src Framerate averaging interval (in milliseconds)
+#dst Інтервал усереднення частоти кадрів (мілісекунди)
+#end
+#src Refresh period (in milliseconds)
+#dst Період оновлення (мілісекунди)
+#end
+#src Display integer framerate
+#dst Відображати ціле значення частоти кадрів
+#end
+#src Display maximum frametime
+#dst Відображати максимальну тривалість кадру
+#end
+#src Enable frametime history overlay
+#dst Увімкнути оверлей історії часу кадрів
+#end
+
+#src Frametime calculation point
+#dst Точка розрахунку часу кадру
+#end
+#src frame start
+#dst початок кадру
+#end
+#src frame presentation
+#dst показ кадру
+#end
+
+
+#src Peak framerate calculation mode
+#dst Режим розрахунку пікової частоти кадрів
+#end
+#src average
+#dst усереднена
+#end
+#src instantaneous
+#dst миттєва
+#end
+#src Percentile calculation mode
+#dst Режим розрахунку процентиля
+#end
+#src integral
+#dst інтегральний
+#end
+#src linear
+#dst лінійний
+#end
+#src Percentile buffer
+#dst Буфер процентиля
+#end
+#src unlimited
+#dst необмежений
+#end
+#src ring
+#dst кільцевий
+#end
+
+#src graph
+#dst графік
+#end
+#src diagram
+#dst діаграма
+#end
+#src Compatibility properties
+#dst Властивості сумісності
+#end
+#src Enable dedicated encoder server service
+#dst Увімкнути виділений сервер кодування
+#end
+#src 32-bit
+#dst 32-бітний
+#end
+#src 64-bit
+#dst 64-бітний
+#end
+#src Enable 64-bit applications support service
+#dst Увімкнути сервіс підтримки 64-бітних додатків
+#end
+#src Enable benchmark mode
+#dst Увімкнути режим бенчмарку
+#end
+#src Enable framerate limiter
+#dst Увімкнути обмежувач частоти кадрів
+#end
+#src async
+#dst асинхронний
+#end
+#src front edge sync
+#dst синх. переднього фронту
+#end
+#src back edge sync
+#dst синх. заднього фронту
+#end
+#src Enable passive waiting
+#dst Увімкнути пасивне очікування
+#end
+
+#src Injection properties
+#dst Властивості інжекції
+#end
+#src Use Microsoft Detours API hooking
+#dst Використовувати Microsoft Detours для перехоплення викликів API
+#end
+#src Injection delay (in milliseconds)
+#dst Затримка інжекції (мілісекунди)
+#end
+#src Reset cache
+#dst Скинути кеш
+#dlu -100
+#end
+
+#src Plugins
+#dst Плагіни
+#end
+#src Active plugin modules
+#dst Активні плагіни
+#end
+#src Setup
+#dst Налаштувати
+#end
+
+#src User Interface
+#dst Інтерфейс
+#end
+#src Language
+#dst Мова
+#end
+#src English
+#dst Англійська
+#end
+#src User interface help system properties
+#dst Властивості довідкової системи користувацького інтерфейсу
+#end
+#src Show user interface tooltips
+#dst Показати спливаючі підказки
+#end
+#src User interface skinning properties
+#dst Властивості скінів користувацького інтерфейсу
+#end
+#src Skin composition mode
+#dst Режим композиції скіна
+#end
+#src traditional
+#dst традиційний
+#end
+#src layered with colorkey
+#dst шари з колірним ключем
+#end
+#src layered with alpha
+#dst шари з альфа каналом
+#end
+#src Skin transparency
+#dst Прозорість скіна
+#end
+#src Transparent
+#dst Прозорий
+#end
+#src Opaque
+#dst Непрозорий
+#end
+#src Color
+#dst Колір
+#end
+#src Cancel
+#dst Скасувати
+#end

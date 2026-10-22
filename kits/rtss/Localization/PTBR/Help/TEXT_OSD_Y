@@ -1,0 +1,6 @@
+Coordenadas Y do mostrador de informações na tela
+Define a coordenada do eixo Y para o mostrador de informações na tela. Clique no campo para definir manualmente a posição desejada ou use os botões direcionais para aumentar ou diminuir. Use a janela de visualização para  ajustar a posição.
+
+Sugestões:
+- Sistemas "Anticheat" de alguns jogos podem considerar o código para a detecção de aplicativos e a renderização de informações na tela como possível fraude em servidores multiplayer. Para solucionar essas questões, tente adicionar um perfil para o jogo e desative o suporte ao mostrador de informações na tela, ou tente diminuir o nível de detecção do programa. 
+- Você pode desativar as sugestões na aba <Inteface> das configurações.

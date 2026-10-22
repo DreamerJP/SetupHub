@@ -1,0 +1,7 @@
+Coordenadas espaciais: Memória de tela
+Por padrão, as coordenadas do mostrador correspondem ao espaço de coordenadas de uma janela, ou seja, a área retangular do último programa executado. No entanto, algums programas (por exemplo, StarCraft II: Wings of Liberty) podem usar várias janelas durante o quadro de renderização (por exemplo, janelas diferentes para os modos 3D e HUD). Neste caso, a coordenada de origem na tela segue um dos cantos da última janela, definida durante a renderização do quadro, que pode estar localizado em uma posição indesejada. 
+No modo de coordenadas definidas pela memória de tela, as coodenadas espacias utilizadas como espaço de coordenadas para exibição do mostrador de informações na tela serão automaticamente substituídas por coordenadas armazenadas a partir da memória de tela (Framebuffer) para restaurar a posição de origem prevista para o programa.
+
+Sugestões:
+- Sistemas "Anticheat" de alguns jogos podem considerar o código para a detecção de aplicativos e a renderização de informações na tela como possível fraude em servidores multiplayer. Para solucionar essas questões, tente adicionar um perfil para o jogo e desative o suporte ao mostrador de informações na tela, ou tente diminuir o nível de detecção do programa. 
+- Você pode desativar as sugestões na aba <Inteface> das configurações.

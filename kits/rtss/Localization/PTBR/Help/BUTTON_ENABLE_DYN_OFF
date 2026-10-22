@@ -1,0 +1,6 @@
+Compatibilidades com bibliotecas Direct3D modificadas 
+Por padrão, o programa apenas suporta aplicações que usem bibliotecas Microsoft Direct3D nativas. Você pode ativar essa opção para torná-las compatíveis com os programas que usem bibliotecas proxy Direct3D personalizadas (por exemplo, InjectFXAA habilitado por aplicativos Direct3D). 
+Esta opção é específica, de modo que você deve configurá-la de forma independente para cada programa. Não é recomendado habilitá-la como configuração global porque o modo de compatibilidade pode impedir que alguns aplicativos Direct3D sejam iniciados corretamente. 
+
+Sugestões: 
+- Você pode desativar as sugestões na aba <Inteface> das configurações.

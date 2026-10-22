@@ -1,0 +1,153 @@
+#src %s skin has been successfully compiled!
+#dst Tema %s compilado com sucesso!
+#end
+#src Failed to compile %s skin!
+#dst Falha ao compilar o tema %s!
+#end
+#src %s skin has been successfully decompiled!
+#dst Tema %s descompilado com sucesso!
+#end
+#src Failed to decompile %s skin!
+#dst Falha ao descompilar o tema %s!
+#end
+#src Failed to load %s skin!
+#dst Falha ao carregar o tema %s!
+#end
+#src Some of %PRODUCTNAME% components are expired, missing or corrupted!
+#dst Alguns componentes do %PRODUCTNAME% estão desatualizados, não existem ou estão corrompidos!
+#end
+#src Failed to load %s skin, reverting to default skin!
+#dst Falha ao carregar o tema %s, será utilizado o tema padrão! 
+#end
+#src Unsupported %s skin file format!
+#dst Formato do tema %s não suportado!
+#end
+#src Failed to initialize main window with %s skin, reverting to default skin!
+#dst Falha ao iniciar a tela principal com o tema %s. Será utilizado o tema padrão!
+#end
+#src Failed to initialize main window!
+#dst Falha ao iniciar a tela principal!
+#end
+#src Beta %d
+#dst Beta %d
+#end
+#src compiled on %d-%m-%Y %H:%M:%S
+#dst Compilado em %d/%m/%Y %H:%M:%S
+#end
+#src expires on %s
+#dst Expira em %s
+#end
+#src Cannot load RTSSHooks.dll library!
+#dst Não foi possível carregar a biblioteca RTSSHooks.dll!
+#end
+#src Tip: %PRODUCTNAME% is currently minimized to system tray area. You may click its' tray icon to bring %PRODUCTNAME% window to top.
+#dst Dica: O %PRODUCTNAME% está minimizado na bandeja do sistema. Clique duas vezes no ícone para abrir a janela principal do %PRODUCTNAME%.
+#end
+#src Failed to restore main window DIB cache!
+#dst Falha ao restaurar o cache DIB da tela principal!
+#end
+#src CTaskSchedulerInterface::%s failed with error code %d!
+#dst CTaskSchedulerInterface::%s falhou com código de erro %d!
+#end
+#src %PRODUCTNAME% properties
+#dst Configurações do RivaTuner Statistics Server
+#end
+#src Resource file copy has been successfully saved to %s!
+#dst A cópia do arquivo de recursos salva com sucesso em %s!
+#end
+#src Failed to save resource file copy to %s!
+#dst Falha ao salvar a cópia do arquivo de recursos em %s!
+#end
+#src Executable files (*.exe)|*.exe||
+#dst Arquivos executáveis (*.exe)|*.exe||
+#end
+#src Bitmap files (*.bmp)|*.bmp||
+#dst Arquivos Bitmap (*.bmp)|*.bmp|| 
+#end
+#src There is no new version available at this time. Currently installed version is up to date.
+#dst Não há novas versões disponíveis no momento. A versão instalada é a mais atual.
+#end
+#src %PRODUCTNAME% v%s is available for download. Do you want to open the download page now?
+#dst %PRODUCTNAME% v%s está disponível para download. Você quer abrir a página de download agora?
+#end
+#src Cannot retrieve update information from the update server!
+#dst Não foi possível recuperar as informações de atualização do servidor de atualização!
+#end
+#src Cannot establish connection with the update server!
+#dst Não foi possível estabelecer conexão com o servidor de atualização!
+#end
+#src cannot open internet connection
+#dst Não foi possível abrir a conexão da internet.
+#end
+#src cannot open server connection
+#dst Não foi possível abrir a conexão do servidor.
+#end
+#src cannot open HTTP request
+#dst Não foi possível abrir a solicitação HTTP.
+#end
+#src cannot send HTTP request
+#dst Não foi possível enviar a solicitação HTTP.
+#end
+#src cannot query HTTP info
+#dst Não foi possível consultar as informações HTTP.
+#end
+#src proxy authentification required
+#dst Autenticação de proxy é necessária.
+#end
+#src cannot read file
+#dst Não foi possível ler o arquivo.
+#end
+#src unknown reason %d
+#dst Motivo desconhecido %d
+#end
+#src Reason : %s, error code %d
+#dst Motivo: %s, código do erro %d
+#end
+#src Last checked on %A, %B %d, %Y, %H:%M:%S
+#dst Última verificação em %d/%m/%Y, às %H:%M:%S
+#end
+#src Reboot is required to finalize %PRODUCTNAME% installation!
+#dst É necessário reiniciar o sistema para concluir a instalação do %PRODUCTNAME%!
+#end
+#src Some system components cannot be hooked right now. It is strongly recommended to restart application.
+#dst Alguns componentes do sistema não podem ser iniciados no momento. É altamente recomendado reiniciar o programa.
+#end
+#src The changes you've made will be applied after restarting %PRODUCTNAME%.  Do you want to restart it now?
+#dst As alterações efetuadas serão aplicadas após a reinicialização do %PRODUCTNAME%. Deseja reiniciá-lo agora?
+#end 
+#src Skin scaling %d%%
+#dst Tamanho: %d%%
+#end
+#src On-Screen Display preview
+#dst Pré-visualização do mostrador de informações na tela
+#end
+#src Image files (*.bmp;*.png)|*.bmp;*.png||
+#dst Arquivos de imagem (*.bmp;*.png)|*.bmp;*.png||
+#end
+#src Opacity %d%%
+#dst Opacidade: %d%%
+#end
+#src Please enter integer value in %d-%d range!
+#dst Por favor, insira um valor inteiro no intervalo %d-%d! 
+#end
+#src Active 3D application
+#dst Aplicações 3D ativas
+#end
+#src Properties
+#dst Proprieadades
+#end
+#src Add profile
+#dst Adicionar perfil
+#end
+#src Add exclusion
+#dst Adicionar exclusão
+#end
+#src Required DirectX runtimes are not installed! On-Screen Display may not function properly!
+#dst Os componentes necessários de tempo de execução do DirectX não estão instalados! A exibição na tela pode não funcionar corretamente!
+#end
+#src %s components cannot be hooked right now. It is strongly recommended to restart application.
+#dst %s componentes não podem ser enganchados agora. É altamente recomendável reiniciar o programa.
+#end
+#src %s is not found, installation is corrupted!
+#dst %s não foi encontrado, a instalação está corrompida!
+#end

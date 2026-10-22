@@ -1,0 +1,111 @@
+#src %s skin has been successfully compiled!
+#dst Skórka %s zosta³a skompilowana!
+#end
+#src Failed to compile %s skin!
+#dst Nie uda³o siê skompilowaæ skórki %s!
+#end
+#src %s skin has been successfully decompiled!
+#dst Skórka %s zosta³a zdekompilowana!
+#end
+#src Failed to decompile %s skin!
+#dst Nie uda³o siê zdekompilowaæ skórki %s!
+#end
+#src Failed to load %s skin!
+#dst Nie uda³o siê wczytaæ skórki %s!
+#end
+#src Some of %PRODUCTNAME% components are expired, missing or corrupted!
+#dst Niektóre komponenty %PRODUCTNAME% s¹ przestarza³e, zosta³y usuniête lub uleg³y uszkodzeniu!
+#end
+#src Failed to load %s skin, reverting to default skin!
+#dst Nie uda³o siê wczytaæ skórki %s, zostanie przywrócona skórka podstawowa!
+#end
+#src Unsupported %s skin file format!
+#dst Format pliku skórki %s nie jest obs³ugiwany!
+#end
+#src Failed to initialize main window with %s skin, reverting to default skin!
+#dst Nie uda³o siê otworzyæ g³ównego ona aplikacji ze skórk¹ %s, zostanie przywrócona skórka podstawowa!
+#end
+#src Failed to initialize main window!
+#dst Nie uda³o siê otworzyæ g³ównego okna aplikacji!
+#end
+#src Beta %d
+#dst Beta %d
+#end
+#src compiled on %d-%m-%Y %H:%M:%S
+#dst skompilowany %d-%m-%Y â %H:%M:%S
+#end
+#src expires on %s
+#dst wygasa %s
+#end
+#src Cannot load RTSSHooks.dll library!
+#dst Nie mo¿na za³adowaæ biblioteki RTSSHooks.dll!
+#end
+#src Tip: %PRODUCTNAME% is currently minimized to system tray area. You may click its' tray icon to bring %PRODUCTNAME% window to top.
+#dst PodpowiedŸ: %PRODUCTNAME% jest aktualnie zminimalizowany do zasobnika systemowego. Klikniêcie na jego ikonie w zasobniku systemowym przywróci na wierzch okno aplikacji.
+#end
+#src Failed to restore main window DIB cache!
+#dst Nie uda³o siê przywróciæ pamiêci podrêcznej DIB g³ównego okna!
+#end
+#src CTaskSchedulerInterface::%s failed with error code %d!
+#dst Funkcja CTaskSchedulerInterface::%s zwróci³a b³¹d o kodzie %d!
+#end
+#src %PRODUCTNAME% properties
+#dst W³aœciwoœci %PRODUCTNAME%
+#end
+#src Resource file copy has been successfully saved to %s!
+#dst Kopia pliku zasobów zosta³a zapisana do %s!
+#end
+#src Failed to save resource file copy to %s!
+#dst Nie uda³o siê zapisaæ kopii pliku zasobów do %s!
+#end
+#src Executable files (*.exe)|*.exe||
+#dst Pliki wykonywalne (*.exe)|*.exe||
+#end
+#src Bitmap files (*.bmp)|*.bmp||
+#dst Bitmapy (*.bmp)|*.bmp||
+#end
+#src There is no new version available at this time. Currently installed version is up to date.
+#dst Aktualnie brak jest nowszej wersji. Obecnie zainstalowana wersja programu jest najnowszü.
+#end
+#src %PRODUCTNAME% v%s is available for download. Do you want to open the download page now?
+#dst %PRODUCTNAME% v%s jest gotowy do pobrania. Czy chcesz wy_wietli¦ stronª pobierania programu?
+#end
+#src Cannot retrieve update information from the update server!
+#dst Nie moõna pobra¦ informacji o aktualizacji z serwera!
+#end
+#src Cannot establish connection with the update server!
+#dst Nie moõna nawiüza¦ po_üczenia z serwerem aktualizacji!
+#end
+#src cannot open internet connection
+#dst nie moõna nawiüza¦ po_üczenia z internetem
+#end
+#src cannot open server connection
+#dst nie moõna nawiüza¦ po_üczenia z serwerem
+#end
+#src cannot open HTTP request
+#dst nie moõna otworzy¦ õüdania HTTP
+#end
+#src cannot send HTTP request
+#dst nie moõna wys_a¦ õüdania HTTP
+#end
+#src cannot query HTTP info
+#dst nie moõna wys_a¦ zapytania HTTP
+#end
+#src proxy authentification required
+#dst proxy wymaga autentykacji
+#end
+#src cannot read file
+#dst nie moõna odczyta¦ pliku
+#end
+#src unknown reason %d
+#dst przyczyna nieznana %d
+#end
+#src Reason : %s, error code %d
+#dst Przyczyna : %s, kod b_ªdu %d
+#end
+#src Last checked on %A, %B %d, %Y, %H:%M:%S
+#dst Ostatnio sprawdzono %d-%m-%Y, %H:%M:%S
+#end
+#src Reboot is required to finalize %PRODUCTNAME% installation!
+#dst
+#end

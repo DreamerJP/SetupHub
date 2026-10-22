@@ -1,0 +1,8 @@
+On-Screen Display coordinate: framebuffer
+Per impostazione predefinita le coordinate dello spazio dell'On-Screen Display coincidono con le coordinate dello spazio della finestra di rendering, ad esempio l'ultima area rettangolare dell'applicazione che era stata resa. Tuttavia, alcune applicazioni (ad esempio, StarCraft II: Wings of Liberty) possono usare finestre multiple durante il rendering del telaio (ad esempio finestre diverse per il mondo 3D e HUD e così via). In questo caso l'origine dell'On-Screen Display segue uno degli angoli del riquadro di visualizzazione scorso, definito durante il rendering della struttura, che può essere situato in una posizione indesiderata. Le coordinate di spazio dell'On-Screen Display ignorando le relative opzioni possono essere utilizzate per il ripristino della posizione di origine prevista per tali applicazioni.
+Questo pulsante seleziona l'intero framebuffer come coordinate dello spazio per l'On-Screen Display.
+
+Consigli:
+- I sistemi anticheat di alcuni giochi possono riconoscere il rilevamento dell'applicazione On-Screen Display come possibile applicazione per barare al gioco e quindi bloccare la connessione al server multiplayer.
+Per risolvere i problemi, tentare di aggiungere un profilo per il gioco, e disabilitare il supporto On-Screen Display, o se non funziona, provare a diminuire il rilevamento di livello dell' applicazione.
+- È possibile disattivare i suggerimenti di interfaccia utente tramite la scheda <Interfaccia utente> in proprietà avanzate.

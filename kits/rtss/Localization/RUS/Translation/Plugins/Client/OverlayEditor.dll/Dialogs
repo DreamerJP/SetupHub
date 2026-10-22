@@ -1,0 +1,433 @@
+#src Add embedded object
+#dst Добавить встроенный объект
+#end
+#src Data source
+#dst Источник данных
+#end
+#src Text table
+#dst Текстовая таблица
+#end
+#src Add label
+#dst Добавить название
+#end
+#src Add current value macro
+#dst Добавить макрос текущего значения
+#end
+#src Add embedded graph
+#dst Добавить встроенный график
+#end
+#src Add embedded image
+#dst Добавить изображение
+#end
+#src use current template
+#dst текущий шаблон
+#end
+#src use custom template
+#dst произвольный шаблон
+#end
+#src use static image
+#dst простое изображение
+#end
+
+#src Embedded animated image settings
+#dst Настройки встроенного анимированного изображения
+#end
+#src Image template
+#dst Шаблон изображения
+#end
+#src Image template properties
+#dst Свойства шаблона изображения
+#end
+#src Image width, in pixels or symbols if negative
+#dst Ширина, в пикселях или символах если меньше 0
+#end 
+#src Image height, in pixels or symbols if negative
+#dst Высота, в пикселях или символах если меньше 0
+#end
+#src Sprite animation minimum, in data source units
+#dst Минимум анимации спрайта, в единицах источника
+#end
+#src Sprite animation maximum, in data source units
+#dst Максимум анимации спрайта, в единицах источника
+#end
+#src Sprite animation bias
+#dst Смещение анимации спрайта
+#end
+#src Minimum rotation angle
+#dst Минимальный угол поворота
+#end
+#src Maximum rotation angle
+#dst Максимальный угол поворота
+#end
+#src Sprite X, in pixels
+#dst Спрайт X, в пикселях
+#end
+#src Sprite Y, in pixels
+#dst Спрайт Y, в пикселях
+#end
+#src Sprite width, in pixels
+#dst Ширина спрайта, в пикселях
+#end
+#src Sprite height, in pixels
+#dst Высота спрайта, в пикселях
+#end
+#src Rotation angle
+#dst Угол поворота
+#end
+#src Sprites number
+#dst Количество спрайтов
+#end
+#src Sprites number per line
+#dst Количество спрайтов в строке
+#end
+#src Resize image to layer extent
+#dst Переразмеривать изображение до размеров слоя
+#end
+
+#src Embedded graph settings
+#dst Настройки встроенного графика
+#end
+#src Graph template
+#dst Шаблон графика
+#end
+#src Graph template properties
+#dst Свойства шаблона графика
+#end
+#src Graph width, in pixels or symbols if negative
+#dst Ширина, в пикселях или символах если < 0
+#end 
+#src Graph height, in pixels or symbols if negative
+#dst Высота, в пикселях или символах если < 0
+#end
+#src Graph margin, in pixels
+#dst Отступ графика, в пикселях
+#end
+#src Graph minimum, in data source units
+#dst Минимум графика, в единицах источника
+#end
+#src Graph maximum, in data source units
+#dst Максимум графика, в единицах источника
+#end
+#src Range minimum, in data source units
+#dst Минимальный диапазон, в единицах источника
+#end
+#src Range maximum, in data source units
+#dst Максимальный диапазон, в единицах источника
+#end
+#src Autoscale graph
+#dst Автомасштабировать график
+#end
+#src Graph style
+#dst Стиль графика
+#end
+#src graph
+#dst график
+#end
+#src diagram
+#dst диаграмма
+#end
+#src barchart
+#dst столбик
+#end
+#src bar range
+#dst диапазон
+#end
+#src Graph background
+#dst Фоновое заполнение графика
+#end
+#src enabled
+#dst включено
+#end
+#src disabled
+#dst отключено
+#end
+#src Graph orientation
+#dst Ориентация графика
+#end
+#src horizontal
+#dst горизонтальная
+#end
+#src vertical
+#dst вертикальная
+#end
+#src Graph direction
+#dst Направление графика
+#end
+#src normal
+#dst прямое
+#end
+#src mirrored
+#dst зеркальное
+#end
+#src Resize graph to layer extent
+#dst Переразмеривать график до размеров слоя
+#end
+
+#src Embedded image settings
+#dst Настройки встроенного изображения
+#end
+
+#src Layer properties
+#dst Свойства слоя
+#end
+#src Name
+#dst Имя
+#end 
+#src Visibility source
+#dst Источник видимости
+#end
+#src Hypertext
+#dst Гипертекст
+#end 
+#src Use custom text color
+#dst Пользовательский цвет текста
+#end
+#src Use custom background color
+#dst Пользовательский цвет фона
+#end
+#src Border, in pixels, inner or outer if negative
+#dst Бордюр, в пикселях, внешний если меньше 0
+#end
+#src Text size, in percents
+#dst Размер текста, в процентах
+#end
+#src Text alignment, in symbols, left or right if negative
+#dst Выравнивание, в символах, правое если меньше 0
+#end
+#src Use fixed size alignment
+#dst Выравнивание с фиксацией размера
+#end
+#src Resize layer to content
+#dst Переразмеривать слой до размеров содержимого
+#end
+#src Manual extent origin
+#dst Привязка ручного размера
+#end
+#src Sticky layer position
+#dst Приклеить слой
+#end
+#src Margins
+#dst Отступы
+#end
+
+#src Apply
+#dst Применить
+#end
+
+#src Add new data sources
+#dst Добавить новые источники данных
+#end
+#src Data provider
+#dst Поставщик данных
+#end
+#src Export
+#dst Экспорт
+#end
+
+#src Data source settings
+#dst Настройки источника данных
+#end
+#src AIDA64 sensor properties
+#dst Свойства сенсора AIDA64	
+#end
+#src ID
+#dst Идентификатор
+#end
+#src Overlay data source properties
+#dst Свойства источника данных оверлея
+#end
+#src Name
+#dst Имя
+#end
+#src Units
+#dst Единицы
+#end
+#src Format
+#dst Формат
+#end
+#src Correction formula
+#dst Формула коррекции
+#end
+
+#src HWiNFO64 sensor properties
+#dst Свойства сенсора HWiNFO64	
+#end
+#src Type
+#dst Тип
+#end
+#src Instance
+#dst Экземпляр
+#end
+
+#src MSI Afterburner sensor properties
+#dst Свойства сенсора MSI Afterburner
+#end
+
+#src HAL sensor properties
+#dst Свойства сенсора уровня абстрацкии оборудования
+#end
+
+#src Performance counter properties
+#dst Свойства счётчика производительности
+#end
+#src Object name
+#dst Имя объекта
+#end
+#src Instance name or index
+#dst Имя или индекс экземпляра
+#end
+#src Counter name
+#dst Имя счётчика
+#end
+#src Enable dynamic mode
+#dst Включить динамический режим
+#end
+
+#src Instance name
+#dst Имя экземпляра
+#end
+#src Use instance index instead of name
+#dst Использовать индекс экземпляра вместо имени
+#end
+
+#src Overlay data sources
+#dst Источники данных оверлея
+#end
+#src Setup
+#dst Настроить
+#end
+#src Add
+#dst Добавить
+#end
+#src Remove
+#dst Удалить
+#end
+
+#src Ovelay editor
+#dst Редактор оверлея
+#end
+
+#src Overlay properties
+#dst Свойства оверлея
+#end
+#src Environment variables
+#dst Переменные окружения
+#end
+#src Refresh period, in milliseconds
+#dst Период обновления, в миллисекундах
+#end
+#src Lock user settings
+#dst Запретить настройки пользователя
+#end
+#src Master settings
+#dst Настройки создателя
+#end
+#src Embedded image
+#dst Встроенное изображение
+#end
+#src Ping address
+#dst Адрес пинга
+#end
+
+#src Ovelay editor
+#dst Редактор оверлея
+#end
+
+#src Select sprite
+#dst Выбор спрайта
+#end
+
+#src Text tables
+#dst Текстовые таблицы
+#end
+
+#src Text table properties
+#dst Свойства текстовой таблицы
+#end
+#src Value
+#dst Значение
+#end
+#src Units
+#dst Единицы
+#end
+#src Cell size, in percents
+#dst Размер ячейки, в процентах
+#end
+#src Cell alignment, in symbols
+#dst Выравнивание ячейки, в символах
+#end
+#src Table edit mode
+#dst Режим редактирования таблицы
+#end
+#src lines
+#dst строки
+#end
+#src cells
+#dst ячейки
+#end
+
+#src Text table cell properties
+#dst Свойства ячейки текстовой таблицы
+#end
+#src Line name
+#dst Имя строки
+#end
+#src Use custom line text color
+#dst Пользовательский цвет текста строки
+#end
+#src Use custom cell text color
+#dst Пользовательский цвет текста ячейки
+#end
+#src Cell data source
+#dst Источник данных ячейки
+#end
+#src Cell text
+#dst Текст ячейки
+#end
+
+#src Add new text table cells
+#dst Добавление новых ячеек текстовой таблицы
+#end
+#src Add cells to new line
+#dst Добавить ячейки к новой строке
+#end
+#src Add separator
+#dst Добавить разделитель
+#end
+
+#src Overlay layers
+#dst Слои оверлея
+#end
+
+#src Dynamic color
+#dst Динамический цвет
+#end
+#src Min
+#dst Мин
+#end
+#src Max
+#dst Макс
+#end
+#src Preview
+#dst Просмотр
+#end
+#src Blend colors
+#dst Смешивать цвета
+#end
+#src Embed formula
+#dst Встроить формулу
+#end
+
+#src Internal HAL properties
+#dst Свойства внутреннего слоя абстракции оборудования
+#end
+#src Enable low-level IO driver
+#dst Включить низкоуровневый драйвер ввода/вывода
+#end
+#src Enable SMART monitoring
+#dst Включить мониторинг SMART
+#end
+
+#src LibreHardwareMonitor sensor properties
+#dst Свойства сенсора LibreHardwareMonitor	
+#end

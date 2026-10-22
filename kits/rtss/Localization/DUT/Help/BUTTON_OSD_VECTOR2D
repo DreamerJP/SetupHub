@@ -1,0 +1,10 @@
+Informatie op het scherm (OSD): vector 2D rendering mode.
+OSD kan gerenderd worden door middel van vector of raster lettertypes via 2D hardware versnelling of 3D hardware versnelling door DirectX / OpenGL functies.
+2D versnelling gebaseerde implementatie verzekerd maximale compatibiliteit met de meeste 3D games engines , maar het wordt niet ondersteund in DirectX10 en de nieuwste spellen wanneer multisample antialiasing is ingeschakeld.
+2D versnelling kan ook slecht geoptimaliseerd zijn in sommige scherm drivers , dus 3D versnelling gebaseerde implementatie kan effectiever zijn in verband met prestatie beinvloeding op zulke systemen.
+Niet mis te verstaan dat 3D implementatie meer kans heeft tot incompatibel te zijn met sommige 3D engines.
+Probeer om 3D mode uit te schakelen wanneer je rendering vervormingen ziet tijdens het spelen wanneer OSD is ingeschakeld.
+
+Hint:
+- Anti-cheat systemen van sommige games kunnen game code hooking dat nodig is voor de informatie op het scherm (OSD)te verkrijgen aanzien als een cheat. Als dit het geval is dient u OSD uit te schakelen voor deze 3D toepassingen of probeer om een profiel voor deze toepassing te maken en verminder het detectie niveau van de toepassing.
+- Je kan de gebruikers interface werktips uitschakelen via de<gebruikers interface> tab in geavanceerde eigenschappen.

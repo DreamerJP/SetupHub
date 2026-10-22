@@ -1,0 +1,5 @@
+Cache leeren
+Ermöglicht den Offset-Cache des Bereitstellungssystems zu leeren und ihn neu zu erstellen, wenn die Anwendung neu gestartet wird. Diese Funktion kann bei der Fehlersuche hilfreich sein.
+
+Hinweis:
+- Tooltips können in der Registerkarte <Benutzeroberfläche> in den erweiterten Einstellungen deaktiviert werden.

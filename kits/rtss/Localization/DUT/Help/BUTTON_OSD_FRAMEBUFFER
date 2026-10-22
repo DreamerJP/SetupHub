@@ -1,0 +1,7 @@
+Informatie op het scherm (OSD) coordinatie ruimte: beeldbuffer
+Standaard OSD coördinaat ruimte komen overeen met de coördinatie van de ruimte van rendering viewport, dat wil zeggen de laatste rechthoekige gebied werd gerenderd naar. Echter, bepaalde toepassingen (bijv. Codename Panzers: Phase II) kunnen gebruik maken van meerdere viewports tijdens frame rendering (bijv. verschillende viewports voor 3D-wereld en HUD en ga zo maar door). In dit geval zal de OSD plaats één van de hoeken van de laatste viewport volgen, gedefinieerd tijdens de beeld rendering, dit kan leiden tot een ongewenste OSD positie.
+Deze knop selecteert de hele beeldbuffer als de coördinatie ruimte voor de OSD.
+
+Hint:
+- Anti-cheat systemen van sommige games kunnen game code hooking dat nodig is voor de informatie op het scherm (OSD)te verkrijgen aanzien als een cheat. Als dit het geval is dient u OSD uit te schakelen voor deze 3D toepassingen of probeer om een profiel voor deze toepassing te maken en verminder het detectie niveau van de toepassing.
+- Je kan de gebruikers interface werktips uitschakelen via de<gebruikers interface> tab in geavanceerde eigenschappen.

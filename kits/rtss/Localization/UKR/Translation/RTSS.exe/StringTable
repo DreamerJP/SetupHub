@@ -1,0 +1,150 @@
+#src %s skin has been successfully compiled!
+#dst Скін %s успішно скомпільовано!
+#end
+#src Failed to compile %s skin!
+#dst Неможливо скомпілювати скін %s!
+#end
+#src %s skin has been successfully decompiled!
+#dst Скін %s успішно декомпілювали!
+#end
+#src Failed to decompile %s skin!
+#dst Неможливо декомпілювати скін %s!
+#end
+#src Failed to load %s skin!
+#dst Неможливо завантажити скін %s!
+#end
+#src Some of %PRODUCTNAME% components are expired, missing or corrupted!
+#dst Деякі компоненти %PRODUCTNAME% прострочені, відсутні або пошкоджені!
+#end
+#src Failed to load %s skin, reverting to default skin!
+#dst Неможливо завантажити скін %s, повертаємось до скіна за замовчуванням!
+#end
+#src Unsupported %s skin file format!
+#dst Непідтримуваний формат файлу скіна %s!
+#end
+#src Failed to initialize main window with %s skin, reverting to default skin!
+#dst Неможливо ініціалізувати головне вікно зі скіном %s, повертаємось до скіна за замовчуванням!
+#end
+#src Failed to initialize main window!
+#dst Неможливо ініціалізувати головне вікно!
+#end
+#src Beta %d
+#dst Beta %d
+#end
+#src compiled on %d-%m-%Y %H:%M:%S
+#dst скомпільовано %d-%m-%Y у %H:%M:%S
+#end
+#src expires on %s
+#dst спливає %s
+#end
+#src Cannot load RTSSHooks.dll library!
+#dst Неможливо завантажити бібліотеку RTSSHooks.dll!
+#end
+#src Tip: %PRODUCTNAME% is currently minimized to system tray area. You may click its' tray icon to bring %PRODUCTNAME% window to top.
+#dst Підказка: Наразі %PRODUCTNAME% згорнуто до області системного лотка. Ви можете клацнути його іконку у треї, щоб вивести вікно %PRODUCTNAME% нагору.
+#end
+#src Failed to restore main window DIB cache!
+#dst Неможливо відновити кеш зображень головного вікна!
+#end
+#src CTaskSchedulerInterface::%s failed with error code %d!
+#dst Помилка у функції RTTSH.dll::%s, код помилки %d!
+#end
+#src %PRODUCTNAME% properties
+#dst Властивості %PRODUCTNAME%
+#end
+#src Resource file copy has been successfully saved to %s!
+#dst Копію файлу ресурсу успішно збережено до %s!
+#end
+#src Failed to save resource file copy to %s!
+#dst Не вдалося зберегти копію файлу ресурсу в %s!
+#end
+#src Executable files (*.exe)|*.exe||
+#dst Виконувані файли (*.exe)|*.exe|||
+#end
+#src Bitmap files (*.bmp)|*.bmp||
+#dst Растрові зображення (*.bmp)|*.bmp||||
+#end
+#src There is no new version available at this time. Currently installed version is up to date.
+#dst Наразі немає нової версії. Поточна встановлена версія є актуальною.
+#end
+#src %PRODUCTNAME% v%s is available for download. Do you want to open the download page now?
+#dst %PRODUCTNAME% v%s доступний для завантаження. Ви хочете відкрити сторінку завантаження прямо зараз?
+#end
+#src Cannot retrieve update information from the update server!
+#dst Неможливо отримати інформацію про оновлення з сервера оновлень!
+#end
+#src Cannot establish connection with the update server!
+#dst Неможливо підключитися до сервера оновлень!
+#end
+#src cannot open internet connection
+#dst неможливо відкрити інтернет-з'єднання
+#end
+#src cannot open server connection
+#dst неможливо відкрити підключення до сервера
+#end
+#src cannot open HTTP request
+#dst неможливо відкрити HTTP-запит
+#end
+#src cannot send HTTP request
+#dst неможливо надіслати HTTP-запит
+#end
+#src cannot query HTTP info
+#dst неможливо запросити HTTP інформацію
+#end
+#src proxy authentification required
+#dst потрібна аутентифікація проксі-сервера
+#end
+#src cannot read file
+#dst неможливо зчитати файл
+#end
+#src unknown reason %d
+#dst невідома причина %d
+#end
+#src Reason : %s, error code %d
+#dst Причина : %s, код помилки %d
+#end
+#src Last checked on %A, %B %d, %Y, %H:%M:%S
+#dst Останній пошук оновлень %d-%m-%Y, %H:%M:%S
+#end
+#src Reboot is required to finalize %PRODUCTNAME% installation!
+#dst Для завершення встановлення %PRODUCTNAME% потрібне перезавантаження!
+#end
+#src Some system components cannot be hooked right now. It is strongly recommended to restart application.
+#dst Деякі компоненти системи не можуть бути підключені прямо зараз. Наполегливо рекомендуємо перезапустити програму.
+#end
+#src The changes you've made will be applied after restarting %PRODUCTNAME%.  Do you want to restart it now?
+#dst Внесені зміни будуть застосовані після перезапуску %PRODUCTNAME%.  Ви хочете перезапустити його зараз?
+#end
+#src Skin scaling %d%%
+#dst Масштабування скіна %d%%
+#end
+#src On-Screen Display preview
+#dst Попередній перегляд ОЕД
+#end
+#src Image files (*.bmp;*.png)|*.bmp;*.png||
+#dst Файли зображень (*.bmp;*.png)|*.bmp;*.png|||
+#end
+#src Opacity %d%%
+#dst Видимість %d%%
+#end
+#src Please enter integer value in %d-%d range!
+#dst Будь ласка, введіть ціле число в діапазоні %d-%d!
+#end
+#src Active 3D application
+#dst Активний 3D додаток
+#end
+#src Properties
+#dst Властивості
+#end
+#src Add profile
+#dst Додати профіль
+#end
+#src Add exclusion
+#dst Додати виняток
+#end
+#src Required DirectX runtimes are not installed! On-Screen Display may not function properly!
+#dst Необхідні версії рантайм бібліотек DirectX не встановлено! Функція відображення Оверлейного Екранного Дисплея може не працювати!
+#end
+#src %s components cannot be hooked right now. It is strongly recommended to restart application.
+#dst Компоненти %s не можуть бути підключені зараз. Наполегливо рекомендуємо перезапустити програму.
+#end

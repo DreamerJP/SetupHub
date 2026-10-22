@@ -1,0 +1,5 @@
+Activer l'indicateur coloré de trame
+Activer l'indicateur coloré de trame pour l'outil d'analyse NVIDIA de capture de trames (FCAT). FCAT est un complexe matériel/logiciel pour une analyse précise des temps de trames.
+
+Astuce:
+- Vous pouvez désactiver les bulles d'interface dans la tabulation <interface d'utilisateur> dans les propriétés avancées.

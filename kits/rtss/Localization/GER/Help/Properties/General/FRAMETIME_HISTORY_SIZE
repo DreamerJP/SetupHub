@@ -1,0 +1,5 @@
+Größe des Frametimeverlauf-Overlays
+Ermöglicht die Größe des Frametimeverlauf-Overlays zu bearbeiten. Sie können positive Werte verwenden, um die Größe in Pixel anzugeben, oder negative Werte, um die Größe in Symbolen anzugeben.
+
+Hinweis:
+- Tooltips können in der Registerkarte <Benutzeroberfläche> in den erweiterten Einstellungen deaktiviert werden.

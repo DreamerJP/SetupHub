@@ -1,0 +1,7 @@
+Nível de detecção: Alto
+Seleciona o nível alto de detecção para o programa associado ao perfil atual. O programa intercepta DirectDraw, Direct3D, bibliotecas OpenGL, assim como, as tentativas de inteceptação do carregarmento de novas bibliotecas.
+Este modo é recomendado para a coleta de estatísticas em tempo real, como taxa de quadros, permitindo serviços adicionais, como mostrador de informações na tela, em aplicações DirectDraw e bibliotecas Direct3D e OpenGL carregadas dinamicamente.
+
+Sugestões: 
+- Algums programas protegidos podem tratar a coleta de estatísticas como possível ameaça e se recusarem a executar. Tente diminuir o nível de detecção para as aplicações para solucionar tais questões. 
+- Você pode desativar as sugestões na aba <Inteface> das configurações.

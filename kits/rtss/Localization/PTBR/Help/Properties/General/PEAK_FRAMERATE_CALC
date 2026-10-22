@@ -1,0 +1,5 @@
+Método de cálculo da taxa de quadros
+Os valores mínimos e máximos da taxa de quadros no modo de benchmark podem ser calculados a partir de valores médios ou instantâneos. Você pode usar esta opção para selecionar seu método de cálculo preferido.
+
+Sugestões: 
+- Você pode desativar as sugestões na aba <Inteface> das configurações.

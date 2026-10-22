@@ -1,0 +1,8 @@
+Vorschau der Overlay-Bildschirmanzeige
+Zeigt eine Vorschau der Overlay-Bildschirmanzeige an. Bitte beachten Sie, dass die Vorschaugröße und -position der Overlay-Bildschirmanzeige im Vorschaufenster nur für Videomodi gelten, die der Desktop-Auflösung entsprechen, und nur in Bezug auf den Ursprungsecke.
+
+Hinweise:
+- Sie können das Vorschaufenster vom Hauptfenster trennen und eine beliebige Größe und Position für das Fenster festlegen, indem Sie auf den Bereich des Vorschaufensters doppelklicken. Dies kann den Prozess der visuellen Anpassung der Position der Overlay-Bildschirmanzeige vereinfachen.
+- Sie können mit der rechten Maustaste auf das Vorschaufenster klicken und im Kontextmenü den Befehl <Screenshot aufnahmen> auswählen, um einen Screenshot der aktuellen 3D-Anwendung aufzunehmen und ihn als Hintergrundbild dieses Fensters zu verwenden. Dies kann den Prozess der visuellen Anpassung der Position der Overlay-Bildschirmanzeige vereinfachen. Der ursprüngliche Zustand des Hintergrunds kann mit dem Befehl <Löschen> aus dem Kontextmenü wiederhergestellt werden.
+- Die Anti-Cheat-Systeme einiger Spiele können das für die Anwendungserkennung und das Rendern von Bildschirmanzeigen erforderliche Einhängen des Spielcodes als möglichen Cheat behandeln und die Verbindung zum Multiplayer-Server blockieren. Um dieses Problem zu lösen, kann ein Profil für das Spiel erstellt und die Unterstützung für die Overlay-Bildschirmanzeige deaktiviert werden. Wenn das nicht hilft, versuchen Sie, die Erkennungsstufe der App zu senken.
+- Tooltips können in der Registerkarte <Benutzeroberfläche> in den erweiterten Einstellungen deaktiviert werden.

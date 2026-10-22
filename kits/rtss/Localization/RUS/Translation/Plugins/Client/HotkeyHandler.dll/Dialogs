@@ -1,0 +1,319 @@
+#src Hotkey handler properties
+#dst Свойства обработчика горячих клавиш
+#end
+
+#src On-Screen Display
+#dst Оверлейный Экранный Дисплей
+#end
+#src Show On-Screen Display
+#dst Показать ОЭД
+#end
+#src Hide On-Screen Display
+#dst Спрятать ОЭД
+#end 
+#src Toggle On-Screen Display
+#dst Переключить видимость ОЭД
+#end
+#src Overlay editor plugin
+#dst Плагин редактора оверлея
+#end
+
+#src Overlay editor plugin properties
+#dst Свойства плагина редактора оверлея
+#end
+#src Programmable overlay modifier 1
+#dst Программируемый модификатор 1
+#end
+#src Programmable overlay modifier 2
+#dst Программируемый модификатор 2
+#end
+#src Programmable overlay modifier 3
+#dst Программируемый модификатор 3
+#end
+#src Programmable overlay modifier 4
+#dst Программируемый модификатор 4
+#end
+
+#src Programmable overlay modifier properties
+#dst Свойства программируемого модификатора оверлея
+#end
+#src Load overlay
+#dst Загрузить оверлей
+#end
+#src Load text file
+#dst Загрузить текстовый файл
+#end
+#src View text file
+#dst Просмотреть текстовый файл
+#end
+#src Move to next text file line
+#dst Следующая строка текстового файла
+#end
+#src Move to previous text file line
+#dst Предыдущая строка текстового файла
+#end
+#src Set timer to 30 seconds
+#dst Установка таймера на 30 секунд
+#end
+#src Set ping address
+#dst Установка адреса пинга
+#end
+#src Reset statistics
+#dst Сброс статистики
+#end
+
+
+#src Overlay message
+#dst Сообщение оверлея
+#end
+#src Overlay layer
+#dst Слой оверлея
+#end
+#src Parameters
+#dst Параметры
+#end
+
+#src Framerate limiter
+#dst Ограничитель частоты кадров
+#end
+#src Enable framerate limter
+#dst Включить ограничитель частоты кадров
+#end
+#src Disable framerate limiter
+#dst Выключить ограничитель частоты кадров
+#end
+#src Toggle framerate limiter
+#dst Переключить ограничитель частоты кадров
+#end
+
+#src Screenshots
+#dst Скриншоты
+#end
+#src Screen capture
+#dst Захват скриншота
+#end
+
+#src Screen capture properties
+#dst Свойства захвата скриншотов
+#end
+#src Screenshot format
+#dst Формат скриншота
+#end
+#src Screenshots folder
+#dst Папка скриншотов
+#end
+#src Browse
+#dst Обзор
+#end
+#src View
+#dst Просмотр
+#end
+#src Show On-Screen Display on captured screenshots and videos
+#dst Показывать ОЭД на захваченных скриншотах и видео
+#end
+
+#src Videos
+#dst Видео
+#end
+#src Video capture
+#dst Захват видео
+#end
+#src Video prerecord
+#dst Предзапись видео
+#end
+
+#src Video capture properties
+#dst Свойства захвата видео
+#end
+#src General
+#dst Основные
+#end
+#src Video format
+#dst Формат видео
+#end
+#src Videos folder
+#dst Папка видео
+#end
+#src Video stream
+#dst Видеопоток
+#end
+#src Capture mode
+#dst Режим захвата
+#end
+#src mixed
+#dst смешанный
+#end
+#src desktop
+#dst рабочий стол
+#end
+#src 3D application
+#dst 3D приложение
+#end
+#src Frame size
+#dst Размер кадра
+#end
+#src full frame
+#dst полный кадр
+#end
+#src 1/2 frame
+#dst 1/2 кадра
+#end
+#src 1/3 frame
+#dst 1/3 кадра
+#end
+#src 1/4 frame
+#dst 1/4 кадра
+#end
+#src Audio stream
+#dst Аудиопоток
+#end
+#src Downmix multichannel audio to stereo
+#dst Сводить многоканальное аудио в стерео
+#end
+#src stereo rip
+#dst вырезание
+#end
+#src stereo mix
+#dst микширование
+#end
+#src Mix multiple audio tracks
+#dst Сводить несколько аудио треков в один
+#end
+#src None
+#dst Нет
+#end
+#src Auto select
+#dst Выбрать автоматически
+#end
+#src DirectSound capture device
+#dst Устройство захвата DirectSound
+#end
+#src WASAPI playback device
+#dst Устройство воспроизведения WASAPI
+#end
+#src WASAPI capture device
+#dst Устройство захвата WASAPI
+#end
+#src There are no devices
+#dst Устройства недоступны
+#end
+#src Audio source #1
+#dst Источник аудио #1
+#end
+#src Audio source #2
+#dst Источник аудио #2
+#end
+#src Push-To-Talk hotkey
+#dst Клавиша Push-To-Talk
+#end
+#src There are no devices available
+#dst Устройства недоступны
+#end
+#src Use dedicated encoder server
+#dst Использовать выделенный сервер кодирования
+#end
+
+#src Video prerecording properties
+#dst Свойства предзаписи видео
+#end
+#src Prerecord buffer location
+#dst Расположение буфера предзаписи
+#end
+#src file
+#dst файл
+#end
+#src RAM
+#dst ОЗУ
+#end
+#src Prerecord buffer time limit, in seconds
+#dst Предел времени буфера предзаписи, в секундах
+#end
+#src Prerecord buffer size limit, in MB
+#dst Предел размера буфера предзаписи, в МБ
+#end
+#src Enable automatic prerecording mode
+#dst Включить режим автоматической предзаписи
+#end
+
+#src Benchmark
+#dst Бенчмарк
+#end
+#src Begin recording
+#dst Начать запись
+#end
+#src End recording
+#dst Завершить запись
+#end
+
+#src Benchmark properties
+#dst Свойства бенчмарка
+#end
+#src Benchmark results file
+#dst Файл результатов бенчмарка
+#end
+#src Recreate existing benchmark results files
+#dst Пересоздавать существующие файлы результатов
+#end
+
+#src Profiles
+#dst Профили
+#end
+#src Programmable profile modifier 1
+#dst Программируемый модификатор 1
+#end
+#src Programmable profile modifier 2
+#dst Программируемый модификатор 2
+#end
+#src Programmable profile modifier 3
+#dst Программируемый модификатор 3
+#end
+#src Programmable profile modifier 4
+#dst Программируемый модификатор 4
+#end
+
+#src Programmable profile modifier properties
+#dst Свойства программируемого модификатора профиля 
+#end
+#src Description
+#dst Описание
+#end
+#src Target profile (leave blank for global)
+#dst Целевой профиль
+#end
+#src Target profile property
+#dst Свойство целевого профиля
+#end
+#src Modifier type
+#dst Тип модификатора
+#end
+#src set
+#dst установить
+#end
+#src add
+#dst прибавить
+#end
+#src Modifier value
+#dst Значение модификатора
+#end 
+#src Preset
+#dst Пресет
+#end
+#src custom
+#dst произвольный
+#end
+#src Set 60 FPS framerate limit
+#dst Установить ограничение 60 FPS
+#end
+#src Increase framerate limit
+#dst Увеличить ограничение FPS
+#end
+#src Decrease framerate limit
+#dst Уменьшить ограничение FPS
+#end
+#src Increase Scanline Sync index
+#dst Увеличить индекс Scanline Sync
+#end
+#src Decrease Scanline Sync index
+#dst Уменьшить индекс Scanline Sync
+#end
+

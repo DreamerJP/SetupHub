@@ -1,0 +1,13 @@
+Cor do contorno da fonte do mostrador de informações na tela
+Altera a cor do contorno da fonte do texto a ser exibido na tela para os modos de renderização por Vetor 2D e Vetor 3D. Você também pode ajustar o nível de transparência da cor do contorno nos modos de renderização por vetores. Por favor, observe que a renderização de contornos aumenta o consumo de recursos do sistema, portanto, habilite-o somente quando necessário.
+
+Sugestões: 
+- Sistemas "Anticheat" de alguns jogos podem considerar o código para a detecção de aplicativos e a renderização de informações na tela como possível fraude em servidores multiplayer. Para solucionar essas questões, tente adicionar um perfil para o jogo e desative o suporte ao mostrador de informações na tela, ou tente diminuir o nível de detecção do programa. 
+- Você pode desativar as sugestões na aba <Inteface> das configurações.
+
+
+
+
+
+
+

@@ -1,0 +1,9 @@
+Mostra le statistiche personali
+Lo scopo primario di %PRODUCTNAME% è di raccogliere le statistiche di framerate per tutte le applicazioni 3D in esecuzione nel sistema e di fornirle alle applicazioni client come RivaTuner, HIS iTurbo, EVGA Precision o MSI Afterburner. Fornisce inoltre servizi aggiuntivi, come l'On-Screen Display, la cattura immagini il supporto o individuazione 3D , per le applicazioni.
+Tuttavia, è anche possibile utilizzare %PRODUCTNAME% come soluzione indipendente di monitoraggio del framerate. Attivare questa opzione per consentire a %PRODUCTNAME% di mostrare le sue statistiche del framerate nell'On-Screen Display senza avviare nessuna applicazione client aggiuntiva.
+
+Consigli:
+- I sistemi anticheat di alcuni giochi possono riconoscere il rilevamento dell'applicazione On-Screen Display come possibile applicazione per barare al gioco e quindi bloccare la connessione al server multiplayer.
+Per risolvere i problemi, tentare di aggiungere un profilo per il gioco, e disabilitare il supporto On-Screen Display, o se non funziona, provare a diminuire il rilevamento di livello dell' applicazione.
+- È possibile disattivare i suggerimenti di interfaccia utente tramite la scheda <Interfaccia utente> in proprietà avanzate.
+

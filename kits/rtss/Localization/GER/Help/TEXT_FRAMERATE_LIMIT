@@ -1,0 +1,10 @@
+Framerate-Limit
+Ermöglicht ein Framerate-Limit für 3D-Anwendungen festzulegen. Das Framerate-Limit kann dazu beitragen, den Stromverbrauch des Systems zu senken und das Spielerlebnis zu verbessern, indem der unerwünschte Mikrostottereffekt, der durch Schwankungen der Framerate verursacht wird, eliminiert wird. Setzen Sie diesen Wert auf Null, um das Limit zu deaktivieren.
+
+Hinweise:
+- Es wird dringend empfohlen, VSync zu deaktivieren, damit das festgelegte Framerate-Limit korrekt funktioniert.
+- Sie können gebrochene Bildraten festlegen, z. B. 59,94 fps.
+- Sie können das Limit als Framerate und als Frametime festlegen. Klicken Sie auf die nebenstehende Überschrift <Framerate-Limit>, um zwischen Framerate- und Frametime-Limit zu wechseln. Wenn Sie veraltete Skins von Drittanbietern verwenden, die keine native Unterstützung für das Umschalten zwischen Framerate- und Frametime-Limit bieten, können Sie eine alternative Methode verwenden und zwischen den Modi wechseln, indem Sie die <Strg>-Taste gedrückt halten und auf das Eingabefeld klicken.
+- Sie können die <Alt>-Taste gedrückt halten und auf dieses Feld klicken, um das Framerate-Limit auf die genaue Refresh rate des Display-Hosting-Fensters %PRODUCTNAME% festzulegen.
+- Sie können mit der rechten Maustaste auf dieses Feld klicken, um das Framerate-Limit auf die genaue Refresh rate eines angeschlossenen Displays oder auf die VRR-Obergrenze eines angeschlossenen Displays (95% der Refresh rate) festzulegen.
+- Tooltips können in der Registerkarte <Benutzeroberfläche> in den erweiterten Einstellungen deaktiviert werden.

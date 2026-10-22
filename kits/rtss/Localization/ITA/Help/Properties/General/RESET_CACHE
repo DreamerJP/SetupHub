@@ -1,0 +1,5 @@
+Reimposta cache
+Consente di reimpostare la cache degli offset di iniezione e ricompilarla dopo aver riavviato l'applicazione. Questa funzione può essere utile per la risoluzione dei problemi.
+
+Suggerimenti:
+-È possibile disabilitare le descrizioni comandi dell'interfaccia utente tramite la scheda <interfaccia utente> in proprietà avanzate.

@@ -1,0 +1,17 @@
+#src Show
+#dst Mostra
+#end
+#src Close
+#dst Chiudi
+#end
+
+#src Capture screenshot
+#dst Cattura screenshot
+#end
+#src Load
+#dst Carica
+#end
+#src Clear
+#dst Pulisci
+#end
+

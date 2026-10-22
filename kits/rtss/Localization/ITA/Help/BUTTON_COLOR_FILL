@@ -1,0 +1,7 @@
+Colore di riempimento
+Visualizza il colore di riempimento per la visualizzazione su schermo e consente di ridefinirlo. È anche possibile regolare il livello di trasparenza per il colore di riempimento in modalità di rendering vettoriale 3D e raster 3D nell'On-Screen Display.
+
+Consigli:
+- I sistemi anticheat di alcuni giochi possono riconoscere il rilevamento dell'applicazione On-Screen Display come possibile applicazione per barare al gioco e quindi bloccare la connessione al server multiplayer.
+Per risolvere i problemi, tentare di aggiungere un profilo per il gioco, e disabilitare il supporto On-Screen Display, o se non funziona, provare a diminuire il rilevamento di livello dell' applicazione.
+- È possibile disattivare i suggerimenti di interfaccia utente tramite la scheda <Interfaccia utente> in proprietà avanzate.

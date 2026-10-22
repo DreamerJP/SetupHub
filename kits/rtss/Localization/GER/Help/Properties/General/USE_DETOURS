@@ -1,0 +1,7 @@
+Microsoft Detours zum Abfangen von API-Aufrufen verwenden
+Standardmäßig verwendet %PRODUCTNAME% seine eigene native Implementierung zum Abfangen von API-Aufrufen, die ein zuverlässiges Abfangen von API-Aufrufen von 3D-Anwendungen ermöglicht, selbst wenn diese bereits von einer Drittanbieteranwendung (z. B. einem anderen Overlay) abgefangen werden. Dies wird durch das ursprüngliche Konzept des Aufbaus einer sicheren Abfangkette erreicht, die die Koexistenz verschiedener Abfangmechanismen ermöglicht, wenn sie gleichzeitig in derselben Funktion implementiert werden. Einige Anwendungen von Drittanbietern, die auf dem Prinzip des Abfangens von 3D-API-Funktionsaufrufen basieren (z. B. Overlays oder Anwendungen für Videoaufnahme/-streaming), können jedoch die Microsoft Detours-Bibliothek zum Abfangen verwenden, die den Aufbau sicherer Abfangketten nicht nativ unterstützt und zu Konflikten führen kann, wenn diese alternative Abfangmethoden verwenden. Solche Anwendungen funktionieren möglicherweise nicht ordnungsgemäß, wenn %PRODUCTNAME% aktiv ist.
+Sie können diese Option aktivieren, um zu erzwingen, dass %PRODUCTNAME% Microsoft Detours anstelle einer eigenen API-Hooking-Implementierung verwendet. Dies kann die Kompatibilität mit solchen Anwendungen verbessern.
+
+Hinweise:
+- Diese Einstellung ist spezifisch für das aktuell ausgewählte Anwendungsprofil.
+- Tooltips können in der Registerkarte <Benutzeroberfläche> in den erweiterten Einstellungen deaktiviert werden.

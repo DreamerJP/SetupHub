@@ -1,0 +1,5 @@
+Framerate-Limiter aktivieren
+Steuert global die Unterstützung für die Limitierung der Framerate. Verwenden Sie diese Einstellung, um den Framerate-Limiter zu aktivieren oder zu deaktivieren, ohne das Profil ändern zu müssen. Clientanwendungen können diese Option auch über Hotkeys steuern.
+
+Hinweis:
+- Tooltips können in der Registerkarte <Benutzeroberfläche> in den erweiterten Einstellungen deaktiviert werden.

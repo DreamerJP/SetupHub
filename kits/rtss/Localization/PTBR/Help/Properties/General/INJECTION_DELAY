@@ -1,0 +1,9 @@
+Atraso na injeção
+Ajusta o atraso em milissegundos para o motor de injeção. A injeção retardada ignora a verificação de exclusividade de implementação do mostrador de informações na tela em determinadas aplicações em execução na tela (por exemplo, sobreposição da Steam de 64 bits) e impede que tais aplicativos bloqueiem a funcionalidade de exibição na tela. 
+O mecanismo de injeção retardada é configurável pelo usuário, podendo-se aumentar a lista de módulos DLLs acionandos pelo mecanismo e ajustar o atraso desejado. 
+Por padrão, a injeção retardada é acionada pela sobreposição da Steam de 64 bits e por sobreposições de bibliotecas nativas de jogos, e o atraso de injeção é definido em 15 segundos se as bibliotecas forem carregadas no espaço de endereçamento do programa.
+
+Sugestões:
+- Esta definição é específica para o perfil do programa selecionado.
+- Você pode definir o valor a 0 para desabilitar o atraso na injeção.
+- Você pode desativar as sugestões na aba <Inteface> das configurações.

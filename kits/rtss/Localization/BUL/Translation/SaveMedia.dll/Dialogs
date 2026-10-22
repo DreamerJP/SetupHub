@@ -1,0 +1,16 @@
+#src External encoder configuration
+#dst Конфигурация на външен енкодер
+#end
+#src Encoder
+#dst Eнкодер
+#end
+#src Configure
+#dst Конфигуриране
+#end
+#src Benchmark mode
+#dst Режим на бенчмарк
+#end
+#src 
+#src Benchmark
+#dst Бенчмарк
+#end

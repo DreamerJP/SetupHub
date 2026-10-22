@@ -1,0 +1,7 @@
+#src Target bitrate : %d Mbps
+#dst Taxa de bits alvo: %d Mbps
+#end
+
+#src AMD VCE H.264 hardware accelerated via AMD AMF with %s memory interface
+#dst AMD VCE H.264 acelerado via AMD AMF com interface de memória %s
+#end

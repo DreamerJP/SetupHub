@@ -1,0 +1,42 @@
+#src Intel QuickSync encoder
+#dst Intel QuickSync энкодер
+#end
+#src Hardware acceleration mode
+#dst Режим аппаратного ускорения
+#end
+#src Device
+#dst Устройство
+#end
+#src auto
+#dst авто
+#end
+#src device 2
+#dst устройство 2
+#end
+#src device 3
+#dst устройство 3
+#end
+#src device 4
+#dst устройство 4
+#end
+#src Target usage
+#dst Режим 
+#end
+#src Best speed
+#dst Скорость
+#end
+#src Balanced
+#dst Баланс
+#end 
+#src Best quality
+#dst Качество
+#end
+
+
+#src 1 Mbps
+#dst 1 Мбит/c
+#end
+#src 50 Mbps
+#dst 50 Мбит/c
+#end
+

@@ -1,0 +1,5 @@
+Ativar serviço de suporte a programas 64 bits
+Permite executar um serviço auxiliar que fornece suporte a programas 64 bits. Desative esta opção para solucionar problemas ou se não precisar que o programa funcione em aplicações 64 bits. Por favor, observe que devido ao licenciamento de terceiros, a funcionalidade de exibição de informações na tela em programas de overclocking de 64 bits é atualmente limitada apenas ao MSI Afterburner. 
+
+Sugestões: 
+- Você pode desativar as sugestões na aba <Inteface> das configurações.

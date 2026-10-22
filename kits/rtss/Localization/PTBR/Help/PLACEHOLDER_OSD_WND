@@ -1,0 +1,10 @@
+Posição do mostrador de informações na tela
+Mostra uma visualização prévia do mostrador de informações na tela. Por favor, observe que o tamanho e o posicionamento do mostrador de informações na tela correspondem apenas à visualização atual com referência a cada um dos cantos de origem.
+
+Sugestões:
+- Você pode desanexar a tela de visualização com um duplo clique para definir a posição e o tamanho reais do mostrador na tela. Isso pode simplificar o processo de ajuste visual para o posicionamento na tela.
+- Você pode clicar com o botão direito na área da tela de visualização e selecionar o comando <Capturar tela> no menu de contexto para capturar a tela do aplicativo 3D atualmente em execução e usá-la como imagem de plano de fundo desta janela. Isso pode simplificar o processo de ajuste visual para posicionamento na tela. O plano de fundo padrão pode ser redefinido com o comando <Limpar> no menu de contexto.
+- Sistemas "Anticheat" de alguns jogos podem considerar o código para a detecção de aplicativos e a renderização de informações na tela como possível fraude em servidores multiplayer. Para solucionar essas questões, tente adicionar um perfil para o jogo e desative o suporte ao mostrador de informações na tela, ou tente diminuir o nível de detecção do programa.
+- Você pode desativar as sugestões na aba <Inteface> das configurações.
+
+

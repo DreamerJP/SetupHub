@@ -1,0 +1,27 @@
+#src NVIDIA NVENC encoder
+#dst NVIDIA NVENC енкодер
+#end
+#src Preset
+#dst Предварителна настройка
+#end
+#src Speed
+#dst Скорост
+#end
+#src Balanced
+#dst Балансиран
+#end 
+#src Quality
+#dst Качество
+#end
+#src Low-latency encoding
+#dst Кодиране с ниска латентност
+#end
+
+
+#src 1 Mbps
+#dst 1 Мбит/c
+#end
+#src 130 Mbps
+#dst 130 Мбит/c
+#end
+

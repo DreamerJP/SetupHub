@@ -1,0 +1,5 @@
+Mode invisible
+Les protections anti-triche de certains jeux pourrait détecter le rajout de code pour la détection du jeu ou l'indication en sur-impression comme de la triche et de ce fait bloquer la connection au serveur multi joueur. Activer le mode invisible peut aider à résoudre ce problème. quand ce mode est activé, %PRODUCTNAME% utilise des techniques de codage sophistiquées le rendant plus difficlement détectable par les applications.
+
+Astuce:
+- Vous pouvez désactiver les bulles d'interface dans la tabulation <interface d'utilisateur> dans les propriétés avancées.

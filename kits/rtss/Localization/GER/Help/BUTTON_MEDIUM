@@ -1,0 +1,7 @@
+Anwendungserkennungsstufe: Mittel
+Wählt die durchschnittliche Erkennungsstufe für die Anwendung aus, die dem aktuellen Profil zugeordnet ist. In diesem Modus fängt %PRODUCTNAME% Anwendungsaufrufe an DirectDraw-, Direct3D- und OpenGL-Laufzeitbibliotheken ab.
+Dieser Modus wird zum Sammeln von Statistiken wie der Framerate sowie zur Bereitstellung zusätzlicher Dienste wie der Overlay-Bildschirmanzeige in den meisten modernen 3D-Anwendungen und in Anwendungen empfohlen, die ältere 2D-/3D-Hardwarebeschleunigungsschnittstellen wie DirectDraw und Direct3D7 verwenden.
+
+Hinweise:
+- Einige geschützte Anwendungen betrachten möglicherweise das Hooking von ausführbarem Code, das für die ordnungsgemäße Anwendungserkennung, Statistikerfassung und Overlay-Bildschirmanzeige erforderlich ist, als mögliche Bedrohung und verweigern die Ausführung. Um dieses Problem zu beheben, versuchen Sie, ein Profil für diese Anwendung hinzuzufügen und die Anwendungserkennungsstufe zu verringern.
+- Tooltips können in der Registerkarte <Benutzeroberfläche> in den erweiterten Einstellungen deaktiviert werden.

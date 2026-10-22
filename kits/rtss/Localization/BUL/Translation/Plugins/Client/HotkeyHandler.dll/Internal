@@ -1,0 +1,44 @@
+#src Please select target folder for screen capture
+#dst Моля, изберете папка за съхраняване на екранни снимки
+#end
+#src Please select target folder for video capture
+#dst Моля, изберете папка за съхраняване на видеоклипове
+#end
+
+#src uncompressed
+#dst некомпресиран
+#end
+#src NV12 compression
+#dst NV12 компресия
+#end
+#src RTV1 compression
+#dst RTV1 компресия
+#end
+#src MJPG compression
+#dst MJPG компресия
+#end
+#src VFW compression : %s
+#dst VFW компресия : %s
+#end
+#src external plugin : %s
+#dst външен плъгин : %s
+#end
+#src not configured
+#dst не е конфигуриран
+#end
+
+#src %d%% quality
+#dst %d%% качество
+#end
+
+#src Framerate %d FPS
+#dst Кадри %d FPS
+#end
+
+
+#src Warning
+#dst Внимание
+#end
+#src You've specified invalid profile property!
+#dst Посочили сте неправилно свойство на профила!
+#end

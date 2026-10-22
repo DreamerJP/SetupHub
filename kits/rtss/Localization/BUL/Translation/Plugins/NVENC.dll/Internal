@@ -1,0 +1,13 @@
+#src Target bitrate : %d Mbps
+#dst Целева скорост на предаване: %d Mbps
+#end
+
+#src NVIDIA NVENC H.264 accelerated via CUDA on device %d (%s), %s mode
+#dst NVIDIA NVENC H.264 ускорен чрез CUDA на устройство %d (%s), режим %s
+#end
+#src async
+#dst асинхронен
+#end
+#src sync
+#dst синхронизиране
+#end

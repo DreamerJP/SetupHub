@@ -1,0 +1,6 @@
+Ativar modo de benchmark
+Permite ativar o modo de gravação de estatísticas de benchmark. Neste modo, o %PRODUCTNAME% calcula e, opcionalmente, exibe a taxa de quadros mínima, média, máxima, 1% low e 0,1% low para todas as aplicações 3D ativas.
+Aplicações clientes como o MSI Afterburner também podem ativar o modo de benchmark diretamente por atalhos durante a execução de aplicativos 3D, possibilitando salvar os resultados em um arquivo de texto.
+
+Sugestões: 
+- Você pode desativar as sugestões na aba <Inteface> das configurações.

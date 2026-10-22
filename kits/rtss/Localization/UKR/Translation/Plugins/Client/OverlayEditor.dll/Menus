@@ -1,0 +1,121 @@
+#src Layouts
+#dst Оверлеї
+#end
+#src New\tCtrl+N
+#dst Новий\tCtrl+N
+#end
+#src Edit\tCtrl+Enter
+#dst Редагувати\tCtrl+Enter
+#end
+#src Load\tCtrl+L, Ctrl+O
+#dst Завантажити\tCtrl+L, Ctrl+O
+#end
+#src Save\tCtrl+S
+#dst Зберегти\tCtrl+S
+#end
+#src Save As\tCtrl+Shift+S
+#dst Зберегти як\tCtrl+Shift+S
+#end
+#src Undo\tCtrl+Z
+#dst Скасувати\tCtrl+Z
+#end
+#src Redo\tCtrl+Y, Ctrl+Shift+Z
+#dst Повторити\tCtrl+Y, Ctrl+Shift+Z
+#end
+#src Import
+#dst Імпорт
+#end
+#src Export
+#dst Експорт
+#end
+
+#src Data sources
+#dst Джерела
+#end
+#src Edit\tCtrl+D
+#dst Редагувати\tCtrl+D
+#end
+
+#src Tables
+#dst Таблиці
+#end
+#src Edit\tCtrl+T
+#dst Редагувати\tCtrl+T
+#end
+
+#src Layers
+#dst Шари
+#end
+#src Add\tInsert
+#dst Додати\tInsert
+#end
+#src Remove\tDelete
+#dst Видалити\tDelete
+#end
+#src Edit\tEnter
+#dst Редагувати\tEnter
+#end
+
+#src Edit list\tCtrl+Shift+L
+#dst Редагувати список\tCtrl+Shift+L
+#end
+#src Move to top\tHome
+#dst Зробити верхнім\tHome
+#end
+#src Move up\tPage Up
+#dst Перемістити вище\tPage Up
+#end
+#src Move down\tPage Down
+#dst Перемістити нижче\tPage Down
+#end
+#src Move to bottom\tEnd
+#dst Зробити нижнім\tEnd
+#end
+#src Copy\tCtrl+C
+#dst Копіювати\tCtrl+C
+#end
+#src Paste\tCtrl+V
+#dst Вставити\tCtrl+V
+#end
+
+#src View
+#dst Вид
+#hst Menu
+#end
+#src Reset view zoom
+#dst Скинути масштаб виду
+#end
+#src Snap to grid
+#dst Прив'язка до сітки
+#end
+#src Show grid
+#dst Показ сітки
+#end
+#src Show checkerboard
+#dst Показ шахової дошки
+#end
+
+#src Tools
+#dst Інструменти
+#end
+#src Show hypertext\tCtrl+Shift+H
+#dst Показ гіпертексту\tCtrl+Shift+H
+#end
+#src Optimize hypertext\tCtrl+Shift+O
+#dst Оптимізація гіпертексту\tCtrl+Shift+O
+#end
+
+#src Macro
+#dst Макроси
+#end
+#src Internal sources
+#dst Внутрішні джерела
+#end
+#src External sources
+#dst Зовнішні джерела
+#end
+
+
+#src Tags
+#dst Теги
+#end

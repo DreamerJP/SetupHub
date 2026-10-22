@@ -1,0 +1,7 @@
+Modo de renderização: Vetor 2D
+O mostrador de informações na tela pode ser renderinzado usando um vetor ou fontes de varredura via hardware com aceleração 2D ou via hardware acelerado por funções DirectX 3D/OpenGL. A implementação baseada na aceleração 2D oferece a máxima compatibilidade com a maioria dos jogos 3D existentes, no entanto, não é compatível com DirectX10 e os jogos mais recentes, quando "antialiasing multisampled" estiver habilitado. A aceleração 2D também pode ser pouco otimizada em alguns drivers de vídeo com implementação baseada em aceleração 3D, mas é muito mais eficaz em termos de impacto no desempenho nesses sistemas.
+No entanto, a implementação 3D tem mais chances de ser incompatível com alguns jogos 3D. Tente desativar o modo 3D se detectar quaisquer anomalias de renderização em um jogo durante a execução do mostrador de informações na tela.
+
+Sugestões:
+- Sistemas "Anticheat" de alguns jogos podem considerar o código para a detecção de aplicativos e a renderização de informações na tela como possível fraude em servidores multiplayer. Para solucionar essas questões, tente adicionar um perfil para o jogo e desative o suporte ao mostrador de informações na tela, ou tente diminuir o nível de detecção do programa. 
+- Você pode desativar as sugestões na aba <Inteface> das configurações.

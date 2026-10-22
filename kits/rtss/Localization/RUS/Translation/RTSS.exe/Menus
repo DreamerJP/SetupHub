@@ -1,0 +1,17 @@
+#src Show
+#dst Показать
+#end
+#src Close
+#dst Выход
+#end
+
+#src Capture screenshot
+#dst Захватить скриншот
+#end
+#src Load
+#dst Загрузить
+#end
+#src Clear
+#dst Очистить
+#end
+

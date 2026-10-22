@@ -1,0 +1,16 @@
+#src Show
+#dst Abrir
+#end
+#src Close
+#dst Fechar
+#end
+
+#src Capture screenshot
+#dst Capturar Tela
+#end
+#src Load
+#dst Carregar
+#end
+#src Clear
+#dst Limpar
+#end

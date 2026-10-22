@@ -1,0 +1,44 @@
+#src Please select target folder for screen capture
+#dst Будь ласка, виберіть папку для зберігання скріншотів
+#end
+#src Please select target folder for video capture
+#dst Будь ласка, виберіть папку для зберігання відео
+#end
+
+#src uncompressed
+#dst без стиснення
+#end
+#src NV12 compression
+#dst стиснення NV12
+#end
+#src RTV1 compression
+#dst стиснення RTV1
+#end
+#src MJPG compression
+#dst стиснення MJPG
+#end
+#src VFW compression : %s
+#dst стиснення VFW : %s
+#end
+#src external plugin : %s
+#dst зовнішній модуль : %s
+#end
+#src not configured
+#dst не налаштовано
+#end
+
+#src %d%% quality
+#dst %d%% якість
+#end
+
+#src Framerate %d FPS
+#dst Частота кадрів %d FPS
+#end
+
+
+#src Warning
+#dst Увага
+#end
+#src You've specified invalid profile property!
+#dst Ви вказали неправильну властивість профілю!
+#end

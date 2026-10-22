@@ -1,0 +1,7 @@
+Exibir próprias estatísticas 
+O objetivo principal do servidor é coletar estatísticas de todas as aplicações 3D em execução no sistema e fornecer os dados aos programas RivaTuner, HIS iTurbo, EVGA Precision ou MSI Afterburner. E também oferecer serviços adicionais, como exibição em tela, suporte à captura de telas e detecção em 3D. No entanto, você também pode usar o programa como solução de monitoramento de taxa de quadros independente. Ative essa opção para permitir que o programa mostre suas próprias estatísticas na tela sem depender de quaisquer aplicativos ou programas adicionais.
+Quando os programas estiverem usando o recurso de captura de vídeo, esta opção também mostrará estatísticas relacionadas à gravação do vídeo. Serão exibidos o tempo de duração do vídeo, o tamanho, a taxa de compressão de quadros e outras estatísticas.
+
+Sugestões:
+- Sistemas "Anticheat" de alguns jogos podem considerar o código para a detecção de aplicativos e a renderização de informações na tela como possível fraude em servidores multiplayer. Para solucionar essas questões, tente adicionar um perfil para o jogo e desative o suporte ao mostrador de informações na tela, ou tente diminuir o nível de detecção do programa. 
+- Você pode desativar as sugestões na aba <Inteface> das configurações.

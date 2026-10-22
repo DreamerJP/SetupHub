@@ -1,0 +1,6 @@
+Rajoute la compatibilité avec les librairies Direct3D runtime modifiées
+Par défaut %PRODUCTNAME% supporte les applications Direct3D qui utilisent les libairies natives Direct3D de Microsoft. Vous pouvez activer cette option pour le rendre compatible avec les applications Direct3D qui utilisent des librairies proxy runtime Direct3D customisées (ex: Applications InjectFXAA Direct3D).
+Cette option est spécifique à chaque profil, vous pouvez donc le configurer indépendemment pour chaque application. Il est recommandé de ne pas l'activer globalement parce que le mode de compatibilité peut empêcher certaine application Direct3D de démarrer.
+
+Astuce:
+- Vous pouvez désactiver les bulles d'interface dans la tabulation <interface d'utilisateur> dans les propriétés avancées.

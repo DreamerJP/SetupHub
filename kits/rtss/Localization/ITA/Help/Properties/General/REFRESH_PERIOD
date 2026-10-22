@@ -1,0 +1,5 @@
+Periodo di aggiornamento
+Rapidi cambi dei valori di framerate e frametime possono essere difficilmente leggibili se sono aggiornati su ogni fotogramma. Il periodo di aggiornamento viene utilizzato per affrontare questo. È possibile impostare il periodo su 0 per consentire l'aggiornamento di tali valori su ogni fotogramma.
+
+Suggerimenti:
+-È possibile disabilitare le descrizioni comandi dell'interfaccia utente tramite la scheda <interfaccia utente> in proprietà avanzate.

@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <AssemblyName>SetupHubPainel</AssemblyName>
+    <RootNamespace>SetupHub.Janela</RootNamespace>
+    <AssemblyTitle>SetupHub</AssemblyTitle>
+    <UseWPF>true</UseWPF>
+    <ApplicationIcon>Recursos\setuphub.ico</ApplicationIcon>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <StartupObject>SetupHub.Janela.Programa</StartupObject>
+    <EnableDefaultApplicationDefinition>false</EnableDefaultApplicationDefinition>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Nucleo\SetupHub.Nucleo.csproj" />
+    <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.3485.44" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Recursos\Fontes\*.ttf" Link="Fontes\%(Filename)%(Extension)" />
+    <Resource Include="Recursos\setuphub.ico" />
+    <None Update="Recursos\Fontes\sairasemicondensed_OFL.txt" Link="licencas\saira_OFL.txt" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+</Project>

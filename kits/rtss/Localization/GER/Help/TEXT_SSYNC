@@ -1,0 +1,9 @@
+Scanline-Synchronisierung
+Ermöglicht die Definition des Ziel-Scanline-Index und die Aktivierung der Scanline-Synchronisierung für 3D-Anwendungen. Durch die Synchronisierung der Framerate auf eine bestimmte Rasterizer-Position (z. B. Ziel-Scanline) während des Spielens kann ein VSync-ON-Effekt mit geringerer Eingabeverzögerung und vorhersehbarer fester Tearline-Position erzielt werden. Sie können die Bruchlinie nach unten verschieben, indem Sie den Scanline-Index erhöhen. Setzen Sie ihn auf Null, um die Synchronisierung zu deaktivieren.
+
+Hinweise:
+- Für eine ordnungsgemäße Scanline-Synchronisierungsfunktion muss VSync deaktiviert werden.
+- Sie können die Scanline-Synchronisierung in Verbindung mit dem Framerate-Limiter im Modus "synchron mit Front-Edge"/"synchron mit Back-Edge" aktivieren, um den Hybrid-Scanline-Synchronisierungsmodus zu aktivieren. In diesem Fall wird die echte Synchronisierung mit der Ziel-Scanlinie nur einmal zu Beginn durchgeführt und die anschließende Stabilisierung der Position der Bruchlinie wird durch die Synchronisierung mit dem Systemtakt sichergestellt.
+- Sie können das FCAT-Overlay im Modus <Bewegender Balken> als visuelle Anzeige der Position der Bruchlinie verwenden.
+- Sie können einen negativen Scanline-Index angeben, um den Offset von der Gesamtzahl der Scanlines festzulegen.
+- Tooltips können in der Registerkarte <Benutzeroberfläche> in den erweiterten Einstellungen deaktiviert werden.

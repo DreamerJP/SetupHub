@@ -1,0 +1,5 @@
+Overlay-Bildschirmanzeige anzeigen
+Steuert global die Sichtbarkeit der Overlay-Bildschirmanzeige. Verwenden Sie diese Einstellung, um die Overlay-Bildschirmanzeige zu deaktivieren, ohne das Profil ändern zu müssen. Clientanwendungen können diese Option auch über Hotkeys steuern.
+
+Hinweis:
+- Tooltips können in der Registerkarte <Benutzeroberfläche> in den erweiterten Einstellungen deaktiviert werden.

@@ -1,0 +1,5 @@
+Dedizierten Encoderservicedienst aktivieren
+Aktiviert einen Hilfsdienst, der der %PRODUCTNAME%-Videoaufnahme-Engine die Funktionen eines dedizierten Kodierungsservers bereitstellt. Sie können diesen Dienst sicher deaktivieren, wenn Sie die Videoaufnahmefunktionen nicht nutzen oder den optionalen Videokodierungsmodus nicht über einen dedizierten Server aktivieren.
+
+Hinweis:
+- Tooltips können in der Registerkarte <Benutzeroberfläche> in den erweiterten Einstellungen deaktiviert werden.

@@ -1,0 +1,111 @@
+#src %s skin has been successfully compiled!
+#dst le skin %s a bien été compilé!
+#end
+#src Failed to compile %s skin!
+#dst N'a pas pû compiler le skin %s !
+#end
+#src %s skin has been successfully decompiled!
+#dst le skin %s a bien été décompilé!
+#end
+#src Failed to decompile %s skin!
+#dst le skin %s n'a pas pû être décompilé!
+#end
+#src Failed to load %s skin!
+#dst N'as pas pû charger le skin %s !
+#end
+#src Some of %PRODUCTNAME% components are expired, missing or corrupted!
+#dst Quelques composants de %PRODUCTNAME% sont expirés, manquants ou corrompus!
+#end
+#src Failed to load %s skin, reverting to default skin!
+#dst N'a pas pû charger le skin %s , utilisation de celui par défaut!
+#end
+#src Unsupported %s skin file format!
+#dst Format du skin %s non supporté!
+#end
+#src Failed to initialize main window with %s skin, reverting to default skin!
+#dst N'a pas pû initialisé la fenêtre principale avec le skin %s , utilisation de celui par défaut! 
+#end
+#src Failed to initialize main window!
+#dst N'a pas pû initialisé la fenêtre principale!
+#end
+#src Beta %d
+#dst Béta %d
+#end
+#src compiled on %d-%m-%Y %H:%M:%S
+#dst Compilé le %d-%m-%Y %H:%M:%S
+#end
+#src expires on %s
+#dst Expire le %s
+#end
+#src Cannot load RTSSHooks.dll library!
+#dst N'a pas pû charger la librairie RTSSHooks.dll ! 
+#end
+#src Tip: %PRODUCTNAME% is currently minimized to system tray area. You may click its' tray icon to bring %PRODUCTNAME% window to top.
+#dst Astuce: %PRODUCTNAME% est actuellement minimisé vers le barre de tâche. Vous pouvez cliquer sur l'icône de la barre de tâche pour ramener la fenêtre de %PRODUCTNAME% en avant.
+#end
+#src Failed to restore main window DIB cache!
+#dst N'a pas pû restaurer la fenêtre principale du cache DIB!
+#end
+#src CTaskSchedulerInterface::%s failed with error code %d!
+#dst CTaskSchedulerInterface::%s a malfonctionné avec le code d'erreur %d!
+#end
+#src %PRODUCTNAME% properties
+#dst Propriétés de %PRODUCTNAME%
+#end
+#src Resource file copy has been successfully saved to %s!
+#dst Une copie du fichier de ressource a été convenablement sauvegardée vers %s !
+#end
+#src Failed to save resource file copy to %s!
+#dst N'a pas pû sauvegarder la copie du fichier de ressource vers %s !
+#end
+#src Executable files (*.exe)|*.exe||
+#dst Fichier executable (*.exe)|*.exe||
+#end
+#src Bitmap files (*.bmp)|*.bmp||
+#dst Fichier image (*.bmp)|*.bmp||
+#end
+#src There is no new version available at this time. Currently installed version is up to date.
+#dst Il n'y a pas de nouvelle version en ce moment. La version actuelle est à jour.
+#end
+#src %PRODUCTNAME% v%s is available for download. Do you want to open the download page now?
+#dst %PRODUCTNAME% v%s est disponible en chargement. Voulez-vous ouvrir la page de chargement maintenant?
+#end
+#src Cannot retrieve update information from the update server!
+#dst N'a pas pû rechercher les informations de mise à jour sur le server de mise à jour !
+#end
+#src Cannot establish connection with the update server!
+#dst N'a pas pû établie de conenction avec le serveur de mise à jour !
+#end
+#src cannot open internet connection
+#dst N'a pas pû ouvrir une connection internet
+#end
+#src cannot open server connection
+#dst N'a pas pû ouvrir une connection serveur
+#end
+#src cannot open HTTP request
+#dst N'a pas pû ouvrir une requête HTTP
+#end
+#src cannot send HTTP request
+#dst N'a pas pû envoyer une requête HTTP
+#end
+#src cannot query HTTP info
+#dst N'a pas pû demander une info HTTP
+#end
+#src proxy authentification required
+#dst Autentification proxy requise
+#end
+#src cannot read file
+#dst Ne peut pas lire le fichier
+#end
+#src unknown reason %d
+#dst raison inconnue %d
+#end
+#src Reason : %s, error code %d
+#dst Raison : %s, code d'erreur %d 
+#end
+#src Last checked on %A, %B %d, %Y, %H:%M:%S
+#dst Dernière vérification le %A, %B %d, %Y, %H:%M:%S
+#end
+#src Reboot is required to finalize %PRODUCTNAME% installation!
+#dst Un redémarrage est nécessaire pour finaliser l'installation de %PRODUCTNAME% !
+#end

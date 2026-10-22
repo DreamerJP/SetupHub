@@ -1,0 +1,5 @@
+Intervalo de atualização
+Mudanças rápidas na taxa e nos tempos dos quadros se tornam difíceis de serem lidas quando esses valores são atualizados a cada quadro. Esta opção permite definir, em milissegundos, um intervalo de atualização para evitar tais dificuldades. Você ainda pode definir o intervalo a 0 para permitir que os valores sejam atualizados a cada quadro.
+
+Sugestões: 
+- Você pode desativar as sugestões na aba <Inteface> das configurações.

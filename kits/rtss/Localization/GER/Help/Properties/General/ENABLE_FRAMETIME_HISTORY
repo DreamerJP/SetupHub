@@ -1,0 +1,5 @@
+Frametimeverlaufs-Overlay aktivieren
+Ermöglicht die grafische Darstellung des Frametimeverlaufs für die letzten 512 gerenderten Frames. Das Verlaufsdiagramm kann zur Diagnose von Framerate-Ruckeln verwendet werden.
+
+Hinweis:
+- Tooltips können in der Registerkarte <Benutzeroberfläche> in den erweiterten Einstellungen deaktiviert werden.

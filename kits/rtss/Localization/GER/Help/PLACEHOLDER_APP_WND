@@ -1,0 +1,7 @@
+Liste der Anwendungsprofile
+Zeigt eine Liste von Anwendungsprofilen an und ermöglicht Ihnen die Verwaltung von Profilen.
+Das Konzept der Anwendungsprofile bietet Ihnen eine flexible Möglichkeit, persönliche Einstellungen für jede Anwendung zu definieren. Es ist nicht erforderlich, die Profile für jede Anwendung zu erstellen. Alle Anwendungen, die in der Profilliste fehlen, verwenden automatisch das globale Profil. Fügen Sie neue Profile nur hinzu, wenn es notwendig ist, einige persönliche Einstellungen speziell für die gewünschte Anwendung zu definieren, z. B. Overlay-Bildschirmanzeige aufgrund des Anti-Cheat-Systems deaktivieren oder benutzerdefinierte Farben und Positionen für die Overlay-Bildschirmanzeige aufgrund Spiel-HUD-Besonderheiten definieren. Andernfalls bearbeiten Sie einfach das globale Profil.
+
+Hinweise:
+- Vordefinierte Profile können nicht gelöscht werden. Sie können nur selbsterstellte Profile löschen.
+- Tooltips können in der Registerkarte <Benutzeroberfläche> in den erweiterten Einstellungen deaktiviert werden.

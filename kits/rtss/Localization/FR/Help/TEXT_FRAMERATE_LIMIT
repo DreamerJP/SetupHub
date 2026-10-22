@@ -1,0 +1,6 @@
+Limite du framerate (débit de trames)
+Permet de limiter la limite du framerate dans les applications 3D. Limiter le framerate en jeux peut aider à réduire la consommation de puissance et aussi améliorer l'experience visuelle (moins de variations ou maoins de stuttering). Mettez le à 0 pour désactiver la limite.
+
+Astuces:
+- Il est vivement conseillé de désactiver le Vsync (synchro verticale) pour que le fonction fonctionne.
+- Vous pouvez désactiver les bulles d'interface dans la tabulation <interface d'utilisateur> dans les propriétés avancées.

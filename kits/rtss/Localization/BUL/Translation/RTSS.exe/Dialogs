@@ -1,0 +1,242 @@
+#src General
+#dst Основни
+#end
+#src General properties
+#dst Основни свойства
+#end
+#src Start minimized
+#dst Стартирай в минимизирано състояние
+#end
+#src Hide pre-created profiles
+#dst Скриване на предварително създадени профили
+#end
+#src Update checking properties
+#dst Актуализиране на свойствата за проверка
+#end
+#src Check for available product updates
+#dst Период на проверка на актуализация
+#end
+#src Check for available product beta versions
+#dst Провери за налични бета версии 
+#end
+#src never
+#dst никогa
+#end
+#src on startup
+#dst при всяко стартиране
+#end
+#src on startup daily
+#dst при стартиране всеки ден
+#end
+#src on startup weekly
+#dst при стартиране всяка седмица
+#end
+#src on startup monthly
+#dst при стартиране всеки месец
+#end
+#src Check now
+#dst Провери сега
+#end
+#src FCAT properties
+#dst Свойства на системa FCAT
+#end
+#src Enable frame color indicator
+#dst Активиране на индикатора за цвят на рамката
+#end
+#src color sequence
+#dst цветова последователност
+#end
+#src 2 bars
+#dst 2 ленти
+#end
+#src 3 bars
+#dst 3 ленти
+#end
+#src 4 bars
+#dst 4 ленти
+#end
+#src moving bar
+#dst подвижна лента
+#end
+#src latency marker
+#dst маркер за закъснение
+#end
+#src Statistics properties
+#dst Статистически свойства
+#end
+#src Framerate averaging interval (in milliseconds)
+#dst Интервал на осредняване на кадрите (в миллисекунди)
+#end
+#src Refresh period (in milliseconds)
+#dst Период на опресняване (в миллисекунди)
+#end
+#src Display integer framerate
+#dst Показване на цяла честота на кадрите
+#end
+#src Display maximum frametime
+#dst Показване на максимално време за кадри
+#end
+#src Enable frametime history overlay
+#dst Активиране на покозване историята на време за кадрите
+#end
+
+#src Frametime calculation point
+#dst Точка за изчисление на време за кадрите
+#end
+#src frame start
+#dst начало на кадрите
+#end
+#src frame presentation
+#dst оформление на кадрите
+#end
+
+
+#src Peak framerate calculation mode
+#dst Режим на изчисляване на пикова честота на кадрите
+#end
+#src average
+#dst средно
+#end
+#src instantaneous
+#dst моментално
+#end
+#src Percentile calculation mode
+#dst Режим на изчисляване на проценти
+#end
+#src integral
+#dst интегрален
+#end
+#src linear
+#dst линеен
+#end
+#src Percentile buffer
+#dst Процентен буфер
+#end
+#src unlimited
+#dst неограничен
+#end
+#src ring
+#dst пръстеновиден
+#end
+
+#src graph
+#dst графика
+#end
+#src diagram
+#dst диаграма
+#end
+#src Compatibility properties
+#dst Свойства на съвместимост
+#end
+#src Enable dedicated encoder server service
+#dst Активиране на специален сървър за кодиране
+#end
+#src 32-bit
+#dst 32-битов
+#end
+#src 64-bit
+#dst 64-битов
+#end
+#src Enable 64-bit applications support service
+#dst Активирайте услугата за поддръжка на 64-битови приложения
+#end
+#src Enable benchmark mode
+#dst Активирайте режима за бенчмарк
+#end
+#src Enable framerate limiter
+#dst Активирайте ограничителя на кадрите
+#end
+#src async
+#dst асинхронно
+#end
+#src front edge sync
+#dst синхронизиране на предния край
+#end
+#src back edge sync
+#dst синхронизиране на задния край
+#end
+#src Enable passive waiting
+#dst Разрешете пасивно изчакване
+#end
+
+#src Injection properties
+#dst Свойства за вграждане
+#end
+#src Use Microsoft Detours API hooking
+#dst Използвайте Microsoft Detours API за прихващане 
+#end
+#src Injection delay (in milliseconds)
+#dst Забавяне на изпълнението (в милисекунди)
+#end
+#src Reset cache
+#dst Нулиране на кеша
+#dlu -100
+#end
+#src Inject NVIDIA Reflex latency markers
+#dst Внедрете маркери за задръжка на NVIDIA Reflex
+#end
+#src Inject NVIDIA Reflex sleep call
+#dst Внедрете функцията за режим на готовност на NVIDIA Reflex
+#end
+#src before frame presentation
+#dst преди да бъде показан кадърът
+#end
+#src after frame presentation
+#dst след показване на кадъра
+#end
+
+#src Plugins
+#dst Плъгини
+#end
+#src Active plugin modules
+#dst Активни плъгин модули
+#end
+#src Setup
+#dst Настройки
+#end
+
+#src User Interface
+#dst Интерфейс
+#end
+#src Language
+#dst Език
+#end
+#src English
+#dst Английски
+#end
+#src User interface help system properties
+#dst Помощни свойства на потребителския интерфейс
+#end
+#src Show user interface tooltips
+#dst Показване на подсказки за потребителския интерфейс
+#end
+#src User interface skinning properties
+#dst Свойства на скина на потребителския интерфейс  
+#end
+#src Skin composition mode
+#dst Режим на скина
+#end
+#src traditional
+#dst традиционен
+#end
+#src layered with colorkey
+#dst слой с цветове
+#end
+#src layered with alpha
+#dst слой с алфа канал
+#end
+#src Skin transparency
+#dst Прозрачност на скина
+#end
+#src Transparent
+#dst Прозрачен
+#end
+#src Opaque
+#dst Непрозрачен
+#end
+#src Color
+#dst Цвят
+#end 
+#src Cancel
+#dst Отказ
+#end

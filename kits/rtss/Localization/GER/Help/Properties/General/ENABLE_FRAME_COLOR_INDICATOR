@@ -1,0 +1,6 @@
+Frame-Farbindikator aktivieren
+Aktiviert den Frame-Farbindikator für das NVIDIA Frame Capture Analysis Tool (FCAT)-System. FCAT ist ein Hardware-/Softwarekomplex für eine genaue Frametime-Analyse.
+
+Hinweise:
+- Diese Einstellung ist spezifisch für das aktuell ausgewählte Anwendungsprofil.
+- Tooltips können in der Registerkarte <Benutzeroberfläche> in den erweiterten Einstellungen deaktiviert werden.

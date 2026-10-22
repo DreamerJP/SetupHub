@@ -1,0 +1,5 @@
+Mostra l'On-Screen Display
+Controllo globale della visibilità dell'On-Screen Display. Utilizzare questa opzione per nascondere l'On-Screen Display senza cambiare i profili. Le applicazioni client possono anche controllare in remoto questa opzione tramite tasti di scelta rapida.
+
+Suggerimento:
+- È possibile disattivare i suggerimenti di interfaccia utente tramite la scheda <Interfaccia utente> in proprietà avanzate.

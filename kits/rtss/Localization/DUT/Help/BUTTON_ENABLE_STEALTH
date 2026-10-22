@@ -1,0 +1,6 @@
+Ondetecteerbare mode / stealth mode.
+Anti-cheat systemen van sommige games kunnen game code hooking dat nodig is voor de informatie op het scherm (OSD)te verkrijgen aanzien als een cheat. Het inschakelen van ondetecteerbare mode / stealth mode kan dit probleem oplossen. Wanneer deze optie is ingeschakeld gebruikt %PRODUCTNAME% een gesofisticeerde code voor de hooking techniek en is het moeilijker voor de 3D toepassing om deze hook te detecteren.
+ 
+Hint:
+- Je kan de gebruikers interface werktips uitschakelen via de<gebruikers interface> tab in geavanceerde eigenschappen.
+

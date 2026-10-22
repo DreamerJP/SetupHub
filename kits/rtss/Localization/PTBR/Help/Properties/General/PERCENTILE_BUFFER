@@ -1,0 +1,7 @@
+Tamanho do buffer do percentil
+Afeta o cálculo de métricas com base no percentil 1% Low e 0,1% Low. Ambas as métricas são baseadas em matrizes de tempos de quadros classificadas e refletem a taxa de quadros instantânea calculada a partir de um único tempo de quadro localizado em um limite de 1% ou 0,1% dos quadros mais lentos.
+Esta opção define o tamanho do buffer dos tempos de quadro para classificação. O buffer pode ser ilimitado, de modo que cada quadro renderizado durante a sessão de benchmarking afeta o resultado, ou pode ser um buffer circular rolante, de modo que os quadros muito antigos são descartados e apenas os últimos segundos do benchmark são processados.
+O modo ilimitado é preferível se você iniciar manualmente a sessão de benchmarking com uma tecla de atalho. O modo circular é preferível se você mantiver o modo de benchmark habilitado permanentemente e quiser visualizar métricas de 1% e 0,1% em apenas alguns segundos de jogo.
+
+Sugestões:
+- Você pode desativar as sugestões na aba <Interface> das configurações.

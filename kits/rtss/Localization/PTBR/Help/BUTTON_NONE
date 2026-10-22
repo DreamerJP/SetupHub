@@ -1,0 +1,6 @@
+Nível de detecção: Inativo 
+Desabilita toda a detecção para o programa associado ao perfil atual. Neste modo o programa não coleta informações em tempo real, como a taxa de quadros e outras estatísticas e não oferece serviços adicionais como a exibição de informações na tela. 
+
+Sugestões: 
+- Algums programas protegidos podem tratar a coleta de estatísticas como possível ameaça e se recusarem a executar. Desative a detecção para solucionar tais questões. 
+- Você pode desativar as sugestões na aba <Inteface> das configurações.

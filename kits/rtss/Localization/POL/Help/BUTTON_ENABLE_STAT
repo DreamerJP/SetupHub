@@ -1,0 +1,8 @@
+Poka¿ w³asne statystyki
+The primary purpose of %PRODUCTNAME% is collecting framerate statistics for all 3D applications running in the system and providing it to client applications, such as RivaTuner, HIS iTurbo, EVGA Precision or MSI Afterburner. It also provides additional services, such as On-Screen Display, Screen capture support or 3D detection, to the clients.
+However, you can also use %PRODUCTNAME% as a standalone framerate monitoring solution. Enable this option to allow %PRODUCTNAME% to show its own framerate statistics in On-Screen Display without running any additional client applications.
+
+Wskazówki:
+- Systemy przeciwdzia³aj¹ce oszukiwaniu w niektórych grach mog¹ traktowaæ technikê wstrzykiwania kodu u¿ywan¹ przez program, niezbêdn¹ do wykrywania aplikacji i wyœwietlania On-Screen Display, jako potencjalne oszustwo i blokowaæ po³¹czenie z serwerem gry. By rozwi¹zaæ takie problemy spróbuj stworzyæ profil dla takiej gry i wy³¹cz dla niej obs³ugê On-Screen Display, lub jeœli to nie pomo¿e spróbuj obni¿yæ poziom wykrywania aplikacji.
+- Mo¿esz wy³¹czyæ wskazówki interfejsu u¿ytkownika w ustawieniach na zak³adce <Interfejs u¿ytkownika>.
+

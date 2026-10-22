@@ -1,0 +1,409 @@
+#src N/A
+#dst Indisponível
+#end
+
+#src Sensor
+#dst Sensor
+#end
+#src Value
+#dst valor
+#end
+
+#src Sensors exported to %s!
+#dst Sensores exportados para %s!
+#end
+
+#src Source
+#dst Fonte
+#end
+
+#src Temperature
+#dst Temperatura
+#end
+#src Voltage
+#dst Tensão
+#end
+#src Fan speed
+#dst Velocidade da Ventoinha
+#end
+#src Current
+#dst Atual
+#end
+#src Power
+#dst Energia
+#end
+#src Clock
+#dst Frequência
+#end
+#src Usage
+#dst Uso
+#end
+#src Other
+#dst Outro
+#end
+
+#src GPU temperature
+#dst Temperatura da GPU
+#end
+#src PCB temperature
+#dst Temperatura do PCB
+#end
+#src Memory temperature
+#dst Temperatura da Memória
+#end
+#src VRM temperature
+#dst Temperatura do VRM
+#end
+#src Fan speed
+#dst Velocidade da Ventoinha
+#end
+#src Fan tachometer
+#dst Rotação da Ventoinha
+#end
+#src Core clock
+#dst Frequência da GPU
+#end
+#src Shader clock
+#dst Frequência do Shader
+#end
+#src Memory clock
+#dst Frequência da Memória
+#end
+#src GPU usage
+#dst Uso da GPU
+#end
+#src Memory usage
+#dst Uso da Memória
+#end
+#src FB usage
+#dst Uso de FB
+#end
+#src VID usage
+#dst Uso de VID
+#end
+#src BUS usage
+#dst Uso de BUS
+#end
+#src GPU voltage
+#dst Tensão da GPU
+#end
+#src Aux voltage
+#dst Tensão Auxiliar
+#end
+#src Memory voltage
+#dst Tensão da Memória
+#end
+#src Framerate
+#dst Taxa de Quadros
+#end
+#src Frametime
+#dst Tempo de Quadros
+#end
+#src Framerate Min
+#dst Taxa de Quadros Mínima
+#end
+#src Framerate Avg
+#dst Taxa de Quadros Média
+#end
+#src Framerate Max
+#dst Taxa de Quadros Máxima
+#end
+#src Framerate 1% Low
+#dst Taxa de Quadros 1% Low
+#end
+#src Framerate 0.1% Low
+#dst Taxa de Quadros 0,1% low
+#end
+#src Power
+#dst Energia
+#end
+
+#src Temp limit
+#dst Limite de Temperatura
+#end
+#src Power limit
+#dst Limite de Energia
+#end
+#src Voltage limit
+#dst Limite de Tensão
+#end
+#src No load limit
+#dst Uso Não Limitado
+#end
+#src CPU usage
+#dst Uso da CPU
+#end
+#src RAM usage
+#dst Uso de RAM
+#end
+#src Commit charge
+#dst Carga Comprometida
+#end
+#src CPU temperature
+#dst Temperatura da CPU
+#end
+#src SLI sync limit
+#dst Limite de Sincronização SLI
+#end
+#src CPU clock
+#dst Frequência da CPU
+#end
+#src Aux2 voltage
+#dst Tensão Auxiliar 2
+#end
+#src GPU temperature 2
+#dst Temperatura 2 da GPU
+#end
+#src PCB temperature 2
+#dst Temperatura 2 do PCB
+#end
+#src Memory temperature 2
+#dst Temperatura 2 da Memória
+#end
+#src VRM temperature 2
+#dst Temperatura 2 do VRM
+#end
+#src GPU temperature 3
+#dst Temperatura 3 da GPU
+#end
+#src PCB temperature 3
+#dst Temperatura 3 do PCB
+#end
+#src Memory temperature 3
+#dst Temperatura 3 da Memória
+#end
+#src VRM temperature 3
+#dst Temperatura 3 do VRM
+#end
+#src GPU temperature 4
+#dst Temperatura 4 da GPU
+#end
+#src PCB temperature 4
+#dst Temperatura 4 do PCB
+#end
+#src Memory temperature 4
+#dst Temperatura 4 da Memória
+#end
+#src VRM temperature 4
+#dst Temperatura 4 do VRM
+#end
+#src GPU temperature 5
+#dst Temperatura 5 da GPU
+#end
+#src PCB temperature 5
+#dst Temperatura 5 do PCB
+#end
+#src Memory temperature 5
+#dst Temperatura 5 da Memória
+#end
+#src VRM temperature 5
+#dst Temperatura 5 do VRM
+#end
+#src <GPU plugin>
+#dst <Plugin da GPU>
+#end
+#src <CPU plugin>
+#dst <Plugin da CPU>
+#end
+#src <motherboard plugin>
+#dst <Plugin da Paca-Mãe>
+#end
+#src <RAM plugin>
+#dst <Plugin da RAM>
+#end
+#src <HDD plugin>
+#dst <Plugin do HDD>
+#end
+#src <NET plugin>
+#dst <Plugin da Rede>
+#end
+#src <PSU plugin>
+#dst <Plugin da PSU>
+#end
+#src <UPS plugin>
+#dst <Plugin da UPS>
+#end
+#src <miscellaneous plugin>
+#dst <Plugins Variados>
+#end
+#src CPU power
+#dst Energia da CPU
+#end
+
+#src Failed to initialize Direct3D!
+#dst Falha ao inicializar o Direct3D!
+#end
+
+#src nameless
+#dst Sem nome
+#end
+#src Overlay editor
+#dst Editor de informações na tela
+#end
+
+#src Overlay editor - %s
+#dst Editor de informações na tela - %s
+#end
+#src Undo / Redo : %d / %d
+#dst Desfazer/Refazer: %d / %d
+#end
+#src Undo : %d
+#dst Desfazer:  %d
+#end
+#src Undo / Redo
+#dst Desfazer/Refazer
+#end
+#src Layer %d of %d\tPos (%d, %d)\tExt (%d, %d)
+#dst Camada %d de %d\tPos (%d, %d)\tExt (%d, %d)
+#end
+#src Layer info
+#dst Informação da camada
+#end
+#src \tHypertext %d / %d\tBuffer %d / %d
+#dst \tHipertexto %d / %d\tBuffer %d / %d
+#end
+#src Do you want to save changes in %s overlay layout?
+#dst Deseja salvar as alterações no layout "%s"?
+#end
+#src Overlay layout files (*.ovl)|*.ovl||
+#dst Arquivos de layout do editor de informações na tela (*.ovl)|*.ovl||
+#end
+#src PNG image files (*.png)|*.png||
+#dst Arquivos de imagem PNG (*.png)|*.png||
+#end
+#src Warning! This will set your On-Screen Display rendering mode, raster font and zoom settings to layout creator's ones. Do you want to continue?
+#dst Aviso! Isto definirá o modo de renderização na tela, a fonte de varredura e as configurações de zoom para as do criador do layout. Deseja continuar?
+#end
+#src Cur (%d, %d)\tPos (%d, %d)\tExt (%d, %d)
+#dst Cur (%d, %d)\tPos (%d, %d)\tExt (%d, %d)
+#end
+
+#src Table
+#dst Tabela
+#end
+#src Line
+#dst Linha
+#end
+#src Cell
+#dst Célula
+#end
+#src <nameless>
+#dst <Sem nome>
+#end
+#src <separator>
+#dst <Separador>
+#end
+#src <no binding>
+#dst <Sem ligação>
+#end
+
+#src Internal HAL
+#dst HAL interno
+#end
+#src Windows performance counter
+#dst Contador de Desempenho do Windows
+#end
+
+#src Layer %d of %d\tPos (%s, %s)\tExt (%d, %d)
+#dst Camada %d of %d\tPos (%s, %s)\tExt (%d, %d
+#end
+
+#src left
+#dst Esquerda
+#end
+#src center
+#dst Centro
+#end
+#src right
+#dst Direita
+#end
+#src top
+#dst Topo
+#end
+#src bottom
+#dst Abaixo
+#end
+#src Overlay layout exchange files (*.ovx)|*.ovx||
+#dst Arquivos de layout do editor de informações na tela (*.ovx)|*.ovx||
+#end
+#src Failed to export %s file!
+#dst Falha ao exportar os arquivos %s!
+#end
+#src Failed to import %s file!
+#dst Falha ao importar os arquivos %s!
+#end
+#src Different version of %s file already exists, do you want to overwrite it?
+#dst Já existe uma versão diferente do arquivo %s, deseja subistituí-la?
+#end
+#src Failed to extract %s file!
+#dst Falha ao extrair os arquivos %s!
+#end
+
+#src The settings will be applied after restarting the application!
+#dst As mudanças serão aplicadas depois de reiniciar o progrma!
+#end
+
+#src graph minimum
+#dst Gráfico Mínimo
+#end
+#src graph maximum
+#dst Gráfico Máximo
+#end
+#src framerate
+#dst Taxa de Quadros
+#end
+#src minimum framerate
+#dst Taxa de Quadros Mínima
+#end
+#src average framerate
+#dst Taxa de Quadros Média
+#end
+#src maximum framerate
+#dst Taxa de Quadros Máxima
+#end
+#src 1% low framerate
+#dst 1% Mímino
+#end
+#src 0.1% low framerate
+#dst 0,1% Mínimo
+#end
+#src frametime
+#dst Tempo de Quadros
+#end
+#src frame counter
+#dst Contador de Quadros
+#end
+#src abbreviated 3D API
+#dst API 3D Abreviada
+#end
+#src 3D API
+#dst API 3D 
+#end
+#src executable
+#dst Execurável
+#end
+#src resolution
+#dst Resolução
+#end
+#src architecture
+#dst Arquitetura
+#end
+#src time
+#dst Hora
+#end
+#src text file
+#dst Arquivo de texto
+#end
+#src benchmark time
+#dst Tempo do Benchmark
+#end
+
+#src Embedded image must be located in the same folder with overlay layout!
+#dst A imagem incorporada deve estar localizada na mesma pasta do layout!
+#end
+#src Overlay layout contains references to additional files, do you want to copy them to new folder as well?
+#dst O layout contém referências a arquivos adicionais. Deseja copiá-los também para a nova pasta?
+#end
+#src The following overlay properties must be merged manually:\n\n
+#dst Os seguintes itens devem ser mesclados manualmente:\n\n
+#end

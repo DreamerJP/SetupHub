@@ -1,0 +1,5 @@
+Ativar serviço do servidor codificador dedicado  
+Permite executar um serviço auxiliar que fornece suporte à codificação de vídeo dedicada para o recurso de captura de vídeo. Você pode desativar o serviço se não usar os recursos de captura de vídeo ou se nunca ativar o modo opcional de codificação de vídeo dedicada. 
+
+Sugestões: 
+- Você pode desativar as sugestões na aba <Inteface> das configurações.

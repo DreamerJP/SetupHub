@@ -1,0 +1,5 @@
+Limitar taxa de quadros ou tempos dos quadros
+Permite alternar entre os modos de taxa de quadros e tempos dos quadros. No modo de tempos dos quadros, o limite é especificado como tempo alvo com precisão de 1 microssegundo.
+
+Sugestões: 
+- Você pode desativar as sugestões na aba <Inteface> das configurações.

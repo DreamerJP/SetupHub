@@ -1,0 +1,5 @@
+Maximalwert der Frametime anzeigen
+Ermöglicht die Anzeige der Frametime entweder als Momentanwert oder Maximalwert während jedes Aktualisierungsintervalls. Der Maximalwert der Frametime kann zur Diagnose von Framerate-Ruckeln verwendet werden.
+
+Hinweis:
+- Tooltips können in der Registerkarte <Benutzeroberfläche> in den erweiterten Einstellungen deaktiviert werden.

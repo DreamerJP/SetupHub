@@ -1,0 +1,316 @@
+#src Hotkey handler properties
+#dst Configurações do módulo programador de teclas de atalho
+#end
+
+#src On-Screen Display
+#dst Informações na tela
+#end
+#src Show On-Screen Display
+#dst Mostrar informações na tela
+#end
+#src Hide On-Screen Display
+#dst Ocultar informações na tela
+#end 
+#src Toggle On-Screen Display
+#dst Mostar/Ocultar informações na tela
+#end
+
+#src Overlay editor plugin
+#dst Editor de informações na tela
+#end
+#src Overlay editor plugin properties
+#dst Configurações do editor de informações na tela
+#end
+#src Programmable overlay modifier 1
+#dst Modificador programável 1
+#end
+#src Programmable overlay modifier 2
+#dst Modificador programável 2
+#end
+#src Programmable overlay modifier 3
+#dst Modificador programável 3
+#end
+#src Programmable overlay modifier 4
+#dst Modificador programável 4
+#end
+#src Programmable overlay modifier properties
+#dst Configurações dos modificadores programáveis 
+#end
+#src Load overlay
+#dst Carregar arquivo do editor de informações na tela
+#end
+#src Load text file
+#dst Carregar arquivo de texto
+#end
+#src View text file
+#dst Exibir arquivo de texto
+#end
+#src Move to next text file line
+#dst Mover para a linha do arquivo do texto seguinte
+#end
+#src Move to previous text file line
+#dst Mover para a linha do arquivo do texto anterior
+#end
+#src Set timer to 30 seconds
+#dst Definir temporizador para 30 segundos
+#end
+#src Set ping address
+#dst Definir endereço do ping
+#end
+#src Reset statistics
+#dst Restaurar estatísticas
+#end
+#src Overlay message
+#dst Mensagem
+#end
+#src Overlay layer
+#dst Camada 
+#end
+#src Parameters
+#dst Parâmetros
+#end
+
+#src Framerate limiter
+#dst Limitador da taxa de quadros
+#end
+#src Enable framerate limter
+#dst Ativar limitador da taxa de quadros
+#end
+#src Disable framerate limiter
+#dst Desativar limitador da taxa de quadros
+#end
+#src Toggle framerate limiter
+#dst Ativar/Desativar limitador da taxa de quadros
+#end
+
+#src Screenshots
+#dst Capturas de tela
+#end
+#src Screen capture
+#dst Capturas de tela 
+#end
+
+#src Screen capture properties
+#dst Configurações de capturas de tela
+#end
+#src Screenshot format
+#dst Formato da imagem:
+#end
+#src Screenshots folder
+#dst Pasta de destino:
+#end
+#src Browse
+#dst Procurar
+#end
+#src View
+#dst Ver
+#end
+#src Show On-Screen Display on captured screenshots and videos
+#dst Mostar informações de monitoramento nas capturas de tela e vídeo
+#end
+
+#src Videos
+#dst Capturas de vídeo
+#end
+#src Video capture
+#dst Capturas de vídeo
+#end
+#src Video prerecord
+#dst Pré-gravação
+#end
+
+#src Video capture properties
+#dst Configurações de capturas de vídeo
+#end
+#src General
+#dst Geral
+#end
+#src Video format
+#dst Formato do vídeo:
+#end
+#src Videos folder
+#dst Pasta de destino:
+#end
+#src Video stream
+#dst Propriedades do vídeo
+#end
+#src Capture mode
+#dst Modo de captura:
+#end
+#src mixed
+#dst Padrão
+#end
+#src desktop
+#dst Área de trabalho
+#end
+#src 3D application
+#dst Aplicçãoes 3D
+#end
+#src Frame size
+#dst Tamanho do quadro:
+#end
+#src full frame
+#dst Quadro completo
+#end
+#src 1/2 frame
+#dst 1/2 quadro
+#end
+#src 1/3 frame
+#dst 1/3 quadro
+#end
+#src 1/4 frame
+#dst 1/4 quadro
+#end
+#src Audio stream
+#dst Propriedades do áudio
+#end
+#src Downmix multichannel audio to stereo
+#dst Áudio multicanal para estéreo Downmix
+#end
+#src stereo rip
+#dst Estéreo RIP
+#end
+#src stereo mix
+#dst Estéreo MIX
+#end
+#src Mix multiple audio tracks
+#dst Misturar várias faixas de áudio
+#end
+#src None
+#dst Nenhum
+#end
+#src Auto select
+#dst Seleção automática
+#end
+#src DirectSound capture device
+#dst Dispositivo de captura DirectSound
+#end
+#src WASAPI playback device
+#dst dispositivo de reprodução WASAPI
+#end
+#src WASAPI capture device
+#dst Dispositivo de captura WASAPI
+#end
+#src There are no devices
+#dst Não há dispositivos
+#end
+#src Audio source #1
+#dst Fonte de áudio 1
+#end
+#src Audio source #2
+#dst Fonte de áudio 2
+#end
+#src Push-To-Talk hotkey
+#dst Aperte para falar:
+#end
+#src There are no devices available
+#dst Sem dispositivos disponíveis
+#end
+#src Use dedicated encoder server
+#dst Usar servidor codificador dedicado
+#end
+
+#src Video prerecording properties
+#dst Configurações de pré-gravação
+#end
+#src Prerecord buffer location
+#dst Local do buffer de pré-gravação
+#end
+#src file
+#dst Arquivo
+#end
+#src RAM
+#dst RAM
+#end
+#src Prerecord buffer time limit, in seconds
+#dst Tempo limite do buffer de pré-gravação (s)   
+#end
+#src Prerecord buffer size limit, in MB
+#dst Tamanho limite do buffer de pré-gravação (MB)
+#end
+#src Enable automatic prerecording mode
+#dst Ativar modo de pré-gravação automático
+#end
+
+#src Benchmark
+#dst Benchmark
+#end
+#src Begin recording
+#dst Iniciar benchmark
+#end
+#src End recording
+#dst Finalizar benchmark
+#end
+
+#src Benchmark properties
+#dst Configurações de benchmark
+#end
+#src Benchmark results file
+#dst Local do Arquivo:
+#end
+#src Recreate existing benchmark results files
+#dst Recriar arquivos de benchmark
+#end
+
+#src Profiles
+#dst Perfis
+#end
+#src Programmable profile modifier 1
+#dst Modificador de perfil programável 1
+#end
+#src Programmable profile modifier 2
+#dst Modificador de perfil programável 2
+#end
+#src Programmable profile modifier 3
+#dstModificador de perfil programável 3
+#end
+#src Programmable profile modifier 4
+#dst Modificador de perfil programável 4
+#end
+
+#src Programmable profile modifier properties
+#dst Configurações do modificador de perfil programável
+#end
+#src Description
+#dst Descrição
+#end
+#src Target profile (leave blank for global)
+#dst Perfil de destino (em branco para global)
+#end
+#src Target profile property
+#dst Propriedade do perfil de destino
+#end
+#src Modifier type
+#dst Tipo de modificador
+#end
+#src set
+#dst Definir
+#end
+#src add
+#dst Adicionar
+#end
+#src Modifier value
+#dst Valor do modificador
+#end 
+#src Preset
+#dst Predefinição
+#end
+#src custom
+#dst Personalizado
+#end
+#src Set 60 FPS framerate limit
+#dst Definir limite de taxa de quadros de 60 FPS
+#end
+#src Increase framerate limit
+#dst Aumentar o limite de taxa de quadros
+#end
+#src Decrease framerate limit
+#dst Diminuir o limite de taxa de quadros
+#end
+#src Increase Scanline Sync index
+#dst Aumentar o índice de linha de varredura
+#end
+#src Decrease Scanline Sync index
+#dst Diminuir o índice de linha de varredura
+#end
+

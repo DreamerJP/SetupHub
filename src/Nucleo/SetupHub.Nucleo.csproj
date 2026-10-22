@@ -1,0 +1,7 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <AssemblyName>SetupHub.Nucleo</AssemblyName>
+    <RootNamespace>SetupHub.Nucleo</RootNamespace>
+  </PropertyGroup>
+</Project>

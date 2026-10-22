@@ -1,0 +1,153 @@
+#src %s skin has been successfully compiled!
+#dst Скин %s успешно скомпилирован!
+#end
+#src Failed to compile %s skin!
+#dst Невозможно скомпилировать скин %s!
+#end
+#src %s skin has been successfully decompiled!
+#dst Скин %s успешно скомпилирован!
+#end
+#src Failed to decompile %s skin!
+#dst Невозможно декомпилировать скин %s!
+#end
+#src Failed to load %s skin!
+#dst Невозможно загрузить скин %s!
+#end
+#src Some of %PRODUCTNAME% components are expired, missing or corrupted!
+#dst Некоторые компоненты %PRODUCTNAME% просрочены, отсутствуют либо повреждены!
+#end
+#src Failed to load %s skin, reverting to default skin!
+#dst Невозможно загрузить скин %s, выполняется откат к исходному скину!
+#end
+#src Unsupported %s skin file format!
+#dst Неподдерживаемый формат файла скина %s!
+#end
+#src Failed to initialize main window with %s skin, reverting to default skin!
+#dst Невозможно инициализировать главное окно со скином %s, выполняется откат к исходному скину!
+#end
+#src Failed to initialize main window!
+#dst Невозможно инициализировать главное окно!
+#end
+#src Beta %d
+#dst Beta %d
+#end
+#src compiled on %d-%m-%Y %H:%M:%S
+#dst скомпилирован %d-%m-%Y в %H:%M:%S
+#end
+#src expires on %s
+#dst истекает %s
+#end
+#src Cannot load RTSSHooks.dll library!
+#dst Невозможно загрузить библиотеку RTSSHooks.dll!
+#end
+#src Tip: %PRODUCTNAME% is currently minimized to system tray area. You may click its' tray icon to bring %PRODUCTNAME% window to top.
+#dst Подсказка: %PRODUCTNAME% в данный момент свёрнут в системную область панели задач. Вы можете кликнуть по его иконке в системной области, чтобы открыть окно %PRODUCTNAME%.
+#end
+#src Failed to restore main window DIB cache!
+#dst Невозможно восстановить кеш изображений главного окна!
+#end
+#src CTaskSchedulerInterface::%s failed with error code %d!
+#dst Ошибка в функции RTTSH.dll::%s, код ошибки %d!
+#end
+#src %PRODUCTNAME% properties
+#dst Свойства %PRODUCTNAME%
+#end
+#src Resource file copy has been successfully saved to %s!
+#dst Ресурсы успешно скопированы в файл %s!
+#end
+#src Failed to save resource file copy to %s!
+#dst Невозможно скопировать ресурсы в файл %s!
+#end
+#src Executable files (*.exe)|*.exe||
+#dst Исполняемые файлы (*.exe)|*.exe||
+#end
+#src Bitmap files (*.bmp)|*.bmp||
+#dst Растровые изображения (*.bmp)|*.bmp||
+#end
+#src There is no new version available at this time. Currently installed version is up to date.
+#dst На данный момент обновления отсутствуют. Текущая установленная версия является актуальной.
+#end
+#src %PRODUCTNAME% v%s is available for download. Do you want to open the download page now?
+#dst %PRODUCTNAME% v%s доступен для загрузки. Вы хотите открыть страницу загрузки прямо сейчас?
+#end
+#src Cannot retrieve update information from the update server!
+#dst Невозможно получить информацию об обновлениях с сервера обновлений!
+#end
+#src Cannot establish connection with the update server!
+#dst Невозможно подключиться к серверу обновлений!
+#end
+#src cannot open internet connection
+#dst невозможно открыть подключение к Internet
+#end
+#src cannot open server connection
+#dst невозможно открыть подключение к серверу
+#end
+#src cannot open HTTP request
+#dst невозможно открыть HTTP запрос
+#end
+#src cannot send HTTP request
+#dst невозможно отправить HTTP запрос
+#end
+#src cannot query HTTP info
+#dst невозможно запросить HTTP информацию
+#end
+#src proxy authentification required
+#dst требуется аутентификация прокси сервера
+#end
+#src cannot read file
+#dst невозможно считать файл
+#end
+#src unknown reason %d
+#dst неизвестная причина %d
+#end
+#src Reason : %s, error code %d
+#dst Причина : %s, код ошибки %d
+#end
+#src Last checked on %A, %B %d, %Y, %H:%M:%S
+#dst Последний поиск обновлений %d-%m-%Y, %H:%M:%S
+#end
+#src Reboot is required to finalize %PRODUCTNAME% installation!
+#dst Необходима перезагрузка для завершения установки %PRODUCTNAME%!
+#end
+#src Some system components cannot be hooked right now. It is strongly recommended to restart application.
+#dst В данный момент невозможно произвести внедрение в некоторые системные компоненты. Строго рекомендуется перезапустить приложение.
+#end
+#src The changes you've made will be applied after restarting %PRODUCTNAME%.  Do you want to restart it now?
+#dst Сделанные Вами изменения будут применены после перезапуска %PRODUCTNAME%. Хотите перезапустить приложение прямо сейчас?
+#end 
+#src Skin scaling %d%%
+#dst Масштабирование скина %d%%
+#end
+#src On-Screen Display preview
+#dst Предварительный просмотр ОЭД
+#end
+#src Image files (*.bmp;*.png)|*.bmp;*.png||
+#dst Файлы изображений (*.bmp;*.png)|*.bmp;*.png||
+#end
+#src Opacity %d%%
+#dst Видимость %d%%
+#end
+#src Please enter integer value in %d-%d range!
+#dst Пожалуйста, введите целое число в диапазоне %d-%d! 
+#end
+#src Active 3D application
+#dst Активное 3D приложение
+#end
+#src Properties
+#dst Свойства
+#end
+#src Add profile
+#dst Добавить профиль
+#end
+#src Add exclusion
+#dst Добавить исключение
+#end
+#src Required DirectX runtimes are not installed! On-Screen Display may not function properly!
+#dst Требуемые версии рантайм библиотек DirectX не установлены! Функция отображения Оверлейного Экранного Дисплея может не работать!
+#end
+#src %s components cannot be hooked right now. It is strongly recommended to restart application.
+#dst В данный момент невозможно произвести внедрение в %s компоненты. Строго рекомендуется перезапустить приложение.
+#end
+#src %s is not found, installation is corrupted!
+#dst %s не найден, установка повреждена!
+#end

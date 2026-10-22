@@ -1,0 +1,5 @@
+Automatisch mit Windows starten
+%PRODUCTNAME% wird automatisch mit Windows gestartet. Aktivieren Sie diese Option nur, wenn Sie %PRODUCTNAME% als eigenständige Lösung zur Framerate-Überwachung verwenden. Wenn Sie %PRODUCTNAME% in Verbindung mit Client-Anwendungen wie RivaTuner, HIS iTurbo, EVGA Precision oder MSI Afterburner verwenden, starten diese den Server bei Bedarf selbst.
+
+Hinweis:
+- Tooltips können in der Registerkarte <Benutzeroberfläche> in den erweiterten Einstellungen deaktiviert werden.

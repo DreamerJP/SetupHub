@@ -1,0 +1,9 @@
+NVIDIA Reflex-Latenzmarkierungen einfügen
+Standardmäßig fügt %PRODUCTNAME% NVIDIA Reflex-Latenzmarkierungen in alle Direct3D11- und Direct3D12-Anwendungen ein, die die NVIDIA Reflex-Technologie nicht nativ unterstützen.
+Durch die Integration von Latenzmarkierungen können Sie detaillierte Timings und Latenzen pro Phase in verschiedenen Phasen der Rendering-Pipeline überwachen.
+Einige Anwendungen (z. B. Workers And Resources: Sowjet Republic oder Overwatch 2) können jedoch mit der Injektion von Latenzmarkierungen nicht kompatibel sein. Daher können Sie diese Option zur Fehlerbehebung verwenden, um sie entweder global oder für bestimmte Anwendungen zu deaktivieren.
+
+Hinweise:
+- Diese Einstellung ist spezifisch für das aktuell ausgewählte Anwendungsprofil.
+- Sie können das Reflex.ovl-Overlay-Layout im OverlayEditor-Plugin laden, um die NVIDIA Reflex-Latenzen in verschiedenen Phasen der Rendering-Pipeline zu analysieren.
+- Tooltips können in der Registerkarte <Benutzeroberfläche> in den erweiterten Einstellungen deaktiviert werden.

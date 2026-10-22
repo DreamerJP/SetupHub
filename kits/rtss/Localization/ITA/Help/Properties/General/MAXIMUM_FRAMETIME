@@ -1,0 +1,5 @@
+Visualizza massimo frametime
+Consente di visualizzare il valore di frametime istantaneo corrente o il valore massimo di frametime durante ogni periodo di aggiornamento. Il valore massimo di frametime può essere utilizzato per la rilevazione di framerate balbettanti.
+
+Suggerimenti:
+-È possibile disabilitare le descrizioni comandi dell'interfaccia utente tramite la scheda <interfaccia utente> in proprietà avanzate.

@@ -1,0 +1,7 @@
+Rendermodus der Overlay-Bildschirmanzeige: Vektor 2D
+Die Overlay-Bildschirmanzeige kann entweder mit Vektor- oder Bitmap-Schriftarten über hardwarebeschleunigte 2D- oder über hardwarebeschleunigte 3D-DirectX-/OpenGL-Funktionen angezeigt werden. Die 2D-Implementierung bietet maximale Kompatibilität mit den meisten vorhandenen 3D-Spiele-Engines, wird jedoch in Direct3D10 und älteren Spielen nicht unterstützt, wenn FSAA durch Multisampling aktiviert ist. 2D-Beschleunigungsschnittstellen sind möglicherweise auch in einigen Grafiktreibern nicht gut optimiert, sodass eine auf 3D-Beschleunigung basierende Implementierung hinsichtlich der Leistungsauswirkungen auf solchen Systemen möglicherweise deutlich effizienter ist.
+Es ist jedoch wahrscheinlicher, dass die 3D-Implementierung mit einigen 3D-Game-Engines nicht kompatibel ist. Versuchen Sie, den 3D-Modus zu deaktivieren, wenn Sie beim Aktivieren der OSD-Überlagerung Rendering-Anomalien bemerken.
+
+Hinweise:
+- Die Anti-Cheat-Systeme einiger Spiele können das für die Anwendungserkennung und das Rendern von Bildschirmanzeigen erforderliche Einhängen des Spielcodes als möglichen Cheat behandeln und die Verbindung zum Multiplayer-Server blockieren. Um dieses Problem zu lösen, kann ein Profil für das Spiel erstellt und die Unterstützung für die Overlay-Bildschirmanzeige deaktiviert werden. Wenn das nicht hilft, versuchen Sie, die Erkennungsstufe der App zu senken.
+- Tooltips können in der Registerkarte <Benutzeroberfläche> in den erweiterten Einstellungen deaktiviert werden.

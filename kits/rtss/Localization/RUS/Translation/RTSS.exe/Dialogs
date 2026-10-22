@@ -1,0 +1,242 @@
+#src General
+#dst Основные
+#end
+#src General properties
+#dst Основные свойства
+#end
+#src Start minimized
+#dst Запускать в минимизированном состоянии
+#end
+#src Hide pre-created profiles
+#dst Спрятать встроенные профили
+#end
+#src Update checking properties
+#dst Свойства системы поиска обновлений
+#end
+#src Check for available product updates
+#dst Проверять наличие обновлений
+#end
+#src Check for available product beta versions
+#dst Проверять наличие бета версий 
+#end
+#src never
+#dst никогда
+#end
+#src on startup
+#dst при каждом запуске
+#end
+#src on startup daily
+#dst ежедневно
+#end
+#src on startup weekly
+#dst еженедельно
+#end
+#src on startup monthly
+#dst ежемесячно
+#end
+#src Check now
+#dst Проверить
+#end
+#src FCAT properties
+#dst Свойства системы FCAT
+#end
+#src Enable frame color indicator
+#dst Включить цветовую индикацию кадров
+#end
+#src color sequence
+#dst цветовой ряд
+#end
+#src 2 bars
+#dst 2 полоски
+#end
+#src 3 bars
+#dst 3 полоски
+#end
+#src 4 bars
+#dst 4 полоски
+#end
+#src moving bar
+#dst бегущая полоска
+#end
+#src latency marker
+#dst метка задержки
+#end
+#src Statistics properties
+#dst Свойства статистики
+#end
+#src Framerate averaging interval (in milliseconds)
+#dst Интервал усреднения частоты кадров (миллисекунды)
+#end
+#src Refresh period (in milliseconds)
+#dst Период обновления (миллисекунды)
+#end
+#src Display integer framerate
+#dst Отображать целое значение частоты кадров
+#end
+#src Display maximum frametime
+#dst Отображать максимальное значение времени кадра
+#end
+#src Enable frametime history overlay
+#dst Включить оверлей истории времени кадров
+#end
+
+#src Frametime calculation point
+#dst Точка расчёта времени кадра
+#end
+#src frame start
+#dst начало кадра
+#end
+#src frame presentation
+#dst показ кадра
+#end
+
+
+#src Peak framerate calculation mode
+#dst Режим расчёта пиковой частоты кадров
+#end
+#src average
+#dst усреднённая
+#end
+#src instantaneous
+#dst мгновенная
+#end
+#src Percentile calculation mode
+#dst Режим расчёта процентиля
+#end
+#src integral
+#dst интегральный
+#end
+#src linear
+#dst линейный
+#end
+#src Percentile buffer
+#dst Буфер процентиля
+#end
+#src unlimited
+#dst неограниченный
+#end
+#src ring
+#dst кольцевой
+#end
+
+#src graph
+#dst график
+#end
+#src diagram
+#dst диаграмма
+#end
+#src Compatibility properties
+#dst Свойства совместимости
+#end
+#src Enable dedicated encoder server service
+#dst Включить выделенный сервер кодирования
+#end
+#src 32-bit
+#dst 32-битный
+#end
+#src 64-bit
+#dst 64-битный
+#end
+#src Enable 64-bit applications support service
+#dst Включить сервис поддержки 64-битных приложений
+#end
+#src Enable benchmark mode
+#dst Включить режим бенчмарка
+#end
+#src Enable framerate limiter
+#dst Включить ограничитель частоты кадров
+#end
+#src async
+#dst асинхронный
+#end
+#src front edge sync
+#dst синх. переднего фронта
+#end
+#src back edge sync
+#dst синх. заднего фронта
+#end
+#src Enable passive waiting
+#dst Включить пассивное ожидание
+#end
+
+#src Injection properties
+#dst Свойства внедрения
+#end
+#src Use Microsoft Detours API hooking
+#dst Использовать Microsoft Detours для перехвата вызовов API
+#end
+#src Injection delay (in milliseconds)
+#dst Задержка внедрения (миллисекунды)
+#end
+#src Reset cache
+#dst Сбросить кэш
+#dlu -100
+#end
+#src Inject NVIDIA Reflex latency markers
+#dst Внедрять маркеры задержки NVIDIA Reflex
+#end
+#src Inject NVIDIA Reflex sleep call
+#dst Внедрять функцию ожидания NVIDIA Reflex
+#end
+#src before frame presentation
+#dst до показа кадра
+#end
+#src after frame presentation
+#dst после показа кадра
+#end
+
+#src Plugins
+#dst Плагины
+#end
+#src Active plugin modules
+#dst Активные плагин модули
+#end
+#src Setup
+#dst Настроить
+#end
+
+#src User Interface
+#dst Интерфейс
+#end
+#src Language
+#dst Язык
+#end
+#src English
+#dst Английский
+#end
+#src User interface help system properties
+#dst Свойства справочной системы пользовательского интерфейса
+#end
+#src Show user interface tooltips
+#dst Показывать всплывающие подсказки
+#end
+#src User interface skinning properties
+#dst Свойства скинов пользовательского интерфейса
+#end
+#src Skin composition mode
+#dst Режим композиции скина
+#end
+#src traditional
+#dst традиционный
+#end
+#src layered with colorkey
+#dst слои с цветовым ключом
+#end
+#src layered with alpha
+#dst слои с альфа каналом
+#end
+#src Skin transparency
+#dst Прозрачность скина
+#end
+#src Transparent
+#dst Прозрачный
+#end
+#src Opaque
+#dst Непрозрачный
+#end
+#src Color
+#dst Цвет
+#end 
+#src Cancel
+#dst Отмена
+#end

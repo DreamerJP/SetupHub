@@ -1,0 +1,6 @@
+Benchmark-Modus aktivieren
+Ermöglicht die Aktivierung des Benchmark-Statistikaufzeichnungsmodus. In diesem Modus berechnet %PRODUCTNAME% die durchschnittliche, minimale, maximale, 1 % Low und 0,1 % Low Framerate für alle aktiven 3D-Anwendungen und zeigt diese optional an.
+Client-Anwendungen wie MSI Afterburner ermöglichen außerdem, den Status des Benchmark-Modus mithilfe von Hotkeys direkt zu wechseln, während die 3D-Anwendung ausgeführt wird, und die Benchmark-Ergebnisse in einer Textdatei zu speichern.
+
+Hinweis
+- Tooltips können in der Registerkarte <Benutzeroberfläche> in den erweiterten Einstellungen deaktiviert werden.

@@ -1,0 +1,6 @@
+Lista de perfis
+Exibe e gerencia a lista de perfis. Os perfis definem configurações pessoais para qualquer aplicação, mas não há necessidade de criar perfis para cada programa, pois os programas não listados automaticamente usam o perfil global. Adicione novos perfis apenas se for necessário definir algumas configurações específicas para o programa desejado, como desativar a exibição de informações na tela para evitar conflitos com sistemas "Anticheat" ou personalizar a cor e posição do mostrador de informações na tela. 
+
+Sugestões:
+- Você somente pode remover os perfis que você criou.
+- Você pode desativar as sugestões na aba <Inteface> das configurações.

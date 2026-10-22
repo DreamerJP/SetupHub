@@ -1,0 +1,8 @@
+NVIDIA Reflex-Sleep-Aufruf einfügen
+Die Effizienz der NVIDIA Reflex-Integration hängt von der optimalen Platzierung des NvAPI_D3D_Sleep-Aufrufs innerhalb der Frame-Rendering-Implementierung des Spiels ab. Dieser Aufruf bietet dem Treiber einen Einstiegspunkt, um das Warten an der optimalen Stelle im Hinblick auf die Reduzierung der Latenz zu implementieren. Idealerweise sollte der Aufruf ganz am Anfang des Frames platziert werden, bevor die Simulation startet und Eingaben abfragt.
+Mit dieser Option können Sie die Implementierungsstrategie für den NvAPI_D3D_Sleep-Aufruf in Anwendungen steuern, die NVIDIA Reflex nicht nativ unterstützen, wenn die Bildratenbegrenzung mit NVIDIA Reflex aktiviert ist. In diesem Fall kann die Position der Wartefunktion entweder automatisch vom Treiber ermittelt werden oder Sie können sie unmittelbar vor oder unmittelbar nach der Anzeige des Frames platzieren. Die Positionierung vor der Anzeige des Frames priorisiert die Frametime-Stabilität, die Positionierung nach der Anzeige des Frames priorisiert die Latenz und kann dazu beitragen, diese zu reduzieren, wenn die Anwendung die Simulation und Abfrage der Eingaben im selben Thread wie das Rendern durchführt.
+
+Hinweise:
+- Diese Einstellung ist spezifisch für das aktuell ausgewählte Anwendungsprofil.
+- Sie können das Reflex.ovl-Overlay-Layout im OverlayEditor-Plugin laden, um die NVIDIA Reflex-Latenzen in verschiedenen Phasen der Rendering-Pipeline zu analysieren.
+- Tooltips können in der Registerkarte <Benutzeroberfläche> in den erweiterten Einstellungen deaktiviert werden.

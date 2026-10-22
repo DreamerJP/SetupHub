@@ -1,0 +1,5 @@
+Attiva il servizio di supporto nelle applicazioni a 64-bit
+Attiva il servizio helper, che fornisce supporto nelle applicazioni a 64-bit. È possibile disattivarlo per la risoluzione dei problemi o se non hai bisogno delle funzionalità di %PRODUCTNAME% in applicazioni a 64 bit. Si prega di prendere nota che a causa di licenze di terze parti le funzionalità a 64-bit dell'On-Screen Display nelle applicazioni di overclocking è attualmente limitato al solo MSI Afterburner.
+
+Suggerimento:
+- È possibile disattivare i suggerimenti di interfaccia utente tramite la scheda <Interfaccia utente> in proprietà avanzate.

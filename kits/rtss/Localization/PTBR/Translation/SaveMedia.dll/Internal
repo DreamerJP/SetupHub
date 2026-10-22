@@ -1,0 +1,19 @@
+#src disabled
+#dst Desabilitado
+#end
+#src %s\n\n%dx%d : Failed to encode frame %d!\n\nError code %s!
+#dst %s\n\n%dx%d : Falha ao codificar o quadro %d!\n\nCódigo de erro %s!
+#end
+#src %s\n\n%dx%d : %d frames have been encoded in %d ms, %.1f frames per second
+#dst %s\n\n%dx%d : %d quadros codificados em %d ms, %.1f FPS
+#end
+#src %s\n\n%dx%d : Failed to start encoding!\n\nError code : %s!
+#dst %s\n\n%dx%d : Falha ao iniciar a codificação!\n\nCódigo de erro: %s!
+#end
+#src Failed to capture frame!
+#dst Falha ao capturar o quadro!
+#end
+#src Failed to get encoder caps!
+#dst Falha ao obter os limites do codificador!
+#end
+

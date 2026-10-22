@@ -1,0 +1,433 @@
+#src Add embedded object
+#dst Adicionar objeto incorporado
+#end
+#src Data source
+#dst Fonte de dados
+#end
+#src Text table
+#dst Tabela de texto
+#end
+#src Add label
+#dst Adicionar marcador
+#end
+#src Add current value macro
+#dst Adicionar macro de valor atual
+#end
+#src Add embedded graph
+#dst Adicionar gráfico incorporado
+#end
+#src Add embedded image
+#dst Adicionar imagem incorporada
+#end
+#src use current template
+#dst Modelo atual
+#end
+#src use custom template
+#dst Modelo personalizado
+#end
+#src use static image
+#dst Imagem estática
+#end
+
+#src Embedded animated image settings
+#dst Configurações de imagens animadas incorporadas
+#end
+#src Image template
+#dst Modelo de imagem
+#end
+#src Image template properties
+#dst Modelo de imagem
+#end
+#src Image width, in pixels or symbols if negative
+#dst Largura do sprite (píxeis ou símbolos se negativo)
+#end 
+#src Image height, in pixels or symbols if negative
+#dst Altura do sprite (píxeis ou símbolos se negativo)
+#end
+#src Sprite animation minimum, in data source units
+#dst Animação sprite mínima (unidades de fonte de dados)
+#end
+#src Sprite animation maximum, in data source units
+#dst Animação sprite máxima (unidades de fonte de dados)
+#end
+#src Sprite animation bias
+#dst Viés de animação do sprite
+#end
+#src Minimum rotation angle
+#dst Ângulo de rotação mínimo 
+#end
+#src Maximum rotation angle
+#dst Ângulo de rotação máximo 
+#end
+#src Sprite X, in pixels
+#dst Sprite X (píxeis)
+#end
+#src Sprite Y, in pixels
+#dst Sprite Y (píxeis)
+#end
+#src Sprite width, in pixels
+#dst Largura do sprite (píxeis)
+#end
+#src Sprite height, in pixels
+#dst Altura do sprite (píxeis)
+#end
+#src Rotation angle
+#dst Ângulo de rotação
+#end
+#src Sprites number
+#dst Número de sprites
+#end
+#src Sprites number per line
+#dst Número de sprites por linha
+#end
+#src Resize image to layer extent
+#dst Redimensionar imagem no tamanho da camada
+#end
+
+#src Embedded graph settings
+#dst Configurações de gráfico incorporado
+#end
+#src Graph template
+#dst Modelo de gráfico
+#end
+#src Graph template properties
+#dst Modelo do gráfico
+#end
+#src Graph width, in pixels or symbols if negative
+#dst Largura do gráfico (píxeis ou símbolos se negativo)
+#end 
+#src Graph height, in pixels or symbols if negative
+#dst Altura do gráfico (píxeis ou símbolos se negativo)
+#end
+#src Graph margin, in pixels
+#dst Margem (píxeis)
+#end
+#src Graph minimum, in data source units
+#dst Valor mínimo (unidades de fonte de dados)
+#end
+#src Graph maximum, in data source units
+#dst Valor máximo (unidades de fonte de dados)
+#end
+#src Graph style
+#dst Tipo
+#end
+#src Range minimum, in data source units
+#dst Limite mínimo (unidades de fonte de dados)
+#end
+#src Range maximum, in data source units
+#dst Limite máximo (unidades de fonte de dados)
+#end
+#src Autoscale graph
+#dst Gráfico em escala automática
+#end
+#src graph
+#dst Gráfico
+#end
+#src diagram
+#dst Diagrama
+#end
+#src barchart
+#dst Barra
+#end
+#src bar range
+#dst Faixa
+#end
+#src Graph background
+#dst Plano de fundo
+#end
+#src enabled
+#dst Ativado
+#end
+#src disabled
+#dst Desativado
+#end
+#src Graph orientation
+#dst Orientação
+#end
+#src horizontal
+#dst Horizontal
+#end
+#src vertical
+#dst Vertical
+#end
+#src Graph direction
+#dst Direção
+#end
+#src normal
+#dst Normal
+#end
+#src mirrored
+#dst Espelhado
+#end
+#src Resize graph to layer extent
+#dst Redimensionar gráfico no tamanho da camada
+#end
+
+#src Embedded image settings
+#dst Configurações de imagem incorporada
+#end
+
+#src Layer properties
+#dst Configurações da camada
+#end
+#src Name
+#dst Nome
+#end 
+#src Visibility source
+#dst Fonte de dados
+#end
+#src Hypertext
+#dst Hipertexto
+#end 
+#src Use custom text color
+#dst Usar cor de texto personalizada
+#end
+#src Use custom background color
+#dst Usar cor de fundo personalizada
+#end
+#src Border, in pixels, inner or outer if negative
+#dst Borda (píxeis ou interna/externa se negativa)
+#end
+#src Text size, in percents
+#dst Tamanho do texto (%)
+#end
+#src Text alignment, in symbols, left or right if negative
+#dst Alinhamento (símbolos ou esquerdo/direito se negativo)
+#end
+#src Use fixed size alignment
+#dst Usar alinhamento de tamanho fixo
+#end
+#src Resize layer to content
+#dst Redimensionar camada no tamanho do conteúdo
+#end
+#src Manual extent origin
+#dst Origem manual
+#end
+#src Sticky layer position
+#dst Posição fixa
+#end
+#src Margins
+#dst Margens
+#end
+
+#src Apply
+#dst Aplicar
+#end
+
+#src Add new data sources
+#dst Adicionar novas fontes de dados
+#end
+#src Data provider
+#dst Fornecedor de dado
+#end
+#src Export
+#dst Exportar
+#end
+
+#src Data source settings
+#dst Configurações da fonte de dados
+#end
+#src AIDA64 sensor properties
+#dst Sensor AIDA64	
+#end
+#src ID
+#dst ID
+#end
+#src Overlay data source properties
+#dst Fonte de dados
+#end
+#src Name
+#dst Nome
+#end
+#src Units
+#dst Unidade
+#end
+#src Format
+#dst formato
+#end
+#src Correction formula
+#dst Fórmula de correção
+#end
+
+#src HWiNFO64 sensor properties
+#dst Sensor HWiNFO64
+#end
+#src Type
+#dst Tipo
+#end
+#src Instance
+#dst Instância
+#end
+
+#src MSI Afterburner sensor properties
+#dst Sensor MSI Afterburner
+#end
+
+#src HAL sensor properties
+#dst Sensor HAL
+#end
+
+#src Performance counter properties
+#dst Contador de desempenho
+#end
+#src Object name
+#dst Nome do objeto
+#end
+#src Instance name or index
+#dst Nome ou índice da instância
+#end
+#src Counter name
+#dst Nome do contador
+#end
+#src Enable dynamic mode
+#dst Ativar modo dinâmico
+#end
+
+#src Instance name
+#dst Nome da instância
+#end
+#src Use instance index instead of name
+#dst Use o índice da instância em vez do nome
+#end
+
+#src Overlay data sources
+#dst Fontes de dados
+#end
+#src Setup
+#dst Configurar
+#end
+#src Add
+#dst Adicionar
+#end
+#src Remove
+#dst Remover
+#end
+
+#src Ovelay editor
+#dst Editor de informações na tela
+#end
+
+#src Overlay properties
+#dst Configurações de edição de informações na tela
+#end
+#src Environment variables
+#dst Variáveis de ambiente
+#end
+#src Refresh period, in milliseconds
+#dst Taxa de atualização (ms)
+#end
+#src Lock user settings
+#dst Bloquear configurações do usuário
+#end
+#src Master settings
+#dst Configurações principais
+#end
+#src Embedded image
+#dst Imagem incorporada
+#end
+#src Ping address
+#dst Endereço de ping
+#end
+
+#src Ovelay editor
+#dst Editor de informações na tela
+#end
+
+#src Select sprite
+#dst Selecionar imagem animada
+#end
+
+#src Text tables
+#dst Tabelas de texto
+#end
+
+#src Text table properties
+#dst Configurações da tabela de texto
+#end
+#src Value
+#dst Valor
+#end
+#src Units
+#dst Unidades
+#end
+#src Cell size, in percents
+#dst Tamanho da célula (%)
+#end
+#src Cell alignment, in symbols
+#dst Alinhamento da célula (símbolos)
+#end
+#src Table edit mode
+#dst Modo de edição da tabela
+#end
+#src lines
+#dst Linhas
+#end
+#src cells
+#dst Céluas
+#end
+
+#src Text table cell properties
+#dst Célula da tabela de texto
+#end
+#src Line name
+#dst Nome da linha
+#end
+#src Use custom line text color
+#dst Usar cor de texto de linha personalizada
+#end
+#src Use custom cell text color
+#dst Usar cor de texto de célula personalizada
+#end
+#src Cell data source
+#dst Fonte de dados da célula
+#end
+#src Cell text
+#dst Texto da célula
+#end
+
+#src Add new text table cells
+#dst Adicionar nova célula da tabela de texto
+#end
+#src Add cells to new line
+#dst Adicionar células à nova linha
+#end
+#src Add separator
+#dst Adicionar separador
+#end
+
+#src Overlay layers
+#dst Camadas
+#end
+
+#src Dynamic color
+#dst Cor dinâmica
+#end
+#src Min
+#dst Mín
+#end
+#src Max
+#dst Máx
+#end
+#src Preview
+#dst Prévia
+#end
+#src Blend colors
+#dst Misturar cores
+#end
+#src Embed formula
+#dst Incorporar fórmula
+#end
+
+#src Internal HAL properties
+#dst Configurações do HAL interno 
+#end
+#src Enable low-level IO driver
+#dst Ativar acesso de baixo nível ao driver IO 
+#end
+#src Enable SMART monitoring
+#dst Ativar monitoramento SMART
+#end
+
+#src LibreHardwareMonitor sensor properties
+#dst Propriedades do sensor LibreHardwareMonitor
+#end

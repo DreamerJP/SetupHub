@@ -1,0 +1,7 @@
+Bereitstellungsverzögerung 
+Legt die Bereitstellungsverzögerung (in Millisekunden) fest. Die Bereitstellungsverzögerung soll die Overlay-Exklusivitätsprüfung umgehen, die in einigen Overlay-Softwareprodukten von Drittanbietern (z. B. dem 64-Bit Steam-Overlay) implementiert ist, und verhindern, dass die Overlay-Funktionalität solcher Anwendungen blockiert wird. Die Bereitstellungsverzögerung ist konfigurierbar, sodass fortgeschrittene Benutzer die Verzögerung anpassen und die Liste der DLLs erweitern können, die den Bereitstellungsverzögerungsmechanismus aktivieren. Standardmäßig ist die Bereitstellungsverzögerung durch die 64-Bit Overlay-Bibliotheken Steam und Origin aktiviert und die Verzögerung ist auf 15 Sekunden eingestellt, wenn eine dieser Bibliotheken in den Adressraum der Anwendung geladen wird.
+
+Hinweise:
+- Diese Einstellung ist spezifisch für das aktuell ausgewählte Anwendungsprofil.
+- Sie können die Verzögerung auf 0 setzen, um die Bereitstellungsverzögerung zu deaktivieren.
+- Tooltips können in der Registerkarte <Benutzeroberfläche> in den erweiterten Einstellungen deaktiviert werden.

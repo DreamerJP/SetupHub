@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <AssemblyName>SetupHubInstalador</AssemblyName>
+    <RootNamespace>SetupHub.Instalador</RootNamespace>
+    <AssemblyTitle>Instalador do SetupHub</AssemblyTitle>
+    <UseWPF>true</UseWPF>
+    <ApplicationIcon>..\Janela\Recursos\setuphub.ico</ApplicationIcon>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <StartupObject>SetupHub.Instalador.Programa</StartupObject>
+    <EnableDefaultApplicationDefinition>false</EnableDefaultApplicationDefinition>
+    <!-- Um arquivo só: o runtime e as bibliotecas nativas do WPF vão dentro do executável. -->
+    <PublishSingleFile>true</PublishSingleFile>
+    <IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
+    <EnableCompressionInSingleFile>true</EnableCompressionInSingleFile>
+    <PublishReadyToRun>false</PublishReadyToRun>
+    <Pacote>$(BaseIntermediateOutputPath)pacote.zip</Pacote>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Nucleo\SetupHub.Nucleo.csproj" />
+    <Compile Include="..\Janela\Kit\IconeApp.cs" Link="IconeApp.cs" />
+    <Resource Include="..\Janela\Recursos\Fontes\Saira*.ttf" Link="Fontes\%(Filename)%(Extension)" />
+    <Resource Include="..\Janela\Recursos\setuphub.ico" Link="setuphub.ico" />
+  </ItemGroup>
+  <!-- PastaPacote vem do publicar.sh: a pasta do programa pronta vira o pacote embutido. -->
+  <ItemGroup Condition="'$(PastaPacote)' != ''">
+    <EmbeddedResource Include="$(Pacote)" LogicalName="pacote.zip" />
+  </ItemGroup>
+  <Target Name="Empacotar" BeforeTargets="PrepareForBuild" Condition="'$(PastaPacote)' != ''">
+    <ZipDirectory SourceDirectory="$(PastaPacote)" DestinationFile="$(Pacote)" Overwrite="true" />
+  </Target>
+</Project>

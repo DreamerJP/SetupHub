@@ -1,0 +1,44 @@
+#src Please select target folder for screen capture
+#dst Por favor, selecione a pasta de destino de capturas de tela
+#end
+#src Please select target folder for video capture
+#dst Por favor, selecione a pasta de destino de capturas de vídeo
+#end
+
+#src uncompressed
+#dst Sem Compressão
+#end
+#src NV12 compression
+#dst Compressão NV12
+#end
+#src RTV1 compression
+#dst Compressão RTV1
+#end
+#src MJPG compression
+#dst Compressão MJPG
+#end
+#src VFW compression : %s
+#dst Compressão VFW: %s
+#end
+#src external plugin : %s
+#dst Plugin externo: %s
+#end
+#src not configured
+#dst Não Configurado
+#end
+
+#src %d%% quality
+#dst Qualidade: %d%%
+#end
+
+#src Framerate %d FPS
+#dst Taxa de quadros: %d FPS
+#end
+
+#src Warning
+#dst Atenção
+#end
+#src You've specified invalid profile property!
+#dst Você especificou uma propriedade de perfil inválida!
+#end
+

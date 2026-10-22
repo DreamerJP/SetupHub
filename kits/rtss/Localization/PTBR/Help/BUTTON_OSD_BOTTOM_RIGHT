@@ -1,0 +1,6 @@
+Coordenada de origem: Canto inferior direito
+Move a coordenada de origem do mostrador de informações para o canto inferior direito da tela. Clique duas vezes no canto para redefinir as coordenadas de exibição na tela e retornar à posição de origem.
+
+Sugestões:
+- Sistemas "Anticheat" de alguns jogos podem considerar o código para a detecção de aplicativos e a renderização de informações na tela como possível fraude em servidores multiplayer. Para solucionar essas questões, tente adicionar um perfil para o jogo e desative o suporte ao mostrador de informações na tela, ou tente diminuir o nível de detecção do programa. 
+- Você pode desativar as sugestões na aba <Inteface> das configurações.

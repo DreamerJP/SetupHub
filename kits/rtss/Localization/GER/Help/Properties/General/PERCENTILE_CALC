@@ -1,0 +1,6 @@
+Modus der Perzentilberechnung
+Beeinflusst die Berechnung der perzentilbasierten Messwerte "1% Low" und "0.1% Low". Beide Metriken verwenden sortierte Arrays von Frametimes als Basis und spiegeln die momentane Framerate wider, die aus der einzelnen Frametime berechnet wird, die sich an der Grenze von 1 % oder 0,1 % der langsamsten Frames befindet.
+Diese Option beeinflusst die Definition der Grenze von 1 % oder 0,1 % der langsamsten Frames. Für den linearen Modus ist dies der rein statische P99/P99,1-Perzentilwert. Mit anderen Worten, es beträgt 1 % oder 0,1 % der Gesamtzahl der Frames. Der integrale Modus ist etwas komplexer, aber gleichzeitig repräsentativer. Dies ist die Grenze der n langsamsten Frames, die insgesamt 1 % oder 0,1 % der gesamten Benchmark-Zeit beanspruchen.
+
+Hinweis:
+- Tooltips können in der Registerkarte <Benutzeroberfläche> in den erweiterten Einstellungen deaktiviert werden.

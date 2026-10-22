@@ -1,0 +1,152 @@
+#src General
+#dst Generale
+#end
+#src General properties
+#dst Proprietà generali
+#end
+#src Start minimized
+#dst Avvia ridoto a icona
+#end
+#src Hide pre-created profiles
+#dst Nascondi profili pre-creati
+#end
+#src Update checking properties
+#dst Propriet  controllo aggiornamenti
+#end
+#src Check for available product updates
+#dst Verifica gli aggiornamenti
+#end
+#src Check for available product beta versions
+#dst Verificare la presenza di versioni beta del prodotto
+#end
+#src never
+#dst Mai
+#end
+#src on startup
+#dst All'avvio
+#end
+#src on startup daily
+#dst All'avvio quotidiano
+#end
+#src on startup weekly
+#dst All'avvio settimanale
+#end
+#src on startup monthly
+#dst All'avvio mensile
+#end
+#src Check now
+#dst Controlla ora
+#end
+#src FCAT properties
+#dst Proprietà FCAT
+#end
+#src Enable frame color indicator
+#dst Abilita il colore dell'indicatore frame
+#end
+#src color sequence
+#dst sequenza colori
+#end
+#src 2 bars
+#dst 2 barre
+#end
+#src 3 bars
+#dst 3 barre
+#end
+#src 4 bars
+#dst 4 barre
+#end
+#src Statistics properties
+#dst Proprietà delle statistiche
+#end
+#src Framerate averaging interval (in milliseconds)
+#dst Intervallo di media framerate (in millisecondi)
+#end
+#src Refresh period (in milliseconds)
+#dst Periodo di aggiornamento (in millisecondi)
+#end
+#src Display integer framerate
+#dst Visualizza framerate intero
+#end
+#src Display maximum frametime
+#dst Visualizza massimo frametime
+#end
+#src Enable frametime history overlay
+#dst Attiva sovrapposizione cronologia frametime
+#end
+#src graph
+#dst grafico
+#end
+#src diagram
+#dst diagramma
+#end
+#src Compatibility properties
+#dst Proprietà di compatibilità
+#end
+#src Enable dedicated encoder server service
+#dst Abilita il servizio server dedicatao dell'encoder
+#end
+#src 32-bit
+#dst 32-bit
+#end
+#src 64-bit
+#dst 64-bit
+#end
+#src Enable 64-bit applications support service
+#dst Abilita il servizio di supporto delle applicazioni a 64-bit
+#end
+#src Injection properties
+#dst Proprietà di iniezione
+#end
+#src Injection delay (in milliseconds)
+#dst Ritardo iniezione (in millisecondi)
+#end
+#src Reset cache
+#dst Reimposta cache
+#dlu -100
+#end
+
+#src User Interface
+#dst Interfaccia utente
+#end
+#src User interface help system properties
+#dst Impostazioni 
+#end
+#src English
+#dst Inglese
+#end
+#src Language
+#dst Lingua
+#end
+#src Show user interface tooltips
+#dst Mostra consigli
+#end
+#src User interface skinning properties
+#dst Anteprima Tema
+#end
+#src Skin composition mode
+#dst Modalità di composizione Skin
+#end
+#src traditional
+#dst Tradizionale
+#end
+#src layered with colorkey
+#dst a strati con colorkey
+#end
+#src layered with alpha
+#dst a strati con alpha
+#end
+#src Skin transparency
+#dst Trasparenza Skin
+#end
+#src Transparent
+#dst Trasparente
+#end
+#src Opaque
+#dst Opaca
+#end
+#src Color
+#dst Colore
+#end 
+#src Cancel
+#dst Annulla
+#end

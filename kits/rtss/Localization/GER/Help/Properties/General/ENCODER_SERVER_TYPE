@@ -1,0 +1,5 @@
+Typ des dedizierten Encoder-Serverdienstes
+Ermöglicht die Auswahl eines dedizierten 32-Bit- oder 64-Bit-Encoder-Serverdienstes. Aus Kompatibilitätsgründen wird bei Verwendung der VfW-Komprimierung ein 32-Bit-Server empfohlen, da viele Codecs derzeit nur über eine 32-Bit-Version verfügen. Ein 64-Bit-Server kann in Kombination mit der Voraufzeichnung nützlich sein, da Sie damit mehr als 2 GB RAM für den Voraufzeichnungspuffer reservieren können.
+
+Hinweis:
+- Tooltips können in der Registerkarte <Benutzeroberfläche> in den erweiterten Einstellungen deaktiviert werden.

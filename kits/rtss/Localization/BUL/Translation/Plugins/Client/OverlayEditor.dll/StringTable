@@ -1,0 +1,12 @@
+#src Undo / Redo
+#dst Отказ/повтаряне
+#end
+#src Layer info
+#dst Информация за слоя
+#end
+#src Hypertext info
+#dst Информация за хипертекст
+#end
+#src Sprite dimensions
+#dst Размер на спрея
+#end

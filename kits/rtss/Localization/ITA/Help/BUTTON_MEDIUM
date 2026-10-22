@@ -1,0 +1,8 @@
+Applicazione livello di rilevamento: medio
+Seleziona il livello di rilevamento per l'applicazione associata con il profilo corrente. In questo modo %PRODUCTNAME% intercetta le chiamate dell'applicazione DirectDraw, Direct3D e OpenGL e intercetta i tentativi di applicazione delle librerie di runtime per caricare nuove librerie.
+Questa modalità è consigliata per la raccolta di statistiche di runtime, come il framerate, e permette i servizi aggiuntivi, come l'On-Screen Display, il caricamento delle librerie dinamiche di runtime di applicazioni DirectDraw, Direct3D e OpenGL.
+
+Consigli:
+- I sistemi anticheat di alcuni giochi possono riconoscere il rilevamento dell'applicazione On-Screen Display come possibile applicazione per barare al gioco e quindi bloccare la connessione al server multiplayer.
+Per risolvere i problemi, tentare di aggiungere un profilo per il gioco, e disabilitare il supporto On-Screen Display, o se non funziona, provare a diminuire il rilevamento di livello dell' applicazione.
+- È possibile disattivare i suggerimenti di interfaccia utente tramite la scheda <Interfaccia utente> in proprietà avanzate.

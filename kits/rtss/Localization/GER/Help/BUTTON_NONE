@@ -1,0 +1,6 @@
+Anwendungserkennungsstufe: Deaktiviert
+Deaktiviert die Erkennung der Anwendung, die dem aktuellen Profil zugeordnet ist. In diesem Modus erfasst %PRODUCTNAME% keine Statistiken wie die Framerate und bietet auch keine zusätzlichen Dienste wie die Overlay-Bildschirmanzeige für die mit dem Profil verknüpfte Anwendung.
+
+Hinweise:
+- Einige geschützte Anwendungen betrachten möglicherweise das Hooking von ausführbarem Code, das für die ordnungsgemäße Anwendungserkennung, Statistikerfassung und Overlay-Bildschirmanzeige erforderlich ist, als mögliche Bedrohung und verweigern die Ausführung. Um dieses Problem zu beheben, versuchen Sie, ein Profil für diese Anwendung hinzuzufügen und die Anwendungserkennungsstufe zu verringern.
+- Tooltips können in der Registerkarte <Benutzeroberfläche> in den erweiterten Einstellungen deaktiviert werden.

@@ -1,0 +1,5 @@
+Aktualisierungsintervall
+Sich schnell ändernde Framerate- und Frametime-Werte können schwer lesbar sein, wenn sie bei jedem Frame aktualisiert werden. Um dieses Problem zu beheben, wird ein Aktualisierungsintervall verwendet. Sie können das Aktualisierungsintervall auf 0 setzen, damit diese Werte bei jedem Frame aktualisiert werden.
+
+Hinweis:
+- Tooltips können in der Registerkarte <Benutzeroberfläche> in den erweiterten Einstellungen deaktiviert werden.

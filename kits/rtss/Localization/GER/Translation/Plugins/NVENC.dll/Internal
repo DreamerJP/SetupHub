@@ -1,0 +1,13 @@
+#src Target bitrate : %d Mbps
+#dst Zielbitrate: %d Mbit/s
+#end
+
+#src NVIDIA NVENC H.264 accelerated via CUDA on device %d (%s), %s mode
+#dst NVIDIA NVENC H.264-Beschleunigung über CUDA auf Gerät %d (%s), %s-Modus
+#end
+#src async
+#dst asynchron
+#end
+#src sync
+#dst synchron
+#end

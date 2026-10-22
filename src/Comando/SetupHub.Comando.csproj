@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <AssemblyName>setuphub</AssemblyName>
+    <RootNamespace>SetupHub.Comando</RootNamespace>
+    <AssemblyTitle>SetupHub (linha de comando)</AssemblyTitle>
+    <ApplicationIcon>..\Janela\Recursos\setuphub.ico</ApplicationIcon>
+    <TieredCompilation>true</TieredCompilation>
+    <TieredCompilationQuickJitForLoops>true</TieredCompilationQuickJitForLoops>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Nucleo\SetupHub.Nucleo.csproj" />
+  </ItemGroup>
+</Project>

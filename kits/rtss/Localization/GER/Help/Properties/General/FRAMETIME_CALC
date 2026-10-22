@@ -1,0 +1,19 @@
+Berechnungspunkt der Frametime
+Eine typische Spiel-Renderschleife besteht aus den folgenden Schritten:
+
+[A_1]CPU-Rendering[B_1]Frame-Darstellung[C_1]
+[A_2]CPU-Rendering[B_2]Frame-Darstellung[C_2]
+...
+[A_n]CPU-Rendering[B_n]Frame-Darstellung[C_n]
+
+Die A_n-Punkte definieren die Zeitpunkte, zu denen jeder neue Frame beginnt. Normalerweise wird zu diesem Zeitpunkt der Status der Eingabegeräte abgefragt und die CPU beginnt mit der Darstellung eines neuen Frames, der den Status der simulierten 3D-Welt in Bezug auf diesen Zeitstempel simuliert.
+Die B_n-Punkte bestimmen die Zeiten, zu denen die CPU mit dem Rendern eines neuen Frames fertig ist und ihre Anzeigefunktion über die 3D-API aufruft. Die 3D-API erfasst den Inhalt des 3D-Befehlspuffers und stellt ihn in die Frame-Anzeigewarteschlange, und die GPU beginnt ab diesem Zeitpunkt mit der asynchronen Verarbeitung.
+Die C_n-Punkte definieren die Zeiten, zu denen die 3D-API den Aufruf der Show-Frame-Funktion abschließt und die Steuerung an die Renderschleife zurückgibt. Die C_n-Punkte fallen effektiv mit den A_n+1-Punkten der nächsten Frames zusammen, d. h. gleichzeitig beginnt die Renderschleife mit der Vorbereitung des nächsten Frames.
+
+Framerate- und Frametime-Zähler im Spiel definieren die Frametime traditionell als die Differenz zwischen den A_n- und A_n-1-Zeitstempeln zweier aufeinanderfolgender Bilder. %PRODUCTNAME% verwendet diese Zeitstempel standardmäßig auch zur Berechnung der Frametime.
+Einige Benchmark-Anwendungen funktionieren jedoch nicht auf der Ebene des Abfangens von Spielanrufen und haben keinen Zugriff auf solche In-Game-Timings. Es kann nur auf DXGI-Frame-Anzeigestatistiken zurückgreifen, daher definiert es den Begriff "Frametime" etwas anders und berechnet ihn als Differenz zwischen B_n und B_n-1.
+Die auf diese Weise berechneten Frametimes stimmen nicht genau mit den von In-Game-Zählern und %PRODUCTNAME% berechneten Frametimes überein, da die Berechnung unterschiedlich ist und unterschiedliche Zeitstempel erfasst werden.
+Bei Bedarf können Sie mit dieser Option auf ein solches alternatives Frametime-Berechnungsmodell umsteigen.
+
+Hinweis:
+- Tooltips können in der Registerkarte <Benutzeroberfläche> in den erweiterten Einstellungen deaktiviert werden.

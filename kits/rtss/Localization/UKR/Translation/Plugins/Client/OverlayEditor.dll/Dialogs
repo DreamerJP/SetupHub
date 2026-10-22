@@ -1,0 +1,430 @@
+#src Add embedded object
+#dst Додати вбудований об'єкт
+#end
+#src Data source
+#dst Джерело даних
+#end
+#src Text table
+#dst Текстова таблиця
+#end
+#src Add label
+#dst Додати назву
+#end
+#src Add current value macro
+#dst Додати макрос поточного значення
+#end
+#src Add embedded graph
+#dst Додати вбудований графік
+#end
+#src Add embedded image
+#dst Додати зображення
+#end
+#src use current template
+#dst поточний шаблон
+#end
+#src use custom template
+#dst довільний шаблон
+#end
+#src use static image
+#dst просте зображення
+#end
+
+#src Embedded animated image settings
+#dst Налаштування вбудованого анімованого зображення
+#end
+#src Image template
+#dst Шаблон зображення
+#end
+#src Image template properties
+#dst Властивості шаблону зображення
+#end
+#src Image width, in pixels or symbols if negative
+#dst Ширина, в пікселях або символах якщо менше 0
+#end
+#src Image height, in pixels or symbols if negative
+#dst Висота, в пікселях або символах якщо менше 0
+#end
+#src Sprite animation minimum, in data source units
+#dst Мінімум анімації спрайту, в одиницях джерела
+#end
+#src Sprite animation maximum, in data source units
+#dst Максимум анімації спрайту, в одиницях джерела
+#end
+#src Sprite animation bias
+#dst Зміщення анімації спрайту
+#end
+#src Minimum rotation angle
+#dst Мінімальний кут повороту
+#end
+#src Maximum rotation angle
+#dst Максимальний кут повороту
+#end
+#src Sprite X, in pixels
+#dst Спрайт X, у пікселях
+#end
+#src Sprite Y, in pixels
+#dst Спрайт Y, у пікселях
+#end
+#src Sprite width, in pixels
+#dst Ширина спрайту, у пікселях
+#end
+#src Sprite height, in pixels
+#dst Висота спрайту, у пікселях
+#end
+#src Rotation angle
+#dst Кут повороту
+#end
+#src Sprites number
+#dst Кількість спрайтів
+#end
+#src Sprites number per line
+#dst Кількість спрайтів у рядку
+#end
+#src Resize image to layer extent
+#dst Змінити розмір зображення до розміру шару
+#end
+
+#src Embedded graph settings
+#dst Налаштування вбудованого графіка
+#end
+#src Graph template
+#dst Шаблон графіка
+#end
+#src Graph template properties
+#dst Властивості шаблону графіка
+#end
+#src Graph width, in pixels or symbols if negative
+#dst Ширина, в пікселях або символах якщо < 0
+#end
+#src Graph height, in pixels or symbols if negative
+#dst Висота, в пікселях або символах якщо < 0
+#end
+#src Graph margin, in pixels
+#dst Відступ графіка, у пікселях
+#end
+#src Graph minimum, in data source units
+#dst Мінімум графіка, в одиницях джерела
+#end
+#src Graph maximum, in data source units
+#dst Максимум графіка, в одиницях джерела
+#end
+#src Range minimum, in data source units
+#dst Мінімальний діапазон, в одиницях джерела
+#end
+#src Range maximum, in data source units
+#dst Максимальний діапазон, в одиницях джерела
+#end
+#src Autoscale graph
+#dst Автомасштабувати графік
+#end
+#src Graph style
+#dst Стиль графіка
+#end
+#src graph
+#dst графік
+#end
+#src diagram
+#dst діаграма
+#end
+#src barchart
+#dst стовпчик
+#end
+#src bar range
+#dst діапазон
+#end
+#src Graph background
+#dst Фонове заповнення графіка
+#end
+#src enabled
+#dst увімкнено
+#end
+#src disabled
+#dst відключено
+#end
+#src Graph orientation
+#dst Орієнтація графіка
+#end
+#src horizontal
+#dst горизонтальна
+#end
+#src vertical
+#dst вертикальна
+#end
+#src Graph direction
+#dst Напрямок графіка
+#end
+#src normal
+#dst пряме
+#end
+#src mirrored
+#dst дзеркальне
+#end
+#src Resize graph to layer extent
+#dst Змінити розмір графіка до розміру шару
+#end
+
+#src Embedded image settings
+#dst Налаштування вбудованого зображення
+#end
+
+#src Layer properties
+#dst Властивості шару
+#end
+#src Name
+#dst Ім'я
+#end
+#src Visibility source
+#dst Джерело видимості
+#end
+#src Hypertext
+#dst Гіпертекст
+#end
+#src Use custom text color
+#dst Користувацький колір тексту
+#end
+#src Use custom background color
+#dst Користувацький колір фону
+#end
+#src Border, in pixels, inner or outer if negative
+#dst Бордюр, у пікселях, зовнішній, якщо менше 0
+#end
+#src Text size, in percents
+#dst Розмір тексту, у відсотках
+#end
+#src Text alignment, in symbols, left or right if negative
+#dst Вирівнювання, у символах, праве якщо менше 0
+#end
+#src Use fixed size alignment
+#dst Вирівнювання з фіксацією розміру
+#end
+#src Resize layer to content
+#dst Змінити розмір шару до розмірів вмісту
+#end
+#src Manual extent origin
+#dst Прив'язка ручного розміру
+#end
+#src Sticky layer position
+#dst Приклеїти шар
+#end
+#src Margins
+#dst Відступи
+#end
+
+#src Apply
+#dst Застосувати
+#end
+
+#src Add new data sources
+#dst Додати нові джерела даних
+#end
+#src Data provider
+#dst Постачальник даних
+#end
+#src Export
+#dst Експорт
+#end
+
+#src Data source settings
+#dst Налаштування джерела даних
+#end
+#src AIDA64 sensor properties
+#dst Властивості сенсора AIDA64
+#end
+#src ID
+#dst Ідентифікатор
+#end
+#src Overlay data source properties
+#dst Властивості джерела даних оверлею
+#end
+#src Name
+#dst Ім'я
+#end
+#src Units
+#dst Одиниці
+#end
+#src Format
+#dst Формат
+#end
+#src Correction formula
+#dst Формула корекції
+#end
+
+#src HWiNFO64 sensor properties
+#dst Властивості сенсора HWiNFO64
+#end
+#src Type
+#dst Тип
+#end
+#src Instance
+#dst Примірник
+#end
+
+#src MSI Afterburner sensor properties
+#dst Властивості сенсора MSI Afterburner
+#end
+
+#src HAL sensor properties
+#dst Властивості сенсора рівня абстракції обладнання
+#end
+
+#src Performance counter properties
+#dst Властивості лічильника продуктивності
+#end
+#src Object name
+#dst Ім'я об'єкта
+#end
+#src Instance name or index
+#dst Ім'я або індекс екземпляру
+#end
+#src Counter name
+#dst Ім'я лічильника
+#end
+#src Enable dynamic mode
+#dst Увімкнути динамічний режим
+#end
+
+#src Instance name
+#dst Ім'я екземпляра
+#end
+#src Use instance index instead of name
+#dst Використовувати індекс екземпляра замість імені
+#end
+
+#src Overlay data sources
+#dst Джерела даних оверлею
+#end
+#src Setup
+#dst Налаштувати
+#end
+#src Add
+#dst Додати
+#end
+#src Remove
+#dst Видалити
+#end
+
+#src Ovelay editor
+#dst Редактор оверлею
+#end
+
+#src Overlay properties
+#dst Властивості оверлею
+#end
+#src Environment variables
+#dst Змінні оточення
+#end
+#src Refresh period, in milliseconds
+#dst Період оновлення, у мілісекундах
+#end
+#src Master settings
+#dst Майстер-налаштування
+#end
+#src Embedded image
+#dst Вбудоване зображення
+#end
+#src Ping address
+#dst Адреса пінгу
+#end
+
+#src Ovelay editor
+#dst Редактор оверлею
+#end
+
+#src Select sprite
+#dst Вибір спрайту
+#end
+
+#src Text tables
+#dst Текстові таблиці
+#end
+
+#src Text table properties
+#dst Властивості текстової таблиці
+#end
+#src Value
+#dst Значення
+#end
+#src Units
+#dst Одиниці
+#end
+#src Cell size, in percents
+#dst Розмір комірки, у відсотках
+#end
+#src Cell alignment, in symbols
+#dst Вирівнювання комірки, у символах
+#end
+#src Table edit mode
+#dst Режим редагування таблиці
+#end
+#src lines
+#dst рядки
+#end
+#src cells
+#dst комірки
+#end
+
+#src Text table cell properties
+#dst Властивості комірки текстової таблиці
+#end
+#src Line name
+#dst Ім'я рядка
+#end
+#src Use custom line text color
+#dst Користувацький колір тексту рядка
+#end
+#src Use custom cell text color
+#dst Користувацький колір тексту комірки
+#end
+#src Cell data source
+#dst Джерело даних комірки
+#end
+#src Cell text
+#dst Текст комірки
+#end
+
+#src Add new text table cells
+#dst Додавання нових комірок текстової таблиці
+#end
+#src Add cells to new line
+#dst Додати комірки до нового рядка
+#end
+#src Add separator
+#dst Додати роздільник
+#end
+
+#src Overlay layers
+#dst Шари оверлею
+#end
+
+#src Dynamic color
+#dst Динамічний колір
+#end
+#src Min
+#dst Мін
+#end
+#src Max
+#dst Макс
+#end
+#src Preview
+#dst Перегляд
+#end
+#src Blend colors
+#dst Змішати кольори
+#end
+#src Embed formula
+#dst Вбудувати формулу
+#end
+
+#src Internal HAL properties
+#dst Властивості внутрішнього шару абстракції обладнання
+#end
+#src Enable low-level IO driver
+#dst Увімкнути низькорівневий драйвер вводу/виводу
+#end
+#src Enable SMART monitoring
+#dst Увімкнути моніторинг SMART
+#end
+
+#src LibreHardwareMonitor sensor properties
+#dst Властивості сенсора LibreHardwareMonitor
+#end

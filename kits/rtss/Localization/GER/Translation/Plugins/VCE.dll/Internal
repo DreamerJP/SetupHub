@@ -1,0 +1,7 @@
+#src Target bitrate : %d Mbps
+#dst Zielbitrate: %d Mbit/s
+#end
+
+#src AMD VCE H.264 hardware accelerated via %s on device %d (%s)
+#dst AMD VCE H.264 Hardwarebeschleunigung über %s auf Gerät %d (%s)
+#

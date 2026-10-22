@@ -1,0 +1,5 @@
+Framerate als Ganzzahlwert anzeigen
+Ermöglicht die Anzeige der Framerate entweder als Ganzzahlwert oder als Gleitkommawert mit einer Genauigkeit von 0,1 FPS.
+
+Hinweis:
+- Tooltips können in der Registerkarte <Benutzeroberfläche> in den erweiterten Einstellungen deaktiviert werden.

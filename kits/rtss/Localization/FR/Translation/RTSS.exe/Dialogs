@@ -1,0 +1,73 @@
+#src General
+#dst General
+#end
+#src General properties
+#dst Propriétés générales
+#end
+#src Start minimized
+#dst Démarrer minimisé
+#end
+#src Update checking properties
+#dst Propriétés de recherche de mise à jour
+#end
+#src Check for available product updates
+#dst Check pour la disponibilité de mise à jour
+#end
+#src Check for available product beta versions
+#dst Check pour la disponibilité de mise à jour béta
+#end
+#src never
+#dst jamais
+#end
+#src on startup
+#dst au démarrage
+#end
+#src on startup daily
+#dst au démarrage journalièrement
+#end
+#src on startup weekly
+#dst au démarrage une fois par semaine
+#end
+#src on startup monthly
+#dst au démarrage une fois par mois
+#end
+#src Check now
+#dst check maintenant
+#end
+#src FCAT properties
+#dst Propiétés FCAT
+#end
+#src Enable frame color indicator
+#dst Active l'indicateur de trame coloré
+#end
+#src color sequence
+#dst séquence de couleur
+#end
+#src 2 bars
+#dst 2 barres
+#end
+#src 3 bars
+#dst 3 barres
+#end
+#src 4 bars
+#dst 4 barres
+#end
+
+#src User Interface
+#dst Interface utilisateur
+#end
+#src User interface help system properties
+#dst Propiétés du sytème d'aide aux utilisateurs
+#end
+#src English
+#dst Anglais
+#end
+#src Language
+#dst Langue
+#end
+#src Show user interface tooltips
+#dst Afficher les ballons d'aides aux utilisateur
+#end
+#src User interface skinning properties
+#dst Propriétés de décoration de l'interface utilisateur
+#end

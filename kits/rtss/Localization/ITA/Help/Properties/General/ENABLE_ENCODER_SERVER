@@ -1,0 +1,5 @@
+Abilita il servizio server dedicatao dell'encoder
+Abilita il servizio helper, che fornisce funzionalità di codifica video dedicata al motore di videocattura di %PRODUCTNAME%. Si può tranquillamente disabilitare il servizio se non si utilizzano caratteristiche di videocattura o se non si attiva la modalità di codifica video dedicata opzionale.
+
+Suggerimento:
+- È possibile disattivare i suggerimenti di interfaccia utente tramite la scheda <Interfaccia utente> in proprietà avanzate.

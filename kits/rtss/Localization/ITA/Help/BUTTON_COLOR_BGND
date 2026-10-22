@@ -1,0 +1,7 @@
+Ombra del colore
+Visualizza l'ombra del colore di base per l'On-Screen Display e consente di modificarla. Si prega di prendere nota che il rendering dell'ombra raddoppia il calo di prestazioni causato dal rendering dell'On-Screen Display, qinudi abilitarlo solo se necessario
+
+Consigli:
+- I sistemi anticheat di alcuni giochi possono riconoscere il rilevamento dell'applicazione On-Screen Display come possibile applicazione per barare al gioco e quindi bloccare la connessione al server multiplayer.
+Per risolvere i problemi, tentare di aggiungere un profilo per il gioco, e disabilitare il supporto On-Screen Display, o se non funziona, provare a diminuire il rilevamento di livello dell' applicazione.
+- È possibile disattivare i suggerimenti di interfaccia utente tramite la scheda <Interfaccia utente> in proprietà avanzate.

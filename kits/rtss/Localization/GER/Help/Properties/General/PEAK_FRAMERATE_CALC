@@ -1,0 +1,5 @@
+Spitzenwertberechnung der Framerate
+Die minimalen und maximalen Spitzenwerte der Framerate im Benchmark-Modus können sowohl aus Mittelwerten als auch aus Momentanwerten der Framerate berechnet werden. Mit dieser Option können Sie den gewünschten Berechnungsmodus auswählen.
+
+Hinweis:
+- Tooltips können in der Registerkarte <Benutzeroberfläche> in den erweiterten Einstellungen deaktiviert werden.

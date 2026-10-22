@@ -1,0 +1,18 @@
+#src disabled
+#dst відключено
+#end
+#src %s\n\n%dx%d : Failed to encode frame %d!\n\nError code %s!
+#dst %s\n\n\n%dx%d : Неможливо закодувати кадр %d!\n\п\пКод помилки %s!
+#end
+#src %s\n\n%dx%d : %d frames have been encoded in %d ms, %.1f frames per second
+#dst %s\n\n\n%dx%d : %d кадр(ів) закодовано за %d мс, %.1f кадр(ів) на секунду
+#end
+#src %s\n\n%dx%d : Failed to start encoding!\n\nError code : %s!
+#dst %s\n\n\n%dx%d : Неможливо почати кодування! \n\п\пКод помилки: %s!
+#end
+#src Failed to capture frame!
+#dst Неможливо захопити кадр!
+#end
+#src Failed to get encoder caps!
+#dst Неможливо запросити можливості енкодера!
+#end

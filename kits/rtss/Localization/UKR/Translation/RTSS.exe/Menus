@@ -1,0 +1,16 @@
+#src Show
+#dst Показати
+#end
+#src Close
+#dst Закрити
+#end
+
+#src Capture screenshot
+#dst Захопити скріншот
+#end
+#src Load
+#dst Завантажити
+#end
+#src Clear
+#dst Очистити
+#end

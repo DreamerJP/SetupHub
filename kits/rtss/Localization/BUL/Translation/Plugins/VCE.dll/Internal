@@ -1,0 +1,27 @@
+#src Target bitrate : %d Mbps
+#dst Цел на битрейт : %d Mбит/c
+#end
+
+#src AMD VCE H.264 hardware accelerated via %s on device %d (%s)
+#dst AMD VCE H.264 хардуерно ускорено чрез %s на устройство %d (%s)
+#
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

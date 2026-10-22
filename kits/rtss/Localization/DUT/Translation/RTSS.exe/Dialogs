@@ -1,0 +1,73 @@
+#src General
+#dst Algemene instellingen
+#end
+#src General properties
+#dst Algemene eigenschappen
+#end
+#src Start minimized
+#dst Start geminimaliseerd
+#end
+#src Update checking properties
+#dst Update eigenschappen
+#end
+#src Check for available product updates
+#dst Controleer op beschikbare updates
+#end
+#src Check for available product beta versions
+#dst Controleer op beschikbare beta updates
+#end
+#src never
+#dst nooit
+#end
+#src on startup
+#dst bij opstart
+#end
+#src on startup daily
+#dst dagelijks na opstart
+#end
+#src on startup weekly
+#dst weekelijks na opstart
+#end
+#src on startup monthly
+#dst maandelijks na opstart
+#end
+#src Check now
+#dst Controleer nu
+#end
+#src FCAT properties
+#dst
+#end
+#src Enable frame color indicator
+#dst
+#end
+#src color sequence
+#dst
+#end
+#src 2 bars
+#dst
+#end
+#src 3 bars
+#dst
+#end
+#src 4 bars
+#dst
+#end
+
+#src User Interface
+#dst Gebruikers interface
+#end
+#src User interface help system properties
+#dst Eigenschappen van het gebruikers interface help systeem
+#end
+#src English
+#dst Engels
+#end
+#src Language
+#dst Taal
+#end
+#src Show user interface tooltips
+#dst Toon gebruikers interface werktips
+#end
+#src User interface skinning properties
+#dst Eigenschappen van de gebruikers interface thema's
+#end

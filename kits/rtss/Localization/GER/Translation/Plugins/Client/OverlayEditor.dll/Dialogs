@@ -1,0 +1,433 @@
+#src Add embedded object
+#dst Eingebettetes Objekt hinzufügen
+#end
+#src Data source
+#dst Datenquelle
+#end
+#src Text table
+#dst Texttabelle
+#end
+#src Add label
+#dst Label hinzufügen
+#end
+#src Add current value macro
+#dst Makro für aktuellen Wert hinzufügen
+#end
+#src Add embedded graph
+#dst Eingebettetes Diagramm hinzufügen
+#end
+#src Add embedded image
+#dst Eingebettetes Bild hinzufügen
+#end
+#src use current template
+#dst Aktuelle Vorlage verwenden
+#end
+#src use custom template
+#dst Benutzerdefinierte Vorlage verwenden
+#end
+#src use static image
+#dst Statisches Bild verwenden
+#end
+
+#src Embedded animated image settings
+#dst Einstellungen für eingebettete animierte Bilder
+#end
+#src Image template
+#dst Bildvorlage
+#end
+#src Image template properties
+#dst Einstellungen der Bildvorlage
+#end
+#src Image width, in pixels or symbols if negative
+#dst Bildbreite, in Pixel oder Symbolen, falls negativ
+#end 
+#src Image height, in pixels or symbols if negative
+#dst Bildhöhe, in Pixel oder Symbolen, falls negativ
+#end
+#src Sprite animation minimum, in data source units
+#dst Sprite-Animationsminimum, in Datenquelleneinheiten
+#end
+#src Sprite animation maximum, in data source units
+#dst Sprite-Animationsmaximum in Datenquelleneinheiten
+#end
+#src Sprite animation bias
+#dst Ausrichtung der Sprite-Animation
+#end
+#src Minimum rotation angle
+#dst Minimaler Drehwinkel
+#end
+#src Maximum rotation angle
+#dst Maximaler Drehwinkel
+#end
+#src Sprite X, in pixels
+#dst Sprite X, in Pixel
+#end
+#src Sprite Y, in pixels
+#dst Sprite Y, in Pixel
+#end
+#src Sprite width, in pixels
+#dst Sprite-Breite, in Pixel
+#end
+#src Sprite height, in pixels
+#dst Sprite-Höhe, in Pixel
+#end
+#src Rotation angle
+#dst Drehwinkel
+#end
+#src Sprites number
+#dst Anzahl der Sprites
+#end
+#src Sprites number per line
+#dst Anzahl der Sprites pro Zeile
+#end
+#src Resize image to layer extent
+#dst Bildgröße auf Ebenengröße ändern
+#end
+
+#src Embedded graph settings
+#dst Eingebettete Diagrammeinstellungen
+#end
+#src Graph template
+#dst Diagrammvorlage
+#end
+#src Graph template properties
+#dst Einstellungen der Diagrammvorlage
+#end
+#src Graph width, in pixels or symbols if negative
+#dst Diagrammbreite, in Pixel oder Symbolen, falls negativ
+#end 
+#src Graph height, in pixels or symbols if negative
+#dst Diagrammhöhe, in Pixel oder Symbolen, falls negativ
+#end
+#src Graph margin, in pixels
+#dst Diagrammrand, in Pixel
+#end
+#src Graph minimum, in data source units
+#dst Diagrammminimum, in Datenquelleneinheiten
+#end
+#src Graph maximum, in data source units
+#dst Diagrammmaximum in Datenquelleneinheiten
+#end
+#src Range minimum, in data source units
+#dst Bereichsminimum, in Datenquelleneinheiten
+#end
+#src Range maximum, in data source units
+#dst Bereichsmaximum, in Datenquelleneinheiten
+#end
+#src Autoscale graph
+#dst Diagramm automatisch skalieren
+#end
+#src Graph style
+#dst Diagrammstil
+#end
+#src graph
+#dst Graph
+#end
+#src diagram
+#dst Diagramm
+#end
+#src barchart
+#dst Balkendiagramm
+#end
+#src bar range
+#dst Diapason
+#end
+#src Graph background
+#dst Diagrammhintergrund
+#end
+#src enabled
+#dst aktiviert
+#end
+#src disabled
+#dst deaktiviert
+#end
+#src Graph orientation
+#dst Diagrammausrichtung
+#end
+#src horizontal
+#dst horizontal
+#end
+#src vertical
+#dst vertikal
+#end
+#src Graph direction
+#dst Diagrammrichtung
+#end
+#src normal
+#dst normal
+#end
+#src mirrored
+#dst gespiegelt
+#end
+#src Resize graph to layer extent
+#dst Größe des Diagramms auf Ebenengröße ändern
+#end
+
+#src Embedded image settings
+#dst Einstellungen für eingebettete Bilder
+#end
+
+#src Layer properties
+#dst Layer-Eigenschaften
+#end
+#src Name
+#dst Name
+#end 
+#src Visibility source
+#dst Sichtbarkeitsquelle
+#end
+#src Hypertext
+#dst Hypertext
+#end 
+#src Use custom text color
+#dst Benutzerdefinierte Textfarbe verwenden
+#end
+#src Use custom background color
+#dst Benutzerdefinierte Hintergrundfarbe verwenden
+#end
+#src Border, in pixels, inner or outer if negative
+#dst Rand, in Pixel, innen oder außen, wenn negativ
+#end
+#src Text size, in percents
+#dst Textgröße, in Prozent
+#end
+#src Text alignment, in symbols, left or right if negative
+#dst Textausrichtung, in Symbolen, links oder rechts, wenn negativ
+#end
+#src Use fixed size alignment
+#dst Ausrichtung mit fester Größe verwenden
+#end
+#src Resize layer to content
+#dst Größe der Ebene an den Inhalt anpassen
+#end
+#src Manual extent origin
+#dst Manuelle Größenbindung
+#end
+#src Sticky layer position
+#dst Position der festen Ebene
+#end
+#src Margins
+#dst Ränder
+#end
+
+#src Apply
+#dst Übernehmen
+#end
+
+#src Add new data sources
+#dst Neue Datenquellen hinzufügen
+#end
+#src Data provider
+#dst Datenanbieter
+#end
+#src Export
+#dst Export
+#end
+
+#src Data source settings
+#dst Datenquelleneinstellungen
+#end
+#src AIDA64 sensor properties
+#dst AIDA64-Sensoreigenschaften
+#end
+#src ID
+#dst ID
+#end
+#src Overlay data source properties
+#dst Overlay-Datenquelleneigenschaften
+#end
+#src Name
+#dst Name
+#end
+#src Units
+#dst Einheiten
+#end
+#src Format
+#dst Format
+#end
+#src Correction formula
+#dst Korrekturformel
+#end
+
+#src HWiNFO64 sensor properties
+#dst HWiNFO64-Sensoreigenschaften
+#end
+#src Type
+#dst Typ
+#end
+#src Instance
+#dst Instanz
+#end
+
+#src MSI Afterburner sensor properties
+#dst MSI Afterburner-Sensoreigenschaften
+#end
+
+#src HAL sensor properties
+#dst Sensoreigenschaften der Hardware-Abstraktionsebene
+#end
+
+#src Performance counter properties
+#dst Einstellungen des Leistungsindikators
+#end
+#src Object name
+#dst Objektname
+#end
+#src Instance name or index
+#dst Instanzname oder Index
+#end
+#src Counter name
+#dst Zählername
+#end
+#src Enable dynamic mode
+#dst Dynamischen Modus aktivieren
+#end
+
+#src Instance name
+#dst Instanzname
+#end
+#src Use instance index instead of name
+#dst Instanzindex anstelle des Namens verwenden
+#end
+
+#src Overlay data sources
+#dst Overlay-Datenquellen
+#end
+#src Setup
+#dst Einstellungen
+#end
+#src Add
+#dst Hinzufügen
+#end
+#src Remove
+#dst Entfernen
+#end
+
+#src Ovelay editor
+#dst Overlay-Editor
+#end
+
+#src Overlay properties
+#dst Overlay-Einstellungen
+#end
+#src Environment variables
+#dst Umgebungsvariablen
+#end
+#src Refresh period, in milliseconds
+#dst Aktualisierungsintervall, in Millisekunden
+#end
+#src Lock user settings
+#dst Benutzereinstellungen sperren
+#end
+#src Master settings
+#dst Master-Einstellungen
+#end
+#src Embedded image
+#dst Eingebettetes Bild
+#end
+#src Ping address
+#dst Ping-Adresse
+#end
+
+#src Ovelay editor
+#dst Overlay-Editor
+#end
+
+#src Select sprite
+#dst Sprite auswählen
+#end
+
+#src Text tables
+#dst Texttabellen
+#end
+
+#src Text table properties
+#dst Einstellungen der Texttabelle
+#end
+#src Value
+#dst Wert
+#end
+#src Units
+#dst Einheiten
+#end
+#src Cell size, in percents
+#dst Zellengröße, in Prozent
+#end
+#src Cell alignment, in symbols
+#dst Zellenausrichtung, in Symbolen
+#end
+#src Table edit mode
+#dst Tabellenbearbeitungsmodus
+#end
+#src lines
+#dst Zeilen
+#end
+#src cells
+#dst Zellen
+#end
+
+#src Text table cell properties
+#dst Einstellungen von Texttabellenzellen
+#end
+#src Line name
+#dst Zeilenname
+#end
+#src Use custom line text color
+#dst Benutzerdefinierte Zeilentextfarbe verwenden
+#end
+#src Use custom cell text color
+#dst Benutzerdefinierte Zellentextfarbe verwenden
+#end
+#src Cell data source
+#dst Zellendatenquelle
+#end
+#src Cell text
+#dst Zellentext
+#end
+
+#src Add new text table cells
+#dst Neue Texttabellenzellen hinzufügen
+#end
+#src Add cells to new line
+#dst Zellen zur neuen Zeile hinzufügen
+#end
+#src Add separator
+#dst Trennzeichen hinzufügen
+#end
+
+#src Overlay layers
+#dst Overlay-Ebenen
+#end
+
+#src Dynamic color
+#dst Dynamische Farbe
+#end
+#src Min
+#dst Min.
+#end
+#src Max
+#dst Max.
+#end
+#src Preview
+#dst Vorschau
+#end
+#src Blend colors
+#dst Farben mischen
+#end
+#src Embed formula
+#dst Einbettungsformel
+#end
+
+#src Internal HAL properties
+#dst Einstellungen der internen Hardware-Abstraktionsebene
+#end
+#src Enable low-level IO driver
+#dst Low-Level-Treiber aktivieren
+#end
+#src Enable SMART monitoring
+#dst SMART-Überwachung aktivieren
+#end
+
+#src LibreHardwareMonitor sensor properties
+#dst LibreHardwareMonitor-Sensoreigenschaften
+#end

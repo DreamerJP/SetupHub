@@ -1,0 +1,6 @@
+Mover o mostrador de informações na tela
+Move a posição do mostrador de informações na tela para direita. Você também pode clicar no campo de texto e inserir manualmente a cota X desejada. Use a janela de visualização para ajustar a posição.
+
+Sugestões:
+- Sistemas "Anticheat" de alguns jogos podem considerar o código para a detecção de aplicativos e a renderização de informações na tela como possível fraude em servidores multiplayer. Para solucionar essas questões, tente adicionar um perfil para o jogo e desative o suporte ao mostrador de informações na tela, ou tente diminuir o nível de detecção do programa. 
+- Você pode desativar as sugestões na aba <Inteface> das configurações.

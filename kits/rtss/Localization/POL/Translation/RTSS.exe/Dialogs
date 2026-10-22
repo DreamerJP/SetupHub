@@ -1,0 +1,73 @@
+#src General
+#dst Ogólne
+#end
+#src General properties
+#dst W³aœciwoœci ogólne
+#end
+#src Start minimized
+#dst Uruchom zminimalizowany
+#end
+#src Update checking properties
+#dst W_a_ciwo_ci sprawdzania aktualizacji
+#end
+#src Check for available product updates
+#dst Sprawdzaj dostªpno_¦ aktualizacji
+#end
+#src Check for available product beta versions
+#dst Uwzglªdnij wersje beta programu
+#end
+#src never
+#dst nigdy
+#end
+#src on startup
+#dst przy uruchomieniu
+#end
+#src on startup daily
+#dst przy uruchomieniu codziennie
+#end
+#src on startup weekly
+#dst przy uruchomieniu co tydzieá
+#end
+#src on startup monthly
+#dst przy uruchomieniu co miesiüc
+#end
+#src Check now
+#dst Sprawd_ teraz
+#end
+#src FCAT properties
+#dst
+#end
+#src Enable frame color indicator
+#dst
+#end
+#src color sequence
+#dst
+#end
+#src 2 bars
+#dst
+#end
+#src 3 bars
+#dst
+#end
+#src 4 bars
+#dst
+#end
+
+#src User Interface
+#dst Interfejs u¿ytkownika
+#end
+#src Language
+#dst Jêzyk
+#end
+#src English
+#dst Angielski
+#end
+#src User interface help system properties
+#dst W³aœciwoœci systemu pomocy interfejsu u¿ytkownika
+#end
+#src Show user interface tooltips
+#dst Poka¿ podpowiedzi interfejsu u¿ytkownika
+#end
+#src User interface skinning properties
+#dst W³aœciwoœci wygl¹du interfejsu u¿ytkownika
+#end

@@ -1,0 +1,6 @@
+Déplace vers le haut l'affichage en sur-impression
+Déplace vers le haut l'affichage en sur-impression. Une alternative est de cliquer sur le champ adjacent pour entrer les coordonnées Y manuellement. Utilisez le fenêtre de preview pour contrôler visuellement l'apparence lors du changement de position.
+
+Astuces:
+- Les protections anti-triche de certains jeux pourrait détecter le rajout de code pour la détection du jeu ou l'indication en sur-impression comme de la triche et de ce fait bloquer la connection au serveur multi joueur. Pour éviter ce problème, essayez de rajouter un profil pour ce jeu et désactivez l'affichage en sur-impression, et si ça n'aide toujours pas, essayez de réduire le niveau de détection de l'application.
+- Vous pouvez désactiver les bulles d'interface dans la tabulation <interface d'utilisateur> dans les propriétés avancées.

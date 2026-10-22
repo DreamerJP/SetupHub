@@ -1,0 +1,408 @@
+#src N/A
+#dst Не е наличен
+#end
+
+#src Sensor
+#dst Сензор
+#end
+#src Value
+#dst Стойност
+#end
+
+#src Sensors exported to %s!
+#dst Сензори, експортирани в %s!
+#end
+
+#src Source
+#dst Източник
+#end
+
+#src Temperature
+#dst Температура
+#end
+#src Voltage
+#dst Напрежение
+#end
+#src Fan speed
+#dst Скоростна вентилатора
+#end
+#src Current
+#dst Ток
+#end
+#src Power
+#dst Мощност
+#end
+#src Clock
+#dst Честота
+#end
+#src Usage
+#dst Използване
+#end
+#src Other
+#dst Друго
+#end
+
+#src GPU temperature
+#dst Температура GPU
+#end
+#src PCB temperature
+#dst Температура на дънната платка
+#end
+#src Memory temperature
+#dst Температура на паметта
+#end
+#src VRM temperature
+#dst Температура на VRM
+#end
+#src Fan speed
+#dst Скорост на вентилатора
+#end
+#src Fan tachometer
+#dst Обороти на вентилатора
+#end
+#src Core clock
+#dst Честота на ядрото
+#end
+#src Shader clock
+#dst Честота на шейдъра
+#end
+#src Memory clock
+#dst Честота на паметта
+#end
+#src GPU usage
+#dst Използване на GPU
+#end
+#src Memory usage
+#dst Използване на паметта
+#end
+#src FB usage
+#dst Използване на контролера на видеопаметта
+#end
+#src VID usage
+#dst Използване на VID
+#end
+#src BUS usage
+#dst Използване шината
+#end
+#src GPU voltage
+#dst Напрежение на GPU
+#end
+#src Aux voltage
+#dst Помощно напрежение
+#end
+#src Memory voltage
+#dst Напрежение на паметта
+#end
+#src Framerate
+#dst Кадри
+#end
+#src Frametime
+#dst Време на кадрите
+#end
+#src Framerate Min
+#dst Честота на кадрите Минимално
+#end
+#src Framerate Avg
+#dst Честота на кадрите Средно
+#end
+#src Framerate Max
+#dst Честота на кадрите Максимално
+#end
+#src Framerate 1% Low
+#dst Честота на кадрите ниски 1%
+#end
+#src Framerate 0.1% Low
+#dst Честота на кадрите ниски 0.1%
+#end
+#src Power
+#dst Мощност
+#end
+
+#src Temp limit
+#dst Ограничение на температурата
+#end
+#src Power limit
+#dst Ограничение на мощността
+#end
+#src Voltage limit
+#dst Ограничение на напрежението
+#end
+#src No load limit
+#dst Без ограничение на натоварването
+#end
+#src CPU usage
+#dst Използване на процесора
+#end
+#src RAM usage
+#dst Използване на РАМ паметта
+#end
+#src Commit charge
+#dst Виртуална памет
+#end
+#src CPU temperature
+#dst Температура на процесора
+#end
+#src SLI sync limit
+#dst Ограничение за синхронизиране на SLI
+#end
+#src CPU clock
+#dst Честота на процесора
+#end
+#src Aux2 voltage
+#dst Помощно напрежение 2
+#end
+#src GPU temperature 2
+#dst Температура на GPU 2
+#end
+#src PCB temperature 2
+#dst Температура на платката 2
+#end
+#src Memory temperature 2
+#dst Температура на видеопаметта 2
+#end
+#src VRM temperature 2
+#dst Температура на VRM 2
+#end
+#src GPU temperature 3
+#dst Температура на GPU 3
+#end
+#src PCB temperature 3
+#dst Температура на платката 3
+#end
+#src Memory temperature 3
+#dst Температура на видеопаметта 3
+#end
+#src VRM temperature 3
+#dst Температура на VRM 3
+#end
+#src GPU temperature 4
+#dst Температура на GPU 4
+#end
+#src PCB temperature 4
+#dst Температура на платката 4
+#end
+#src Memory temperature 4
+#dst Температура на видеопаметта 4
+#end
+#src VRM temperature 4
+#dst Температура на VRM 4
+#end
+#src GPU temperature 5
+#dst Температура на GPU 5
+#end
+#src PCB temperature 5
+#dst Температура на платката 5
+#end
+#src Memory temperature 5
+#dst Температура на видеопаметта 5
+#end
+#src VRM temperature 5
+#dst Температура на VRM 5
+#end
+#src <GPU plugin>
+#dst <GPU плъгин>
+#end
+#src <CPU plugin>
+#dst <плъгин на централния процесор>
+#end
+#src <motherboard plugin>
+#dst <плагин на дънната платка>
+#end
+#src <RAM plugin>
+#dst <плъгин на Рам паметта>
+#end
+#src <HDD plugin>
+#dst <плъгин на диска>
+#end
+#src <NET plugin>
+#dst <плъгин на мрежата>
+#end
+#src <PSU plugin>
+#dst <плъгин на захранването>
+#end
+#src <UPS plugin>
+#dst <плъгин на UPS>
+#end
+#src <miscellaneous plugin>
+#dst <друг плъгин>
+#end
+#src CPU power
+#dst Мощност на процесора
+#end
+
+#src Failed to initialize Direct3D!
+#dst Неуспешно инициализиране на Direct3D!
+#end
+
+#src nameless
+#dst безименен
+#end
+#src Overlay editor
+#dst Редактор на оверлея
+#end
+#src Overlay editor - %s
+#dst Редактор на оверлея - %s
+#end
+#src Undo / Redo : %d / %d
+#dst Отмяна / Възстановяване : %d / %d
+#end
+#src Undo : %d
+#dst Отмяна : %d
+#end
+#src Undo / Redo
+#dst Отмяна / Възстановяване
+#end
+#src Layer %d of %d\tPos (%d, %d)\tExt (%d, %d)
+#dst Слой %d из %d\tПоз (%d, %d)\tРазм (%d, %d)
+#end
+#src Layer info
+#dst Информация за слоя
+#end
+#src \tHypertext %d / %d\tBuffer %d / %d
+#dst \tХипертекст %d / %d\tБуфер %d / %d
+#end
+#src Do you want to save changes in %s overlay layout?
+#dst Искате ли да запазите промените в оформлението на оверлея %s?
+#end
+#src Overlay layout files (*.ovl)|*.ovl||
+#dst Файлове с оформление на оверлея (*.ovl)|*.ovl||
+#end
+#src PNG image files (*.png)|*.png||
+#dst файлове с изображения PNG (*.png)|*.png||
+#end
+#src Warning! This will set your On-Screen Display rendering mode, raster font and zoom settings to layout creator's ones. Do you want to continue?
+#dst Внимание! Това ще зададе режима на изобразяване на екранния дисплей, растерния шрифт и настройките за мащабиране към тези на създателя на оформлението. Искаш ли да продължиш?
+#end
+#src Cur (%d, %d)\tPos (%d, %d)\tExt (%d, %d)
+#dst Текущ (%d, %d)\tПоз (%d, %d)\tВътр (%d, %d)
+#end
+
+#src Table
+#dst Таблица
+#end
+#src Line
+#dst Линия
+#end
+#src Cell
+#dst клетка
+#end
+#src <nameless>
+#dst <безименен>
+#end
+#src <separator>
+#dst <разделител>
+#end
+#src <no binding>
+#dst <без обвързване>
+#end
+
+#src Internal HAL
+#dst Вътрешен HAL
+#end
+#src Windows performance counter
+#dst Брояч на производителността на Windows
+#end
+
+#src Layer %d of %d\tPos (%s, %s)\tExt (%d, %d)
+#dst Слой %d на %d\tПоз (%s, %s)\tВътр (%d, %d)
+#end
+
+#src left
+#dst наляво
+#end
+#src center
+#dst център
+#end
+#src right
+#dst надясно
+#end
+#src top
+#dst най-отгоре
+#end
+#src bottom
+#dst най-отдолу
+#end
+
+#src Overlay layout exchange files (*.ovx)|*.ovx||
+#dst Файлове за обмен на оформление на оверлея (*.ovx)|*.ovx||
+#end
+#src Failed to export %s file!
+#dst Неуспешно експортиране на файла %s!
+#end
+#src Failed to import %s file!
+#dst Неуспешно импортиране на файла %s!
+#end
+#src Different version of %s file already exists, do you want to overwrite it?
+#dst Вече съществува друга версия на файла %s, искате ли да я презапишете?
+#end
+#src Failed to extract %s file!
+#dst Неуспешно извличане на файла %s!
+#end
+
+#src The settings will be applied after restarting the application!
+#dst Настройките ще бъдат приложени след рестартиране на приложението!
+#end
+
+#src graph minimum
+#dst минимална графика
+#end
+#src graph maximum
+#dst максимална графика
+#end
+#src framerate
+#dst честота на кадрите
+#end
+#src minimum framerate
+#dst минимална честота на кадрите
+#end
+#src average framerate
+#dst средна частота на кадрите
+#end
+#src maximum framerate
+#dst максимална честота на кадрите
+#end
+#src 1% low framerate
+#dst честота на кадрите ниски 1%
+#end
+#src 0.1% low framerate
+#dst честота на кадрите ниски 0.1%
+#end
+#src frametime
+#dst време на кадрите
+#end
+#src frame counter
+#dst брояч на кадри
+#end
+#src abbreviated 3D API
+#dst съкратено 3D API
+#end
+#src 3D API
+#dst 3D API
+#end
+#src executable
+#dst изпълним файл
+#end
+#src resolution
+#dst резолюция
+#end
+#src architecture
+#dst архитектура
+#end
+#src time
+#dst време
+#end
+#src text file
+#dst текстов файл
+#end
+#src benchmark time
+#dst време на бенчмарка
+#end
+
+#src Embedded image must be located in the same folder with overlay layout!
+#dst Вграденото изображение трябва да се намира в същата папка, където е и оверлея!
+#end
+#src Overlay layout contains references to additional files, do you want to copy them to new folder as well?
+#dst Оформлението на оверлея съдържа препратки към допълнителни файлове, искате ли да копирате и тях в нова папка?
+
+
+#end

@@ -1,0 +1,241 @@
+#src General
+#dst Geral
+#end
+#src General properties
+#dst Propriedades
+#end
+#src Start minimized
+#dst Iniciar minimizado
+#end
+#src Hide pre-created profiles
+#dst Ocultar lista padrão de perfis
+#end
+#src Update checking properties
+#dst Atualizações
+#end
+#src Check for available product updates
+#dst Verificar atualizações disponíveis
+#end
+#src Check for available product beta versions
+#dst Incluir versões beta
+#end
+#src never
+#dst Nunca
+#end
+#src on startup
+#dst Na inicialização
+#end
+#src on startup daily
+#dst Diariamente
+#end
+#src on startup weekly
+#dst Semanalmente
+#end
+#src on startup monthly
+#dst Mensalmente
+#end
+#src Check now
+#dst Verificar
+#end
+#src FCAT properties
+#dst Ferramenta de Análise de Captura de Quadros (FCAT)
+#end
+#src Enable frame color indicator
+#dst Ativar indicador colorido dos quadros  
+#end
+#src color sequence
+#dst Sequência de cores
+#end
+#src 2 bars
+#dst 2 barras
+#end
+#src 3 bars
+#dst 3 barras
+#end
+#src 4 bars
+#dst 4 barras
+#end
+#src moving bar
+#dst Barra móvel
+#end
+#src latency marker
+#dst Marcador de latência
+#end
+#src Statistics properties
+#dst Estatísticas
+#end
+#src Framerate averaging interval (in milliseconds)
+#dst Intervalo da média da taxa de quadros (ms)
+#end
+#src Refresh period (in milliseconds)
+#dst Intervalo de atualização (ms)
+#end
+#src Display integer framerate
+#dst Exibir valor inteiro da taxa de quadros 
+#end
+#src Display maximum frametime
+#dst Exibir valor máximo do tempo de quadros 
+#end
+#src Enable frametime history overlay
+#dst Exibir histórico do tempo de quadros na tela
+#end
+
+#src Frametime calculation point
+#dst Ponto de cálculo do tempo de quadros 
+#end
+#src frame start
+#dst Início do quadro
+#end
+#src frame presentation
+#dst Apresentação
+#end
+
+#src Peak framerate calculation mode
+#dst Método de cálculo da taxa de quadros 
+#end
+#src average
+#dst Média
+#end
+#src instantaneous
+#dst Instantâneo
+#end
+#src Percentile calculation mode
+#dst Modo de cálculo percentil
+#end
+#src integral
+#dst Integral
+#end
+#src linear
+#dst Linear
+#end
+#src Percentile buffer
+#dst Tamanho do buffer do percentil
+#end
+#src unlimited
+#dst Ilimitado
+#end
+#src ring
+#dst Circular
+#end
+
+#src graph
+#dst Gráfico de Linha
+#end
+#src diagram
+#dst Gráfico de Área
+#end
+#src Compatibility properties
+#dst Compatibilidades
+#end
+#src Enable dedicated encoder server service
+#dst Ativar serviço do servidor codificador dedicado 
+#end
+#src 32-bit
+#dst 32 bits
+#end
+#src 64-bit
+#dst 64 bits
+#end
+#src Enable 64-bit applications support service
+#dst Ativar serviço de suporte a programas 64 bits
+#end
+#src Enable benchmark mode
+#dst Ativar modo de benchmark
+#end
+#src Enable framerate limiter
+#dst Ativar limitador da taxa de quadros
+#end
+#src async
+#dst Assíncrono
+#end
+#src front edge sync
+#dst Sinc. na borda dianteira
+#end
+#src back edge sync
+#dst Sinc. na borda traseira
+#end
+#src Enable passive waiting
+#dst Ativar espera passiva
+#end
+
+#src Injection properties
+#dst Propriedades de Injeção
+#end
+#src Use Microsoft Detours API hooking
+#dst Usar gancho da API Microsoft Detours
+#end
+#src Injection delay (in milliseconds)
+#dst Atraso na injeção (ms)
+#end
+#src Reset cache
+#dst Restaurar cache
+#dlu -100
+#end
+#src Inject NVIDIA Reflex latency markers
+#dst Injetar marcadoes de latência do NV Reflex
+#end
+#src Inject NVIDIA Reflex sleep call
+#dst Inseir chamada de suspensão do NV Reflex
+#end
+#src before frame presentation
+#dst Antes da apresentação
+#end
+#src after frame presentation
+#dst Depois da apresentação
+#end
+
+#src Plugins
+#dst Plugins
+#end
+#src Active plugin modules
+#dst Módulos Ativos
+#end
+#src Setup
+#dst Configurar
+#end
+
+#src User Interface
+#dst Interface
+#end
+#src User interface help system properties
+#dst Propriedades
+#end
+#src English
+#dst Inglês
+#end
+#src Language
+#dst Selecionar idioma
+#end
+#src Show user interface tooltips
+#dst Exibir balões de sugestões e ajuda
+#end
+#src User interface skinning properties
+#dst Temas
+#end
+#src Skin composition mode
+#dst Modo de composição
+#end
+#src traditional
+#dst Tradicional
+#end
+#src layered with colorkey
+#dst Camadas com Colorkey
+#end
+#src layered with alpha
+#dst Camadas com Alpha
+#end
+#src Skin transparency
+#dst Transparência
+#end
+#src Transparent
+#dst Transparente
+#end
+#src Opaque
+#dst Opaco
+#end
+#src Color
+#dst Cor
+#end 
+#src Cancel
+#dst Cancelar
+#end

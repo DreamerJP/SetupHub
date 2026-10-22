@@ -1,0 +1,5 @@
+Attiva sovrapposizione cronologia frametime
+Abilita il grafico che visualizza la cronologia frametime per gli ultimi 512 fotogrammi renderizzati. Il grafico della storia può essere utilizzato per la rilevazione di framerate balbettante.
+
+Suggerimenti:
+- È possibile disattivare i suggerimenti di interfaccia utente tramite la scheda <Interfaccia utente> in proprietà avanzate.

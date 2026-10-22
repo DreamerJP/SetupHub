@@ -1,0 +1,5 @@
+Tamanho do gráfico de histórico dos tempos dos quadros
+Permite ajustar a largura e a altura do gráfico dos tempos dos quadros. Você pode usar valores positivos para especificar o tamanho em pixels ou valores negativos para especificar o tamanho em caracteres.
+
+Sugestões: 
+- Você pode desativar as sugestões na aba <Inteface> das configurações.

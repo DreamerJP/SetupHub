@@ -1,0 +1,7 @@
+Abilita riempimento On-Screen Display
+Consente di riempire l'area dell'On-Screen Display sottostante con colore solido o trasparente. Il colore di riempimento e il livello di trasparenza possono essere regolati nelle palette dell'On-Screen Display. Il riempimento della zona sottostante può migliorare la leggibilità dell'On-Screen Display in alcune applicazioni evitando che il testo si fondi con un colore dello schermo solido.
+
+Consigli:
+- I sistemi anticheat di alcuni giochi possono riconoscere il rilevamento dell'applicazione On-Screen Display come possibile applicazione per barare al gioco e quindi bloccare la connessione al server multiplayer.
+Per risolvere i problemi, tentare di aggiungere un profilo per il gioco, e disabilitare il supporto On-Screen Display, o se non funziona, provare a diminuire il rilevamento di livello dell' applicazione.
+- È possibile disattivare i suggerimenti di interfaccia utente tramite la scheda <Interfaccia utente> in proprietà avanzate.

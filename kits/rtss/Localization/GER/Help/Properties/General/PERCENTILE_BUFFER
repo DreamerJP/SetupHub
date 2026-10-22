@@ -1,0 +1,7 @@
+Puffermodus für Berechnung des Perzentils
+Beeinflusst die Berechnung der perzentilbasierten Metriken "1% Low" und "0.1% Low". Beide Metriken verwenden sortierte Arrays von Frametimes als Basis und spiegeln die momentane Framerate wieder, die aus der einzelnen Frametime berechnet wird, die sich an der Grenze von 1 % oder 0,1 % der langsamsten Frames befindet.
+Diese Option legt den Frametime-Puffermodus für die Sortierung fest. Der Puffer kann entweder unbegrenzt sein, d.h. jeder während des Benchmarks gerenderte Frame beeinflusst das Ergebnis, oder es kann sich um einen gleitenden Ringpuffer handeln, d. h. zu alte Frames werden von der Berechnung ausgeschlossen und nur die letzten Sekunden verarbeitet.
+Der unbegrenzte Modus wird bevorzugt, wenn Sie eine Benchmark-Sitzung manuell mit einem Hotkey starten. Der Ring-Modus ist möglicherweise vorzuziehen, wenn Sie den Benchmark-Modus ständig aktiviert lassen und in den letzten Sekunden des Spiels nur "1% Low"- und "0.1% Low"-Werte sehen möchten.
+
+Hinweis:
+- Tooltips können in der Registerkarte <Benutzeroberfläche> in den erweiterten Einstellungen deaktiviert werden.

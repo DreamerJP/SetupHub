@@ -1,0 +1,7 @@
+Nível de detecção: Médio
+Seleciona o nível médio de detecção para o programa associado ao perfil atual. O programa intercepta o DirectDraw, Direct3D e bibliotecas OpenGL.
+Este modo é recomendado para a coleta de estatísticas em tempo real, como taxa de quadros, permitindo serviços adicionais, como o mostrador de informações na tela para a maioria das aplicações 3D modernas, bem como nas aplicações com interfaces de aceleração de hardware 2D/3D desatualizados como DirectDraw e Direct3D7.
+
+Sugestões: 
+- Algums programas protegidos podem tratar a coleta de estatísticas como possível ameaça e se recusarem a executar. Tente diminuir o nível de detecção para solucionar tais questões. 
+- Você pode desativar as sugestões na aba <Inteface> das configurações.

@@ -1,0 +1,7 @@
+Liste des profils des applications
+Affiche la liste des profils des applications et vous permet de les manager les profils. 
+Le concept des profils d'applications vous donne la flexibilité de créer des paramètres personnels pour n'importe quelle application. Il n'est pas nécessaire de créer des profils pour chaque applications, les applications sans profils utiliseront automatiquement le profil global. N'ajoutez de nouveaux profils que si c'est nécessaire pour définir des paramètres personnels pour cette application, par ex. désactiver l'affichage en sur-impression pour le système anti triche, définir les couleurs d'affichage en sur-impression ou les positions. Sinon, éditez juste le profil global.
+
+Astuces:
+- Les profils pré-créé ne peuvent pas être enlevé. Vous ne pouvez enlever que les profils que vous avez créé.
+- Vous pouvez désactiver les bulles d'interface dans la tabulation <interface d'utilisateur> dans les propriétés avancées.

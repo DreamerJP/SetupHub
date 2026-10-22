@@ -1,0 +1,24 @@
+#src AMD VCE encoder
+#dst Codificador AMC VCE
+#end
+#src Preset
+#dst Predefinição
+#end
+#src Speed
+#dst Velocidade
+#end
+#src Balanced
+#dst Equilibrado
+#end 
+#src Quality
+#dst Qualidade
+#end
+
+
+#src 1 Mbps
+#dst 1 Mbps
+#end
+#src 50 Mbps
+#dst 50 Mbps
+#end
+

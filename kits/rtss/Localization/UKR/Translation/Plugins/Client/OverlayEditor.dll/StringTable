@@ -1,0 +1,12 @@
+#src Undo / Redo
+#dst Скасувати / Повторити
+#end
+#src Layer info
+#dst Інформація про шар
+#end
+#src Hypertext info
+#dst Інформація про гіпертекст
+#end
+#src Sprite dimensions
+#dst Розміри спрайта
+#end

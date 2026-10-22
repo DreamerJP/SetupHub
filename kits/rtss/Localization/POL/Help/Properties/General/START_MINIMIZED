@@ -1,0 +1,6 @@
+Start minimized
+Forces minimizing %PRODUCTNAME% to system tray area on startup. 
+
+Wskazówki:
+- This option affects manual application startup only. %PRODUCTNAME% is always minimized to system tray area at Windows startup regardless of this option state.
+- Mo¿esz wy³¹czyæ wskazówki interfejsu u¿ytkownika w ustawieniach na zak³adce <Interfejs u¿ytkownika>.

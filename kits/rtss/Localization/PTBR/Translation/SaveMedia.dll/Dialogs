@@ -1,0 +1,16 @@
+#src External encoder configuration
+#dst Configuração do codificador externo
+#end
+#src Encoder
+#dst Codificador
+#end
+#src Configure
+#dst Configurar
+#end
+#src Benchmark mode
+#dst Modo de benchmark
+#end
+#src 
+#src Benchmark
+#dst Benchmark
+#end

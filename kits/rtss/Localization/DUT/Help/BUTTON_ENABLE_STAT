@@ -1,0 +1,8 @@
+Toon eigen statestieken
+De hoofd bedoeling van %PRODUCTNAME% is het verzamelen van beeldverversing snelheid statestieken voor alle 3D toepassingen die opgestart zijn in het systeem en deze gegevens door te geven aan RivaTuner, HIS iTurbo, EVGA Precision of MSI Afterburner.Het geeft ook bijkomde ondersteuning voor OSD, foto vastleggen of 3D detectie. 
+Het is ook mogelijk om %PRODUCTNAME% als een zelfstandige beeldverversing snelheid toezicht oplossing te gebruiken.
+Het inschakelen van deze optie staat %PRODUCTNAME% toe om informatie op het scherm te starten zonder bijkomende toepassing zoals bv: RivaTuner, HIS iTurbo, EVGA Precision of MSI Afterburner. 
+
+Hint:
+- Anti-cheat systemen van sommige games kunnen game code hooking dat nodig is voor de informatie op het scherm (OSD)te verkrijgen aanzien als een cheat. Als dit het geval is dient u OSD uit te schakelen voor deze 3D toepassingen.
+- Je kan de gebruikers interface werktips uitschakelen via de<gebruikers interface> tab in geavanceerde eigenschappen.

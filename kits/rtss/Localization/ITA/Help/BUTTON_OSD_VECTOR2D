@@ -1,0 +1,8 @@
+On-Screen Display: modalità di rendering 2D vector
+On-Screen Display può essere rendered utilizzando caratteri vettoriali o raster tramite accelerazione hardware 2D o accelerazione hardware 3D via DirectX / OpenGL funzioni. All'attuazione l'accelerazione 2D basata fornisce la massima compatibilità con la maggior parte degli attuali motori di gioco 3D, anche se non è supportato in DirectX10 e giochi più recenti, quando il multisampled antialiasing è abilitato. L'accelerazione 2D può essere anche ottimizzata in alcuni driver per display, così l'attuazione dell'accelerazione 3D basata può essere molto più efficace in termini di calo di prestazioni su tali sistemi.
+Tuttavia, l'applicazione 3D ha più possibilità di essere incompatibile con alcuni motori 3D di giochi. Prova a disabilitare la modalità 3D se si notano anomalie di rendering in un gioco mentre è in esecuzione con OSD abilitato.
+
+Consigli:
+- I sistemi anticheat di alcuni giochi possono riconoscere il rilevamento dell'applicazione On-Screen Display come possibile applicazione per barare al gioco e quindi bloccare la connessione al server multiplayer.
+Per risolvere i problemi, tentare di aggiungere un profilo per il gioco, e disabilitare il supporto On-Screen Display, o se non funziona, provare a diminuire il rilevamento di livello dell' applicazione.
+- È possibile disattivare i suggerimenti di interfaccia utente tramite la scheda <Interfaccia utente> in proprietà avanzate.

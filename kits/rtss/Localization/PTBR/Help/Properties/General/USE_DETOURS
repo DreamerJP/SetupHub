@@ -1,0 +1,7 @@
+Usar gancho da API Microsoft Detours
+Por padrão, o %PRODUCTNAME% usa sua própria implementação de interceptação original de API que pode interceptar de maneira confiável as chamadas de função API do aplicativo 3D, mesmo que já tenham sido interceptadas por qualquer aplicativo de interceptação de terceiros (por exemplo, outras sobreposições). Isto é obtido com o encadeamento de gancho seguro original que permite que diferentes mecanismos de gancho coexistam e interceptem a mesma chamada de função com segurança. No entanto, alguns aplicativos de terceiros com base na interceptação de chamadas de função API 3D (por exemplo, sobreposições de terceiros e aplicativos de capturas de vídeo ou steaming) podem usar a biblioteca de gancho da Microsoft Detours que não fornece suporte nativo para o encadeamento de gancho seguro e pode entrar em conflito com ganchos de terceiros se um mecanismo de gancho diferente estiver em uso, podendo não funcionar corretamente quando o %PRODUCTNAME% estiver em execução.
+Você pode habilitar esta opção para forçar o %PRODUCTNAME% a usar a Microsoft Detours em vez de sua própria implementação de interceptação de API. Isto pode melhorar a compatibilidade com esses aplicativos.
+
+Sugestões:
+- Esta configuração é específica para o perfil do aplicativo atualmente selecionado.
+- Você pode desativar as sugestões na aba <Interface> das configurações.

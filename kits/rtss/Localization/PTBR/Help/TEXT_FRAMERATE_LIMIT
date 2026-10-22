@@ -1,0 +1,10 @@
+Limitar taxa de quadros ou tempos dos quadros 
+Permite definir um limite para a taxa de quadros em aplicações 3D. Limitar a taxa de quadro durante um jogo pode ajudar a reduzir o consumo de energia e melhorar a experiência geral com a remoção de microtravamentos indesejados causados por flutuações na geração e exibição dos quadros. Defini-lo a zero desativa o limite. 
+
+Sugestões: 
+- É altamente recomendável desativar a opção de sincronização vertical nas configurações do jogo para executar esta funcionalidade corretamente. 
+- Você pode especificar valores fracionados para a taxa de quadros, por exemplo, 59.94 quadros por segundo.
+- Você pode especificar um limite alvo para a taxa de quadros ou para os tempos dos quadros. Clique em "Framerate limit" para alternar entre os modos de taxa de quadros e tempos dos quadros. Se você estiver usando skins de terceiros desatualizadas sem a funcionalidade de alternância entre os limites de taxa de quadros e tempos dos quadros, segure a tecla <Ctrl> ao clicar neste campo para alternar entre os modos.
+- Você pode manter pressionado <Alt> e clicar neste campo para definir o limite da taxa de quadros para a taxa de atualização exata do monitor vinculado à janela do %PRODUCTNAME%.
+- Você pode clicar com o botão direito do mouse neste campo para definir o limite de taxa de quadros como a taxa de atualização exata de qualquer monitor conectado ou defini-lo como o limite de VRR de qualquer monitor conectado (95% da taxa de atualização).
+- Você pode desativar as sugestões na aba <Inteface> das configurações.

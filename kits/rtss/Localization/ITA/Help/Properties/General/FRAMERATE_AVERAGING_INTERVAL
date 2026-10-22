@@ -1,0 +1,5 @@
+Intervallo di media framerate
+A causa della sua natura il framerate istantaneo è raramente statico, anche in scenari di utilizzo di framerate fisso il framerate immediato è normalmente fluttuante vicino al valore di destinazione. Per filtrare tali fluttuazioni indesiderate i monitoraggi di framerate normalmente visualizzano il valore di framerate medio. È possibile utilizzare questa opzione per regolare l'intervallo di framerate medio o impostarlo su 0 per disabilitare completamente la media di framerate.
+
+Suggerimenti:
+- È possibile disattivare i suggerimenti di interfaccia utente tramite la scheda <Interfaccia utente> in proprietà avanzate.

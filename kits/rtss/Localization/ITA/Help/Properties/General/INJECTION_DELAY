@@ -1,0 +1,7 @@
+Ritardo iniezione
+Regola il ritardo (in millisecondi) per il motore a iniezione ritardata. L'iniezione ritardata ha lo scopo di bypassare sullo schermo l'esclusività del controllo di visualizzazione implementata in alcune altre applicazioni sullo schermo (ad es. Steam overlay a 64-bit) e impedire che tali applicazioni blocchino la loro funzionalità di visualizzazione sullo schermo. Il motore a iniezione ritardata è configurabile dall'utente in modo da potere estendere l'elenco dei moduli DLL innescando un meccanismo di iniezione ritardata e regolare il ritardo. Per impostazione predefinita l'iniezione ritardata è innescata da Steam overlay a 64-bit e Origin in-game overlay librerie e il ritardo di iniezione è impostato a 15 secondi se tali librerie sono caricate nello spazio di indirizzamento dell'applicazione.
+
+Suggerimenti:
+-Questa impostazione è specifica del profilo dell'applicazione attualmente selezionato.
+-È possibile impostare il ritardo su 0 per disabilitare l'iniezione ritardata.
+-È possibile disabilitare le descrizioni comandi dell'interfaccia utente tramite la scheda <interfaccia utente> in proprietà avanzate.

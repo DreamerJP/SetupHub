@@ -1,0 +1,17 @@
+#src Show
+#dst Покажи
+#end
+#src Close
+#dst Затвори
+#end
+
+#src Capture screenshot
+#dst Направете екранна снимка
+#end
+#src Load
+#dst Зареди
+#end
+#src Clear
+#dst Изчисти
+#end
+

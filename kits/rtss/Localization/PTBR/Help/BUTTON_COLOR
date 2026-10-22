@@ -1,0 +1,6 @@
+Cor da fonte do mostrador de informações na tela
+Exibe as cores básicas para a fonte do mostrador de informações na tela e permite redefini-las. Você também pode ajustar o nível de transparência da cor base para os modos de renderização do mostrador por vetor 3D e grade 3D.
+
+Sugestões: 
+- Sistemas "Anticheat" de alguns jogos podem considerar o código para a detecção de aplicativos e a renderização de informações na tela como possível fraude em servidores multiplayer. Para solucionar essas questões, tente adicionar um perfil para o jogo e desative o suporte ao mostrador de informações na tela, ou tente diminuir o nível de detecção do programa. 
+- Você pode desativar as sugestões na aba <Inteface> das configurações.

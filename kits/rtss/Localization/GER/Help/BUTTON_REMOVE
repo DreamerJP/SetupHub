@@ -1,0 +1,6 @@
+Profil löschen
+Löscht das aktuell ausgewählte Anwendungsprofil.
+
+Hinweise:
+- Vordefinierte Profile können nicht gelöscht werden. Sie können nur selbsterstellte Profile löschen.
+- Tooltips können in der Registerkarte <Benutzeroberfläche> in den erweiterten Einstellungen deaktiviert werden.

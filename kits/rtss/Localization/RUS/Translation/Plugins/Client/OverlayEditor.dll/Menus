@@ -1,0 +1,127 @@
+#src Layouts
+#dst Оверлеи
+#end
+#src New\tCtrl+N
+#dst Новый\tCtrl+N
+#end
+#src Edit\tCtrl+Enter
+#dst Редактировать\tCtrl+Enter
+#end
+#src Load\tCtrl+L, Ctrl+O
+#dst Загрузить\tCtrl+L, Ctrl+O
+#end
+#src Merge\tCtrl+M
+#dst Объединить\tCtrl+M
+#end
+#src Save\tCtrl+S
+#dst Сохранить\tCtrl+S
+#end
+#src Save As\tCtrl+Shift+S
+#dst Сохранить как\tCtrl+Shift+S
+#end
+#src Undo\tCtrl+Z
+#dst Отмена\tCtrl+Z
+#end
+#src Redo\tCtrl+Y, Ctrl+Shift+Z
+#dst Повтор\tCtrl+Y, Ctrl+Shift+Z
+#end
+#src Import
+#dst Импорт
+#end
+#src Export
+#dst Экспорт
+#end
+
+#src Data sources
+#dst Источники
+#end
+#src Edit\tCtrl+D
+#dst Редактировать\tCtrl+D
+#end
+
+#src Tables
+#dst Таблицы
+#end
+#src Edit\tCtrl+T
+#dst Редактировать\tCtrl+T
+#end
+
+#src Layers
+#dst Слои
+#end
+#src Add\tInsert
+#dst Добавить\tInsert
+#end
+#src Remove\tDelete
+#dst Удалить\tDelete
+#end
+#src Edit\tEnter
+#dst Редактировать\tEnter
+#end
+
+#src Edit list\tCtrl+Shift+L
+#dst Редактировать список\tCtrl+Shift+L
+#end
+#src Move to top\tHome
+#dst Сделать верхним\tHome
+#end
+#src Move up\tPage Up
+#dst Переместить вверх\tPage Up
+#end
+#src Move down\tPage Down
+#dst Переместить вниз\tPage Down
+#end
+#src Move to bottom\tEnd
+#dst Сделать нижним\tEnd
+#end
+#src Copy\tCtrl+C
+#dst Копировать\tCtrl+C
+#end
+#src Paste\tCtrl+V
+#dst Вставить\tCtrl+V
+#end
+
+#src View
+#dst Вид
+#hst Menu
+#end
+#src Reset view zoom
+#dst Сбросить масштаб вида
+#end
+#src Snap to grid
+#dst Привязка к сетке
+#end
+#src Show grid
+#dst Показывать сетку
+#end
+#src Show checkerboard
+#dst Показывать шахматный фон
+#end
+#src Dark background
+#dst Тёмный фон
+#end
+
+#src Tools
+#dst Инструменты
+#end
+#src Show hypertext\tCtrl+Shift+H
+#dst Показывать гипертекст\tCtrl+Shift+H
+#end
+#src Optimize hypertext\tCtrl+Shift+O
+#dst Оптимизировать гипертекст\tCtrl+Shift+O
+#end
+
+#src Macro
+#dst Макросы
+#end
+#src Internal sources
+#dst Внутренние источники
+#end
+#src External sources
+#dst Внешние источники
+#end
+
+
+#src Tags
+#dst Тэги
+#end

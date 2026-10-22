@@ -1,0 +1,111 @@
+#src %s skin has been successfully compiled!
+#dst Thema %s is succesvol gecompileerd!
+#end
+#src Failed to compile %s skin!
+#dst Onmogelijk om het thema %s te compileren!
+#end
+#src %s skin has been successfully decompiled!
+#dst Thema %s is succesvol gedecompileerd!
+#end
+#src Failed to decompile %s skin!
+#dst Onmogelijk om het thema %s te decompileren!
+#end
+#src Failed to load %s skin!
+#dst Onmogelijk om thema %s te laden!
+#end
+#src Some of %PRODUCTNAME% components are expired, missing or corrupted!
+#dst Sommige onderdelen van %PRODUCTNAME% zijn vervallen , vermist of beschadigt!
+#end
+#src Failed to load %s skin, reverting to default skin!
+#dst Onmogelijk om thema %s te laden , terugkeren tot standard theme!
+#end
+#src Unsupported %s skin file format!
+#dst Niet ondersteunde thema %s verzameling formaat!
+#end
+#src Failed to initialize main window with %s skin, reverting to default skin!
+#dst Onmogelijk om het hoofdscherm te initialiseren met thema %s , terugkeren naar standard thema!
+#end
+#src Failed to initialize main window!
+#dst Onmogelijk om het hoofdscherm te initialiseren!
+#end
+#src Beta %d
+#dst Beta %d
+#end
+#src compiled on %d-%m-%Y %H:%M:%S
+#dst gecomplieerd op %d-%m-%Y %H:%M:%S
+#end
+#src expires on %s
+#dst vervalt op %s
+#end
+#src Cannot load RTSSHooks.dll library!
+#dst Faalde het laden van RTSSHooks.dll!
+#end
+#src Tip: %PRODUCTNAME% is currently minimized to system tray area. You may click its' tray icon to bring %PRODUCTNAME% window to top.
+#dst Tip: %PRODUCTNAME% is momenteel geminimaliseerd op de werkbalk. U kan op dit werkbalk icoon klikken om %PRODUCTNAME% naar voor te brengen.
+#end
+#src Failed to restore main window DIB cache!
+#dst Onmogelijk om het hoofdvenster DIB cache te herstellen!
+#end
+#src CTaskSchedulerInterface::%s failed with error code %d!
+#dst CTaskSchedulerInterface::%s faalde met fout code %d!
+#end
+#src %PRODUCTNAME% properties
+#dst %PRODUCTNAME% eigenschappen
+#end
+#src Resource file copy has been successfully saved to %s!
+#dst Kopie oorsprong bestand is succesvol opgeslaan in %s!
+#end
+#src Failed to save resource file copy to %s!
+#dst Kopie oorsprong bestand is succesvol opgeslaan in %s!
+#end
+#src Executable files (*.exe)|*.exe||
+#dst Uitvoer bestanden (*.exe)|*.exe||
+#end
+#src Bitmap files (*.bmp)|*.bmp||
+#dst Bitmap bestanden (*.bmp)|*.bmp||
+#end
+#src There is no new version available at this time. Currently installed version is up to date.
+#dst Er is geen nieuwe versie beschikbaar op dit ogenblik. De huidig geinstalleerde versie is de laatste nieuwe.
+#end
+#src %PRODUCTNAME% v%s is available for download. Do you want to open the download page now?
+#dst %PRODUCTNAME% v%s is beschikbaar voor download. Wil je de download pagina nu openen?
+#end
+#src Cannot retrieve update information from the update server!
+#dst Kan de update info niet verkrijgen van de update server!
+#end
+#src Cannot establish connection with the update server!
+#dst Kan geen connectie maken met de update server!
+#end
+#src cannot open internet connection
+#dst Kan geen internet connectie openen!
+#end
+#src cannot open server connection
+#dst Kan geen server connectie openen!
+#end
+#src cannot open HTTP request
+#dst Kan geen HTTP aanvraag openen!
+#end
+#src cannot send HTTP request
+#dst Kan geen HTTP aanvraag verzenden!
+#end
+#src cannot query HTTP info
+#dst Kan geen HTTP info opvragen!
+#end
+#src proxy authentification required
+#dst proxy authentificatie vereist!
+#end
+#src cannot read file
+#dst Kan het bestand niet lezen!
+#end
+#src unknown reason %d
+#dst onbekende reden %d
+#end
+#src Reason : %s, error code %d
+#dst Reden : %s, fout code %d
+#end
+#src Last checked on %A, %B %d, %Y, %H:%M:%S
+#dst Laatst gecontroleerd op %d-%m-%Y, %H:%M:%S
+#end
+#src Reboot is required to finalize %PRODUCTNAME% installation!
+#dst
+#end

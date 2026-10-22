@@ -1,0 +1,11 @@
+Modo de sincronização de varredura
+Permite alternar entre os modos de sincronização por linha de varredura simples, dupla ou mediana.
+No modo de sincronização por linha de varredura simples, a taxa de quadros será sincronizada na posição de rasterização para cada período de atualização de exibição, ou seja, você está limitando a taxa de quadros à taxa de atualização e obtendo o efeito da sincrionização vertical com linha de corte localizada em posição fixa. A linha de corte pode ser movida para baixo e escondida no intervalo de supressão vertical.
+No modo de sincronização de linha de varredura dupla, a taxa de quadros será sincronizada na posição de rasterização duas vezes por período de atualização de exibição, ou seja, você está limitando a taxa de quadros a uma taxa de atualização dupla e obtendo o efeito da sincrionização vertical com duas linhas de corte localizadas em posições fixas. Ambas as linhas de corte podem ser movidas para baixo e uma delas pode ser escondida no intervalo de supressão vertical.
+No modo de sincronização por linha de varredura mediana, a taxa de quadros será sincronizada na posição de rasterização uma vez a cada dois períodos de atualização da tela, ou seja, você está limitando a taxa de quadros à metade da taxa de atualização e obtendo o efeito da sincrionização vertical com linha de corte localizada em posição fixa. Neste caso, a linha de corte pode ser movida para baixo e escondida no intervalo de supressão vertical.
+
+Sugestões:
+- É necessário desativar a sincronização vertical para o funcionamento adequado da sincronização por linhas de varredura.
+- Você pode usar a sobreposição FCAT como um indicador visual da posição da linha de corte. O modo FCAT de sequência de cores é recomendado para os modos de sincronização simples e mediana, e o modo FCAT de 2 barras é recomendado para o modo de sincronização dupla.
+- Você pode especificar um índice de varredura negativo para definir o deslocamento do número total de linhas de varredura.
+- Você pode desativar as sugestões na aba <Inteface> das configurações.

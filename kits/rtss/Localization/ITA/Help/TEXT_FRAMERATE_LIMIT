@@ -1,0 +1,6 @@
+Limite framerate
+Consente la definizione del limite del framerate per le applicazioni 3D. Limitare il framerate durante il gioco può aiutare a ridurre il consumo energetico così come può migliorare l'esperienza di gioco con la rimozione dell'effetto indesiderato di microstuttering causato dalle fluttuazioni del framerate. Impostare a zero per disabilitare il limite.
+
+suggerimenti:
+- Si raccomanda vivamente di disabilitare il VSync per una corretta funzionalità del limite framerate.
+- È possibile disattivare i suggerimenti interfaccia utente tramite la scheda <Interfaccia utente> in proprietà avanzate.

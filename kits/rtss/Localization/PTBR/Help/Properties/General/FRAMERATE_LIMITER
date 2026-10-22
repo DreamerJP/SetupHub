@@ -1,0 +1,5 @@
+Ativar limitador da taxa de quadros
+Controla o suporte de limitação da taxa de quadros. Use esta opção para ativar ou desativar a limitação de taxa de quadros sem alterar os perfis. Os aplicativos clientes também podem controlar remotamente esta opção por meio de teclas de atalho.
+
+Sugestões: 
+- Você pode desativar as sugestões na aba <Inteface> das configurações.

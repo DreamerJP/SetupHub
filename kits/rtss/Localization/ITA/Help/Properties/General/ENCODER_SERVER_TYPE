@@ -1,0 +1,5 @@
+Tipo di server dell'encoder dedicato
+Consente di selezionare tra un server dedicata dell'encoder a 32 o 64 bit. Il server a 32-bit è raccomandato per la compatibilità quando si utilizza la compressione VFW in quanto molti codec VFW sono attualmente solo a 32 bit. Il server a 64 bit può essere utile in congiunzione con la preregistrazione, perché consente di utilizzare più di 2 GB di RAM per il buffer di preregistrazione.
+
+Suggerimento:
+- È possibile disattivare i suggerimenti di interfaccia utente tramite la scheda <Interfaccia utente> in proprietà avanzate.

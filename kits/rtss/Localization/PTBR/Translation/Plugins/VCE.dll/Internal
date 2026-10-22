@@ -1,0 +1,26 @@
+#src Target bitrate : %d Mbps
+#dst Taxa de bits: %d Mbps
+#end
+
+#src AMD VCE H.264 hardware accelerated via %s on device %d (%s)
+#dst AMD VCE H.264 acelerado via hardware %s no dispositivo %d (%s)
+#
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

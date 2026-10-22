@@ -1,0 +1,22 @@
+#src Target bitrate : %d Mbps
+#dst Цел на битрейт : %d Mбит/c
+#end
+
+#src software emulation
+#dst софтуерна емулация
+#end
+#src hardware accelerated via %s on device 1
+#dst хардуерно ускорено чрез %s на устройството 1
+#end
+#src hardware accelerated via %s on device 2
+#dst хардуерно ускорено чрез %s на устройството 2
+#end
+#src hardware accelerated via %s on device 3
+#dst хардуерно ускорено чрез %s на устройството 3
+#end
+#src hardware accelerated via %s on device 4
+#dst хардуерно ускорено чрез %s на устройството 4
+#end
+#src Intel QuickSync H.264 %s, async depth %d
+#dst Intel QuickSync H.264 %s, дълбочина на асинхронизация %d
+#end

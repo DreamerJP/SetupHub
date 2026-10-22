@@ -1,0 +1,5 @@
+Framerate-/Frametime-Limit
+Ermöglicht das Umschalten zwischen dem Framerate- und Frametime-Limit-Modus. Im Frametime-Limit-Modus wird das Limit als Ziel-Frametime mit einer Genauigkeit von 1 Mikrosekunde angegeben.
+
+Hinweis:
+- Tooltips können in der Registerkarte <Benutzeroberfläche> in den erweiterten Einstellungen deaktiviert werden.

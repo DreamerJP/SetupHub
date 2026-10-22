@@ -1,0 +1,12 @@
+#src Undo / Redo
+#dst Desfazer/Refazer
+#end
+#src Layer info
+#dst Informação da camada
+#end
+#src Hypertext info
+#dst Informações de hipertexto
+#end
+#src Sprite dimensions
+#dst Dimensões do Sprite
+#end

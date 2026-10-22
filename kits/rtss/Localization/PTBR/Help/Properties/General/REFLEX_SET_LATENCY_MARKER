@@ -1,0 +1,9 @@
+Injetar marcadores de latência do NVIDIA Reflex
+Por padrão, o %PRODUCTNAME% injeta marcadores de latência do NVIDIA Reflex em qualquer aplicativo Direct3D11 e Direct3D12 que não ofereça suporte nativo à tecnologia NVIDIA Reflex.
+A integração de marcadores de latência permite monitorar tempos e latências detalhados por estágios em diferentes etapas do pipeline de renderização.
+No entanto, alguns aplicativos (por exemplo, Workers & Resources: Soviet Republic ou Overwatch 2) podem ser incompatíveis com a injeção de marcadores de latência. Portanto, você pode usar esta opção como solução de problemas para desativá-la globalmente ou para alguns aplicativos específicos.
+
+Dicas:
+- Esta configuração é específica para o perfil de aplicativo atualmente selecionado.
+- Você pode carregar o arquivo de layout do editor de informações na tela "Reflex.ovl" no plugin "OverlayEditor" para analisar as latências do NVIDIA Reflex em diferentes estágios do pipeline de renderização.
+- Você pode desativar as sugestões na aba <Inteface> das configurações.

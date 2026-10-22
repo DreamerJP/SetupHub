@@ -1,0 +1,127 @@
+#src Layouts
+#dst Overlays
+#end
+#src New\tCtrl+N
+#dst Neu\tStrg+N
+#end
+#src Edit\tCtrl+Enter
+#dst Bearbeiten\tStrg+Enter
+#end
+#src Load\tCtrl+L, Ctrl+O
+#dst Laden\tStrg+L, Strg+O
+#end
+#src Merge\tCtrl+M
+#dst Zusammenführen\tCtrl+M
+#end
+#src Save\tCtrl+S
+#dst Speichern\tStrg+S
+#end
+#src Save As\tCtrl+Shift+S
+#dst Speichern unter\tStrg+Umschalt+S
+#end
+#src Undo\tCtrl+Z
+#dst Rückgängig\tStrg+Z
+#end
+#src Redo\tCtrl+Y, Ctrl+Shift+Z
+#dst Wiederherstellen\tStrg+Y, Strg+Umschalt+Z
+#end
+#src Import
+#dst Import
+#end
+#src Export
+#dst Export
+#end
+
+#src Data sources
+#dst Datenquellen
+#end
+#src Edit\tCtrl+D
+#dst Bearbeiten\tStrg+D
+#end
+
+#src Tables
+#dst Tabellen
+#end
+#src Edit\tCtrl+T
+#dst Bearbeiten\tStrg+T
+#end
+
+#src Layers
+#dst Ebenen
+#end
+#src Add\tInsert
+#dst Hinzufügen\tEinfügen
+#end
+#src Remove\tDelete
+#dst Entfernen\tLöschen
+#end
+#src Edit\tEnter
+#dst Bearbeiten\tEnter
+#end
+
+#src Edit list\tCtrl+Shift+L
+#dst Liste bearbeiten\tStrg+Umschalt+L
+#end
+#src Move to top\tHome
+#dst Nach ganz oben\tPos1
+#end
+#src Move up\tPage Up
+#dst Nach oben\tBild Auf
+#end
+#src Move down\tPage Down
+#dst Nach unten\tBild Ab
+#end
+#src Move to bottom\tEnd
+#dst Nach ganz unten\tEnde
+#end
+#src Copy\tCtrl+C
+#dst Kopieren\tStrg+C
+#end
+#src Paste\tCtrl+V
+#dst Einfügen\tStrg+V
+#end
+
+#src View
+#dst Anzeige
+#hst Menu
+#end
+#src Reset view zoom
+#dst Zoom der Ansicht zurücksetzen
+#end
+#src Snap to grid
+#dst Am Raster ausrichten
+#end
+#src Show grid
+#dst Raster anzeigen
+#end
+#src Show checkerboard
+#dst Schachbrettmuster anzeigen
+#end
+#src Dark background
+#dst Dunkler Hintergrund
+#end
+
+#src Tools
+#dst Werkzeuge
+#end
+#src Show hypertext\tCtrl+Shift+H
+#dst Hypertext anzeigen\tStrg+Umschalt+H
+#end
+#src Optimize hypertext\tCtrl+Shift+O
+#dst Hypertext optimieren\tStrg+Umschalt+O
+#end
+
+#src Macro
+#dst Makro
+#end
+#src Internal sources
+#dst Interne Quellen
+#end
+#src External sources
+#dst Externe Quellen
+#end
+
+
+#src Tags
+#dst Tags
+#end

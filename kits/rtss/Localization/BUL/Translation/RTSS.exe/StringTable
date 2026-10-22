@@ -1,0 +1,153 @@
+#src %s skin has been successfully compiled!
+#dst Скина %s е компилиран успешно!
+#end
+#src Failed to compile %s skin!
+#dst Неуспешно компилиране на скин %s!
+#end
+#src %s skin has been successfully decompiled!
+#dst %s скин е успешно декомпилиран!
+#end
+#src Failed to decompile %s skin!
+#dst Не може да се декомпилира скина %s!
+#end
+#src Failed to load %s skin!
+#dst Не може да се зареди скина %s!
+#end
+#src Some of %PRODUCTNAME% components are expired, missing or corrupted!
+#dst Някои от компонентите на %PRODUCTNAME% са с изтекъл срок, липсват или са повредени!
+#end
+#src Failed to load %s skin, reverting to default skin!
+#dst Не може да се зареди скина %s, връщане към скин по подразбиране!
+#end
+#src Unsupported %s skin file format!
+#dst Неподдържан файлов формат на  скина %s!
+#end
+#src Failed to initialize main window with %s skin, reverting to default skin!
+#dst Главният прозорец не може да се инициализира със скина %s, връщане към скин по подразбиране!
+#end
+#src Failed to initialize main window!
+#dst Главният прозорец не може да се инициализира!
+#end
+#src Beta %d
+#dst Бета %d
+#end
+#src compiled on %d-%m-%Y %H:%M:%S
+#dst компилиран на %d-%m-%Y в %H:%M:%S
+#end
+#src expires on %s
+#dst изтича на %s
+#end
+#src Cannot load RTSSHooks.dll library!
+#dst Не може да се зареди библиотеката RTSSHooks.dll!
+#end
+#src Tip: %PRODUCTNAME% is currently minimized to system tray area. You may click its' tray icon to bring %PRODUCTNAME% window to top.
+#dst Съвет: %PRODUCTNAME% в момента е минимизиран в системната област. Можете да щракнете върху иконата му в системната област, за да отворите прозореца на %PRODUCTNAME%.
+#end
+#src Failed to restore main window DIB cache!
+#dst Кешът на изображението на главния прозорец не може да бъде възстановен!
+#end
+#src CTaskSchedulerInterface::%s failed with error code %d!
+#dst Грешка във функция CTaskSchedulerInterface::%s, код на грешка %d!
+#end
+#src %PRODUCTNAME% properties
+#dst Свойства %PRODUCTNAME%
+#end
+#src Resource file copy has been successfully saved to %s!
+#dst Копието на ресурсния файл е успешно записано в %s!
+#end
+#src Failed to save resource file copy to %s!
+#dst Неуспешно запазване на копието на файла с ресурси %s!
+#end
+#src Executable files (*.exe)|*.exe||
+#dst Изпълними файлове (*.exe)|*.exe||
+#end
+#src Bitmap files (*.bmp)|*.bmp||
+#dst Bitmap файлове (*.bmp)|*.bmp||
+#end
+#src There is no new version available at this time. Currently installed version is up to date.
+#dst В момента няма налична нова версия. Текущо инсталираната версия е актуална.
+#end
+#src %PRODUCTNAME% v%s is available for download. Do you want to open the download page now?
+#dst %PRODUCTNAME% v%s е достъпен за изтегляне. Искате ли да отворите страницата за изтегляне сега?
+#end
+#src Cannot retrieve update information from the update server!
+#dst Не може да се извлече информация за актуализация от сървъра за актуализация!
+#end
+#src Cannot establish connection with the update server!
+#dst Не може да се установи връзка със сървъра за актуализиране!
+#end
+#src cannot open internet connection
+#dst не може да отвори интернет връзка
+#end
+#src cannot open server connection
+#dst не може да отвори връзка със сървъра
+#end
+#src cannot open HTTP request
+#dst не може да отвори HTTP заявка
+#end
+#src cannot send HTTP request
+#dst не може да изпрати HTTP заявка
+#end
+#src cannot query HTTP info
+#dst не може да направи запитване за HTTP информация
+#end
+#src proxy authentification required
+#dst изисква се удостоверяване на прокси сървър
+#end
+#src cannot read file
+#dst не може да прочете файла
+#end
+#src unknown reason %d
+#dst неизвестна причина %d
+#end
+#src Reason : %s, error code %d
+#dst Причина: %s, код на грешка %d
+#end
+#src Last checked on %A, %B %d, %Y, %H:%M:%S
+#dst Последна проверка за актуализация %d-%m-%Y,%H:%M:%S
+#end
+#src Reboot is required to finalize %PRODUCTNAME% installation!
+#dst Необходимо е рестартиране, за да завършите инсталацията на %PRODUCTNAME%!
+#end
+#src Some system components cannot be hooked right now. It is strongly recommended to restart application.
+#dst Някои системни компоненти не могат да бъдат внедрени в момента. Силно се препоръчва да рестартирате приложението.
+#end
+#src The changes you've made will be applied after restarting %PRODUCTNAME%.  Do you want to restart it now?
+#dst Промените, които сте направили, ще бъдат приложени след рестартиране на %PRODUCTNAME%. Искате ли да го рестартирате сега?
+#end 
+#src Skin scaling %d%%
+#dst Мащабиране на скина %d%%
+#end
+#src On-Screen Display preview
+#dst Визуализация на екранния дисплей
+#end
+#src Image files (*.bmp;*.png)|*.bmp;*.png||
+#dst Файлове с изображения (*.bmp;*.png)|*.bmp;*.png||
+#end
+#src Opacity %d%%
+#dst Непрозрачност %d%%
+#end
+#src Please enter integer value in %d-%d range!
+#dst Моля, въведете цяло число в диапазона %d-%d! 
+#end
+#src Active 3D application
+#dst Активно 3D приложение
+#end
+#src Properties
+#dst Свойства
+#end
+#src Add profile
+#dst Добавете профил
+#end
+#src Add exclusion
+#dst Добавете изключение
+#end
+#src Required DirectX runtimes are not installed! On-Screen Display may not function properly!
+#dst Необходимите DirectX изпълнения не са инсталирани! Екранният дисплей може да не функционира правилно!
+#end
+#src %s components cannot be hooked right now. It is strongly recommended to restart application.
+#dst %s компоненти не могат да бъдат внедрени в момента. Силно се препоръчва да рестартирате приложението.
+#end
+#src %s is not found, installation is corrupted!
+#dst %s не е намерен, инсталацията е повредена!
+#end

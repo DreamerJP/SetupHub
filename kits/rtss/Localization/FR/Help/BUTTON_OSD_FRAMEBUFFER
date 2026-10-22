@@ -1,0 +1,7 @@
+Origine de l'affichage en sur-impression: tampon de trame
+Par défaut les coordonnées d'espace de l'affichage en sur-impression sont en relation avec les coordonnées d'espace du rendu viewport, par ex. l'espace du dernier rectangle que l'application à rendu. Néanmoins, certain applications (par ex. StarCraft II : Wings of Liberty) peuvent utiliser de multiples viewports pendant le rendu des trames (par ex. différents viewports pour le monde 3D et le panel de contrôle 2D et ainsi de suite). Dans ce cas les origines du système de sur-impression suivent le coin du dernier viewport, défini pendant le rendu, qui pourrait être situé dans une position indésirable. Les options de forcage des coordinées d'espace de l'affichage en sur-impression peuvent être utilisées pour restaurer les positions d'origines attendue dans de tels applications.
+Ce bouton utilise les coordinnées d'espace du tampon entier de trame pour l'affichage en sur-impression. 
+
+Astuces:
+- Les protections anti-triche de certains jeux pourrait détecter le rajout de code pour la détection du jeu ou l'indication en sur-impression comme de la triche et de ce fait bloquer la connection au serveur multi joueur. Pour éviter ce problème, essayez de rajouter un profil pour ce jeu et désactivez l'affichage en sur-impression, et si ça n'aide toujours pas, essayez de réduire le niveau de détection de l'application.
+- Vous pouvez désactiver les bulles d'interface dans la tabulation <interface d'utilisateur> dans les propriétés avancées.

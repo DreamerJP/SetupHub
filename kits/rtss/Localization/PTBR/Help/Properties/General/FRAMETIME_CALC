@@ -1,0 +1,18 @@
+Ponto de cálculo do tempo de quadros
+O ciclo de renderização típico em jogos consiste nas seguintes etapas:
+
+[A_1] CPU_render [B_1] Frame_presentation [C_1]
+[A_2] CPU_render [B_2] Frame_presentation [C_2]
+...
+[A_n] CPU_render [B_n] Frame_presentation [C_n]
+
+
+Os pontos A_n definem os momentos em que cada novo quadro é iniciado. A entrada normalmente é amostrada nesse estágio e a CPU começa a renderizar o novo quadro neste timestamp para simular a representação do mundo 3D.
+Os pontos B_n definem os momentos em que a CPU termina de renderizar o novo quadro e tenta apresentá-lo por meio de uma chamada de apresentação do quadro API 3D. A API 3D captura o quadro criando buffers de comando 3D na fila de apresentação e a GPU começa a processá-lo de forma assíncrona a partir de então.
+Os pontos C_n definem os momentos em que a API 3D termina de processar a chamada de apresentação do quadro e devolve o controle ao thread de renderização do jogo. Os pontos C_n correspondem efetivamente aos pontos An + 1, ou seja, simultaneamente o ciclo de renderização começa a renderizar um novo quadro.
+A taxa de quadros e os contadores de tempo de quadros nativos de certos jogos normalmente definem o tempo de quadros como a diferença entre os pontos de tempo A_n e An-1 de dois quadros subsequentes. O RivaTuner usa, por padrão, os mesmos pontos de tempo para o cálculo de tempo de quadros.
+No entanto, alguns programas de benchmarking não funcionam no nível de código de gancho do jogo e não têm acesso a esses tempos específicos, confiam apenas nas estatísticas de apresentação de quadros DXGI e definem um tempo de quadros ligeiramente diferente, calculando-os como a diferença entre os pontos de tempo Bn e Bn-1. 
+O tempo de quadros, medido desta forma, não corresponderá ao tempo de quadros medido por contadores de desempenho nativos de certos jogos ou pelo RivaTuner por sua natureza diferenciada e devido à amostragem timestamps em diferentes momentos. Você pode para mudar para esse modelo de cálculo de tempo de quadros, se necessário.
+
+Sugestões: 
+- Você pode desativar as sugestões na aba <Inteface> das configurações.

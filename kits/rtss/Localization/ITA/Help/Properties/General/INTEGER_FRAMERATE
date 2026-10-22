@@ -1,0 +1,5 @@
+Visualizza il framerate intero
+Consente la visualizzazione del framerate sia come valore intero o come valore a virgola mobile con precisione di 0,1 FPS.
+
+Suggerimenti:
+-È possibile disabilitare le descrizioni comandi dell'interfaccia utente tramite la scheda <interfaccia utente> in proprietà avanzate.

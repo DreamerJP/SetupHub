@@ -1,0 +1,16 @@
+#src Show
+#dst Anzeigen
+#end
+#src Close
+#dst Schließen
+#end
+
+#src Capture screenshot
+#dst Screenshot aufnehmen
+#end
+#src Load
+#dst Laden
+#end
+#src Clear
+#dst Löschen
+#end

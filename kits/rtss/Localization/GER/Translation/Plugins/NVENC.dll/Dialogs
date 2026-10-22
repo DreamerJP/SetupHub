@@ -1,0 +1,26 @@
+#src NVIDIA NVENC encoder
+#dst NVIDIA NVENC-Encoder
+#end
+#src Preset
+#dst Voreinstellung
+#end
+#src Speed
+#dst Geschwindigkeit
+#end
+#src Balanced
+#dst Ausgewogen
+#end 
+#src Quality
+#dst Qualität
+#end
+#src Low-latency encoding
+#dst Encodierung mit geringer Latenz
+#end
+
+
+#src 1 Mbps
+#dst 1 Mbit/s
+#end
+#src 130 Mbps
+#dst 130 Mbit/s
+#end

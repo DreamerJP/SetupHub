@@ -1,0 +1,7 @@
+Activer l'affichage de l'ombre lors de la sur-impression
+Activer l'affichage de l'ombre lors de la sur-impression. L'affichage de l'ombre peut améliorer la lisibilité de la sur-impression dans certaines applications en prévenant le texte de se fondre avec les couleurs solides de l'afficahge. 
+Veuillez noter réduit les performances par le rendu en sur-impression en mode vectoriel, ne l'activez donc que si nécessaire.
+
+Astuces:
+- Les protections anti-triche de certains jeux pourrait détecter le rajout de code pour la détection du jeu ou l'indication en sur-impression comme de la triche et de ce fait bloquer la connection au serveur multi joueur. Pour éviter ce problème, essayez de rajouter un profil pour ce jeu et désactivez l'affichage en sur-impression, et si ça n'aide toujours pas, essayez de réduire le niveau de détection de l'application.
+- Vous pouvez désactiver les bulles d'interface dans la tabulation <interface d'utilisateur> dans les propriétés avancées.

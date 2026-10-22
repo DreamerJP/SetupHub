@@ -1,0 +1,406 @@
+#src N/A
+#dst Н/Д
+#end
+
+#src Sensor
+#dst Сенсор
+#end
+#src Value
+#dst Значення
+#end
+
+#src Sensors exported to %s!
+#dst Сенсори експортовано у файл %s!
+#end
+
+#src Source
+#dst Джерело
+#end
+
+#src Temperature
+#dst Температура
+#end
+#src Voltage
+#dst Напруга
+#end
+#src Fan speed
+#dst Швидкість вентилятора
+#end
+#src Current
+#dst Струм
+#end
+#src Power
+#dst Енергоспоживання
+#end
+#src Clock
+#dst Частота
+#end
+#src Usage
+#dst Завантаження
+#end
+#src Other
+#dst Інше
+#end
+
+#src GPU temperature
+#dst Температура ГП
+#end
+#src PCB temperature
+#dst Температура оточення
+#end
+#src Memory temperature
+#dst Температура пам'яті
+#end
+#src VRM temperature
+#dst Температура VRM
+#end
+#src Fan speed
+#dst Швидкість вентилятора
+#end
+#src Fan tachometer
+#dst Тахометр вентилятора
+#end
+#src Core clock
+#dst Частота ядра
+#end
+#src Shader clock
+#dst Частота шейдерів
+#end
+#src Memory clock
+#dst Частота пам'яті
+#end
+#src GPU usage
+#dst Завантаження ГП
+#end
+#src Memory usage
+#dst Завантаження пам'яті
+#end
+#src FB usage
+#dst Завантаження контролера пам'яті
+#end
+#src VID usage
+#dst Завантаження відеоядра
+#end
+#src BUS usage
+#dst Завантаження контролера шини
+#end
+#src GPU voltage
+#dst Напруга ГП
+#end
+#src Aux voltage
+#dst Згадана напруга
+#end
+#src Memory voltage
+#dst Напруга пам'яті
+#end
+#src Framerate
+#dst Частота кадрів
+#end
+#src Frametime
+#dst Час кадру
+#end
+#src Framerate Min
+#dst Частота кадрів Мін
+#end
+#src Framerate Avg
+#dst Частота кадрів Середнє
+#end
+#src Framerate Max
+#dst Частота кадрів Макс
+#end
+#src Framerate 1% Low
+#dst Частота кадрів нижче 1%
+#end
+#src Framerate 0.1% Low
+#dst Частота кадрів нижча за 0.1%
+#end
+#src Power
+#dst Енергоспоживання
+#end
+
+#src Temp limit
+#dst Межа температури
+#end
+#src Power limit
+#dst Межа енергоспоживання
+#end
+#src Voltage limit
+#dst Межа напруги
+#end
+#src No load limit
+#dst Межа відсутності навантаження
+#end
+#src CPU usage
+#dst Завантаження ЦП
+#end
+#src RAM usage
+#dst Завантаження ОЗП
+#end
+#src Commit charge
+#dst Виділена пам'ять
+#end
+#src CPU temperature
+#dst Температура ЦП
+#end
+#src SLI sync limit
+#dst Межа синхронізації SLI
+#end
+#src CPU clock
+#dst Частота ЦП
+#end
+#src Aux2 voltage
+#dst Доп. напруга 2
+#end
+#src GPU temperature 2
+#dst Температура ГП 2
+#end
+#src PCB temperature 2
+#dst Температура оточення 2
+#end
+#src Memory temperature 2
+#dst Температура пам'яті 2
+#end
+#src VRM temperature 2
+#dst Температура VRM 2
+#end
+#src GPU temperature 3
+#dst Температура ГП 3
+#end
+#src PCB temperature 3
+#dst Температура оточення 3
+#end
+#src Memory temperature 3
+#dst Температура пам'яті 3
+#end
+#src VRM temperature 3
+#dst Температура VRM 3
+#end
+#src GPU temperature 4
+#dst Температура ГП 4
+#end
+#src PCB temperature 4
+#dst Температура оточення 4
+#end
+#src Memory temperature 4
+#dst Температура пам'яті 4
+#end
+#src VRM temperature 4
+#dst Температура VRM 4
+#end
+#src GPU temperature 5
+#dst Температура ГП 5
+#end
+#src PCB temperature 5
+#dst Температура оточення 5
+#end
+#src Memory temperature 5
+#dst Температура пам'яті 5
+#end
+#src VRM temperature 5
+#dst Температура VRM 5
+#end
+#src <GPU plugin>
+#dst <плагін ГП>
+#end
+#src <CPU plugin>
+#dst <плагін ЦП>
+#end
+#src <motherboard plugin>
+#dst <плагін матплати>
+#end
+#src <RAM plugin>
+#dst <плагін ОЗП>
+#end
+#src <HDD plugin>
+#dst <плагін диска>
+#end
+#src <NET plugin>
+#dst <плагін мережі>
+#end
+#src <PSU plugin>
+#dst <плагін БП>
+#end
+#src <UPS plugin>
+#dst <плагін ДБЖ>
+#end
+#src <miscellaneous plugin>
+#dst <інший плагін>
+#end
+#src CPU power
+#dst Енергоспоживання ЦП
+#end
+
+#src Failed to initialize Direct3D!
+#dst Неможливо ініціалізувати Direct3D!
+#end
+
+#src nameless
+#dst безіменний
+#end
+#src Overlay editor
+#dst Редактор оверлею
+#end
+#src Overlay editor - %s
+#dst Редактор оверлею - %s
+#end
+#src Undo / Redo : %d / %d
+#dst Скасувати / Повторити : %d / %d
+#end
+#src Undo : %d
+#dst Скасувати : %d
+#end
+#src Undo / Redo
+#dst Скасувати / Повторити
+#end
+#src Layer %d of %d\tPos (%d, %d)\tExt (%d, %d)
+#dst Шар %d з %d\тПоз (%d, %d)\тРазм (%d, %d)
+#end
+#src Layer info
+#dst Інформація про шар
+#end
+#src \tHypertext %d / %d\tBuffer %d / %d
+#dst \тГіпертекст %d / %d\тБуфер %d / %d
+#end
+#src Do you want to save changes in %s overlay layout?
+#dst Ви хочете зберегти зміни в макеті оверлею %s?
+#end
+#src Overlay layout files (*.ovl)|*.ovl||
+#dst Файли макетів оверлею (*.ovl)|*.ovl||||
+#end
+#src PNG image files (*.png)|*.png||
+#dst Файли зображень PNG (*.png)|*.png||||
+#end
+#src Warning! This will set your On-Screen Display rendering mode, raster font and zoom settings to layout creator's ones. Do you want to continue?
+#dst Увага! Це призведе до того, що режим рендеринга екранного дисплея, растровий шрифт і налаштування масштабування будуть відповідати налаштуванням творця макета. Хочете продовжити?
+#end
+#src Cur (%d, %d)\tPos (%d, %d)\tExt (%d, %d)
+#dst Кур (%d, %d)\тПоз (%d, %d)\тРазм (%d, %d)
+#end
+
+#src Table
+#dst Таблиця
+#end
+#src Line
+#dst Рядок
+#end
+#src Cell
+#dst Клітина
+#end
+#src <nameless>
+#dst <безіменна>
+#end
+#src <separator>
+#dst <роздільник>
+#end
+#src <no binding>
+#dst <без прив'язки>
+#end
+
+#src Internal HAL
+#dst Внутрішній шар абстракції обладнання
+#end
+#src Windows performance counter
+#dst Лічильник продуктивності Windows
+#end
+
+#src Layer %d of %d\tPos (%s, %s)\tExt (%d, %d)
+#dst Шар %d з %d\тПоз (%s, %s)\тРазм (%d, %d)
+#end
+
+#src left
+#dst ліворуч
+#end
+#src center
+#dst центр
+#end
+#src right
+#dst справа
+#end
+#src top
+#dst зверху
+#end
+#src bottom
+#dst знизу
+#end
+
+#src Overlay layout exchange files (*.ovx)|*.ovx||
+#dst Файли обміну макетами оверлеїв (*.ovx)|*.ovx||||
+#end
+#src Failed to export %s file!
+#dst Неможливо експортувати файл %s!
+#end
+#src Failed to import %s file!
+#dst Неможливо імпортувати файл %s!
+#end
+#src Different version of %s file already exists, do you want to overwrite it?
+#dst Інша версія файлу %s вже існує, хочете перезаписати його?
+#end
+#src Failed to extract %s file!
+#dst Неможливо витягти файл %s!
+#end
+
+#src The settings will be applied after restarting the application!
+#dst Налаштування будуть застосовані після перезапуску програми!
+#end
+
+#src graph minimum
+#dst мінімум графіка
+#end
+#src graph maximum
+#dst максимум графіка
+#end
+#src framerate
+#dst частота кадрів
+#end
+#src minimum framerate
+#dst мінімальна частота кадрів
+#end
+#src average framerate
+#dst середня частота кадрів
+#end
+#src maximum framerate
+#dst максимальна частота кадрів
+#end
+#src 1% low framerate
+#dst частота кадрів нижче 1%
+#end
+#src 0.1% low framerate
+#dst частота кадрів нижче 0.1%
+#end
+#src frametime
+#dst час кадру
+#end
+#src frame counter
+#dst лічильник кадрів
+#end
+#src abbreviated 3D API
+#dst абревіатура 3D API
+#end
+#src 3D API
+#dst 3D API
+#end
+#src executable
+#dst виконуваний файл
+#end
+#src resolution
+#dst роздільна здатність
+#end
+#src architecture
+#dst архітектура
+#end
+#src time
+#dst час
+#end
+#src text file
+#dst тескстовий файл
+#end
+#src benchmark time
+#dst час бенчмарку
+#end
+
+#src Embedded image must be located in the same folder with overlay layout!
+#dst Вбудоване зображення має знаходитися в тій самій папці, що й макет оверлею!
+#end
+#src Overlay layout contains references to additional files, do you want to copy them to new folder as well?
+#dst Макет оверлею містить посилання на додаткові файли, хочете скопіювати і їх у новупапку?
+#end

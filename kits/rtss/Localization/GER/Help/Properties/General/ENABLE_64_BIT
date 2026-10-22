@@ -1,0 +1,5 @@
+64-Bit-Anwendungsunterstutzungsdienst aktivieren
+Enthalt einen Hilfsdienst, der Unterstutzung fur 64-Bit-Anwendungen bietet. Sie konnen den Service deaktivieren, um Probleme zu losen oder wenn Sie die %PRODUCTNAME%-Funktionalitat in 64-Bit-Anwendungen nicht benotigen. Bitte beachten Sie, dass die Unterstutzung fur 64-Bit-Overlay-OSD in Ubertaktungssoftware aufgrund der Lizenzbedingungen auf MSI Afterburner beschrankt ist.
+
+Hinweis:
+- Tooltips konnen in der Registerkarte <Benutzeroberflache> in den erweiterten Einstellungen deaktiviert werden.

@@ -1,0 +1,319 @@
+#src Hotkey handler properties
+#dst Свойства на манипулатора на бързи клавиши
+#end
+
+#src On-Screen Display
+#dst Екранен дисплей
+#end
+#src Show On-Screen Display
+#dst Покажи екранен дисплей
+#end
+#src Hide On-Screen Display
+#dst Скриване на екранния дисплей
+#end 
+#src Toggle On-Screen Display
+#dst Превключване на екранния дисплей
+#end
+#src Overlay editor plugin
+#dst Плъгин за редактор на оверлея
+#end
+
+#src Overlay editor plugin properties
+#dst Свойства на плъгина редактор на оверлея
+#end
+#src Programmable overlay modifier 1
+#dst Програмируем модификатор на оверлея 1
+#end
+#src Programmable overlay modifier 2
+#dst Програмируем модификатор на оверлея 2
+#end
+#src Programmable overlay modifier 3
+#dst Програмируем модификатор на оверлея 3
+#end
+#src Programmable overlay modifier 4
+#dst Програмируем модификатор на оверлея 4
+#end
+
+#src Programmable overlay modifier properties
+#dst Свойства на програмируем модификатор на оверлея
+#end
+#src Load overlay
+#dst Заредете оверлей
+#end
+#src Load text file
+#dst Зареждане на текстов файл
+#end
+#src View text file
+#dst Преглед на текстов файл
+#end
+#src Move to next text file line
+#dst Преминаване към следващия ред на текстов файл
+#end
+#src Move to previous text file line
+#dst Преминаване към предишния ред на текстовия файл
+#end
+#src Set timer to 30 seconds
+#dst Задайте таймера на 30 секунди
+#end
+#src Set ping address
+#dst Задайте адрес на пинг-а
+#end
+#src Reset statistics
+#dst Нулиране на статистиката
+#end
+
+
+#src Overlay message
+#dst Съобщение за оверлея
+#end
+#src Overlay layer
+#dst Слой на оверлея
+#end
+#src Parameters
+#dst Параметри
+#end
+
+#src Framerate limiter
+#dst Ограничител на кадрите
+#end
+#src Enable framerate limter
+#dst Активирайте ограничителя на кадри
+#end
+#src Disable framerate limiter
+#dst Деактивирайте ограничителя на кадрите
+#end
+#src Toggle framerate limiter
+#dst Превключване на ограничителя на кадрите
+#end
+
+#src Screenshots
+#dst Екранни снимки
+#end
+#src Screen capture
+#dst Заснемане на екрана
+#end
+
+#src Screen capture properties
+#dst Свойства за заснемане на екрана
+#end
+#src Screenshot format
+#dst Формат на екранна снимка
+#end
+#src Screenshots folder
+#dst Папка за екранни снимки
+#end
+#src Browse
+#dst Прегледайте
+#end
+#src View
+#dst Преглед
+#end
+#src Show On-Screen Display on captured screenshots and videos
+#dst Показване на екранен дисплей върху заснети екранни снимки и видеоклипове
+#end
+
+#src Videos
+#dst Видео
+#end
+#src Video capture
+#dst Видеозапис
+#end
+#src Video prerecord
+#dst Предварителен запис на видео
+#end
+
+#src Video capture properties
+#dst Свойства за заснемане на видео
+#end
+#src General
+#dst Основни
+#end
+#src Video format
+#dst Видео формат
+#end
+#src Videos folder
+#dst Папка с видеоклипове
+#end
+#src Video stream
+#dst Видео поток
+#end
+#src Capture mode
+#dst Режим на заснемане
+#end
+#src mixed
+#dst смесен
+#end
+#src desktop
+#dst работен плот
+#end
+#src 3D application
+#dst 3D приложение
+#end
+#src Frame size
+#dst Размер на кадър
+#end
+#src full frame
+#dst пълен кадър
+#end
+#src 1/2 frame
+#dst 1/2 кадър
+#end
+#src 1/3 frame
+#dst 1/3 кадър
+#end
+#src 1/4 frame
+#dst 1/4 кадър
+#end
+#src Audio stream
+#dst Аудио поток
+#end
+#src Downmix multichannel audio to stereo
+#dst Смесете многоканален звук към стерео
+#end
+#src stereo rip
+#dst изрязване на стерео
+#end
+#src stereo mix
+#dst stereo mix
+#end
+#src Mix multiple audio tracks
+#dst Смесете множество аудио записи
+#end
+#src None
+#dst Нито един
+#end
+#src Auto select
+#dst Автоматичен избор
+#end
+#src DirectSound capture device
+#dst Устройство за запис на DirectSound
+#end
+#src WASAPI playback device
+#dst Устройство за възпроизвеждане на WASAPI
+#end
+#src WASAPI capture device
+#dst Устройство за запис на WASAPI
+#end
+#src There are no devices
+#dst Няма устройства
+#end
+#src Audio source #1
+#dst Аудио източник #1 #1
+#end
+#src Audio source #2
+#dst Аудио източник #2
+#end
+#src Push-To-Talk hotkey
+#dst Бърз клавиш за Push-to-Talk
+#end
+#src There are no devices available
+#dst Няма налични устройства
+#end
+#src Use dedicated encoder server
+#dst Използвайте специален сървър за кодиране
+#end
+
+#src Video prerecording properties
+#dst Свойства за предварителен запис на видео
+#end
+#src Prerecord buffer location
+#dst Местоположение на буфера за предварителен запис
+#end
+#src file
+#dst файл
+#end
+#src RAM
+#dst РАМ
+#end
+#src Prerecord buffer time limit, in seconds
+#dst Времево ограничение на буфера за предварителен запис, в секунди
+#end
+#src Prerecord buffer size limit, in MB
+#dst Ограничение за размера на буфера за предварителен запис, в МБ
+#end
+#src Enable automatic prerecording mode
+#dst Активиране на автоматичен режим на предварителен запис
+#end
+
+#src Benchmark
+#dst Бенчмарк
+#end
+#src Begin recording
+#dst Начать запись
+#end
+#src End recording
+#dst Завершить запись
+#end
+
+#src Benchmark properties
+#dst Свойства бенчмарка
+#end
+#src Benchmark results file
+#dst Файл с резултати от бенчмарк
+#end
+#src Recreate existing benchmark results files
+#dst Пресъздайте съществуващи файлове с резултати от бенчмарк
+#end
+
+#src Profiles
+#dst Профили
+#end
+#src Programmable profile modifier 1
+#dst Програмируем модификатор на профили 1
+#end
+#src Programmable profile modifier 2
+#dst Програмируем модификатор на профили 2
+#end
+#src Programmable profile modifier 3
+#dst Програмируем модификатор на профилир 3
+#end
+#src Programmable profile modifier 4
+#dst Програмируем модификатор на профили 4
+#end
+
+#src Programmable profile modifier properties
+#dst Свойства на програмируемия модификатор на профили
+#end
+#src Description
+#dst Описание
+#end
+#src Target profile (leave blank for global)
+#dst Целеви профил (оставете празно за глобално)
+#end
+#src Target profile property
+#dst Свойство на целеви профил
+#end
+#src Modifier type
+#dst Тип модификатор
+#end
+#src set
+#dst инсталирай
+#end
+#src add
+#dst добавете
+#end
+#src Modifier value
+#dst Стойност на модификатора
+#end 
+#src Preset
+#dst Предварителна настройка
+#end
+#src custom
+#dst персонализиран
+#end
+#src Set 60 FPS framerate limit
+#dst Задайте ограничение на кадрите от 60 FPS
+#end
+#src Increase framerate limit
+#dst Увеличаване ограничението на кадрите
+#end
+#src Decrease framerate limit
+#dst Намаляване ограничението на кадрите
+#end
+#src Increase Scanline Sync index
+#dst Увеличете индекса за синхронизиране на Scanline 
+#end
+#src Decrease Scanline Sync index
+#dst Намалете индекса за синхронизиране на Scanline
+#end
+

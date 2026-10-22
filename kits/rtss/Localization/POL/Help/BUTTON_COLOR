@@ -1,0 +1,6 @@
+Kolor bazowy
+Displays base color for On-Screen Display and allows you to redefine it.
+
+Wskazówki:
+- Systemy przeciwdzia³aj¹ce oszukiwaniu w niektórych grach mog¹ traktowaæ technikê wstrzykiwania kodu u¿ywan¹ przez program, niezbêdn¹ do wykrywania aplikacji i wyœwietlania On-Screen Display, jako potencjalne oszustwo i blokowaæ po³¹czenie z serwerem gry. By rozwi¹zaæ takie problemy spróbuj stworzyæ profil dla takiej gry i wy³¹cz dla niej obs³ugê On-Screen Display, lub jeœli to nie pomo¿e spróbuj obni¿yæ poziom wykrywania aplikacji.
+- Mo¿esz wy³¹czyæ wskazówki interfejsu u¿ytkownika w ustawieniach na zak³adce <Interfejs u¿ytkownika>.

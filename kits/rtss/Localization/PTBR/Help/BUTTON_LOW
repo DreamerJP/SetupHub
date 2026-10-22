@@ -1,0 +1,7 @@
+Nível de detecção: Baixo 
+Seleciona o nível de detecção baixo para o programa associado ao perfil atual. O programa intercepta as bibliotecas Direct3D e OpenGL em tempo real de execução. 
+Este modo é recomendado para a coleta de estatísticas em tempo real, como taxa de quadros, permitindo serviços adicionais como o mostrador de informações na tela para a maioria das aplicações 3D modernas. 
+
+Sugestões: 
+- Algums programas protegidos podem tratar a coleta de estatísticas como possível ameaça e se recusarem a executar. Tente diminuir o nível de detecção para solucionar tais questões. 
+- Você pode desativar as sugestões na aba <Inteface> das configurações.

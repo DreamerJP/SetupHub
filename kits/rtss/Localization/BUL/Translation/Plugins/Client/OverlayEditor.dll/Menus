@@ -1,0 +1,121 @@
+#src Layouts
+#dst Оформления
+#end
+#src New\tCtrl+N
+#dst Нов\tCtrl+N
+#end
+#src Edit\tCtrl+Enter
+#dst Редактиране\tCtrl+Enter
+#end
+#src Load\tCtrl+L, Ctrl+O
+#dst Заредете\tCtrl+L, Ctrl+O
+#end
+#src Save\tCtrl+S
+#dst Запазване\tCtrl+S
+#end
+#src Save As\tCtrl+Shift+S
+#dst Запази като\tCtrl+Shift+S
+#end
+#src Undo\tCtrl+Z
+#dst Отмяна\tCtrl+Z
+#end
+#src Redo\tCtrl+Y, Ctrl+Shift+Z
+#dst Повторете\tCtrl+Y, Ctrl+Shift+Z
+#end
+#src Import
+#dst Импортиране
+#end
+#src Export
+#dst Експортиране
+#end
+
+#src Data sources
+#dst Източници на данни
+#end
+#src Edit\tCtrl+D
+#dst Редактиране\tCtrl+D
+#end
+
+#src Tables
+#dst Таблици
+#end
+#src Edit\tCtrl+T
+#dst Редактиране\tCtrl+T
+#end
+
+#src Layers
+#dst Слоеве
+#end
+#src Add\tInsert
+#dst Добавяне\tInsert
+#end
+#src Remove\tDelete
+#dst Премахване\tDelete
+#end
+#src Edit\tEnter
+#dst Редактиране\tEnter
+#end
+
+#src Edit list\tCtrl+Shift+L
+#dst Редактиране на списък\tCtrl+Shift+L
+#end
+#src Move to top\tHome
+#dst Преместване отгоре\tHome
+#end
+#src Move up\tPage Up
+#dst Придвижете се нагоре\tPage Up
+#end
+#src Move down\tPage Down
+#dst Придвижете се надолу\tPage Down
+#end
+#src Move to bottom\tEnd
+#dst Преместване отдолу\tEnd
+#end
+#src Copy\tCtrl+C
+#dst Копирай\tCtrl+C
+#end
+#src Paste\tCtrl+V
+#dst Постави\tCtrl+V
+#end
+
+#src View
+#dst Преглед
+#hst Menu
+#end
+#src Reset view zoom
+#dst Нулиране на мащаба на изгледа
+#end
+#src Snap to grid
+#dst Прилепване към мрежата
+#end
+#src Show grid
+#dst Показване на мрежа
+#end
+#src Show checkerboard
+#dst Показване на шахматна дъска
+#end
+
+#src Tools
+#dst Инструменти
+#end
+#src Show hypertext\tCtrl+Shift+H
+#dst Показване на хипертекст\tCtrl+Shift+H
+#end
+#src Optimize hypertext\tCtrl+Shift+O
+#dst Оптимизиране на хипертекста\tCtrl+Shift+O
+#end
+
+#src Macro
+#dst Макро
+#end
+#src Internal sources
+#dst Вътрешни източници
+#end
+#src External sources
+#dst Външни източници
+#end
+
+
+#src Tags
+#dst Тагове
+#end

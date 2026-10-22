@@ -1,0 +1,5 @@
+Iniciar com o Windows
+Permite iniciar o programa com o Windows. Ative essa opção somente quando estiver usando o programa como solução de monitoramento de taxa de quadros independente. Se você estiver usando juntamente com os clientes RivaTuner, HIS iTurbo, EVGA Precision ou MSI Afterburner, estes irão carregar o servidor quando necessário.
+
+Sugestões:
+- Você pode desativar as sugestões na aba <Inteface> das configurações.

@@ -1,0 +1,5 @@
+Exibir histórico do tempo de quadros na tela
+Ativa o gráfico que exibe na tela o histórico do tempo de quadros para os últimos 512 quadros renderizados. O gráfico pode ser útil na detecção de microtravamentos decorrentes de flutuações na taxa de quadros.
+
+Sugestões: 
+- Você pode desativar as sugestões na aba <Inteface> das configurações.

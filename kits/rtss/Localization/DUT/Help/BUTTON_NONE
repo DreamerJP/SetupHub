@@ -1,0 +1,6 @@
+Toepassing detectie niveau: geen
+Schakel detectie uit voor de toepassing geassocieerd met het huidige profiel. In deze modus %PRODUCTNAME% verzamelt geen runtime statistieken, zoals framerate, en ondersteund geen aanvullende diensten, zoals OSD, aan de bijbehorende toepassing.
+
+Hint:
+- Anti-cheat systemen van sommige games kunnen game code hooking dat nodig is voor de informatie op het scherm (OSD)te verkrijgen aanzien als een cheat. Als dit het geval is dient u OSD uit te schakelen voor deze 3D toepassingen of probeer om een profiel voor deze toepassing te maken en verminder het detectie niveau van de toepassing.
+- Je kan de gebruikers interface werktips uitschakelen via de<gebruikers interface> tab in geavanceerde eigenschappen.

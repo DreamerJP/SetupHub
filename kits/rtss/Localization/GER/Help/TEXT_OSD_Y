@@ -1,0 +1,6 @@
+Y-Koordinate der Overlay-Bildschirmanzeige
+Zeigt die Y-Koordinate auf dem Bildschirm in Bezug auf den Ursprung an. Klicken Sie auf dieses Feld, um die gewünschte Position manuell einzugeben, oder verwenden Sie die nebenstehenden Schaltflächen, um sie zu vergrößern oder zu verkleinern. Verwenden Sie das Vorschaufenster der Bildschirmanzeige zur visuellen Kontrolle des Erscheinungsbilds der Bildschirmanzeige beim Anpassen der Position.
+
+Hinweise:
+- Die Anti-Cheat-Systeme einiger Spiele können das für die Anwendungserkennung und das Rendern von Bildschirmanzeigen erforderliche Einhängen des Spielcodes als möglichen Cheat behandeln und die Verbindung zum Multiplayer-Server blockieren. Um dieses Problem zu lösen, kann ein Profil für das Spiel erstellt und die Unterstützung für die Overlay-Bildschirmanzeige deaktiviert werden. Wenn das nicht hilft, versuchen Sie, die Erkennungsstufe der App zu senken.
+- Tooltips können in der Registerkarte <Benutzeroberfläche> in den erweiterten Einstellungen deaktiviert werden.

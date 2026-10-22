@@ -1,0 +1,29 @@
+#src AMD VCE encoder
+#dst AMC VCE енкодер
+#end
+#src Memory type
+#dst “ип пам'€т≥
+#end
+#src host
+#dst хост
+#end
+#src Preset
+#dst ѕресет
+#end
+#src Speed
+#dst Ўвидк≥сть
+#end
+#src Balanced
+#dst Ѕаланс
+#end
+#src Quality
+#dst як≥сть
+#end
+
+
+#src 1 Mbps
+#dst 1 ћб≥т/c
+#end
+#src 50 Mbps
+#dst 50 ћб≥т/c
+#end

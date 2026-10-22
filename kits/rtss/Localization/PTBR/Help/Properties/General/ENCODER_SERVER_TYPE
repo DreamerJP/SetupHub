@@ -1,0 +1,5 @@
+Tipo de servidor codificador dedicado  
+Permite ativar o servidor codificador dedicado para aplicações de 32 bits ou 64 bits. O servidor de 32 bits é recomendado para maior compatibilidade ao usar o modo de compressão VFW em codecs VFW. O servidor de 64 bits pode ser útil no modo de pré-gravação, pois permite usar mais de 2GB de RAM para "buffer" de gravação. 
+
+Sugestões: 
+- Você pode desativar as sugestões na aba <Inteface> das configurações.

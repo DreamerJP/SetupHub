@@ -1,0 +1,6 @@
+Plano de fundo do mostrador de informações na tela
+Permite preencher a área de fundo do mostrador de informações na tela com cores sólidas ou transparentes. A cor do preenchimento e o nível de transparência podem ser ajustados nas configurações de seleção de cores. O preenchimento da área de fundo pode melhorar a legibilidade do mostrador de informações na tela em algumas aplicações, impedindo que o texto se funda às cores da tela.
+
+Sugestões:
+- Sistemas "Anticheat" de alguns jogos podem considerar o código para a detecção de aplicativos e a renderização de informações na tela como possível fraude em servidores multiplayer. Para solucionar essas questões, tente adicionar um perfil para o jogo e desative o suporte ao mostrador de informações na tela, ou tente diminuir o nível de detecção do programa. 
+- Você pode desativar as sugestões na aba <Inteface> das configurações.

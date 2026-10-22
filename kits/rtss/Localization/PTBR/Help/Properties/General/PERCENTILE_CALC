@@ -1,0 +1,5 @@
+Modo do cálculo percentil
+Afeta o método de cálculo com base nos percentis 1% mínimo e 0,1% mínimo. Ambas as métricas são baseadas em matrizes classificadas de tempo de quadros e refletem a taxa de quadros instantânea calculada a partir de um único tempo de quadro localizado no limite de 1% ou 0,1% dos quadros mais lentos.Esta opção define os limites 1% ou 0,1% dos quadros mais lentos. No modo de cálculo percentil linear, o limite é estático P99/P99.1, ou seja, é 1% ou 0,1% da contagem total de quadros renderizados. O modo de cálculo integral é um pouco mais complexo, porém mais representativo, é o limite dos quadros mais lentos contando 1% ou 0,1% do tempo total do benchmark.
+
+Sugestões:
+- Você pode desativar as sugestões na aba <Interface> das configurações.

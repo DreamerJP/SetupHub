@@ -1,0 +1,44 @@
+#src Please select target folder for screen capture
+#dst Bitte wählen Sie den Speicherpfad für Screenshots aus
+#end
+#src Please select target folder for video capture
+#dst Bitte wählen Sie den Speicherpfad für Videoaufnahmen aus
+#end
+
+#src uncompressed
+#dst unkomprimiert
+#end
+#src NV12 compression
+#dst NV12 (4:2:0, 24-Bit)
+#end
+#src RTV1 compression
+#dst RTV1 (RivaTuner Video V1)
+#end
+#src MJPG compression
+#dst MJPEG (Motion JPEG)
+#end
+#src VFW compression : %s
+#dst VfW-Komprimierung: %s
+#end
+#src external plugin : %s
+#dst Externes Plug-in: %s
+#end
+#src not configured
+#dst nicht konfiguriert
+#end
+
+#src %d%% quality
+#dst %d%% Qualität
+#end
+
+#src Framerate %d FPS
+#dst Framerate %d FPS
+#end
+
+
+#src Warning
+#dst Achtung
+#end
+#src You've specified invalid profile property!
+#dst Sie haben eine ungültige Profileigenschaft angegeben!
+#end

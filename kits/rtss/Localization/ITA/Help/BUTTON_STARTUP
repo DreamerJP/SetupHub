@@ -1,0 +1,5 @@
+Avvio con Windows
+Consente l'avvio di %PRODUCTNAME% con Windows. Attivare questa opzione solo quando si usa %PRODUCTNAME% come soluzione indipendente di monitoraggio framerate. Se si utilizza questa applicazione combinata con applicazioni clients come RivaTuner, HIS iTurbo, EVGA Precision o MSI Afterburner, il client caricherà il server quando necessario automaticamente.
+
+Consigli:
+- È possibile disattivare i suggerimenti di interfaccia utente tramite la scheda <Interfaccia utente> in proprietà avanzate.

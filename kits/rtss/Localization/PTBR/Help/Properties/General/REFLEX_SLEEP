@@ -1,0 +1,8 @@
+Inserir chamada de suspensão do NVIDIA Reflex
+A eficiência da integração do NVIDIA Reflex depende do posicionamento ideal de chamada do NvAPI_D3D_Sleep dentro da implementação de renderização de quadros do jogo. Esta chamada fornece um ponto de entrada para suspender o driver no local ideal para atingir a latência mais baixa. Idealmente, ele deve estar localizado bem no início do quadro, antes da simulação e da amostragem de entrada.
+Esta opção permite controlar o comportamento de injeção NvAPI_D3D_Sleep para jogos sem suporte nativo ao NVIDIA Reflex e quando ativado o modo de limitação de taxa de quadros do NVIDIA Reflex. Neste caso, o ponto de entrada pode ser colocado automaticamente pelo driver ou você pode forçá-lo imediatamente antes ou imediatamente após a apresentação. Colocá-lo imediatamente antes da apresentação prioriza a estabilidade do tempo de quadros, colocá-lo imediatamente após a apresentação prioriza a latência e pode reduzi-la se o jogo estiver realizando simulação e amostragem de entrada no thread de renderização.
+
+Dicas:
+- Esta configuração é específica para o perfil do aplicativo atualmente selecionado.
+- Você pode carregar o arquivo de layout do editor de informações na tela "Reflex.ovl" no plugin "OverlayEditor" para analisar as latências do NVIDIA Reflex em diferentes estágios do pipeline de renderização.
+- Você pode desativar as sugestões na aba <Inteface> das configurações.

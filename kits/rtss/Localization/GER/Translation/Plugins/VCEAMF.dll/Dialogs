@@ -1,0 +1,29 @@
+#src AMD VCE encoder
+#dst AMD VCE-Encoder
+#end
+#src Memory type
+#dst Speichertyp
+#end
+#src host
+#dst Host
+#end
+#src Preset
+#dst Voreinstellung
+#end
+#src Speed
+#dst Geschwindigkeit
+#end
+#src Balanced
+#dst Ausgewogen
+#end 
+#src Quality
+#dst Qualität
+#end
+
+
+#src 1 Mbps
+#dst 1 Mbit/s
+#end
+#src 50 Mbps
+#dst 50 Mbit/s
+#end

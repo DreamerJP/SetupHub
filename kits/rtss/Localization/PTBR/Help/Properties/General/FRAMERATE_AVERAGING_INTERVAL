@@ -1,0 +1,6 @@
+Intervalo da média da taxa de quadros
+A taxa de quadros possui características imediatas e raramente estáticas mesmo em cenários fixos de uso, sendo que normalmente flutua próximo a um valor-alvo. Geralmente, para filtrar tais flutuações indesejadas, as ferramentas de monitoramento exibem um valor médio para a taxa de quadros. 
+Esta opção permite ajustar o intervalo, em milissegundos, para obtenção da taxa de quadros média, mas você ainda pode defini-lo a 0 para desativar completamente a exibição de valores médios para a taxa de quadros.
+
+Sugestões:
+- Você pode desativar as sugestões na aba <Inteface> das configurações.

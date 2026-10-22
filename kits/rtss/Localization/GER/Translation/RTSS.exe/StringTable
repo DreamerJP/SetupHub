@@ -1,0 +1,153 @@
+#src %s skin has been successfully compiled!
+#dst Skin %s wurde erfolgreich kompiliert!
+#end
+#src Failed to compile %s skin!
+#dst Skin %s konnte nicht kompiliert werden!
+#end
+#src %s skin has been successfully decompiled!
+#dst Skin %s wurde erfolgreich dekompiliert!
+#end
+#src Failed to decompile %s skin!
+#dst Skin %s konnte nicht dekompiliert werden!
+#end
+#src Failed to load %s skin!
+#dst Skin %s konnte nicht geladen werden!
+#end
+#src Some of %PRODUCTNAME% components are expired, missing or corrupted!
+#dst Einige MSI %PRODUCTNAME%-Komponenten sind abgelaufen, fehlen oder sind beschädigt!
+#end
+#src Failed to load %s skin, reverting to default skin!
+#dst Skin %s konnte nicht geladen werden, Standard-Skin wird geladen!
+#end
+#src Unsupported %s skin file format!
+#dst Nicht unterstütztes %s Skin-Dateiformat!
+#end
+#src Failed to initialize main window with %s skin, reverting to default skin!
+#dst Das Hauptfenster konnte nicht mit Skin %s initialisiert werden, Standard-Skin wird geladen!
+#end
+#src Failed to initialize main window!
+#dst Hauptfenster konnte nicht initialisiert werden!
+#end
+#src Beta %d
+#dst Beta %d
+#end
+#src compiled on %d-%m-%Y %H:%M:%S
+#dst kompiliert am %d-%m-%Y um %H:%M:%S
+#end
+#src expires on %s
+#dst läuft am %s ab
+#end
+#src Cannot load RTSSHooks.dll library!
+#dst ?????????? ????????? ?????????? RTSSHooks.dll!
+#end
+#src Tip: %PRODUCTNAME% is currently minimized to system tray area. You may click its' tray icon to bring %PRODUCTNAME% window to top.
+#dst %PRODUCTNAME% ist derzeit im Taskleistenbereich minimiert. Sie können auf das Taskleistensymbol klicken, um das %PRODUCTNAME%-Fenster zu öffnen.
+#end
+#src Failed to restore main window DIB cache!
+#dst Der Bildcache des Hauptfensters kann nicht wiederhergestellt werden!
+#end
+#src CTaskSchedulerInterface::%s failed with error code %d!
+#dst CTaskSchedulerInterface::%s Fehler mit Fehlercode %d!
+#end
+#src %PRODUCTNAME% properties
+#dst Erweiterte Einstellungen
+#end
+#src Resource file copy has been successfully saved to %s!
+#dst Ressourcen erfolgreich nach %s kopiert!
+#end
+#src Failed to save resource file copy to %s!
+#dst Ressourcen konnten nicht nach %s gespeichert werden!
+#end
+#src Executable files (*.exe)|*.exe||
+#dst Ausführbare Dateien (*.exe)|*.exe||
+#end
+#src Bitmap files (*.bmp)|*.bmp||
+#dst Bitmap-Dateien (*.bmp)|*.bmp||
+#end
+#src There is no new version available at this time. Currently installed version is up to date.
+#dst Derzeit ist keine neue Version verfügbar. Die installierte Version ist aktuell.
+#end
+#src %PRODUCTNAME% v%s is available for download. Do you want to open the download page now?
+#dst %PRODUCTNAME% v%s steht zum Download bereit. Möchten Sie die Downloadseite jetzt öffnen?
+#end
+#src Cannot retrieve update information from the update server!
+#dst Update-Informationen können nicht vom Update-Server abgerufen werden!
+#end
+#src Cannot establish connection with the update server!
+#dst Es kann keine Verbindung zum Update-Server hergestellt werden!
+#end
+#src cannot open internet connection
+#dst Es kann keine Internetverbindung hergestellt werden!
+#end
+#src cannot open server connection
+#dst Es kann keine Verbindung zum Server hergestellt werden!
+#end
+#src cannot open HTTP request
+#dst HTTP-Anfrage kann nicht geöffnet werden!
+#end
+#src cannot send HTTP request
+#dst HTTP-Anfrage kann nicht gesendet werden!
+#end
+#src cannot query HTTP info
+#dst HTTP-Info kann nicht abgefragt werden!
+#end
+#src proxy authentification required
+#dst Proxy-Authentifizierung erforderlich!
+#end
+#src cannot read file
+#dst Datei kann nicht gelesen werden
+#end
+#src unknown reason %d
+#dst Unbekannter Grund %d
+#end
+#src Reason : %s, error code %d
+#dst Grund : %s, Fehlercode %d
+#end
+#src Last checked on %A, %B %d, %Y, %H:%M:%S
+#dst Zuletzt überprüft am %d.%m.%Y um %H:%M:%S
+#end
+#src Reboot is required to finalize %PRODUCTNAME% installation!
+#dst Ein Neustart ist erforderlich, um die Installation von %PRODUCTNAME% abzuschließen!
+#end
+#src Some system components cannot be hooked right now. It is strongly recommended to restart application.
+#dst Einige Systemkomponenten können derzeit nicht eingebunden werden. Es wird dringend empfohlen, die Anwendung neu zu starten.
+#end
+#src The changes you've made will be applied after restarting %PRODUCTNAME%.  Do you want to restart it now?
+#dst Die von Ihnen vorgenommenen Änderungen werden nach einem Neustart von %PRODUCTNAME% übernommen. Wollen Sie %PRODUCTNAME% jetzt neu starten?
+#end 
+#src Skin scaling %d%%
+#dst Skalierung: %d%%
+#end
+#src On-Screen Display preview
+#dst Vorschau der Overlay-Bildschirmanzeige
+#end
+#src Image files (*.bmp;*.png)|*.bmp;*.png||
+#dst Bild-Dateien (*.bmp;*.png)|*.bmp;*.png||
+#end
+#src Opacity %d%%
+#dst Deckkraft %d%%
+#end
+#src Please enter integer value in %d-%d range!
+#dst Bitte geben Sie einen ganzzahligen Wert im Bereich %d-%d ein!
+#end
+#src Active 3D application
+#dst Aktive 3D-Anwendung
+#end
+#src Properties
+#dst Einstellungen
+#end
+#src Add profile
+#dst Profil hinzufügen
+#end
+#src Add exclusion
+#dst Ausnahme hinzufügen
+#end
+#src Required DirectX runtimes are not installed! On-Screen Display may not function properly!
+#dst Erforderliche DirectX-Runtimes sind nicht installiert! Die Overlay-Bildschirmanzeige funktioniert möglicherweise nicht richtig!
+#end
+#src %s components cannot be hooked right now. It is strongly recommended to restart application.
+#dst %s Komponenten können derzeit nicht eingebunden werden. Es wird dringend empfohlen, die Anwendung neu zu starten.
+#end
+#src %s is not found, installation is corrupted!
+#dst %s wurde nicht gefunden, die Installation ist beschädigt!
+#end

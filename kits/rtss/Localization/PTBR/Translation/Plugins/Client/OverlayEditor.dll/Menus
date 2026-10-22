@@ -1,0 +1,126 @@
+#src Layouts
+#dst Layouts
+#end
+#src New\tCtrl+N
+#dst Novo\tCtrl+N
+#end
+#src Edit\tCtrl+Enter
+#dst Editar\tCtrl+Enter
+#end
+#src Load\tCtrl+L, Ctrl+O
+#dst Carregar\tCtrl+L, Ctrl+O
+#end
+#src Merge\tCtrl+M
+#dst Mesclar\tCtrl+M
+#end
+#src Save\tCtrl+S
+#dst Salvar\tCtrl+S
+#end
+#src Save As\tCtrl+Shift+S
+#dst Salvar Como\tCtrl+Shift+S
+#end
+#src Undo\tCtrl+Z
+#dst Desfazer\tCtrl+Z
+#end
+#src Redo\tCtrl+Y, Ctrl+Shift+Z
+#dst Refazer\tCtrl+Y, Ctrl+Shift+Z
+#end
+#src Import
+#dst Importar
+#end
+#src Export
+#dst Exportar
+#end
+
+
+#src Data sources
+#dst Fontes de dados
+#end
+#src Edit\tCtrl+D
+#dst Editar\tCtrl+D
+#end
+
+#src Tables
+#dst Tabelas
+#end
+#src Edit\tCtrl+T
+#dst Editar\tCtrl+T
+#end
+
+#src Layers
+#dst Camadas
+#end
+#src Add\tInsert
+#dst Adicionar\tInsert
+#end
+#src Remove\tDelete
+#dst Remover\tDelete
+#end
+#src Edit\tEnter
+#dst Editar\tEnter
+#end
+#src Edit list\tCtrl+Shift+L
+#dst Editar lista\tCtrl+Shift+L
+#end
+
+#src Move to top\tHome
+#dst Mover para o topo\tHome
+#end
+#src Move up\tPage Up
+#dst Subir\tPage Up
+#end
+#src Move down\tPage Down
+#dst Descer\tPage Down
+#end
+#src Move to bottom\tEnd
+#dst Mover para baixo\tEnd
+#end
+#src Copy\tCtrl+C
+#dst Copiar\tCtrl+C
+#end
+#src Paste\tCtrl+V
+#dst Colar\tCtrl+V
+#end
+
+#src View
+#dst Ver
+#hst Menu
+#end
+#src Reset view zoom
+#dst Redefinir zoom
+#end
+#src Snap to grid
+#dst Encaixar na grade
+#end
+#src Show grid
+#dst Mostrar grades
+#end
+#src Show checkerboard
+#dst Mostrar tabuleiro
+#end
+#src Dark background
+#dst Fundo escuro
+#end
+
+#src Tools
+#dst Ferramentas
+#end
+#src Show hypertext\tCtrl+Shift+H
+#dst Mostar Hipertexto\tCtrl+Shift+H
+#end
+#src Optimize hypertext\tCtrl+Shift+O
+#dst Otimizar Hipertexto\tCtrl+Shift+O
+#end
+
+#src Macro
+#dst Macro
+#end
+#src Internal sources
+#dst Fontes Internas
+#end
+#src External sources
+#dst Fontes Externas
+#end
+#src Tags
+#dst Etiqueta
+#end

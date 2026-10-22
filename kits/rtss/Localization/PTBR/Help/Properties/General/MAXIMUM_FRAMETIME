@@ -1,0 +1,5 @@
+Exibir valor máximo do tempo de quadros 
+Permite exibir o valor atual ou o valor máximo do tempo de quadros a cada intervalo de atualização. A exibição do valor máximo do tempo do quadro pode ser útil na detecção de microtravamentos decorrentes de flutuações na taxa de quadros.
+
+Sugestões: 
+- Você pode desativar as sugestões na aba <Inteface> das configurações.

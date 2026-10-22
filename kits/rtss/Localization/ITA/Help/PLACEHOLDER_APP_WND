@@ -1,0 +1,7 @@
+Lista dei profili delle applicazioni
+Visualizza l'elenco dei profili delle applicazioni e consente di gestirli. 
+Il concetto dei profili delle applicazioni ti dà un modo flessibile di definire le impostazioni personali per ogni applicazione. Non c'è bisogno di creare dei profili per ogni applicazione, tutte le applicazioni mancanti nell'elenco dei profili utilizzeranno automaticamente il profilo globale. Aggiungere nuovi profili solo se è necessario definire alcune impostazioni personali specifiche per l'applicazione desiderata, ad esempio disabilitare l'On-Screen Display a causa del sistema anticheat o personalizzare i colori e la posizione dell'On-Screen Display a causa delle proprie specifiche di rendering dello schermo. In caso contrario, è sufficiente modificare il profilo globale
+
+Consigli:
+- I profili creati in precedenza non possono essere rimossi. È possibile rimuovere solo i profili che tu hai creato.
+- È possibile disattivare i suggerimenti di interfaccia utente tramite la scheda <Interfaccia utente> in proprietà avanzate.

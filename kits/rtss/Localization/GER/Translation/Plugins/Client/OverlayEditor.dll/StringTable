@@ -1,0 +1,12 @@
+#src Undo / Redo
+#dst Rückgängig/Wiederholen
+#end
+#src Layer info
+#dst Ebenen-Informationen
+#end
+#src Hypertext info
+#dst Hypertext-Informationen
+#end
+#src Sprite dimensions
+#dst Sprite-Abmessungen
+#end
