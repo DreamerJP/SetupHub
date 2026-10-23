@@ -15,6 +15,7 @@ using SetupHub.Nucleo;
 
 namespace SetupHub.Janela;
 
+// Fechar esconde e devolve a memória ao Windows; reabrir é redesenhar.
 sealed class Painel : Window
 {
     [DllImport("dwmapi.dll")] static extern int DwmSetWindowAttribute(IntPtr h, int a, ref int v, int t);
@@ -88,6 +89,7 @@ sealed class Painel : Window
         TextElement.SetFontSize(this, K.P.F(14));
         var raiz = new Grid { Background = K.P.Fundo };
         Resources[typeof(System.Windows.Controls.Primitives.ScrollBar)] = Estilos.BarraRolagem();
+        // A área das telas é a mesma entre uma montagem e outra: sai do quadro antigo antes de entrar no novo.
         if (conteudo.Parent is Panel antigo) antigo.Children.Remove(conteudo);
         perfisFixos = new ContentControl { VerticalAlignment = VerticalAlignment.Center };
         nomesPerfis = "";
@@ -153,6 +155,7 @@ sealed class Painel : Window
     string nomesPerfis = "";
     TextBlock? tituloTela, subTela;
 
+    // O ativo sempre aparece, mesmo quando não está entre os cinco primeiros.
     void PintarPerfis(Config? c)
     {
         if (c is null) return;
@@ -186,7 +189,7 @@ sealed class Painel : Window
     UIElement BarraFixa()
     {
         var P = K.P;
-        tituloTela = K.T("", 30, P.Texto, FontWeights.SemiBold, P.Titulo);
+        tituloTela = K.T("", 30, P.Texto, FontWeights.SemiBold, P.Numero);
         tituloTela.LineHeight = 30;
         subTela = K.T("", 13, P.Apagado);
         subTela.Margin = new Thickness(10, 6, 0, 0);

@@ -61,10 +61,9 @@ public static partial class Validacao
             if (p.Luz is not null) Luz(p.Luz, c.Luz.Planos.Concat(p.Luz.Planos).ToList(), e, pre);
             if (p.Processador is not null)
             {
-                // -1 guardado no perfil é "o máximo do hardware", resolvido quando a faixa é lida.
                 var pr = SemTravados(p.Processador, f, "processador");
-                pr.Ppt = Padroes.Dentro(f, "processador.ppt", pr.Ppt);
-                if (pr.Ppt == -1) pr.Ppt = null;
+                pr.Ppt = Padroes.Ppt(f, pr.Ppt);
+                if (pr.Ppt < 0) pr.Ppt = null;
                 Processador(pr, f, e, pre);
             }
             if (p.PlacaDeVideo is not null) PlacaDeVideo(SemTravados(p.PlacaDeVideo, f, "placaDeVideo"), f, e, pre);
@@ -156,7 +155,7 @@ public static partial class Validacao
             e.Add(pre + $"{nome}: a curva tem que chegar a 100% em {t:0} °C (temperatura crítica). Hoje fica em {Curvas.Avaliar(c, t):0}%.");
     }
 
-    static readonly string[] TiposLuz = { "desligado", "padrao", "fixo", "respiracao", "onda", "chama", "temperatura", "anel", "musica", "meteoro", "carga", "jogo", "horario", "alerta" };
+    static readonly string[] TiposLuz = { "desligado", "fixo", "respiracao", "onda", "chama", "temperatura", "anel", "musica", "meteoro", "carga", "jogo", "horario", "alerta" };
     public static IReadOnlyList<string> EfeitosLuz => TiposLuz;
 
     // biblioteca: planos que o nome do plano ativo pode usar (no perfil, os da máquina mais os que o perfil trouxer).
@@ -388,7 +387,7 @@ public static partial class Validacao
         if (a.Densidade is not ("compacta" or "confortavel")) e.Add($"Aparência: espaçamento \"{a.Densidade}\" não existe (compacta ou confortavel).");
         if (a.TamanhoTexto < 90 || a.TamanhoTexto > 130 || a.TamanhoTexto % 5 != 0) e.Add($"Aparência: tamanho do texto {a.TamanhoTexto}%, aceito de 90% a 130%, de 5 em 5.");
         foreach (var q in a.Inicio)
-            if (!Padroes.Quadros.Any(x => x.Tipo == q.Tipo)) e.Add($"Aparência: quadro \"{q.Tipo}\" não existe no visual Detalhado.");
+            if (!Padroes.Quadros.Any(x => x.Tipo == q.Tipo)) e.Add($"Aparência: quadro \"{q.Tipo}\" da tela inicial não existe.");
     }
 
     public static bool CorValida(string s) => CorRegex().IsMatch(s);

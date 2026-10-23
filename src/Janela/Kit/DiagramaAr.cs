@@ -262,13 +262,14 @@ sealed class DiagramaAr : Viewbox
             if (da == 0) a.Linha.BeginAnimation(Shape.StrokeDashOffsetProperty, null);
             else a.Linha.BeginAnimation(Shape.StrokeDashOffsetProperty, new DoubleAnimation(0, -120 / a.Linha.StrokeThickness, TimeSpan.FromSeconds(da)) { RepeatBehavior = RepeatBehavior.Forever });
         }
+        var c = App.Lig.Config;
         cpuTemp.Text = e.Cpu.TempMaisQuente is double ct ? $"{ct:0} °C" : "–";
-        cpuTemp.Foreground = P.Calor(e.Cpu.TempMaisQuente, 75, 88, P.Cpu);
+        cpuTemp.Foreground = P.CalorCpu(e.Cpu.TempMaisQuente, c);
         gpuTemp.Text = e.Gpu.TempMaisQuente is double gt ? $"{gt:0} °C" : "–";
-        gpuTemp.Foreground = P.Calor(e.Gpu.TempMaisQuente, 85, 100, P.Gpu);
+        gpuTemp.Foreground = P.CalorGpu(e.Gpu.TempMaisQuente, c);
         gpuNota.Text = $" placa de vídeo, {(gr < 60 ? 0 : gr).ToString("N0", K.Br)} rpm";
-        cpu.Fill = Tinta(e.Cpu.TempMaisQuente, 95);
-        gpu.Fill = Tinta(e.Gpu.TempMaisQuente, 110);
+        cpu.Fill = Tinta(e.Cpu.TempMaisQuente, Paleta.LimitesCpu(c).quente);
+        gpu.Fill = Tinta(e.Gpu.TempMaisQuente, Paleta.LimitesGpu(c).quente);
     }
 
     public void Parar()

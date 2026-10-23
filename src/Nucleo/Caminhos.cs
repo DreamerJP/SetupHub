@@ -1,10 +1,9 @@
 namespace SetupHub.Nucleo;
 
-// Nome do programa no Windows: serviço, pastas, canal, tarefas e programas. "Antigo" só serve para migrar a instalação de antes da troca de nome.
+// Nome do programa no Windows: serviço, pastas, canal, tarefas e programas.
 public static class Produto
 {
     public const string Nome = "SetupHub";
-    public const string Antigo = "Central";
     public const string ExePainel = "SetupHubPainel.exe";
     public const string ExeServico = "SetupHubServico.exe";
     public const string Comando = "setuphub";

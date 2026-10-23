@@ -15,7 +15,6 @@ sealed class Fluxo : Panel
 
     public double Espaco = 12;
     public bool EsticarAltura = true;
-    public bool PreencherUltima;
 
     public static T Item<T>(T e, double baseLargura, double cresce = 1) where T : UIElement
     {
@@ -72,7 +71,6 @@ sealed class Fluxo : Panel
         {
             var ws = Larguras(l, final.Width);
             double h = l.Max(c => c.DesiredSize.Height);
-            if (PreencherUltima && l == linhas[^1]) h = Math.Max(h, final.Height - y);
             double x = 0;
             for (int i = 0; i < l.Count; i++)
             {

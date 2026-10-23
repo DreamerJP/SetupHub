@@ -7,6 +7,8 @@ COMPILACAO="$RAIZ/_temporario-SetupHub/compilacao"
 SAIDA="$COMPILACAO/pacote"
 SAIDAW=$(cygpath -w "$SAIDA")
 cd "$RAIZ/src"
+# Pasta vazia a cada publicação: arquivo que saiu do projeto não fica no instalador.
+rm -rf "$SAIDA"
 mkdir -p "$SAIDA"
 for p in Servico Comando Janela; do
   echo "Publicando $p..."
@@ -20,12 +22,8 @@ done
 for exe in SetupHubServico.exe setuphub.exe SetupHubPainel.exe; do
   [ -f "$SAIDA/$exe" ] || { echo "ERRO: $exe não foi gerado."; exit 1; }
 done
-rm -rf "$SAIDA/kits/rtss"
 mkdir -p "$SAIDA/kits"
 cp -rp "$RAIZ/kits/." "$SAIDA/kits/"
-cp "$RAIZ/instalar.cmd" "$RAIZ/remover.cmd" "$SAIDA/"
-# Registro de uma instalação feita desta pasta não vai para o instalador.
-rm -f "$SAIDA/instalacao.txt"
 
 # O instalador de um arquivo só leva a pasta acima dentro dele; a versão do nome vem do Directory.Build.props.
 VERSAO=$(sed -n 's:.*<Version>\([0-9]*\.[0-9]*\)\..*</Version>.*:\1:p' "$RAIZ/Directory.Build.props")

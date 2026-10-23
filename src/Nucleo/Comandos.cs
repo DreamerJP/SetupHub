@@ -18,7 +18,7 @@ public static class Comandos
         C("ventoinha", "setuphub ventoinha <nome|grupo>... <0-100|bios|curva>", "Valor fixo ou modo de uma ou várias ventoinhas, por exemplo: setuphub ventoinha \"Fan 1\" \"Fan 2\" 60"),
         C("ventoinhas", "setuphub ventoinhas silencioso|equilibrado|forte|maximo [nomes...]", "Nível rápido para todas ou para as escolhidas."),
         C("calibrar", "setuphub calibrar [nomes...]", "Calibra as ventoinhas (todas, se nenhuma for dita). Leva alguns minutos."),
-        C("luz", "setuphub luz plano <nome> | ligar | desligar | efeito <tipo> [#cor...] [--saidas a,b] [--brilho n] [--velocidade 0-2] [--temperaturas 50,70,90]", "Plano de luz, liga e desliga, efeito por saída. Efeitos: desligado, padrao, fixo, respiracao, onda, chama, temperatura, anel, musica, meteoro, carga, jogo, horario, alerta."),
+        C("luz", "setuphub luz plano <nome> | ligar | desligar | efeito <tipo> [#cor...] [--saidas a,b] [--brilho n] [--velocidade 0-2] [--temperaturas 50,70,90]", "Plano de luz, liga e desliga, efeito por saída. Efeitos: desligado, fixo, respiracao, onda, chama, temperatura, anel, musica, meteoro, carga, jogo, horario, alerta."),
         C("luz salvar", "setuphub luz salvar <nome>", "Guarda o que as saídas mostram agora como um plano de luz."),
         C("luz excluir", "setuphub luz excluir <nome> | restaurar <nome>", "Exclui um plano criado por você ou volta um plano pronto ao padrão."),
         C("aplicar perfil", "setuphub aplicar perfil <nome>", "Aplica um perfil e confere cada área por leitura."),

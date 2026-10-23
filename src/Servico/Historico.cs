@@ -8,13 +8,7 @@ namespace SetupHub.Servico;
 // Tamanho fixo, duas áreas circulares (segundos de 24 h, minutos de 30 dias); grava em blocos de um minuto.
 sealed class Historico : IDisposable
 {
-    public static readonly string[] Canais =
-    {
-        "cpu.temp", "cpu.consumo", "cpu.clock", "cpu.uso", "gpu.temp", "gpu.quente", "gpu.memoria", "gpu.consumo",
-        "gpu.clock", "gpu.uso", "placa.sistema", "placa.vrm", "placa.chipset", "ssd.temp", "memoria.uso", "fps",
-        "fan.cpu", "fan.bomba", "fan.sys1", "fan.sys2", "fan.sys3", "fan.sys4", "fan.ez", "fan.gpu",
-        "pct.cpu", "pct.sys1", "pct.sys2", "pct.sys3", "pct.gpu", "cpu.tensao", "gpu.vram", "gpu.tensao",
-    };
+    static readonly string[] Canais = Padroes.SensoresHistorico;
     const int N = 32;
     const int Segundos = 86400, Minutos = 43200;
     const int TamSeg = 4 + N * 4, TamMin = 4 + N * 8;

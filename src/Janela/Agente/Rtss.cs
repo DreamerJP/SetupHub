@@ -15,8 +15,7 @@ static class Rtss
     [DllImport("kernel32", CharSet = CharSet.Unicode)] static extern IntPtr LoadLibraryW(string f);
     [DllImport("kernel32", CharSet = CharSet.Ansi)] static extern IntPtr GetProcAddress(IntPtr m, string n);
 
-    // O RivaTuner avulso só vale enquanto a cópia do SetupHub não existir.
-    public static readonly string Pasta = File.Exists(Path.Combine(Caminhos.Kits, "rtss", "RTSS.exe")) ? Path.Combine(Caminhos.Kits, "rtss") : @"C:\Program Files (x86)\RivaTuner Statistics Server";
+    public static readonly string Pasta = Path.Combine(Caminhos.Kits, "rtss");
     const string Dono = Produto.Nome;
     public static bool Instalado => File.Exists(Path.Combine(Pasta, "RTSS.exe"));
     public static bool Rodando => System.Diagnostics.Process.GetProcessesByName("RTSS").Length > 0;

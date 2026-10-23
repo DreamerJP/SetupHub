@@ -142,7 +142,7 @@ static class K
     // Número no centro do arco do medidor (uma unidade invisível à esquerda equilibra a de verdade) e a nota na abertura de baixo.
     public static Grid Mostrador(Medidor m, double fonte, Brush cor, out Run valor, out TextBlock nota, string notaTxt)
     {
-        valor = new Run("–") { FontFamily = P.Grande, FontSize = fonte, FontWeight = FontWeights.SemiBold, Foreground = cor };
+        valor = new Run("–") { FontFamily = P.Numero, FontSize = fonte, FontWeight = FontWeights.SemiBold, Foreground = cor };
         TextBlock Unidade(bool fantasma) => new()
         {
             Text = "°C", FontSize = Math.Round(fonte * 0.27), Foreground = P.Secundario, VerticalAlignment = VerticalAlignment.Top,

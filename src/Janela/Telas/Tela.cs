@@ -32,6 +32,13 @@ abstract class Tela
     }
     protected static double? Proporcao(double? valor, double? limite) => valor is double atual && double.IsFinite(atual) && limite is double maximo && double.IsFinite(maximo) && maximo > 0 ? atual / maximo : null;
     protected Estado? Est => App.Lig.Estado;
+
+    // Sem nenhuma ventoinha detectada valem todas as saídas da placa.
+    protected List<string> VentoinhasLigadas()
+    {
+        var ids = Est?.Ventoinhas.Where(v => v.Conectada).Select(v => v.Id).ToList();
+        return ids is { Count: > 0 } ? ids : Padroes.Ventoinhas.Select(v => v.Id).ToList();
+    }
     protected static Paleta P => K.P;
     protected abstract string Id { get; }
     readonly List<Action> aoConfig = new();
@@ -39,17 +46,17 @@ abstract class Tela
 
     public static Tela Criar(string id) => id switch
     {
-        "inicio" => new Detalhado.Inicio(),
-        "ventoinhas" => new Detalhado.Ventoinhas(),
-        "luz" => new Detalhado.Luz(),
-        "processador" => new Detalhado.Processador(),
-        "placaDeVideo" => new Detalhado.PlacaDeVideo(),
-        "jogos" => new Detalhado.Jogos(),
-        "telas" => new Detalhado.Telas(),
-        "energia" => new Detalhado.Energia(),
-        "perfis" => new Detalhado.Perfis(),
-        "sistema" => new Detalhado.Sistema(),
-        "aparencia" => new Detalhado.Aparencia(),
+        "inicio" => new Secoes.Inicio(),
+        "ventoinhas" => new Secoes.Ventoinhas(),
+        "luz" => new Secoes.Luz(),
+        "processador" => new Secoes.Processador(),
+        "placaDeVideo" => new Secoes.PlacaDeVideo(),
+        "jogos" => new Secoes.Jogos(),
+        "telas" => new Secoes.Telas(),
+        "energia" => new Secoes.Energia(),
+        "perfis" => new Secoes.Perfis(),
+        "sistema" => new Secoes.Sistema(),
+        "aparencia" => new Secoes.Aparencia(),
         _ => throw new ArgumentException(id),
     };
 
@@ -106,7 +113,7 @@ abstract class Tela
         return r.Ok;
     }
 
-    protected static async Task<bool> Gravar(Action<Config> mudar, string? ok = null)
+    internal static async Task<bool> Gravar(Action<Config> mudar, string? ok = null)
     {
         var c = App.Lig.Config;
         if (c is null) { App.Janela?.Aviso("Configuração ainda não recebida do serviço.", true); return false; }
@@ -166,6 +173,6 @@ abstract class Tela
     {
         try { Estado(e); } catch (Exception x) { App.Registrar(x); }
     }
-    protected static Brush CorCpu(double? t) => P.Calor(t, 75, 88, P.Cpu);
-    protected static Brush CorGpu(double? quente) => P.Calor(quente, 85, 100, P.Gpu);
+    protected static Brush CorCpu(double? t) => P.CalorCpu(t, App.Lig.Config);
+    protected static Brush CorGpu(double? quente) => P.CalorGpu(quente, App.Lig.Config);
 }

@@ -6,7 +6,7 @@ using SetupHub.Janela.Kit;
 using SetupHub.Nucleo;
 using Microsoft.Win32;
 
-namespace SetupHub.Janela.Telas.Detalhado;
+namespace SetupHub.Janela.Telas.Secoes;
 
 sealed class Sistema : Tela
 {
@@ -96,18 +96,9 @@ sealed class Sistema : Tela
 
     void AbrirPagina()
     {
-        string? url = null;
-        try
-        {
-            using var k = Registry.LocalMachine.OpenSubKey(@"HARDWARE\DESCRIPTION\System\BIOS");
-            var produto = k?.GetValue("BaseBoardProduct")?.ToString() ?? "";
-            int p = produto.IndexOf('(');
-            if (p > 0) produto = produto[..p];
-            produto = produto.Trim().Replace(' ', '-');
-            if (produto.Length > 0) url = $"https://www.msi.com/Motherboard/{produto}/support";
-        }
-        catch { }
-        try { Process.Start(new ProcessStartInfo(url ?? "https://www.msi.com/support") { UseShellExecute = true }); }
+        var placa = Agente.Atualizacoes.PlacaMsi();
+        var url = placa is null ? "https://www.msi.com/support" : $"https://www.msi.com/Motherboard/{placa}/support";
+        try { Process.Start(new ProcessStartInfo(url) { UseShellExecute = true }); }
         catch (Exception x) { App.Janela?.Aviso("Não foi possível abrir o navegador: " + x.Message, true); }
     }
 

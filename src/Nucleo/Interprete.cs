@@ -515,8 +515,7 @@ public sealed class Interprete
                 return 0;
             }
             case "sensores":
-                foreach (var s in new[] { "cpu.temp", "cpu.consumo", "cpu.clock", "cpu.uso", "cpu.tensao", "gpu.temp", "gpu.quente", "gpu.memoria", "gpu.consumo", "gpu.clock", "gpu.uso", "gpu.vram", "gpu.tensao", "placa.sistema", "placa.vrm", "placa.chipset", "ssd.temp", "memoria.uso", "fps", "fan.cpu", "fan.sys1", "fan.sys2", "fan.sys3", "fan.gpu", "pct.cpu", "pct.sys1", "pct.gpu" })
-                    o.WriteLine(s);
+                foreach (var s in Padroes.SensoresHistorico) o.WriteLine(s);
                 return 0;
             case "ventoinhas": return await Ler(new() { "ventoinhas" });
             case "saidas":

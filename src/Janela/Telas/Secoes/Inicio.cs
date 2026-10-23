@@ -6,7 +6,7 @@ using System.Windows.Threading;
 using SetupHub.Janela.Kit;
 using SetupHub.Nucleo;
 
-namespace SetupHub.Janela.Telas.Detalhado;
+namespace SetupHub.Janela.Telas.Secoes;
 
 sealed class Inicio : Tela
 {
@@ -22,7 +22,7 @@ sealed class Inicio : Tela
     Grid gradeFans = null!;
     readonly Dictionary<string, (IconeVentoinha icone, Run rpm, Run pct, Barra barra, Border caixa)> fans = new();
     Segmentado niveis = null!;
-    readonly List<(string modo, Botao b, TextBlock nome, TextBlock limite, TextBlock desc)> modos = new();
+    ModoProcessador modo = null!;
     Grafico grafico = null!;
     FitaLed fita = null!;
     readonly List<(string plano, Botao b)> botoesLuz = new();
@@ -39,7 +39,8 @@ sealed class Inicio : Tela
         porTipo["processador"] = Fluxo.Item(CartaoCpu(), 400);
         porTipo["placaDeVideo"] = Fluxo.Item(CartaoGpu(), 400);
         porTipo["ventoinhas"] = Fluxo.Item(CartaoFans(), 520, 3);
-        porTipo["modoProcessador"] = Fluxo.Item(CartaoModo(), 230);
+        modo = new ModoProcessador("Modo do processador", 46);
+        porTipo["modoProcessador"] = Fluxo.Item(modo.Cartao, 230);
         porTipo["temperatura"] = Fluxo.Item(CartaoGrafico(), 520, 3);
         porTipo["luz"] = Fluxo.Item(CartaoLuz(), 260);
         quadros = new Fluxo { Espaco = 12 };
@@ -52,25 +53,29 @@ sealed class Inicio : Tela
     void Ordenar()
     {
         quadros.Children.Clear();
-        var lista = Cfg?.Aparencia.Inicio is { Count: > 0 } l ? l : Padroes.QuadrosInicio();
+        var lista = Cfg?.Aparencia.Inicio ?? Padroes.QuadrosInicio();
+        bool comFluxo = false;
         foreach (var q in lista)
         {
             if (!q.Visivel) continue;
             if (q.Tipo == "fluxoDeAr")
             {
-                diagrama ??= new DiagramaAr(Ligadas(), Cfg?.Aparencia.PosicaoFluxo) { MaxHeight = 330 };
-                porTipo["fluxoDeAr"] = Fluxo.Item(Cartao("Fluxo de ar", diagrama), 420, 2);
+                comFluxo = true;
+                var ids = VentoinhasLigadas();
+                if (diagrama is null || string.Join(",", ids) != idsDiagrama)
+                {
+                    diagrama?.Parar();
+                    diagrama = new DiagramaAr(ids, Cfg?.Aparencia.PosicaoFluxo) { MaxHeight = 330 };
+                    idsDiagrama = string.Join(",", ids);
+                    porTipo["fluxoDeAr"] = Fluxo.Item(Cartao("Fluxo de ar", diagrama), 420, 2);
+                }
             }
             if (porTipo.TryGetValue(q.Tipo, out var e)) { if (e.Parent is Panel pai) pai.Children.Remove(e); quadros.Children.Add(e); }
         }
+        if (!comFluxo && diagrama is not null) { diagrama.Parar(); diagrama = null; idsDiagrama = ""; porTipo.Remove("fluxoDeAr"); }
     }
 
-    IEnumerable<string> Ligadas()
-    {
-        var est = Est;
-        var ids = est?.Ventoinhas.Where(v => v.Conectada).Select(v => v.Id).ToList();
-        return ids is { Count: > 0 } ? ids : new() { "cpu", "sys1", "sys2", "sys3" };
-    }
+    string idsDiagrama = "";
 
     UIElement Medidor(out Medidor m, out Run valor, out TextBlock nota, Brush cor, string notaTxt)
     {
@@ -187,7 +192,7 @@ sealed class Inicio : Tela
     void MontarFans(Estado e)
     {
         var ligadas = e.Ventoinhas.Where(v => v.Conectada).ToList();
-        if (ligadas.Count == 0) ligadas = e.Ventoinhas.Where(v => v.Id is "cpu" or "sys1" or "sys2" or "sys3").ToList();
+        if (ligadas.Count == 0) ligadas = e.Ventoinhas;
         if (ligadas.Select(v => v.Id).SequenceEqual(fans.Keys)) return;
         fans.Clear();
         var itens = new List<UIElement>();
@@ -206,55 +211,6 @@ sealed class Inicio : Tela
         var f = new Fluxo { Espaco = 10 };
         foreach (var i in itens) f.Children.Add(Fluxo.Item((UIElement)i, 150));
         gradeFans.Children.Add(f);
-    }
-
-    Border CartaoModo()
-    {
-        var lista = new StackPanel();
-        foreach (var (id, nome, desc) in new[] { ("eco", "Eco", "Menor temperatura e ruído"), ("padrao", "Padrão", "Limites de fábrica"), ("maximo", "Máximo", "PBO no limite da placa-mãe") })
-        {
-            var tn = K.T(nome, 14, P.Texto, FontWeights.SemiBold);
-            var tl = K.T("", 17, P.Texto, FontWeights.Normal, P.Numero);
-            var td = K.T(desc, 12, P.Apagado);
-            var b = new Botao { Height = 46, CornerRadius = new CornerRadius(9), Padding = new Thickness(12, 0, 12, 0), Margin = new Thickness(0, 6, 0, 0), Child = K.Col(0, K.Grade("* auto", 8, tn, tl), td) };
-            b.Fundo(P.Poco);
-            var modo = id;
-            b.Clique += (_, _) => _ = AplicarModo(modo);
-            modos.Add((id, b, tn, tl, td));
-            lista.Children.Add(b);
-        }
-        return K.Cartao(K.Col(0, K.Titulo("Modo do processador"), lista));
-    }
-
-    // Eco 88 W, Padrão de fábrica, Máximo até o limite da placa.
-    static async Task AplicarModo(string modo)
-    {
-        var f = App.Lig.Faixas?.Campos.GetValueOrDefault("processador.ppt");
-        if (f is null || !f.Disponivel) { App.Janela?.Aviso("O limite de consumo do processador está travado: " + (f?.Motivo ?? "faixa não lida"), true); return; }
-        int? ppt = modo switch { "eco" => (int)Math.Clamp(88, f.Min, f.Max), "maximo" => (int)f.Max, _ => null };
-        await Gravar(c => { c.Processador.Ppt = ppt; c.Processador.Tdc = null; c.Processador.Edc = null; }, modo == "padrao" ? "Processador nos limites de fábrica." : $"Limite de consumo em {ppt} W.");
-    }
-
-    void PintarModos()
-    {
-        var f = Fx?.Campos.GetValueOrDefault("processador.ppt");
-        int? ppt = Cfg?.Processador.Ppt;
-        string? ativo = ppt is null ? "padrao" : f is not null && Math.Abs(ppt.Value - f.Max) < 0.5 ? "maximo" : Math.Abs(ppt.Value - 88) < 0.5 ? "eco" : null;
-        foreach (var (id, b, tn, tl, td) in modos)
-        {
-            bool on = id == ativo;
-            b.Fundo(on ? P.Selecao : P.Poco);
-            b.FundoSobre = on ? P.Selecao : P.PocoEscuro;
-            tn.Foreground = tl.Foreground = on ? P.TextoSelecao : P.Texto;
-            td.Foreground = on ? P.SubSel : P.Apagado;
-            tl.Text = id switch
-            {
-                "eco" => "88 W",
-                "padrao" => f?.Padrao is double pd ? $"{pd:0} W" : "",
-                _ => f is { Disponivel: true } ? $"até {f.Max:0} W" : "",
-            };
-            b.IsEnabled = f is { Disponivel: true };
-        }
     }
 
     Border CartaoGrafico()
@@ -317,13 +273,13 @@ sealed class Inicio : Tela
 
     protected override void Config(Config c)
     {
-        PintarModos();
+        modo.Pintar();
         PintarLuz();
         PintarFita();
         if (quadros is not null) Ordenar();
     }
 
-    public override void NovasFaixas(Faixas f) => PintarModos();
+    public override void NovasFaixas(Faixas f) => modo.Pintar();
 
     public override void Mostrada()
     {
@@ -411,6 +367,7 @@ sealed class Inicio : Tela
         grafico.Empurrar(0, e.Gpu.TempMaisQuente);
         grafico.Empurrar(1, e.Cpu.TempMaisQuente);
         grafico.Atualizar();
+        if (diagrama is not null && string.Join(",", VentoinhasLigadas()) != idsDiagrama) Ordenar();
         diagrama?.Atualizar(e);
     }
 

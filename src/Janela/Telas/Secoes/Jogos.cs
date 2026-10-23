@@ -6,7 +6,7 @@ using System.Windows.Shapes;
 using SetupHub.Janela.Kit;
 using SetupHub.Nucleo;
 
-namespace SetupHub.Janela.Telas.Detalhado;
+namespace SetupHub.Janela.Telas.Secoes;
 
 sealed class Jogos : Tela
 {

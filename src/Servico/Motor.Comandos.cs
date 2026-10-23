@@ -110,7 +110,6 @@ sealed partial class Motor
             case "config.gravar":
             {
                 var cfg = Json.Ler<Config>(E(a, "config")) ?? throw new ErroSetupHub("Configuração vazia.");
-                Padroes.Migrar(cfg);
                 return Ok(await Trocar(cfg, S(a, "origem") ?? "importação"));
             }
             case "assinar":
@@ -198,8 +197,10 @@ sealed partial class Motor
                 IniciarTarefa("Calibração das ventoinhas", async (prog, ct) =>
                 {
                     var res = await ventoinhas.Calibrar(ids, () => estado.Cpu.TempMaisQuente, prog, ct);
-                    foreach (var (id, cal) in res) maquina.Calibracao[id] = cal;
+                    lock (travaMaquina) foreach (var (id, cal) in res) maquina.Calibracao[id] = cal;
                     SalvarMaquina();
+                    try { await Trocar(Copia(), "mínimo calibrado da ventoinha do processador"); }
+                    catch (ErroSetupHub e) { Registro.Aviso("Configuração depois da calibração: " + e.Message); }
                     return string.Join("; ", res.Select(kv => $"{n.Ventoinhas.Saidas.First(s => s.Id == kv.Key).Nome}: começa em {kv.Value.Inicio}%, máximo {kv.Value.RpmMax} rpm, resposta {kv.Value.Resposta:0.#} s"));
                 });
                 return Ok(tarefa);
@@ -350,7 +351,6 @@ sealed partial class Motor
                 gpuAgente = Json.Ler<LeituraGpu>(E(a, "gpu"));
                 gpuAgenteEm = Environment.TickCount64;
                 fpsAgente = double.TryParse(S(a, "fps"), System.Globalization.NumberStyles.Float, System.Globalization.CultureInfo.InvariantCulture, out var fps) && fps > 0 ? fps : null;
-                if (float.TryParse(S(a, "som"), System.Globalization.NumberStyles.Float, System.Globalization.CultureInfo.InvariantCulture, out var som)) somAgenteF = som;
                 if (double.TryParse(S(a, "ocioso"), System.Globalization.NumberStyles.Float, System.Globalization.CultureInfo.InvariantCulture, out var oc)) SegundosOcioso = oc;
                 return Ok();
             case "agente.som":

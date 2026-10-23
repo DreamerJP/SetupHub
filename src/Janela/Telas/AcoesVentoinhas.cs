@@ -12,7 +12,7 @@ static class AcoesVentoinhas
         var s = c?.NiveisVentoinhas.GetValueOrDefault(nivel)?.Saidas.FirstOrDefault(x => x.Id.StartsWith("sys") && x.Modo != "bios");
         if (s is null) return nivel == "maximo" ? "100% sempre" : Texto(Curvas.Avaliar(Padroes.CurvaNivel(nivel, false), 50));
         return s.Modo == "fixo" ? (s.Fixo == 0 ? "sempre paradas" : $"{s.Fixo}% sempre") : Texto(Curvas.Avaliar(s.Curva, 50));
-        static string Texto(double p) => p < 0.5 ? "paradas em repouso" : $"{p:0}% em repouso";
+        static string Texto(double p) => p < 0.5 ? "parada automática" : $"{p:0}% em repouso";
     }
 
     // O nível vale para todas as ventoinhas; o ajuste feito depois fica guardado nele.

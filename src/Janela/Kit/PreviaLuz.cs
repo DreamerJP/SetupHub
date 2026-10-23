@@ -12,7 +12,6 @@ static class PreviaLuz
     public static readonly Tipo[] Tipos =
     {
         new("desligado", "Desligado", "Saída apagada.", 0, [], false, false, false, false, true),
-        new("padrao", "Padrão da placa","Onda de arco-íris padrão de fábrica da placa.", 0, [], false, false, false, false, true),
         new("fixo", "Fixo", "Cor fixa.", 1, ["Cor"], false, false, false, false, true),
         new("respiracao", "Respiração", "A cor acende e apaga gradualmente.", 1, ["Cor"], true, true, false, false, true),
         new("onda", "Onda", "As cores percorrem a fita.", -1, [], true, true, true, false, true),
@@ -27,7 +26,7 @@ static class PreviaLuz
         new("alerta", "Alerta", "Cor fixa que pulsa em vermelho durante um alerta.", 1, ["Cor"], false, false, false, false, false),
     };
 
-    public static Tipo DoTipo(string id) => Tipos.FirstOrDefault(t => t.Id == id) ?? Tipos[2];
+    public static Tipo DoTipo(string id) => Tipos.FirstOrDefault(t => t.Id == id) ?? Tipos.First(t => t.Id == "fixo");
 
     static Color C((double r, double g, double b) c) => Color.FromRgb((byte)Math.Clamp(c.r, 0, 255), (byte)Math.Clamp(c.g, 0, 255), (byte)Math.Clamp(c.b, 0, 255));
     static Color Hex(string h) => C(CoresLuz.Rgb(h));
@@ -65,7 +64,6 @@ static class PreviaLuz
             r[i] = f.Tipo switch
             {
                 "desligado" => Apagada,
-                "padrao" => Hsl(x * 360 - t * 40, 100, 50),
                 "fixo" => Hex(cores[0]),
                 "respiracao" => Escala(f.ArcoIris ? Hsl(Math.Floor(t * vel / 3) * 60, 100, 50) : Hex(cores[0]), 0.08 + 0.92 * (0.5 - 0.5 * Math.Cos(t * vel * Math.PI * 2 / 3))),
                 "onda" => f.ArcoIris ? Hsl(x * 360 - sentido * arco * 3, 100, 50) : Ciclo(cores, x - sentido * t * 0.15 * vel),

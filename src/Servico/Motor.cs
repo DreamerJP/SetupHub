@@ -38,7 +38,6 @@ sealed partial class Motor
         Directory.CreateDirectory(Caminhos.Dados);
         Registro.Info($"{Produto.Nome} iniciando ({(Environment.IsPrivilegedProcess ? "com" : "sem")} privilégio de administrador, conta {WindowsIdentity.GetCurrent().Name}).");
         maquina = Carregar<EstadoMaquina>(Caminhos.EstadoMaquina) ?? new EstadoMaquina();
-        if (maquina.Calibracao.Count == 0) maquina.Calibracao = Padroes.CalibracaoInicial();
         ProtegerPasta();
         bool queda = !maquina.DesligouLimpo;
         maquina.DesligouLimpo = false;
@@ -245,36 +244,28 @@ sealed partial class Motor
             {
                 var texto = File.ReadAllText(Caminhos.Config);
                 var c = Json.DeTexto<Config>(texto) ?? throw new ErroSetupHub("arquivo vazio");
-                bool migrou = Padroes.Migrar(c);
                 Padroes.AjustarAoHardware(c, faixas);
+                Padroes.AjustarMinimoCpu(c, MinimoCpu());
                 var erros = Validacao.Conferir(c, faixas, maquina);
-                if (erros.Count == 0)
-                {
-                    config = c; ultimoTextoConfig = texto;
-                    if (migrou) { GravarConfig(c); Registro.Info("Configuração de uma versão anterior atualizada."); }
-                    return;
-                }
+                if (erros.Count == 0) { config = c; ultimoTextoConfig = texto; return; }
                 avisoConfig = "O arquivo de configuração tinha erros e não foi usado: " + string.Join(" ", erros.Take(3));
             }
             catch (Exception e) { avisoConfig = "O arquivo de configuração não pôde ser lido e não foi usado: " + e.Message; }
             Registro.Aviso(avisoConfig);
-            var reserva = Caminhos.Config + ".valida";
-            if (File.Exists(reserva))
-            {
-                try { var c = Json.DeTexto<Config>(File.ReadAllText(reserva)); if (c is not null) { Padroes.Migrar(c); config = c; return; } } catch { }
-            }
         }
         config = Padroes.Config();
         Padroes.AjustarAoHardware(config, faixas);
+        Padroes.AjustarMinimoCpu(config, MinimoCpu());
         GravarConfig(config);
     }
+
+    int MinimoCpu() { lock (travaMaquina) return Padroes.MinimoCpu(maquina.Calibracao.GetValueOrDefault("cpu")); }
 
     void GravarConfig(Config c)
     {
         var texto = Json.Texto(c, true);
         ultimoTextoConfig = texto;
         Escrever(Caminhos.Config, texto);
-        Escrever(Caminhos.Config + ".valida", texto);
     }
 
     static void Escrever(string caminho, string texto)
@@ -310,10 +301,8 @@ sealed partial class Motor
         try
         {
             var novo = Json.DeTexto<Config>(texto) ?? throw new ErroSetupHub("arquivo vazio");
-            Padroes.Migrar(novo);
             var r = await Trocar(novo, "arquivo", gravar: false);
             ultimoTextoConfig = texto;
-            Escrever(Caminhos.Config + ".valida", texto);
             avisoConfig = null;
             Registro.Info("Arquivo de configuração recarregado: " + (r.Areas.Count == 0 ? "nenhum ajuste mudou." : string.Join("; ", r.Areas.Select(kv => $"{kv.Key} {kv.Value}"))));
             await Evento("config", null);
@@ -338,6 +327,7 @@ sealed partial class Motor
             GuardaPerfil.NoNivel(novo, anterior);
             GuardaPerfil.NoAtivo(novo, anterior);
         }
+        Padroes.AjustarMinimoCpu(novo, MinimoCpu());
         var erros = Validacao.Conferir(novo, faixas, maquina, anterior);
         if (erros.Count > 0)
         {

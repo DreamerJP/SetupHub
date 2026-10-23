@@ -180,8 +180,8 @@ sealed partial class Motor
                 // Campo travado agora fica de fora; o perfil continua com ele para a próxima vez.
                 case "processador" when p.Processador is not null:
                     n.Processador = Validacao.SemTravados(p.Processador, faixas, "processador");
-                    n.Processador.Ppt = Padroes.Dentro(faixas, "processador.ppt", n.Processador.Ppt);
-                    if (n.Processador.Ppt == -1) n.Processador.Ppt = null;
+                    n.Processador.Ppt = Padroes.Ppt(faixas, n.Processador.Ppt);
+                    if (n.Processador.Ppt < 0) n.Processador.Ppt = null;
                     break;
                 case "placaDeVideo" when p.PlacaDeVideo is not null: n.PlacaDeVideo = Validacao.SemTravados(p.PlacaDeVideo, faixas, "placaDeVideo"); break;
                 case "graficos" when p.Graficos is not null: n.Jogos.Global = Validacao.SemTravados(p.Graficos, faixas, "graficos"); break;

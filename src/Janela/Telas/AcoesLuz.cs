@@ -5,7 +5,7 @@ namespace SetupHub.Janela.Telas;
 
 static class AcoesLuz
 {
-    static readonly string[] Paleta = { "#FF0000", "#00FF00", "#0000FF", "#FFFFFF" };
+    public static readonly string[] CoresIniciais = { "#FF0000", "#00FF00", "#0000FF", "#FFFFFF" };
 
     public static string Tipo(string id) => id switch
     {
@@ -71,7 +71,7 @@ static class AcoesLuz
     public static EfeitoLuz NovoEfeito(string tipo, EfeitoLuz? atual)
     {
         var t = PreviaLuz.DoTipo(tipo);
-        var cores = atual is null || atual.Tipo is "temperatura" or "desligado" or "padrao" ? new List<string>() : atual.Cores.ToList();
+        var cores = atual is null || atual.Tipo is "temperatura" or "desligado" ? new List<string>() : atual.Cores.ToList();
         var ef = new EfeitoLuz
         {
             Tipo = tipo, Brilho = atual is { Brilho: > 0 } ? atual.Brilho : 100, Velocidade = atual?.Velocidade ?? 1,
@@ -81,8 +81,8 @@ static class AcoesLuz
         {
             "temperatura" => Padroes.CoresTemperatura(),
             "desligado" => new() { "#000000" },
-            _ when t.Cores <= 0 => cores.Count >= 2 ? cores.Take(4).ToList() : Paleta.ToList(),
-            _ => Enumerable.Range(0, t.Cores).Select(i => cores.ElementAtOrDefault(i) ?? Paleta[i]).ToList(),
+            _ when t.Cores <= 0 => cores.Count >= 2 ? cores.Take(4).ToList() : CoresIniciais.ToList(),
+            _ => Enumerable.Range(0, t.Cores).Select(i => cores.ElementAtOrDefault(i) ?? CoresIniciais[i]).ToList(),
         };
         return ef;
     }

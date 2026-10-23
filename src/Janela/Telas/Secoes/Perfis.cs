@@ -7,7 +7,7 @@ using Rectangle = System.Windows.Shapes.Rectangle;
 using SetupHub.Janela.Kit;
 using SetupHub.Nucleo;
 
-namespace SetupHub.Janela.Telas.Detalhado;
+namespace SetupHub.Janela.Telas.Secoes;
 
 sealed class Perfis : Tela
 {
@@ -144,11 +144,12 @@ sealed class Perfis : Tela
         "silencioso" => "Silencioso", "equilibrado" => "Equilibrado", "forte" => "Forte", "maximo" => "Máximo", _ => "Personalizado",
     };
 
-    internal static string Descrever(Perfil p, string area) => area switch
+    internal static string Descrever(Perfil p, string area, Faixa? ppt) => area switch
     {
         "ventoinhas" when p.Ventoinhas is { } v => Nivel(v.Nivel) + (v.Saidas.FirstOrDefault(s => s.Id == "cpu") is { } cpu
             ? cpu.Modo == "fixo" ? $", processador fixo em {cpu.Fixo:0}%" : cpu.Modo == "curva" ? $", {Curvas.Avaliar(cpu.Curva, 75):0}% com o processador a 75 °C" : ", processador pela BIOS" : ""),
-        "processador" when p.Processador is { } c => (c.Eco == true ? "Eco" : c.Ppt == -1 ? "Máximo" : c.Ppt is null && c.CoTodos is null ? "Padrão" : "Manual")
+        "processador" when p.Processador is { } c => (c.Eco == true ? "Eco" : c.CoTodos is int co0 && co0 != 0 ? "Manual"
+            : Padroes.ModoPpt(c.Ppt, ppt) switch { "eco" => "Eco", "maximo" => "Máximo", "padrao" => "Padrão", _ => "Manual" })
             + (c.Ppt is int w && w > 0 ? $", {w} W" : "") + (c.CoTodos is int co && co != 0 ? $", curva {co:+0;-0}" : ""),
         "placaDeVideo" when p.PlacaDeVideo is { } g => Json.Texto(g) == Json.Texto(new ConfigPlacaDeVideo()) ? "Automático"
             : "Manual" + (g.LimiteEnergia is int le && le != 0 ? $", energia {le:+0;-0}%" : "") + (g.Tensao is int t && t != 0 ? $", tensão {t:+0;-0} mV" : ""),
@@ -295,7 +296,7 @@ sealed class Perfis : Tela
             var (v, cf, ch) = areas[id];
             bool on = p.Areas.Contains(id);
             ch.Ligada = on;
-            v.Text = on ? Descrever(p, id) : "não mexe";
+            v.Text = on ? Descrever(p, id, Fx?.Campos.GetValueOrDefault("processador.ppt")) : "não mexe";
             v.Foreground = on ? P.Texto : P.Tenue;
             bool dif = DiferencaPerfil.Area(p, c, id);
             cf.Text = ativo && on ? dif ? "mudou depois" : "conferido" : "";

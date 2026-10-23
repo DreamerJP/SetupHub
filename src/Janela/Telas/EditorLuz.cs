@@ -5,7 +5,7 @@ using SetupHub.Nucleo;
 
 namespace SetupHub.Janela.Telas;
 
-// Ajustes do efeito que está nas saídas escolhidas. Os dois visuais usam o mesmo; cada mudança vai na hora.
+// Ajustes do efeito que está nas saídas escolhidas; cada mudança vai na hora.
 sealed class EditorLuz
 {
     public readonly StackPanel Painel = new();
@@ -21,8 +21,6 @@ sealed class EditorLuz
     readonly Deslizante brilho;
     readonly TextBlock brilhoTxt;
 
-    static readonly string[] Paleta = { "#FF0000", "#00FF00", "#0000FF", "#FFFFFF" };
-
     public EditorLuz(Func<EfeitoLuz, string, Task> gravar, double largura)
     {
         this.gravar = gravar;
@@ -30,7 +28,7 @@ sealed class EditorLuz
         quantas.Escolheu += v => Mudar(ef =>
         {
             int n = int.Parse(v);
-            while (ef.Cores.Count < n) ef.Cores.Add(Paleta[ef.Cores.Count]);
+            while (ef.Cores.Count < n) ef.Cores.Add(AcoesLuz.CoresIniciais[ef.Cores.Count]);
             if (ef.Cores.Count > n) ef.Cores = ef.Cores.Take(n).ToList();
         }, $"{v} {(v == "1" ? "cor" : "cores")}.");
         linhaQuantas = K.LinhaAjuste("Quantas cores", quantas, largura, 42);
@@ -38,7 +36,7 @@ sealed class EditorLuz
         var painelCores = new StackPanel { Orientation = Orientation.Horizontal, HorizontalAlignment = HorizontalAlignment.Left };
         for (int i = 0; i < 4; i++)
         {
-            var c = new CorEscolha(Paleta[i], K.P.E(30)) { Width = K.P.E(42), Margin = new Thickness(0, 0, 6, 0) };
+            var c = new CorEscolha(AcoesLuz.CoresIniciais[i], K.P.E(30)) { Width = K.P.E(42), Margin = new Thickness(0, 0, 6, 0) };
             int k = i;
             c.Escolheu += cor => Mudar(ef => { while (ef.Cores.Count <= k) ef.Cores.Add(cor); ef.Cores[k] = cor; }, "Cor atualizada.");
             livres.Add(c);
@@ -112,7 +110,7 @@ sealed class EditorLuz
         for (int i = 0; i < livres.Count; i++)
         {
             livres[i].Visibility = V(i < Math.Max(1, ef.Cores.Count));
-            livres[i].Definir(ef.Cores.ElementAtOrDefault(i) ?? Paleta[i]);
+            livres[i].Definir(ef.Cores.ElementAtOrDefault(i) ?? AcoesLuz.CoresIniciais[i]);
         }
         linhaQuantas.IsEnabled = linhaCores.IsEnabled = corEscolhida;
 
@@ -140,7 +138,6 @@ sealed class EditorLuz
         vel.Selecionar(ef.Velocidade.ToString());
         linhaDir.Visibility = V(t.Direcao);
         dir.Selecionar(ef.Direcao);
-        linhaBrilho.Visibility = V(ef.Tipo != "padrao");
         int nivel = Math.Clamp((int)Math.Ceiling(ef.Brilho / 20.0), 1, 5);
         brilho.Valor = nivel;
         brilhoTxt.Text = $"{nivel} de 5";

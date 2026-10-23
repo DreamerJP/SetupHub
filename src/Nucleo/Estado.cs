@@ -196,8 +196,6 @@ public sealed class EstadoMaquina
     public bool DesligouLimpo { get; set; } = true;
     public string? UsuarioSid { get; set; }
     public bool AbrirPainelNoProximoLogin { get; set; }
-    public bool? ServicoLuzMsiEstavaAtivo { get; set; }
-    public string? InicioServicoLuzMsi { get; set; }
     // Valores de partida só valem na mesma sessão do Windows (segundo Unix em que ligou).
     public long PartidaWindows { get; set; }
     public ConfigProcessador? ProcessadorPartida { get; set; }

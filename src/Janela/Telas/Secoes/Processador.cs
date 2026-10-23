@@ -5,7 +5,7 @@ using System.Windows.Media;
 using SetupHub.Janela.Kit;
 using SetupHub.Nucleo;
 
-namespace SetupHub.Janela.Telas.Detalhado;
+namespace SetupHub.Janela.Telas.Secoes;
 
 sealed class Processador : Tela
 {
@@ -16,15 +16,18 @@ sealed class Processador : Tela
     Grid nucleosGrade = null!;
     readonly List<(Border trilho, Border barra, TextBlock ghz)> nucleos = new();
     const double AlturaBarra = 52;
-    readonly List<(string modo, Botao b, TextBlock nome, TextBlock lim, TextBlock desc)> modos = new();
+    ModoProcessador modo = null!;
     ContentControl corpo = null!;
     UIElement rapido = null!, completo = null!;
     bool modoCompleto;
     TextBlock assistTxt = null!;
     Botao assistBotao = null!;
+    // Rascunho do modo completo: só vai para o processador ao clicar em Aplicar.
     ConfigProcessador rascunho = new();
     readonly List<(string campo, CampoNum c, TextBlock rot)> campos = new();
     readonly List<CampoNum> coCampos = new();
+    ContentControl coGrade = null!;
+    Run coFaixa = null!;
     CampoNum coTodos = null!;
     Chave pbo = null!;
     Border linhaPbo = null!;
@@ -40,12 +43,12 @@ sealed class Processador : Tela
 
     protected override FrameworkElement Montar()
     {
-        Cabecalho("Processador", () => $"{Inicio.Simplificar(Est?.Cpu.Nome ?? "")}, {Est?.Cpu.Nucleos.Count ?? 8} núcleos e {Environment.ProcessorCount} linhas");
+        Cabecalho("Processador", () => Est is { } e ? $"{Inicio.Simplificar(e.Cpu.Nome)}, {e.Cpu.Nucleos.Count} núcleos e {Environment.ProcessorCount} linhas" : "");
         var agora = MontarAgora();
-        var modo = MontarModo();
+        modo = new ModoProcessador("Modo", 54);
         var linha1 = new Fluxo();
         linha1.Children.Add(Fluxo.Item(agora, 560, 3));
-        linha1.Children.Add(Fluxo.Item(modo, 240, 1));
+        linha1.Children.Add(Fluxo.Item(modo.Cartao, 240, 1));
         var rc = RapidoCompleto(c => { modoCompleto = c; corpo.Content = c ? completo : rapido; }, out modoCompleto);
         rc.HorizontalAlignment = HorizontalAlignment.Left;
         var linha2 = K.Grade("auto *", 10, rc, K.Nota("Faixas e padrões lidos do próprio processador. Valor fora da faixa não é gravado."));
@@ -103,33 +106,6 @@ sealed class Processador : Tela
         }
     }
 
-    Border MontarModo()
-    {
-        var lista = new StackPanel();
-        foreach (var (id, nome, desc) in new[] { ("eco", "Eco", "Menor temperatura e ruído"), ("padrao", "Padrão", "Limites de fábrica"), ("maximo", "Máximo", "PBO no limite da placa-mãe") })
-        {
-            var tn = K.T(nome, 14, P.Texto, FontWeights.SemiBold);
-            var tl = K.T("", 17, P.Texto, FontWeights.Normal, P.Numero);
-            var td = K.T(desc, 12, P.Apagado);
-            var b = new Botao { Height = 54, CornerRadius = new CornerRadius(9), Padding = new Thickness(12, 0, 12, 0), Margin = new Thickness(0, 6, 0, 0), Child = K.Col(1, K.Grade("* auto", 8, tn, tl), td) };
-            ((StackPanel)b.Child).VerticalAlignment = VerticalAlignment.Center;
-            b.Fundo(P.Poco);
-            var m = id;
-            b.Clique += (_, _) => _ = Modo(m);
-            modos.Add((id, b, tn, tl, td));
-            lista.Children.Add(b);
-        }
-        return K.Cartao(K.Col(0, K.Titulo("Modo"), lista));
-    }
-
-    async Task Modo(string modo)
-    {
-        var f = Fx?.Campos.GetValueOrDefault("processador.ppt");
-        if (f is not { Disponivel: true }) { App.Janela?.Aviso("Limite de consumo travado: " + (f?.Motivo ?? "faixa não lida do processador"), true); return; }
-        int? ppt = modo switch { "eco" => (int)Math.Clamp(88, f.Min, f.Max), "maximo" => (int)f.Max, _ => null };
-        await Gravar(c => { c.Processador.Ppt = ppt; c.Processador.Tdc = null; c.Processador.Edc = null; }, modo == "padrao" ? "Processador nos limites de fábrica." : $"Limite de consumo em {ppt} W.");
-    }
-
     UIElement MontarAssistente()
     {
         assistTxt = new TextBlock
@@ -173,32 +149,21 @@ sealed class Processador : Tela
         aviso = K.Nota("Campos com borda clara diferem do padrão.");
         var cartaoLim = K.Cartao(K.Col(8, K.Titulo("Limites do PBO"), lim, linhaPbo, aviso));
 
-        var grade = new List<UIElement>();
-        for (int i = 0; i < 8; i++)
-        {
-            var c = new CampoNum(null, "", double.NaN, 32) { Width = double.NaN };
-            int k = i;
-            c.Confirmou += v => MudarCo(k, v);
-            coCampos.Add(c);
-            grade.Add(K.Col(3, K.T($"Núcleo {i}", 12.5, P.Apagado), c));
-        }
+        coGrade = new ContentControl();
         coTodos = new CampoNum(null, "", 76, 32);
         coTodos.Confirmou += v => { if (v is double d && Dentro("coTodos", d, "Curve Optimizer")) { rascunho.CoTodos = (int)d; rascunho.CoNucleos = new(); Atualizar(); } };
         var coTitulo = new TextBlock();
         coTitulo.Inlines.Add(new Run("Curve Optimizer ") { FontWeight = FontWeights.SemiBold, FontSize = P.F(15) });
-        var coFaixa = new Run("") { FontSize = P.F(12.5), Foreground = P.Apagado };
+        coFaixa = new Run("") { FontSize = P.F(12.5), Foreground = P.Apagado };
         coTitulo.Inlines.Add(coFaixa);
-        coTitulo.Tag = coFaixa;
-        var cartaoCo = K.Cartao(K.Col(8, coTitulo, K.Iguais(4, 8, grade),
+        var cartaoCo = K.Cartao(K.Col(8, coTitulo, coGrade,
             K.LinhaAjuste("Definir todos os núcleos em", K.Grade("76 30", 8, coTodos, new Border()), 114, 40)));
-        cartaoCo.Tag = coTitulo;
 
         smtTxt = K.T("–", 14, P.Secundario); x3dTxt = K.T("–", 14, P.Secundario); parkTxt = K.T("–", 14, P.Secundario);
         Border Info(string rotulo, TextBlock valor) => new() { Height = 40, BorderBrush = P.Linha, BorderThickness = new Thickness(0, 1, 0, 0), Child = K.Grade("* auto", 10, K.T(rotulo, 13.5), valor) };
-        var mudarSmt = Botao.Contorno("Alterar SMT ou X3D na próxima reinicialização", () => _ = TrocarSmt());
+        var mudarSmt = Botao.Contorno("Alterar SMT na próxima reinicialização", () => _ = TrocarSmt());
         mudarSmt.Height = 34;
         var cartaoNuc = K.Cartao(K.Col(10, K.Titulo("Núcleos"), Info("SMT, 2 linhas por núcleo", smtTxt), Info("X3D Gaming Mode", x3dTxt), Info("Núcleos estacionados agora", parkTxt), mudarSmt));
-        cartaoNuc.Tag = mudarSmt;
 
         var cartoes = new Fluxo();
         cartoes.Children.Add(Fluxo.Item(cartaoLim, 340));
@@ -242,7 +207,7 @@ sealed class Processador : Tela
     void MudarCo(int nucleo, double? v)
     {
         if (v is double d && !Dentro("coTodos", d, $"Curve Optimizer do núcleo {nucleo}")) { Atualizar(); return; }
-        while (rascunho.CoNucleos.Count < 8) rascunho.CoNucleos.Add(rascunho.CoTodos);
+        while (rascunho.CoNucleos.Count < coCampos.Count) rascunho.CoNucleos.Add(rascunho.CoTodos);
         rascunho.CoNucleos[nucleo] = v is double x ? (int)x : null;
         Atualizar();
     }
@@ -291,35 +256,36 @@ sealed class Processador : Tela
         coTodos.IsEnabled = fco is { Disponivel: true };
     }
 
-    void PintarModos()
+    void MontarCo(int n)
     {
-        var f = Fx?.Campos.GetValueOrDefault("processador.ppt");
-        int? ppt = Cfg?.Processador.Ppt;
-        string? ativo = ppt is null ? "padrao" : f is not null && Math.Abs(ppt.Value - f.Max) < 0.5 ? "maximo" : Math.Abs(ppt.Value - 88) < 0.5 ? "eco" : null;
-        foreach (var (id, b, tn, tl, td) in modos)
+        if (n <= 0 || coCampos.Count == n) return;
+        coCampos.Clear();
+        var grade = new List<UIElement>();
+        for (int i = 0; i < n; i++)
         {
-            bool on = id == ativo;
-            b.Fundo(on ? P.Selecao : P.Poco); b.FundoSobre = on ? P.Selecao : P.PocoEscuro;
-            tn.Foreground = tl.Foreground = on ? P.TextoSelecao : P.Texto; td.Foreground = on ? P.SubSel : P.Apagado;
-            tl.Text = id switch { "eco" => "88 W", "padrao" => f?.Padrao is double pd ? $"{pd:0} W" : "", _ => f is { Disponivel: true } ? $"até {f.Max:0} W" : "" };
-            b.IsEnabled = f is { Disponivel: true };
+            var c = new CampoNum(null, "", double.NaN, 32) { Width = double.NaN };
+            int k = i;
+            c.Confirmou += v => MudarCo(k, v);
+            coCampos.Add(c);
+            grade.Add(K.Col(3, K.T($"Núcleo {i}", 12.5, P.Apagado), c));
         }
+        coGrade.Content = K.Iguais(4, 8, grade);
     }
 
     protected override void Config(Config c)
     {
         rascunho = Json.Copia(c.Processador);
-        PintarModos();
+        modo.Pintar();
         Atualizar();
     }
 
     public override void NovasFaixas(Faixas f)
     {
-        PintarModos();
+        MontarCo(f.Nucleos);
+        modo.Pintar();
         Atualizar();
         var fco = f.Campos.GetValueOrDefault("processador.coTodos");
-        if (completo is StackPanel sp && sp.Children[0] is Fluxo fl && fl.Children[1] is Border b && b.Tag is TextBlock t && t.Tag is Run r)
-            r.Text = fco is { Disponivel: true } ? $"padrão 0, de {Validacao.Numero(fco.Min)} a +{Validacao.Numero(fco.Max)}" : "travado: " + (fco?.Motivo ?? "faixa não lida");
+        coFaixa.Text = fco is { Disponivel: true } ? $"padrão 0, de {Validacao.Numero(fco.Min)} a +{Validacao.Numero(fco.Max)}" : "travado: " + (fco?.Motivo ?? "faixa não lida");
         smtTxt.Text = f.Campos.GetValueOrDefault("processador.smt") is { } smt ? (smt.Atual == 1 ? "ligado" : "desligado") : "–";
         x3dTxt.Text = f.Campos.GetValueOrDefault("processador.x3dJogo") is { Disponivel: true } x ? (x.Atual == 1 ? "ligado" : "desligado") : "não suportado pelo kit nesta máquina";
         parkTxt.Text = f.Campos.GetValueOrDefault("processador.nucleosEstacionados") is { } pk ? $"{pk.Atual ?? 0:0} de {Math.Max(1, f.Nucleos)}" : "–";

@@ -20,13 +20,11 @@ namespace SetupHub.Instalador;
 static class Programa
 {
     // --automatico: instala sem esperar clique e fecha no fim, com o código de saída da instalação.
-    // --previa <pasta>: grava cada tela em PNG e sai (conferência do desenho).
     [STAThread]
     static int Main(string[] args)
     {
         var app = new Application { ShutdownMode = ShutdownMode.OnMainWindowClose };
-        int i = Array.IndexOf(args, "--previa");
-        var janela = new Assistente(args.Contains("--automatico"), i >= 0 && i + 1 < args.Length ? args[i + 1] : null);
+        var janela = new Assistente(args.Contains("--automatico"));
         app.Run(janela);
         return janela.Codigo;
     }
@@ -53,11 +51,10 @@ sealed class Assistente : Window
     public int Codigo { get; private set; } = 1;
     readonly string temporaria = Path.Combine(Path.GetTempPath(), "SetupHubInstalador", Environment.ProcessId.ToString());
 
-    public Assistente(bool automatico, string? previa)
+    public Assistente(bool automatico)
     {
         this.automatico = automatico;
         if (automatico) Loaded += (_, _) => _ = Instalar();
-        if (previa is not null) ContentRendered += (_, _) => Previa(previa);
         Title = $"{Produto.Nome} {Produto.Versao}";
         Width = 640; Height = 440; ResizeMode = ResizeMode.CanMinimize; WindowStartupLocation = WindowStartupLocation.CenterScreen;
         Background = Cor.Fundo; FontFamily = Cor.Corpo; UseLayoutRounding = true;
@@ -273,32 +270,6 @@ sealed class Assistente : Window
         Codigo = codigo;
         if (codigo == 0) Concluido(); else Falhou(saida, codigo);
         if (automatico) { await Task.Delay(1500); Close(); }
-    }
-
-    void Previa(string pasta)
-    {
-        Directory.CreateDirectory(pasta);
-        void Gravar(string nome)
-        {
-            UpdateLayout();
-            var alvo = (FrameworkElement)Content;
-            var dpi = VisualTreeHelper.GetDpi(this);
-            var bmp = new RenderTargetBitmap((int)(alvo.ActualWidth * dpi.DpiScaleX), (int)(alvo.ActualHeight * dpi.DpiScaleY), 96 * dpi.DpiScaleX, 96 * dpi.DpiScaleY, PixelFormats.Pbgra32);
-            bmp.Render(alvo);
-            var png = new PngBitmapEncoder();
-            png.Frames.Add(BitmapFrame.Create(bmp));
-            using var f = File.Create(Path.Combine(pasta, nome + ".png"));
-            png.Save(f);
-        }
-        Gravar("1_boas_vindas");
-        TelaProgresso(); UpdateLayout();
-        Andamento(0.62, "Instalando o serviço, os kits e o RivaTuner");
-        foreach (var l in new[] { "Instalação nova conferida antes da troca.", "Arquivos do programa substituídos por uma instalação limpa.", "PawnIO já instalado.", "Kit da AMD já instalado." }) Linha(l);
-        Gravar("2_progresso");
-        Concluido(); Gravar("3_concluido");
-        Falhou(new() { "ERRO: exemplo de falha para conferir o desenho." }, 1); Gravar("4_falhou");
-        Codigo = 0;
-        Close();
     }
 
     void Extrair()

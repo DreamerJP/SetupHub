@@ -6,7 +6,7 @@ using System.Windows.Media;
 using SetupHub.Janela.Kit;
 using SetupHub.Nucleo;
 
-namespace SetupHub.Janela.Telas.Detalhado;
+namespace SetupHub.Janela.Telas.Secoes;
 
 sealed class Ventoinhas : Tela
 {
@@ -32,6 +32,7 @@ sealed class Ventoinhas : Tela
     TextBlock rodapeTabela = null!;
     Botao calibrar = null!;
     Grafico grafico = null!;
+    TextBlock eixoTopo = null!, eixoMeio = null!;
     readonly List<string> serieIds = new();
     StackPanel legenda = null!;
     Botao posicionar = null!;
@@ -78,12 +79,15 @@ sealed class Ventoinhas : Tela
         return raiz;
     }
 
+    string idsDiagrama = "";
+
     void MontarDiagrama()
     {
+        bool posicionando = diagrama?.Posicionando ?? false;
         diagrama?.Parar();
-        var ids = Est?.Ventoinhas.Where(v => v.Conectada).Select(v => v.Id).ToList();
-        if (ids is not { Count: > 0 }) ids = new() { "cpu", "sys1", "sys2", "sys3" };
-        diagrama = new DiagramaAr(ids, Cfg?.Aparencia.PosicaoFluxo);
+        var ids = VentoinhasLigadas();
+        idsDiagrama = string.Join(",", ids);
+        diagrama = new DiagramaAr(ids, Cfg?.Aparencia.PosicaoFluxo) { Posicionando = posicionando };
         foreach (var s in sel) diagrama.Selecionadas.Add(s);
         diagrama.Pintar();
         diagrama.MudouSelecao += () => { sel.Clear(); foreach (var s in diagrama.Selecionadas) sel.Add(s); Sincronizar(); };
@@ -191,8 +195,7 @@ sealed class Ventoinhas : Tela
 
     void MontarLinhas(Estado e)
     {
-        var mostrar = e.Ventoinhas.Where(v => v.Conectada).Select(v => v.Id).ToList();
-        if (mostrar.Count == 0) mostrar = new() { "cpu", "sys1", "sys2", "sys3" };
+        var mostrar = VentoinhasLigadas();
         if (mostrar.SequenceEqual(linhas.Keys)) return;
         bool primeira = linhas.Count == 0 && sel.Count == 0;
         if (primeira) foreach (var id in mostrar.Where(x => x.StartsWith("sys"))) sel.Add(id);
@@ -217,14 +220,17 @@ sealed class Ventoinhas : Tela
 
     Border MontarGrafico()
     {
-        grafico = new Grafico(0, 3100) { Capacidade = 120, MinHeight = 90, LinhasGrade = new[] { 0.0, 0.5, 1 } };
+        grafico = new Grafico(0, 1) { Capacidade = 120, MinHeight = 90, LinhasGrade = new[] { 0.0, 0.5, 1 } };
         legenda = new StackPanel { Orientation = Orientation.Horizontal };
         var eixo = new Grid { Width = 44 };
         eixo.RowDefinitions.Add(new RowDefinition()); eixo.RowDefinitions.Add(new RowDefinition()); eixo.RowDefinitions.Add(new RowDefinition());
-        foreach (var (txt, l, va) in new[] { ("3.100", 0, VerticalAlignment.Top), ("1.550", 1, VerticalAlignment.Center), ("0 rpm", 2, VerticalAlignment.Bottom) })
+        var rotulos = new List<TextBlock>();
+        foreach (var (txt, l, va) in new[] { ("", 0, VerticalAlignment.Top), ("", 1, VerticalAlignment.Center), ("0 rpm", 2, VerticalAlignment.Bottom) })
         {
             var t = K.T(txt, 11.5, P.Apagado); t.HorizontalAlignment = HorizontalAlignment.Right; t.VerticalAlignment = va; Grid.SetRow(t, l); eixo.Children.Add(t);
+            rotulos.Add(t);
         }
+        eixoTopo = rotulos[0]; eixoMeio = rotulos[1];
         var corpo = K.Grade("44 *", 8, eixo, grafico);
         corpo.MinHeight = 100;
         return Cartao(null, K.Col(6, K.Grade("* auto", 10, K.Titulo("Rotação nos últimos 2 minutos"), legenda), corpo), null, 6, new Thickness(16, 12, 16, 12));
@@ -249,7 +255,11 @@ sealed class Ventoinhas : Tela
             legenda.Children.Add(item);
             max = Math.Max(max, e.Ventoinhas.First(v => v.Id == ids[i]).RpmMax ?? 0);
         }
-        if (max > 0) grafico.Max = Math.Ceiling(max / 100) * 100;
+        // Sem calibração a escala parte da rotação mais alta de agora.
+        if (max <= 0) max = Math.Max(1000, ids.Max(id => e.Ventoinhas.First(v => v.Id == id).Rpm ?? 0) * 1.25);
+        grafico.Max = Math.Ceiling(max / 100) * 100;
+        eixoTopo.Text = grafico.Max.ToString("N0", K.Br);
+        eixoMeio.Text = (grafico.Max / 2).ToString("N0", K.Br);
         _ = Preencher();
     }
 
@@ -298,14 +308,15 @@ sealed class Ventoinhas : Tela
             b.Fundo(on ? P.Selecao : P.Poco); b.FundoSobre = on ? P.Selecao : P.PocoEscuro;
             tn.Foreground = on ? P.TextoSelecao : P.Texto; ts.Foreground = on ? P.SubSel : P.Apagado;
         }
+        bool cpu = saidas.Any(s => s.Id == "cpu");
+        int minimoCpu = Padroes.MinimoCpu(maquina?.Calibracao.GetValueOrDefault("cpu"));
+        fixo.Min = cpu ? minimoCpu : 0;
         var fixos = saidas.Select(s => s.Fixo).Distinct().ToList();
         fixo.Valor = fixos[0];
         fixoTxt.Text = fixos.Count == 1 ? $"{fixos[0]}%" : "vários";
-        bool cpu = saidas.Any(s => s.Id == "cpu");
-        fixo.Min = cpu ? 20 : 0;
         pararFan.IsEnabled = !cpu;
         pararFan.ToolTip = cpu ? "A ventoinha do processador não pode parar. Remova-a da seleção para parar as demais." : "Fixa as selecionadas em 0%.";
-        fixoNota.Text = !cpu ? "Em 0% as ventoinhas param. A rotação varia 2% por segundo, então a mudança leva alguns segundos." : "Ventoinha do processador: mínimo de 20%. Ventoinhas do gabinete param em 0%.";
+        fixoNota.Text = !cpu ? "Em 0% as ventoinhas param. A rotação varia 2% por segundo, então a mudança leva alguns segundos." : $"Ventoinha do processador: mínimo de {minimoCpu}%. Ventoinhas do gabinete param em 0%.";
 
         var primeira = saidas[0];
         var curvaComum = saidas.All(s => Json.Texto(s.Curva) == Json.Texto(primeira.Curva));
@@ -365,6 +376,7 @@ sealed class Ventoinhas : Tela
         _ = Calibracao(e);
         for (int i = 0; i < serieIds.Count && i < grafico.Series.Count; i++) grafico.Empurrar(i, e.Ventoinhas.FirstOrDefault(v => v.Id == serieIds[i])?.Rpm);
         grafico.Atualizar();
+        if (string.Join(",", VentoinhasLigadas()) != idsDiagrama) MontarDiagrama();
         diagrama.Atualizar(e);
         if (modoCompleto && sel.Count > 0 && Cfg?.Ventoinhas.Saidas.FirstOrDefault(s => s.Id == sel.First()) is { } p)
             curva.Mostrar(curva.Pontos, Temperatura(p, e), CorCpu(e.Cpu.TempMaisQuente));
@@ -387,7 +399,9 @@ sealed class Ventoinhas : Tela
         if (maquina is null || Environment.TickCount64 - maquinaEm > 30000)
         {
             maquinaEm = Environment.TickCount64;
+            bool primeira = maquina is null;
             maquina = Json.Ler<EstadoMaquina>((await App.Lig.Pedir("maquina", null, 5000)).Dados);
+            if (primeira && maquina is not null) PreencherAjuste();
         }
         if (maquina is null) return;
         foreach (var (id, l) in linhas)

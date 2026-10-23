@@ -5,7 +5,7 @@ using System.Windows.Threading;
 using SetupHub.Janela.Kit;
 using SetupHub.Nucleo;
 
-namespace SetupHub.Janela.Telas.Detalhado;
+namespace SetupHub.Janela.Telas.Secoes;
 
 sealed class Luz : Tela
 {
@@ -19,6 +19,7 @@ sealed class Luz : Tela
     Grid gradePlanos = null!;
     readonly List<(string nome, Botao b, FitaLed amostra, TextBlock tn, TextBlock td)> planos = new();
     Escolha tipoEfeito = null!;
+    Border linhaEfeito = null!;
     CampoTexto nomeNovo = null!;
     Botao criar = null!, acaoPlano = null!;
     TextBlock planoAtual = null!, descPlano = null!;
@@ -151,7 +152,8 @@ sealed class Luz : Tela
         editor = new EditorLuz(Gravar, 200);
         var nomes = PreviaLuz.Tipos.Where(x => !x.DoMsi || x.Id is "temperatura" or "musica").Select(x => x.Nome).ToList();
         var doSetupHub = nomes.Count > 1 ? string.Join(", ", nomes.SkipLast(1)) + " e " + nomes[^1] : string.Join("", nomes);
-        return K.Cartao(K.Col(0, K.Grade("* auto", 10, planoAtual, acaoPlano), descPlano, K.LinhaAjuste("Efeito", tipoEfeito, 200, 42), editor.Painel,
+        linhaEfeito = K.LinhaAjuste("Efeito", tipoEfeito, 200, 42);
+        return K.Cartao(K.Col(0, K.Grade("* auto", 10, planoAtual, acaoPlano), descPlano, linhaEfeito, editor.Painel,
             K.Nota($"{doSetupHub} dependem do SetupHub em execução; os demais efeitos rodam no controlador da placa.")), new Thickness(16, 12, 16, 10));
     }
 
@@ -190,6 +192,7 @@ sealed class Luz : Tela
         tipoEfeito.Selecionar(ef?.Tipo);
         var planoUsado = usaPlano ? c.Luz.Planos.FirstOrDefault(p => p.Nome == nomeAtivo) : null;
         acaoPlano.Visibility = planoUsado is null ? Visibility.Collapsed : Visibility.Visible;
+        linhaEfeito.Visibility = planoUsado is { Pronto: true } ? Visibility.Collapsed : Visibility.Visible;
         if (planoUsado is not null)
         {
             acaoPlano.TextoBotao = planoUsado.Pronto ? "Restaurar padrão" : "Excluir plano";

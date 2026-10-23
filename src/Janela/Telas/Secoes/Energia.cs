@@ -6,7 +6,7 @@ using System.Windows.Threading;
 using SetupHub.Janela.Kit;
 using SetupHub.Nucleo;
 
-namespace SetupHub.Janela.Telas.Detalhado;
+namespace SetupHub.Janela.Telas.Secoes;
 
 sealed class Energia : Tela
 {
@@ -101,7 +101,7 @@ sealed class Energia : Tela
         var v = Json.Ler<double[]>(r.Dados);
         if (v is null || v.Length < 25) return;
         total.Inlines.Clear();
-        total.Inlines.Add(new System.Windows.Documents.Run(v[24].ToString("N2", K.Br)) { FontFamily = P.Grande, FontSize = P.F(40), FontWeight = FontWeights.SemiBold });
+        total.Inlines.Add(new System.Windows.Documents.Run(v[24].ToString("N2", K.Br)) { FontFamily = P.Numero, FontSize = P.F(40), FontWeight = FontWeights.SemiBold });
         total.Inlines.Add(new System.Windows.Documents.Run(" kWh, processador e placa de vídeo") { Foreground = P.Apagado, FontSize = P.F(14) });
         double max = Math.Max(1, v.Take(24).Max());
         int agora = DateTime.Now.Hour;

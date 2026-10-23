@@ -8,11 +8,25 @@ namespace SetupHub.Janela.Agente;
 // O site da MSI recusa programas comuns: a consulta vai pelo motor do Edge numa janela invisível.
 static class Atualizacoes
 {
-    public const string Produto = "B850-GAMING-PLUS-WIFI";
-    public const string PaginaDownloads = "https://www.msi.com/Motherboard/B850-GAMING-PLUS-WIFI/support";
+    // Nome da placa no site da MSI, tirado do Windows: "B850 GAMING PLUS WIFI (MS-7E56)" vira "B850-GAMING-PLUS-WIFI".
+    public static string? PlacaMsi()
+    {
+        try
+        {
+            using var k = Microsoft.Win32.Registry.LocalMachine.OpenSubKey(@"HARDWARE\DESCRIPTION\System\BIOS");
+            if (k?.GetValue("BaseBoardManufacturer")?.ToString()?.Contains("Micro-Star", StringComparison.OrdinalIgnoreCase) != true) return null;
+            var placa = k.GetValue("BaseBoardProduct")?.ToString() ?? "";
+            int p = placa.IndexOf('(');
+            if (p > 0) placa = placa[..p];
+            placa = placa.Trim().Replace(' ', '-');
+            return placa.Length > 0 ? placa : null;
+        }
+        catch { return null; }
+    }
 
     public static async Task<List<Atualizacao>> Buscar(IntPtr janela, string biosInstalada, string dataBios)
     {
+        var placa = PlacaMsi() ?? throw new ErroSetupHub("Placa-mãe não identificada como MSI: a busca usa o site da MSI.");
         var pasta = Path.Combine(Caminhos.Usuario, "navegador");
         Directory.CreateDirectory(pasta);
         var env = await CoreWebView2Environment.CreateAsync(null, pasta);
@@ -23,7 +37,7 @@ static class Atualizacoes
             var lista = new List<Atualizacao>();
             foreach (var tipo in new[] { "bios", "driver" })
             {
-                var json = await Ler(ctl.CoreWebView2, $"https://www.msi.com/api/v1/product/support/panel?product={Produto}&type={tipo}");
+                var json = await Ler(ctl.CoreWebView2, $"https://www.msi.com/api/v1/product/support/panel?product={placa}&type={tipo}");
                 lista.AddRange(Interpretar(json, tipo, biosInstalada, dataBios));
             }
             return lista;

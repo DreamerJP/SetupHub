@@ -12,7 +12,7 @@ sealed class Paleta
     public SolidColorBrush Texto = null!, Secundario = null!, Apagado = null!, Tenue = null!, Linha = null!, Trilho = null!;
     public SolidColorBrush BordaForte = null!, SubSel = null!, Cpu = null!, Gpu = null!, Morno = null!, Quente = null!, Pa = null!;
     public SolidColorBrush Nav = null!, NavAtivo = null!, Selecao = null!, TextoSelecao = null!, Grade = null!;
-    public FontFamily Corpo = null!, Titulo = null!, Numero = null!, Grande = null!;
+    public FontFamily Corpo = null!, Numero = null!;
     public FontWeight PesoNumero;
     public double Escala = 1, Espaco = 1;
     public double Raio, RaioBotao, RaioCartao;
@@ -63,7 +63,7 @@ sealed class Paleta
             p.Linha = Cor("#E3E8ED"); p.Trilho = Cor("#DDE3E9"); p.BordaForte = Cor("#C3CCD5"); p.SubSel = Cor("#AEB8C3"); p.Pa = Cor("#3E4955");
             p.Nav = Cor("#E7EBEF"); p.NavAtivo = Cor("#D3DAE1"); p.Grade = Cor("#B7C1CB");
         }
-        p.Corpo = Fonte("Saira Semi Condensed"); p.Titulo = Fonte("Saira Extra Condensed"); p.Numero = Fonte("Saira Extra Condensed"); p.Grande = Fonte("Saira Extra Condensed");
+        p.Corpo = Fonte("Saira Semi Condensed"); p.Numero = Fonte("Saira Extra Condensed");
         p.PesoNumero = FontWeights.SemiBold;
         p.Raio = 9; p.RaioBotao = 7; p.RaioCartao = 12;
         p.Morno = Cor("#F2B045"); p.Quente = Cor("#F2643D");
@@ -76,7 +76,13 @@ sealed class Paleta
 
     static SolidColorBrush Escurecer(SolidColorBrush b, double k) => Cor((byte)(b.Color.R * k), (byte)(b.Color.G * k), (byte)(b.Color.B * k));
 
-    public Brush Calor(double? t, double morno, double quente, Brush normal) => t is not double v ? normal : v >= quente ? Quente : v >= morno ? Morno : normal;
+    // Vermelho a partir do alerta de temperatura configurado e amarelo 15 °C antes dele.
+    public static (double morno, double quente) LimitesCpu(Config? c) { var q = Padroes.Alerta(c, "cpu.temp", Padroes.AlertaCpu); return (q - 15, q); }
+    public static (double morno, double quente) LimitesGpu(Config? c) { var q = Padroes.Alerta(c, "gpu.quente", Padroes.AlertaGpu); return (q - 15, q); }
+
+    public Brush CalorCpu(double? t, Config? c) => Calor(t, LimitesCpu(c), Cpu);
+    public Brush CalorGpu(double? t, Config? c) => Calor(t, LimitesGpu(c), Gpu);
+    Brush Calor(double? t, (double morno, double quente) l, Brush normal) => t is not double v ? normal : v >= l.quente ? Quente : v >= l.morno ? Morno : normal;
 
     public double F(double tamanho) => tamanho * Escala;
     public double E(double espaco) => espaco * Espaco;

@@ -5,7 +5,6 @@ namespace SetupHub.Nucleo;
 // Campo de hardware nulo é padrão de fábrica: o SetupHub não mexe nele.
 public sealed class Config
 {
-    public int Versao { get; set; } = 1;
     public string PerfilAtivo { get; set; } = "Equilibrado";
     public ConfigVentoinhas Ventoinhas { get; set; } = new();
     // Fica fora de ConfigVentoinhas para não ir junto na cópia que cada perfil guarda.

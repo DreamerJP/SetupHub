@@ -96,8 +96,6 @@ sealed class ChipVentoinhas
         throw new IOException("o chip não confirmou o fim da configuração");
     }
 
-    public byte LerByte(ushort a) => ComTrava(() => L(a));
-
     public byte[] LerBloco(ushort inicio, int n = 14) => ComTrava(() =>
     {
         var b = new byte[n];

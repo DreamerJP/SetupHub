@@ -23,7 +23,8 @@ static class TelaRivaTuner
             }
         WritePrivateProfileStringW("Settings", "StartMinimized", "0", config);
         using var rtss = Process.Start(new ProcessStartInfo(exe, "/h") { UseShellExecute = false, WorkingDirectory = pasta });
-        Thread.Sleep(4000);
+        // A opção é lida na partida: pronto para receber cliques, ele já leu e ela pode voltar a escondida.
+        try { rtss?.WaitForInputIdle(15000); } catch (InvalidOperationException) { }
         WritePrivateProfileStringW("Settings", "StartMinimized", "1", config);
         // Sem ícone na bandeja, fechar a janela encerra o RivaTuner: ele volta na hora, escondido, para a sobreposição e o limite não pararem.
         // Ao fechar, ele grava de novo "começar com a janela aberta": a opção volta a escondida depois que ele sai.

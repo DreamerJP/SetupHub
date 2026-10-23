@@ -25,8 +25,6 @@ static class Energia
         ["equilibrado"] = new("5e1f2a3b-6c7d-4e8f-9a0b-1c2d3e4f5a62"),
         ["desempenho"] = new("5e1f2a3b-6c7d-4e8f-9a0b-1c2d3e4f5a63"),
     };
-    // Planos que o SetupHub já criou e não usa mais: o plano único e o Máximo.
-    static readonly Guid[] Aposentados = { new("c3a7e1f0-5b2d-4c8e-9a61-2f4d8b0e7c55"), new("5e1f2a3b-6c7d-4e8f-9a0b-1c2d3e4f5a64") };
     static readonly Guid AltoDesempenho = new("8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c");
     static readonly Guid EquilibradoWindows = new("381b4222-f694-41f0-9685-ff5bb260df2e");
 
@@ -86,13 +84,12 @@ static class Energia
     // Plano próprio em uso no Windows, ou nulo quando o ativo é outro.
     public static string? IdAtivo() { var a = Ativo().id; return Ids.FirstOrDefault(kv => kv.Value == a).Key; }
 
-    // Os quatro planos ficam sempre criados e com o ajuste da configuração; o escolhido vira o ativo do Windows.
+    // Os planos ficam sempre criados e com o ajuste da configuração; o escolhido vira o ativo do Windows.
     public static List<string> Aplicar(ConfigEnergia c)
     {
         var falhas = new List<string>();
         foreach (var p in c.Planos)
             if (Garantir(p) == Guid.Empty) falhas.Add($"plano {Padroes.NomePlano(p.Id)} não pôde ser criado");
-        RemoverAntigo();
         if (c.Plano is string id && Ids.TryGetValue(id, out var alvo) && Ativo().id != alvo)
         {
             PowerSetActiveScheme(IntPtr.Zero, ref alvo);
@@ -160,27 +157,13 @@ static class Energia
             try { Registry.LocalMachine.DeleteSubKeyTree($@"{MinimoPorPerfil}\{perfil}\{plano}", false); } catch { }
     }
 
-    // Se um plano aposentado estava em uso, o Equilibrado próprio entra no lugar antes de ele sair.
-    static void RemoverAntigo()
-    {
-        var existentes = Planos().Select(x => x.id).ToHashSet();
-        foreach (var g in Aposentados.Where(existentes.Contains))
-        {
-            if (Ativo().id == g) { var eq = Ids["equilibrado"]; PowerSetActiveScheme(IntPtr.Zero, ref eq); }
-            var a = g;
-            PowerDeleteScheme(IntPtr.Zero, ref a);
-            TirarPerfis(g);
-        }
-    }
-
     // Na remoção do programa o Equilibrado do Windows volta a ser o ativo.
     public static void RemoverPlanos()
     {
         try
         {
-            var ativo = Ativo().id;
-            if (Ids.ContainsValue(ativo) || Aposentados.Contains(ativo)) { var eq = EquilibradoWindows; PowerSetActiveScheme(IntPtr.Zero, ref eq); }
-            foreach (var g in Ids.Values.Concat(Aposentados)) { var x = g; PowerDeleteScheme(IntPtr.Zero, ref x); TirarPerfis(g); }
+            if (Ids.ContainsValue(Ativo().id)) { var eq = EquilibradoWindows; PowerSetActiveScheme(IntPtr.Zero, ref eq); }
+            foreach (var g in Ids.Values) { var x = g; PowerDeleteScheme(IntPtr.Zero, ref x); TirarPerfis(g); }
         }
         catch { }
     }

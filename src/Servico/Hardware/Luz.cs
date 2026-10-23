@@ -4,6 +4,7 @@ using Microsoft.Win32.SafeHandles;
 
 namespace SetupHub.Servico.Hardware;
 
+// Relatório 0x50: 18 áreas de 16 bytes, último byte guarda na memória do controlador; relatório 0x01 comando 0xC0: volume para o efeito Música.
 sealed class ControladorLuz : IDisposable
 {
     const int TamanhoComando = 64;
@@ -15,7 +16,8 @@ sealed class ControladorLuz : IDisposable
     public bool Pronto => h is not null && !h.IsInvalid;
     public string? Motivo { get; private set; }
 
-    public static readonly string?[] Modos = { "desligado", "onda", "fixo", "chama", "respiracao", "anel", null, "musica", "meteoro" };
+    // A posição é o código do modo no controlador; o 6 fica sem uso e o 7 (Recreação no MSI Center) só acende com o volume enviado.
+    public static readonly string?[] Modos ={ "desligado", "onda", "fixo", "chama", "respiracao", "anel", null, "musica", "meteoro" };
 
     public bool Abrir()
     {
@@ -130,6 +132,7 @@ sealed class ControladorLuz : IDisposable
     void Fechar() { try { h?.Dispose(); entrada?.Dispose(); } catch { } h = null; entrada = null; tamanho = 0; tamanhoEntrada = 0; portasGen2Preparadas.Clear(); }
     public void Dispose() { lock (trava) Fechar(); }
 
+    // Mesma montagem do LEDKeeper2 do MSI Center para as placas da série 800.
     public static void Area(byte[] b, int area, EfeitoLuz f)
     {
         int o = area * 16;
@@ -137,17 +140,17 @@ sealed class ControladorLuz : IDisposable
         b[o + 16] = (byte)(area < 4 ? 30 : 255);
     }
 
+    // Modo, 4 cores, quantidade de cores e opções: os mesmos 15 bytes na área comum e em cada fita de segunda geração.
     public static byte[] Efeito(EfeitoLuz f)
     {
-        if (f.Tipo == "padrao") return new byte[] { 1, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 255, 255, 3, 20 };
         var b = new byte[15];
         int modo = Array.IndexOf(Modos, f.Tipo);
         b[0] = (byte)(modo < 0 ? 2 : modo);
         var cores = f.Cores.Count == 0 ? new List<string> { "#000000" } : f.Cores;
         for (int i = 0; i < 4; i++)
         {
-            var (r, g, bl) = Cor(cores[Math.Min(i, cores.Count - 1)]);
-            b[1 + i * 3] = r; b[2 + i * 3] = g; b[3 + i * 3] = bl;
+            var (r, g, bl) = CoresLuz.Rgb(cores[Math.Min(i, cores.Count - 1)]);
+            b[1 + i * 3] = (byte)r; b[2 + i * 3] = (byte)g; b[3 + i * 3] = (byte)bl;
         }
         int quantas = f.Tipo switch { "onda" or "anel" or "meteoro" => Math.Clamp(cores.Count - 1, 0, 3), "chama" => 1, _ => 0 };
         int brilho = f.Tipo == "desligado" ? 0 : Nivel(f.Brilho);
@@ -158,13 +161,6 @@ sealed class ControladorLuz : IDisposable
 
     // O controlador tem 5 níveis de brilho; zero apaga.
     public static int Nivel(int brilho) => brilho <= 0 ? 0 : Math.Clamp((int)Math.Ceiling(brilho / 20.0), 1, 5);
-
-    public static (byte r, byte g, byte b) Cor(string hex)
-    {
-        if (hex.Length == 7 && hex[0] == '#' && int.TryParse(hex.AsSpan(1), NumberStyles.HexNumber, null, out var v))
-            return ((byte)(v >> 16), (byte)(v >> 8), (byte)v);
-        return (255, 255, 255);
-    }
 }
 
 sealed class Luz
@@ -292,6 +288,7 @@ sealed class Luz
         }
         else if (precisaGravar)
         {
+            // Logo depois da gravação o controlador às vezes ainda devolve o estado de antes: até 3 leituras, 40 ms entre elas.
             byte[]? conf = null;
             for (int tentativa = 0; tentativa < 3; tentativa++)
             {
@@ -299,6 +296,7 @@ sealed class Luz
                 conf = ctl.Ler();
                 if (conf is not null && Iguais(conf, b)) break;
             }
+            // Área que volta zerada depois de gravada não devolve leitura: fica fora da conferência para não regravar sem parar.
             if (conf is not null)
             {
                 foreach (var a in Padroes.SaidasLuz.Select(x => x.Area).Distinct())
@@ -420,8 +418,6 @@ sealed class Luz
             return falhas.Count == 0;
         }
     }
-
-    public void Pausar() => rodando = false;
 }
 
 static class Horario

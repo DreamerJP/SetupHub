@@ -11,17 +11,13 @@ static class Programa
     [STAThread]
     static int Main(string[] args)
     {
-        int i = Array.IndexOf(args, "--captura");
-        bool captura = i >= 0 && i + 1 < args.Length;
-        var nome = $@"Local\{Produto.Nome}.Painel" + (captura ? ".Captura" : "");
+        var nome = $@"Local\{Produto.Nome}.Painel";
         using var unica = new Mutex(true, nome, out bool primeira);
         using var mostrar = new EventWaitHandle(false, EventResetMode.AutoReset, nome + ".Mostrar");
         bool bandeja = args.Contains("--bandeja");
         // Abertura escondida (login) com a janela já rodando não traz a janela para a frente.
         if (!primeira) { if (!bandeja) mostrar.Set(); return 0; }
-        var app = new App(bandeja, mostrar);
-        if (captura) app.Captura = (args[i + 1], i + 2 < args.Length ? args[i + 2] : "");
-        return app.Run();
+        return new App(bandeja, mostrar).Run();
     }
 }
 
@@ -76,38 +72,8 @@ sealed class App : Application
         Lig.Iniciar();
         Agente.Iniciar();
         ThreadPool.RegisterWaitForSingleObject(sinal, (_, _) => Interface(Mostrar), null, -1, false);
-        if (Captura is { } cap) { _ = Capturar(cap.pasta, cap.secoes); return; }
         if (!iniciarEscondido) Mostrar();
         else Dispatcher.BeginInvoke(DispatcherPriority.ApplicationIdle, () => { Janela ??= new Painel(); });
-    }
-
-    public (string pasta, string secoes)? Captura;
-
-    async Task Capturar(string pasta, string secoes)
-    {
-        try
-        {
-            for (int i = 0; i < 100 && (Lig.Config is null || Lig.Estado is null); i++) await Task.Delay(100);
-            Mostrar();
-            System.IO.Directory.CreateDirectory(pasta);
-            var lista = secoes.Length > 0 ? secoes.Split(',') : Painel.Secoes.Select(s => s.Id).ToArray();
-            foreach (var s in lista)
-            {
-                Janela!.Ir(s);
-                await Task.Delay(2500);
-                Janela.UpdateLayout();
-                var alvo = (FrameworkElement)Janela.Content;
-                var bmp = new System.Windows.Media.Imaging.RenderTargetBitmap((int)alvo.ActualWidth, (int)alvo.ActualHeight, 96, 96, System.Windows.Media.PixelFormats.Pbgra32);
-                bmp.Render(alvo);
-                var png = new System.Windows.Media.Imaging.PngBitmapEncoder();
-                png.Frames.Add(System.Windows.Media.Imaging.BitmapFrame.Create(bmp));
-                using var f = System.IO.File.Create(System.IO.Path.Combine(pasta, $"tela_{s}.png"));
-                png.Save(f);
-            }
-        }
-        catch (Exception e) { Registrar(e); }
-        Bandeja.Remover();
-        Shutdown();
     }
 
     string? aparenciaAtual;

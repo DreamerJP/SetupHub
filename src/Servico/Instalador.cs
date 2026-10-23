@@ -25,7 +25,6 @@ internal partial class JsonInstalador : JsonSerializerContext
 static class Instalador
 {
     public static readonly string Destino = Caminhos.Instalado;
-    static readonly string DestinoAntigo = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles), Produto.Antigo);
     static readonly string PastaNova = Destino + ".nova";
     static readonly string PastaAnterior = Destino + ".anterior";
     const string Chave = @"SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\" + Produto.Nome;
@@ -50,19 +49,19 @@ static class Instalador
             File.WriteAllLines(Path.Combine(Caminhos.Dados, nome), log);
         }
         catch { }
-        try { File.WriteAllLines(Path.Combine(AppContext.BaseDirectory, nome), log); } catch { }
     }
 
-    static int Rodar(string exe, string args, int ms = 120000, bool registrarErro = true)
+    static int Rodar(string exe, string args, int ms = 120000)
     {
         var p = Process.Start(new ProcessStartInfo(exe, args) { UseShellExecute = false, CreateNoWindow = true, RedirectStandardOutput = true, RedirectStandardError = true })!;
         var o = p.StandardOutput.ReadToEndAsync(); var e = p.StandardError.ReadToEndAsync();
         if (!p.WaitForExit(ms)) { try { p.Kill(true); } catch { } return -1; }
         var saida = (o.Result + e.Result).Trim();
-        if (registrarErro && p.ExitCode != 0 && saida.Length > 0) Log($"  {Path.GetFileName(exe)} {args}: {saida}");
+        if (p.ExitCode != 0 && saida.Length > 0) Log($"  {Path.GetFileName(exe)} {args}: {saida}");
         return p.ExitCode;
     }
 
+    // Pelo Explorer, para a janela abrir sem privilégio de administrador.
     static void AbrirPainel()
     {
         try
@@ -76,8 +75,8 @@ static class Instalador
 
     public static int Instalar(string[] args)
     {
-        bool trocada = false, trocaTentada = false, tinhaInstalacao = false, configuracaoNovaIniciada = false, migracaoAntigaPendente = false;
-        EstadoServico servicoAtualAntes = default, servicoAntigoAntes = default;
+        bool trocada = false, trocaTentada = false, tinhaInstalacao = false, configuracaoNovaIniciada = false;
+        EstadoServico servicoAtualAntes = default;
         EstadoMaquina? estadoNova = null;
         string? sid = null;
         Troca troca = default;
@@ -98,17 +97,12 @@ static class Instalador
             troca = CriarTroca();
             PrepararNovaPasta(origem, troca);
             servicoAtualAntes = EstadoDoServico(ServicoWindows.Nome);
-            servicoAntigoAntes = EstadoDoServico(Produto.Antigo);
             PararTudo();
-            migracaoAntigaPendente = servicoAntigoAntes.Existe || Directory.Exists(DestinoAntigo);
-            if (migracaoAntigaPendente) PrepararMigracaoAntiga(servicoAntigoAntes);
-            CopiarPerfis(DestinoAntigo, troca.Nova);
             CopiarPerfis(Destino, troca.Nova);
             trocaTentada = true;
             tinhaInstalacao = AtivarNovaPasta(troca);
             trocada = true;
             Log("Arquivos do programa substituídos por uma instalação limpa.");
-            if (migracaoAntigaPendente) CopiarDadosAntigos(sid);
             Kits(origem);
             PawnIo();
             KitAmd();
@@ -133,15 +127,14 @@ static class Instalador
 
             using (var s = new ServiceController(ServicoWindows.Nome))
             {
+                // O serviço pode já ter sido religado pela janela aberta; isso não é falha da instalação.
                 s.Refresh();
                 if (s.Status is not (ServiceControllerStatus.Running or ServiceControllerStatus.StartPending))
                     try { s.Start(); } catch (InvalidOperationException e) when (e.InnerException is System.ComponentModel.Win32Exception { NativeErrorCode: 1056 }) { }
                 s.WaitForStatus(ServiceControllerStatus.Running, TimeSpan.FromSeconds(30));
                 Log($"Serviço do {Produto.Nome} rodando.");
             }
-            bool removerPastaAntiga = FinalizarMigracaoAntiga(sid, servicoAntigoAntes, migracaoAntigaPendente);
-            migracaoAntigaPendente = false;
-            FinalizarTroca(tinhaInstalacao, removerPastaAntiga, troca);
+            FinalizarTroca(tinhaInstalacao, troca);
             trocada = false;
             try { if (File.Exists(Path.Combine(PastaRtss, "RTSS.exe"))) Rodar("schtasks.exe", $"/run /tn \"{Produto.TarefaRivaTuner}\""); }
             catch (Exception e) { Log("Aviso: RivaTuner não iniciou: " + e.Message); }
@@ -158,8 +151,7 @@ static class Instalador
                 if (!trocaTentada) ApagarPastaDepois(troca.Nova, "Instalação nova incompleta");
                 RestaurarServico(ServicoWindows.Nome, servicoAtualAntes, "Serviço anterior reiniciado.");
             }
-            if (!tinhaInstalacao && !servicoAtualAntes.Existe && configuracaoNovaIniciada && sid is not null) LimparInstalacaoIncompleta(sid, estadoNova, !migracaoAntigaPendente);
-            if (migracaoAntigaPendente) RestaurarServico(Produto.Antigo, servicoAntigoAntes, "Serviço antigo reiniciado.");
+            if (!tinhaInstalacao && !servicoAtualAntes.Existe && configuracaoNovaIniciada && sid is not null) LimparInstalacaoIncompleta(sid, estadoNova);
             Log("ERRO: " + e);
             GravarLog("instalacao.txt");
             return 1;
@@ -188,8 +180,7 @@ static class Instalador
             }
         }
         catch (InvalidOperationException) { }
-        // Inclui os programas com o nome antigo: a janela antiga religaria o serviço antigo durante a troca.
-        foreach (var nome in new[] { Path.GetFileNameWithoutExtension(Produto.ExePainel), Produto.Comando, Produto.Antigo + "Painel", Produto.Antigo.ToLowerInvariant() })
+        foreach (var nome in new[] { Path.GetFileNameWithoutExtension(Produto.ExePainel), Produto.Comando })
             foreach (var p in Process.GetProcessesByName(nome)) { try { p.Kill(true); p.WaitForExit(5000); } catch { } }
         PararRtss();
     }
@@ -202,127 +193,6 @@ static class Instalador
             return new EstadoServico(true, s.Status != ServiceControllerStatus.Stopped);
         }
         catch (InvalidOperationException) { return default; }
-    }
-
-    static void PrepararMigracaoAntiga(EstadoServico servicoAntigo)
-    {
-        if (servicoAntigo.Existe)
-        {
-            using var s = new ServiceController(Produto.Antigo);
-            if (s.Status != ServiceControllerStatus.Stopped)
-            {
-                s.Stop();
-                s.WaitForStatus(ServiceControllerStatus.Stopped, TimeSpan.FromSeconds(30));
-            }
-        }
-        Log($"Instalação com o nome antigo ({Produto.Antigo}) preparada para migração.");
-    }
-
-    static void CopiarDadosAntigos(string sid)
-    {
-        CopiarPastaAusente(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData), Produto.Antigo), Caminhos.Dados);
-        if (PastaLocalDaConta(sid) is string local) CopiarPastaAusente(Path.Combine(local, Produto.Antigo), Path.Combine(local, Produto.Nome));
-    }
-
-    static bool FinalizarMigracaoAntiga(string sid, EstadoServico servicoAntigo, bool migracaoPendente)
-    {
-        if (!migracaoPendente) return true;
-        Log($"Instalação com o nome antigo ({Produto.Antigo}) encontrada: passa a ser {Produto.Nome}.");
-        try
-        {
-            if (servicoAntigo.Existe && Rodar("sc.exe", $"delete {Produto.Antigo}") != 0)
-            {
-                Log("Aviso: a pasta antiga será mantida porque o serviço antigo não foi removido.");
-                return false;
-            }
-            foreach (var t in new[] { "RivaTuner", "RivaTunerTela" })
-                if (!RemoverTarefaAntiga(t))
-                {
-                    Log("Aviso: a pasta antiga será mantida porque uma tarefa antiga não foi removida.");
-                    return false;
-                }
-            try { File.Delete(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.CommonPrograms), Produto.Antigo + ".lnk")); } catch { }
-            try { Registry.LocalMachine.DeleteSubKeyTree(@"SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\" + Produto.Antigo, false); } catch { }
-            try { using var k = Registry.Users.OpenSubKey($@"{sid}\Software\Microsoft\Windows\CurrentVersion\Run", true); k?.DeleteValue(Produto.Antigo, false); } catch { }
-            AjustarCaminho(DestinoAntigo, false);
-            foreach (var (vista, _) in CamadasVulkan)
-            {
-                try
-                {
-                    using var raiz = RegistryKey.OpenBaseKey(RegistryHive.LocalMachine, vista);
-                    using var k = raiz.OpenSubKey(ChaveCamadas, true);
-                    foreach (var n in k?.GetValueNames().Where(n => n.StartsWith(DestinoAntigo + "\\", StringComparison.OrdinalIgnoreCase)).ToList() ?? new())
-                        k!.DeleteValue(n, false);
-                }
-                catch (Exception e) { Log("Aviso: camada Vulkan antiga: " + e.Message); }
-            }
-            MoverPasta(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData), Produto.Antigo), Caminhos.Dados);
-            if (PastaLocalDaConta(sid) is string local) MoverPasta(Path.Combine(local, Produto.Antigo), Path.Combine(local, Produto.Nome));
-            return true;
-        }
-        catch (Exception e)
-        {
-            Log("Aviso: instalação antiga não foi removida por completo: " + e.Message);
-            return false;
-        }
-    }
-
-    static bool RemoverTarefaAntiga(string nome)
-    {
-        string tarefa = $"{Produto.Antigo}\\{nome}";
-        if (Rodar("schtasks.exe", $"/query /tn \"{tarefa}\"", 30000, false) != 0) return true;
-        return Rodar("schtasks.exe", $"/delete /f /tn \"{tarefa}\"", 30000, false) == 0;
-    }
-
-    static string? PastaLocalDaConta(string sid)
-    {
-        try
-        {
-            using var k = Registry.LocalMachine.OpenSubKey($@"SOFTWARE\Microsoft\Windows NT\CurrentVersion\ProfileList\{sid}");
-            return k?.GetValue("ProfileImagePath") is string p ? Path.Combine(Environment.ExpandEnvironmentVariables(p), "AppData", "Local") : null;
-        }
-        catch { return null; }
-    }
-
-    static void CopiarPastaAusente(string origem, string destino)
-    {
-        if (!Directory.Exists(origem)) return;
-        foreach (var arq in Directory.EnumerateFiles(origem, "*", SearchOption.AllDirectories))
-        {
-            var alvo = Path.Combine(destino, Path.GetRelativePath(origem, arq));
-            if (File.Exists(alvo)) continue;
-            Directory.CreateDirectory(Path.GetDirectoryName(alvo)!);
-            File.Copy(arq, alvo);
-        }
-    }
-
-    // Arquivo que já existe no destino fica: só o que falta é trazido.
-    static void MoverPasta(string origem, string destino)
-    {
-        if (!Directory.Exists(origem)) return;
-        try
-        {
-            if (!Directory.Exists(destino)) Directory.Move(origem, destino);
-            else
-            {
-                foreach (var arq in Directory.EnumerateFiles(origem, "*", SearchOption.AllDirectories).ToList())
-                {
-                    var alvo = Path.Combine(destino, Path.GetRelativePath(origem, arq));
-                    if (File.Exists(alvo)) continue;
-                    Directory.CreateDirectory(Path.GetDirectoryName(alvo)!);
-                    File.Move(arq, alvo);
-                }
-                Directory.Delete(origem, true);
-            }
-            Log($"Dados de {origem} passados para {destino}.");
-        }
-        catch (Exception e) { Log($"Aviso: dados de {origem}: " + e.Message); }
-    }
-
-    static void ApagarPastaAntiga()
-    {
-        if (!Directory.Exists(DestinoAntigo)) return;
-        ApagarPastaDepois(DestinoAntigo, $"Pasta antiga {DestinoAntigo}");
     }
 
     static Troca CriarTroca()
@@ -368,12 +238,6 @@ static class Instalador
             }
             RecuperarTrocaPendente(pendente);
         }
-        if (!Directory.Exists(Destino) && Directory.Exists(PastaAnterior))
-        {
-            Directory.Move(PastaAnterior, Destino);
-            Log("Instalação anterior recuperada depois de uma troca interrompida.");
-        }
-        LimparSobrasLegadas();
     }
 
     static bool TentarLerTrocaPendente(out TrocaPendente? pendente)
@@ -480,21 +344,12 @@ static class Instalador
         catch { return null; }
     }
 
-    static void LimparSobrasLegadas()
-    {
-        if (!Directory.Exists(Destino)) return;
-        ApagarPastaDepois(PastaNova, "Instalação nova pendente");
-        ApagarPastaDepois(PastaAnterior, "Instalação anterior pendente");
-    }
-
     static void CopiarPacote(string origem, string destino)
     {
         int n = 0;
         foreach (var arq in Directory.EnumerateFiles(origem, "*", SearchOption.AllDirectories))
         {
-            var rel = Path.GetRelativePath(origem, arq);
-            if (Path.GetFileName(rel).Equals("instalacao.txt", StringComparison.OrdinalIgnoreCase)) continue;
-            var dest = Path.Combine(destino, rel);
+            var dest = Path.Combine(destino, Path.GetRelativePath(origem, arq));
             Directory.CreateDirectory(Path.GetDirectoryName(dest)!);
             File.Copy(arq, dest, true);
             n++;
@@ -504,12 +359,13 @@ static class Instalador
 
     static void ConferirNovaPasta(string pasta)
     {
-        var obrigatorios = new[] { Produto.ExeServico, Produto.ExePainel, Produto.Comando + ".exe", "instalar.cmd", "remover.cmd", Path.Combine("kits", "rtss") };
+        var obrigatorios = new[] { Produto.ExeServico, Produto.ExePainel, Produto.Comando + ".exe", Path.Combine("kits", "rtss") };
         var faltando = obrigatorios.Where(x => !File.Exists(Path.Combine(pasta, x)) && !Directory.Exists(Path.Combine(pasta, x))).ToList();
         if (faltando.Count > 0) throw new InvalidOperationException("O pacote está incompleto: " + string.Join(", ", faltando) + ".");
         Log("Instalação nova conferida antes da troca.");
     }
 
+    // Os perfis do RivaTuner passam para a instalação nova: ele grava neles os ajustes criados por jogo.
     static void CopiarPerfis(string origem, string destino)
     {
         var de = Path.Combine(origem, "kits", "rtss", "Profiles");
@@ -562,7 +418,7 @@ static class Instalador
         }
     }
 
-    static void FinalizarTroca(bool tinhaInstalacao, bool removerPastaAntiga, Troca troca)
+    static void FinalizarTroca(bool tinhaInstalacao, Troca troca)
     {
         if (tinhaInstalacao)
         {
@@ -570,7 +426,6 @@ static class Instalador
             ApagarPastaDepois(troca.Anterior, "Instalação anterior");
         }
         RemoverTrocaPendente();
-        if (removerPastaAntiga) ApagarPastaAntiga();
     }
 
     static void ReverterTroca(bool tinhaInstalacao, EstadoServico servicoAtualAntes, Troca troca)
@@ -615,7 +470,7 @@ static class Instalador
         catch (Exception e) { Log("Aviso: o serviço anterior não reiniciou: " + e.Message); }
     }
 
-    static void LimparInstalacaoIncompleta(string sid, EstadoMaquina? estadoNova, bool removerPlanos)
+    static void LimparInstalacaoIncompleta(string sid, EstadoMaquina? estadoNova)
     {
         try { DevolverServicosLuz(estadoNova ?? Ler<EstadoMaquina>(Caminhos.EstadoMaquina)); } catch { }
         try { AbrirComWindows(sid, false); } catch { }
@@ -626,7 +481,7 @@ static class Instalador
         try { RemoverRivaTuner(); } catch { }
         try { Rodar("sc.exe", $"delete {ServicoWindows.Nome}"); } catch { }
         try { Registry.LocalMachine.DeleteSubKeyTree(Chave, false); } catch { }
-        if (removerPlanos) try { Hardware.Energia.RemoverPlanos(); } catch { }
+        try { Hardware.Energia.RemoverPlanos(); } catch { }
         Log("Registros da instalação incompleta removidos.");
     }
 
@@ -640,6 +495,7 @@ static class Instalador
         }
         catch
         {
+            // Biblioteca do RivaTuner presa num programa aberto: o Windows apaga o resto no próximo reinício.
             try
             {
                 foreach (var arq in Directory.EnumerateFiles(pasta, "*", SearchOption.AllDirectories).ToList()) MoveFileExW(arq, null, 4);
@@ -717,8 +573,6 @@ static class Instalador
     // Os serviços de luz da MSI (e o LEDKeeper2) desfazem a luz do SetupHub: ficam desativados até a remoção.
     static void ServicoLuzMsi(EstadoMaquina m)
     {
-        if (m.InicioServicoLuzMsi is string antigo && !m.ServicosLuzMsi.ContainsKey("Mystic_Light_Service"))
-            m.ServicosLuzMsi["Mystic_Light_Service"] = $"{antigo}:{(m.ServicoLuzMsiEstavaAtivo == true ? 1 : 0)}";
         foreach (var nome in ServicosLuz)
         {
             try
@@ -740,8 +594,6 @@ static class Instalador
     static void DevolverServicosLuz(EstadoMaquina? m)
     {
         if (m is null) return;
-        if (m.InicioServicoLuzMsi is string antigo && !m.ServicosLuzMsi.ContainsKey("Mystic_Light_Service"))
-            m.ServicosLuzMsi["Mystic_Light_Service"] = $"{antigo}:{(m.ServicoLuzMsiEstavaAtivo == true ? 1 : 0)}";
         foreach (var (nome, antes) in m.ServicosLuzMsi)
         {
             var partes = antes.Split(':');
@@ -885,7 +737,7 @@ static class Instalador
             {
                 var atual = k.GetValue("InstallDir") as string;
                 // A pasta do avulso desinstalado pode esperar o reinício para sumir: sem o programa nela, vale a cópia.
-                if (atual is null || !File.Exists(Path.Combine(atual, "RTSS.exe")) || atual.StartsWith(Destino, StringComparison.OrdinalIgnoreCase) || atual.StartsWith(DestinoAntigo, StringComparison.OrdinalIgnoreCase))
+                if (atual is null || !File.Exists(Path.Combine(atual, "RTSS.exe")) || atual.StartsWith(Destino, StringComparison.OrdinalIgnoreCase))
                 {
                     k.SetValue("InstallDir", pasta);
                     k.SetValue("InstallPath", Path.Combine(pasta, "RTSS.exe"));

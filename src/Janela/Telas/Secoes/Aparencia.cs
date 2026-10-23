@@ -4,7 +4,7 @@ using System.Windows.Media;
 using SetupHub.Janela.Kit;
 using SetupHub.Nucleo;
 
-namespace SetupHub.Janela.Telas.Detalhado;
+namespace SetupHub.Janela.Telas.Secoes;
 
 sealed class Aparencia : Tela
 {
@@ -44,7 +44,7 @@ sealed class Aparencia : Tela
         var titulo = K.Titulo("Cores e tamanho");
         titulo.Height = 34;
         titulo.Padding = new Thickness(0, 7, 0, 0);
-        var nota = K.Nota("As cores de alerta de temperatura (amarelo e vermelho) são fixas.");
+        var nota = K.Nota("Temperaturas ficam vermelhas no valor do alerta e amarelas 15 °C antes.");
         nota.Margin = new Thickness(0, 6, 0, 0);
         return K.Cartao(K.Col(0, titulo,
             K.LinhaAjuste("Tema", tema, 270, 46),
@@ -63,20 +63,10 @@ sealed class Aparencia : Tela
         return K.Cartao(K.Col(4, titulo, quadros));
     }
 
-    internal static List<CartaoInicio> Lista(Config c)
-    {
-        var lista = c.Aparencia.Inicio;
-        foreach (var (tipo, _) in Padroes.Quadros)
-        {
-            if (lista.All(x => x.Tipo != tipo)) lista.Add(new CartaoInicio { Tipo = tipo, Visivel = false });
-        }
-        return lista;
-    }
-
     void PintarQuadros(Config c)
     {
         var nomes = Padroes.Quadros.ToDictionary(x => x.Tipo, x => x.Nome);
-        var lista = Lista(Json.Copia(c));
+        var lista = c.Aparencia.Inicio;
         quadros.Children.Clear();
         for (int i = 0; i < lista.Count; i++)
         {
@@ -117,7 +107,7 @@ sealed class Aparencia : Tela
         }
     }
 
-    Task<bool> Mudar(Action<List<CartaoInicio>> mudar) => Gravar(c => mudar(Lista(c)));
+    Task<bool> Mudar(Action<List<CartaoInicio>> mudar) => Gravar(c => mudar(c.Aparencia.Inicio));
 
     protected override void Config(Config c)
     {

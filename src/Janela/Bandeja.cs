@@ -51,7 +51,6 @@ sealed class Bandeja
         janela = new HwndSource(new HwndSourceParameters(Produto.Nome + "Bandeja") { Width = 1, Height = 1, WindowStyle = unchecked((int)0x80000000), PositionX = -32000, PositionY = -32000 });
         barraRecriada = RegisterWindowMessageW("TaskbarCreated");
         janela.AddHook(Mensagem);
-        var exe = Environment.ProcessPath ?? "";
         int t = GetSystemMetrics(49);
         var icone = LoadImageW(IntPtr.Zero, IcoTemporario(), 1, t, t, 0x10);
         dados = new NotifyIconData
@@ -72,8 +71,10 @@ sealed class Bandeja
         if (c is null) return;
         if (!c.Aparencia.TemperaturasNaBandeja) { RemoverNumeros(); Principal(true); return; }
         bool claro = BarraClara();
-        Numero(2, e.Cpu.TempMaisQuente, $"Processador: ponto mais quente {Formato.Temp(e.Cpu.TempMaisQuente)}", c.Aparencia.CorProcessador, 75, 88, claro);
-        Numero(3, e.Gpu.TempMaisQuente, $"Placa de vídeo: ponto mais quente {Formato.Temp(e.Gpu.TempMaisQuente)}, núcleo {Formato.Temp(e.Gpu.Temp)}", c.Aparencia.CorPlacaDeVideo, 85, 100, claro);
+        var (cpuMorno, cpuQuente) = Paleta.LimitesCpu(c);
+        var (gpuMorno, gpuQuente) = Paleta.LimitesGpu(c);
+        Numero(2, e.Cpu.TempMaisQuente, $"Processador: ponto mais quente {Formato.Temp(e.Cpu.TempMaisQuente)}", c.Aparencia.CorProcessador, cpuMorno, cpuQuente, claro);
+        Numero(3, e.Gpu.TempMaisQuente, $"Placa de vídeo: ponto mais quente {Formato.Temp(e.Gpu.TempMaisQuente)}, núcleo {Formato.Temp(e.Gpu.Temp)}", c.Aparencia.CorPlacaDeVideo, gpuMorno, gpuQuente, claro);
         if (!promovidos && numeros.Count == 2 && ++voltasPromover % 5 == 0) Promover();
         // Sem temperatura na bandeja o ícone principal sempre volta: é o único caminho até a janela escondida.
         Principal(!c.Aparencia.EsconderIconeBandeja || numeros.Count == 0);
@@ -344,7 +345,7 @@ sealed class Bandeja
         tGpu!.Text = e?.Gpu.TempMaisQuente is double gt ? $"{gt:0}°" : "–";
         double? w = e is null ? null : (e.Cpu.Consumo ?? 0) + (e.Gpu.ConsumoTotal ?? e.Gpu.Consumo ?? 0);
         tW!.Text = w is double ww && ww > 0 ? $"{ww:0} W" : "–";
-        if (e is not null) { tCpu.Foreground = P.Calor(e.Cpu.TempMaisQuente, 75, 88, P.Cpu); tGpu.Foreground = P.Calor(e.Gpu.TempMaisQuente, 85, 100, P.Gpu); }
+        if (e is not null) { tCpu.Foreground = P.CalorCpu(e.Cpu.TempMaisQuente, App.Lig.Config); tGpu.Foreground = P.CalorGpu(e.Gpu.TempMaisQuente, App.Lig.Config); }
         var ativo = e?.Perfil ?? App.Lig.Config?.PerfilAtivo;
         foreach (var (nome, b) in perfis)
         {
