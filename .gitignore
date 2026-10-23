@@ -1,4 +1,5 @@
 /.build/
+/_temporario-SetupHub/
 /SetupHub-*-Instalador.exe
 **/bin/
 **/obj/

@@ -13,6 +13,9 @@ sealed class Jogos : Tela
     protected override string Id => "jogos";
     string? exe;
     StackPanel lista = null!;
+    readonly Dictionary<string, ImageSource?> icones = new(StringComparer.OrdinalIgnoreCase);
+    readonly HashSet<string> iconesEmLeitura = new(StringComparer.OrdinalIgnoreCase);
+    bool pinturaIconesPendente;
     TextBlock tituloAbrir = null!;
     Botao tirar = null!;
     Escolha perfil = null!, ventoinhas = null!, luzPlano = null!;
@@ -79,11 +82,51 @@ sealed class Jogos : Tela
             bool on = e == exe;
             var tn = K.T(nome, 14, on ? P.TextoSelecao : P.Texto, FontWeights.SemiBold);
             var ts = K.T(sub, 12, on ? P.SubSel : P.Apagado);
-            var b = new Botao { Height = P.E(54), CornerRadius = new CornerRadius(P.RaioBotao), Padding = new Thickness(12, 0, 12, 0), Child = new StackPanel { VerticalAlignment = VerticalAlignment.Center, Children = { tn, ts } }, Margin = new Thickness(0, 0, 0, 4) };
+            tn.TextWrapping = ts.TextWrapping = TextWrapping.NoWrap;
+            tn.TextTrimming = ts.TextTrimming = TextTrimming.CharacterEllipsis;
+            var texto = new Grid { VerticalAlignment = VerticalAlignment.Center };
+            texto.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
+            texto.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
+            Grid.SetRow(tn, 0); Grid.SetRow(ts, 1);
+            texto.Children.Add(tn); texto.Children.Add(ts);
+            var icone = e is null ? null : Icone(e);
+            UIElement conteudo = icone is null ? texto : K.Grade("* auto", P.E(10), texto, new Image { Source = icone, Width = P.E(28), Height = P.E(28), Stretch = Stretch.Uniform, VerticalAlignment = VerticalAlignment.Center });
+            var b = new Botao { Height = P.E(54), CornerRadius = new CornerRadius(P.RaioBotao), Padding = new Thickness(12, 0, 12, 0), Child = conteudo, Margin = new Thickness(0, 0, 0, 4), ToolTip = nome };
             b.Fundo(on ? P.Selecao : Brushes.Transparent); b.FundoSobre = on ? P.Selecao : P.Poco;
             b.Clique += (_, _) => { exe = e; Atualizar(); };
             lista.Children.Add(b);
         }
+    }
+
+    ImageSource? Icone(string arquivo)
+    {
+        if (icones.TryGetValue(arquivo, out var imagem)) return imagem;
+        if (iconesEmLeitura.Add(arquivo)) _ = LerIcone(arquivo);
+        return null;
+    }
+
+    async Task LerIcone(string arquivo)
+    {
+        ImageSource? imagem = null;
+        try { imagem = await Task.Run(() => IconeArquivo.Ler(arquivo)); }
+        catch { }
+        icones[arquivo] = imagem;
+        iconesEmLeitura.Remove(arquivo);
+        if (Cfg?.Jogos.Lista.Any(j => string.Equals(j.Executavel, arquivo, StringComparison.OrdinalIgnoreCase)) == true) AgendarPinturaIcones();
+    }
+
+    void AgendarPinturaIcones()
+    {
+        if (pinturaIconesPendente) return;
+        pinturaIconesPendente = true;
+        _ = PintarIconesDepois();
+    }
+
+    async Task PintarIconesDepois()
+    {
+        await Task.Yield();
+        pinturaIconesPendente = false;
+        if (Cfg is not null) PintarLista();
     }
 
     Border MontarAbrir()

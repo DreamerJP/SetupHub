@@ -1,9 +1,9 @@
-# Gera na pasta do código só o instalador de um arquivo; o resto da compilação fica em _temporario-SetupHub\compilacao.
+# Gera na pasta do código só o instalador de um arquivo; o resto da compilação fica em _temporario-SetupHub/compilacao.
 # Uso: bash publicar.sh
 set -e
 RAIZ=$(cd "$(dirname "$0")" && pwd)
-source "$RAIZ/../_temporario-SetupHub/ferramentas/ambiente.sh"
-COMPILACAO="$(cd "$RAIZ/.." && pwd)/_temporario-SetupHub/compilacao"
+source "$RAIZ/_temporario-SetupHub/ferramentas/ambiente.sh"
+COMPILACAO="$RAIZ/_temporario-SetupHub/compilacao"
 SAIDA="$COMPILACAO/pacote"
 SAIDAW=$(cygpath -w "$SAIDA")
 cd "$RAIZ/src"
