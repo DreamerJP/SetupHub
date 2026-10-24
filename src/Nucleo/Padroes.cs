@@ -51,7 +51,7 @@ public static class Padroes
     // 30% de teto: abaixo de uns 26% o Ryzen sai do degrau mais baixo e passa a pausar, caindo para uns 450 MHz efetivos.
     public static PlanoEnergia PlanoEnergiaPadrao(string id) => id switch
     {
-        "economia" => new() { Id = id, ProcessadorMinimo = 5, ProcessadorMaximo = 30, NucleosMinimos = 10, PreferenciaEnergia = 25, Impulso = "desligado", SuspensaoUsb = false, EconomiaPcie = "maximo", DesligarTela = 0, Suspender = 0 },
+        "economia" => new() { Id = id, ProcessadorMinimo = 5, ProcessadorMaximo = 30, NucleosMinimos = 10, PreferenciaEnergia = 100, Impulso = "desligado", SuspensaoUsb = false, EconomiaPcie = "maximo", DesligarTela = 0, Suspender = 0 },
         "desempenho" => new() { Id = id, ProcessadorMinimo = 100, ProcessadorMaximo = 100, NucleosMinimos = 100, PreferenciaEnergia = 10, Impulso = "agressivo", SuspensaoUsb = false, EconomiaPcie = "desligado", DesligarTela = 0, Suspender = 0 },
         _ => new() { Id = "equilibrado", ProcessadorMinimo = 5, ProcessadorMaximo = 100, NucleosMinimos = 100, PreferenciaEnergia = 80, Impulso = "agressivo", SuspensaoUsb = false, EconomiaPcie = "moderado", DesligarTela = 0, Suspender = 0 },
     };
