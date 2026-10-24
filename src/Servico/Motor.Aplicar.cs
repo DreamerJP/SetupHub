@@ -30,10 +30,17 @@ sealed partial class Motor
         if (Mudou(c => c.Ventoinhas.Saidas) || Mudou(c => c.Ventoinhas.Noite))
             lock (r) r.Areas["ventoinhas"] = chip.Pronto ? "aplicado no próximo segundo" : "sem controle: " + chip.Motivo;
         if ((Mudou(c => c.Luz) || jogo) && luz.Disponivel) Area("luz", () => Task.FromResult(luz.Aplicar(LuzEfetiva(novo))));
-        if (Mudou(c => c.Processador) && cpu.Disponivel && !cpu.Lido)
-            lock (r) r.Areas["processador"] = "aplicado quando a leitura do processador terminar, em alguns segundos";
-        else if (Mudou(c => c.Processador) && cpu.Disponivel && faixas.AreasLidas.Contains("processador"))
-            Area("processador", () => AplicarProcessador(novo.Processador, inicioServico));
+        if (Mudou(c => c.Processador))
+        {
+            if (cpu.Disponivel && cpu.Lido && faixas.AreasLidas.Contains("processador"))
+                Area("processador", () => AplicarProcessador(novo.Processador, inicioServico));
+            else
+            {
+                // Aplicado só depois, na leitura do processador: uma queda antes disso também tem que voltar ao confirmado.
+                if (!inicioServico) MarcarPendenteProcessador(novo.Processador);
+                if (cpu.Disponivel && !cpu.Lido) lock (r) r.Areas["processador"] = "aplicado quando a leitura do processador terminar, em alguns segundos";
+            }
+        }
         if (Mudou(c => c.Energia)) Area("energia", () => Task.FromResult(Energia.Aplicar(novo.Energia)));
         if (Mudou(c => c.Windows)) Area("windows", () => Task.FromResult(WindowsSistema(novo.Windows)));
         if (agente is not null)
@@ -68,18 +75,20 @@ sealed partial class Motor
     // Só é reaplicado ao ligar depois de confirmado: teste de estabilidade, 30 minutos sem queda ou desligamento normal.
     async Task<List<string>> AplicarProcessador(ConfigProcessador alvo, bool partida)
     {
-        if (!partida)
-        {
-            var confirmado = maquina.ProcessadorConfirmado ?? new ConfigProcessador();
-            if (Json.Texto(alvo) != Json.Texto(confirmado))
-            {
-                maquina.ProcessadorPendente = Json.Copia(alvo);
-                maquina.PendenteDesde = Formato.Agora;
-            }
-            else maquina.ProcessadorPendente = null;
-            SalvarMaquina();
-        }
+        if (!partida) MarcarPendenteProcessador(alvo);
         return await cpu.Aplicar(alvo);
+    }
+
+    void MarcarPendenteProcessador(ConfigProcessador alvo)
+    {
+        var confirmado = maquina.ProcessadorConfirmado ?? new ConfigProcessador();
+        if (Json.Texto(alvo) != Json.Texto(confirmado))
+        {
+            maquina.ProcessadorPendente = Json.Copia(alvo);
+            maquina.PendenteDesde = Formato.Agora;
+        }
+        else maquina.ProcessadorPendente = null;
+        SalvarMaquina();
     }
 
     void MarcarPendenteGpu(ConfigPlacaDeVideo alvo)

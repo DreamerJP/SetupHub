@@ -2,11 +2,31 @@
 # Uso: bash publicar.sh
 set -e
 RAIZ=$(cd "$(dirname "$0")" && pwd)
-source "$RAIZ/_temporario-SetupHub/ferramentas/ambiente.sh"
+FERRAMENTAS="$RAIZ/_temporario-SetupHub/ferramentas"
+if [ ! -f "$FERRAMENTAS/ambiente.sh" ] || [ ! -f "$FERRAMENTAS/dotnet10/dotnet.exe" ]; then
+  FW=$(cygpath -w "$FERRAMENTAS")
+  echo "ERRO: .NET do projeto não encontrado; nada foi publicado."
+  [ -f "$FERRAMENTAS/dotnet10/dotnet.exe" ] || echo "  Falta: $FW\\dotnet10\\dotnet.exe (.NET SDK 10 x64 extraído nessa pasta; usado até agora: 10.0.402)."
+  [ -f "$FERRAMENTAS/ambiente.sh" ] || echo "  Falta: $FW\\ambiente.sh (define DOTNET_ROOT=dotnet10, DOTNET_CLI_HOME=dotnet10-casa e NUGET_PACKAGES=nuget dentro dessa pasta e põe dotnet10 no PATH)."
+  exit 1
+fi
+source "$FERRAMENTAS/ambiente.sh"
 COMPILACAO="$RAIZ/_temporario-SetupHub/compilacao"
 SAIDA="$COMPILACAO/pacote"
 SAIDAW=$(cygpath -w "$SAIDA")
 cd "$RAIZ/src"
+# Teste que falha impede a publicação, antes de a pasta do pacote anterior ser apagada; a aceitação mexe no PC e roda à parte.
+TESTES="$RAIZ/_temporario-SetupHub/testes/SetupHub.Testes.csproj"
+if [ -f "$TESTES" ]; then
+  echo "Testando..."
+  if ! dotnet test "$TESTES" -c Release -nologo -v q --filter "Tipo!=Aceitacao&Tipo!=AceitacaoAdmin" > /tmp/publicar_testes.txt 2>&1; then
+    grep -E "\[FAIL\]| error " /tmp/publicar_testes.txt | sed 's/\[C:.*//' | sort -u
+    echo "ERRO: testes falharam; nada foi publicado."
+    exit 1
+  fi
+else
+  echo "AVISO: testes não encontrados em $(cygpath -w "$TESTES"); publicação sem testes."
+fi
 # Pasta vazia a cada publicação: arquivo que saiu do projeto não fica no instalador.
 rm -rf "$SAIDA"
 mkdir -p "$SAIDA"
