@@ -59,7 +59,7 @@ sealed class Bandeja
             hIcon = icone, szTip = Produto.Nome, szInfo = "", szInfoTitle = "", uVersion = 4,
         };
         Adicionar();
-        App.Lig.AoEstado += e => App.Interface(() => { Dica(e); Temperaturas(e); });
+        App.Lig.AoEstado += e => App.Interface(() => { Dica(e); Temperaturas(e); if (menu?.IsVisible == true) PreencherMenu(e); });
     }
 
     // Um ícone por temperatura, com o número desenhado; uID 2 processador, 3 placa de vídeo.
@@ -215,7 +215,6 @@ sealed class Bandeja
         ultimaDica = t;
         dados.uFlags = 0x4; dados.szTip = t.Length > 127 ? t[..127] : t;
         Shell_NotifyIconW(1, ref dados);
-        if (menu?.IsVisible == true) PreencherMenu(e);
     }
 
     // Com o ícone principal escondido, o aviso sai pelo ícone da temperatura do processador.
@@ -241,20 +240,35 @@ sealed class Bandeja
 
     public void Refazer() { menu?.Close(); menu = null; }
 
-    Run? tCpu, tGpu, tW;
-    readonly List<(string nome, Botao b)> perfis = new();
+    Border? aviso;
+    TextBlock? avisoTexto;
+    Grid? leituras;
+    Run? tCpu, tGpu;
+    TextBlock? nCpu, nGpu;
+    StackPanel? listaPerfis;
+    string chavePerfis = "", chaveLuz = "";
+    readonly List<(string nome, Botao b, TextBlock texto, Run alterado, TextBlock atalho)> perfis = new();
+    Escolha? planoLuz;
     Chave? luz;
 
     void AbrirMenu()
     {
         if (menu is null) Montar();
         PreencherMenu(App.Lig.Estado);
-        var area = SystemParameters.WorkArea;
-        menu!.Left = area.Right - menu.Width - 12;
-        menu.Top = area.Bottom - menu.Height - 12;
-        menu.Show();
+        Posicionar();
+        menu!.Show();
         menu.Activate();
         SetForegroundWindow(new WindowInteropHelper(menu).Handle);
+    }
+
+    void Posicionar()
+    {
+        if (menu?.Content is not FrameworkElement conteudo) return;
+        conteudo.Measure(new Size(menu.Width, double.PositiveInfinity));
+        double altura = menu.ActualHeight > 0 ? menu.ActualHeight : conteudo.DesiredSize.Height;
+        var area = SystemParameters.WorkArea;
+        menu.Left = area.Right - menu.Width - 12;
+        menu.Top = area.Bottom - altura - 12;
     }
 
     void Montar()
@@ -262,101 +276,141 @@ sealed class Bandeja
         var P = K.P;
         menu = new Window
         {
-            Width = 320, Height = 440, WindowStyle = WindowStyle.None, ResizeMode = ResizeMode.NoResize, ShowInTaskbar = false, Topmost = true,
+            Width = 320, SizeToContent = SizeToContent.Height, WindowStyle = WindowStyle.None, ResizeMode = ResizeMode.NoResize, ShowInTaskbar = false, Topmost = true,
             AllowsTransparency = true, Background = Brushes.Transparent, Title = Produto.Nome,
         };
         menu.Deactivated += (_, _) => menu?.Hide();
         menu.KeyDown += (_, e) => { if (e.Key == Key.Escape) menu?.Hide(); };
+        menu.SizeChanged += (_, _) => Posicionar();
         perfis.Clear();
-        var raiz = new Grid();
-        raiz.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
-        raiz.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
-        raiz.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
-        raiz.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-        raiz.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
+        chavePerfis = chaveLuz = "";
 
-        UIElement Leitura(string rotulo, out Run valor, Brush cor)
+        avisoTexto = K.T("", 13);
+        avisoTexto.TextWrapping = TextWrapping.Wrap; avisoTexto.TextTrimming = TextTrimming.None;
+        aviso = new Border { Child = avisoTexto, Background = P.Poco, CornerRadius = new CornerRadius(P.RaioBotao), Padding = new Thickness(10, 8, 10, 8), Margin = new Thickness(0, 0, 0, 10), Visibility = Visibility.Collapsed };
+
+        UIElement Leitura(string rotulo, Brush cor, out Run valor, out TextBlock nota)
         {
             var t = new TextBlock();
-            valor = new Run("–") { FontFamily = P.Numero, FontWeight = FontWeights.SemiBold, FontSize = 26, Foreground = cor };
+            valor = new Run("–") { FontFamily = P.Numero, FontWeight = FontWeights.SemiBold, FontSize = P.F(24), Foreground = cor };
             t.Inlines.Add(valor);
-            var col = K.Col(0, K.T(rotulo, 12, P.Apagado), t);
-            return new Border { Child = col, Padding = new Thickness(10, 8, 10, 8), Background = P.Poco, CornerRadius = new CornerRadius(8) };
+            nota = K.T("", 11.5, P.Apagado);
+            return new Border { Child = K.Col(0, K.T(rotulo, 12, P.Apagado), t, nota), Padding = new Thickness(10, 8, 10, 8), Background = P.Poco, CornerRadius = new CornerRadius(P.RaioBotao) };
         }
-        var leituras = K.Iguais(3, 6, new[]
-        {
-            Leitura("Processador", out var a, P.Cpu),
-            Leitura("Placa de vídeo", out var b, P.Gpu),
-            Leitura("Consumo", out var c, P.Texto),
-        });
-        tCpu = a; tGpu = b; tW = c;
-        var topo = (UIElement)leituras;
-        Grid.SetRow(topo, 0);
-        raiz.Children.Add(topo);
+        leituras = K.Iguais(2, 6, new[] { Leitura("Processador", P.Cpu, out tCpu, out nCpu), Leitura("Placa de vídeo", P.Gpu, out tGpu, out nGpu) });
+        leituras.Margin = new Thickness(0, 0, 0, 10);
+        leituras.Visibility = Visibility.Collapsed;
 
-        var lista = new StackPanel { Margin = new Thickness(0, 10, 0, 0) };
-        foreach (var p in App.Lig.Config?.Perfis.Take(6) ?? Enumerable.Empty<Perfil>())
-        {
-            var nome = p.Nome;
-            var atalho = K.T((p.Atalho ?? "").Replace("+", " "), 12, P.Apagado);
-            var tx = K.T(nome, 14);
-            var bt = new Botao { Height = 36, CornerRadius = new CornerRadius(8), Padding = new Thickness(10, 0, 10, 0), Child = K.Grade("* auto", 8, tx, atalho), Background = Brushes.Transparent };
-            bt.Margin = new Thickness(0, 0, 0, 2);
-            bt.Clique += (_, _) => _ = App.Lig.Pedir("perfil.aplicar", Ligacao.Args(("nome", nome), ("origem", "ícone da bandeja")));
-            perfis.Add((nome, bt));
-            lista.Children.Add(bt);
-        }
-        Grid.SetRow(lista, 1);
-        raiz.Children.Add(lista);
+        var rotuloPerfil = K.T("Perfil", 12, P.Apagado);
+        rotuloPerfil.Margin = new Thickness(10, 0, 0, 4);
+        listaPerfis = new StackPanel();
 
+        planoLuz = new Escolha(Array.Empty<(string, string)>(), null, 32);
+        planoLuz.Escolheu += v => { if (v != "personalizado") _ = App.Lig.Pedir("luz.plano", Ligacao.Args(("nome", v))); };
         luz = new Chave();
         luz.Mudou += on => _ = App.Lig.Pedir("luz.ligar", Ligacao.Args(("ligada", on)));
         var linhaLuz = new Border
         {
-            Child = K.Grade("* 40", 10, K.T("Luz"), luz), Height = 38,
-            Padding = new Thickness(10, 0, 10, 0),
-            BorderBrush = P.Borda, BorderThickness = new Thickness(0, 1, 0, 0), Margin = new Thickness(0, 8, 0, 0),
+            Child = K.Grade("* 156 40", 10, K.T("Luz"), planoLuz, luz), Padding = new Thickness(10, 10, 10, 0),
+            BorderBrush = P.Linha, BorderThickness = new Thickness(0, 1, 0, 0), Margin = new Thickness(0, 8, 0, 0),
         };
-        Grid.SetRow(linhaLuz, 2);
-        raiz.Children.Add(linhaLuz);
 
-        var abrir = Botao.Cheio("Abrir o SetupHub", () => { menu?.Hide(); App.Mostrar(); }, 38);
-        var sair = Botao.Contorno("Sair", () => { menu?.Hide(); App.Sair(); }, 38);
-        ((TextBlock)sair.Child).Foreground = P.Texto;
-        var botoes = K.Iguais(2, 8, new UIElement[] { abrir, sair });
-        Grid.SetRow(botoes, 4);
-        raiz.Children.Add(botoes);
+        var abrir = Botao.Contorno("Abrir o SetupHub", () => { menu?.Hide(); App.Mostrar(); }, 38);
+        ((TextBlock)abrir.Child).Foreground = P.Texto;
+        var sair = new Botao
+        {
+            Width = P.E(38), Height = P.E(38), CornerRadius = new CornerRadius(P.RaioBotao), BorderThickness = new Thickness(1),
+            Child = K.IconeCaixa("M12 3v8M6.3 6.4a8 8 0 1 0 11.4 0", 16, P.Secundario, 2),
+            ToolTip = "Sair do SetupHub: as ventoinhas voltam para a BIOS e a luz fica no efeito do controlador",
+        };
+        sair.FundoNormal = Brushes.Transparent; sair.Background = Brushes.Transparent; sair.FundoSobre = P.Poco;
+        sair.BordaNormal = P.BordaForte; sair.BorderBrush = P.BordaForte; sair.BordaSobre = P.SubSel;
+        sair.Clique += (_, _) => { menu?.Hide(); App.Sair(); };
+        var rodape = K.Grade($"* {P.E(38).ToString(System.Globalization.CultureInfo.InvariantCulture)}", 8, abrir, sair);
+        rodape.Margin = new Thickness(0, 14, 0, 0);
 
         menu.Content = new Border
         {
-            Child = raiz, Background = P.Painel, BorderBrush = P.BordaForte, BorderThickness = new Thickness(1),
-            CornerRadius = new CornerRadius(12), Padding = new Thickness(12),
+            Child = K.Col(0, aviso, leituras, rotuloPerfil, listaPerfis, linhaLuz, rodape), Background = P.Painel, BorderBrush = P.BordaForte, BorderThickness = new Thickness(1),
+            CornerRadius = new CornerRadius(P.RaioCartao), Padding = new Thickness(12),
         };
         TextElement.SetFontFamily(menu, P.Corpo);
-        TextElement.SetFontSize(menu, 14);
+        TextElement.SetFontSize(menu, P.F(14));
         TextElement.SetForeground(menu, P.Texto);
+    }
+
+    void MontarPerfis(Config? c)
+    {
+        var lista = c?.Perfis.Take(6).ToList() ?? new List<Perfil>();
+        var chave = string.Join("\n", lista.Select(p => p.Nome + "|" + p.Atalho));
+        if (chave == chavePerfis || listaPerfis is null) return;
+        chavePerfis = chave;
+        perfis.Clear();
+        listaPerfis.Children.Clear();
+        var P = K.P;
+        foreach (var p in lista)
+        {
+            var nome = p.Nome;
+            var alterado = new Run("") { FontSize = P.F(12) };
+            var tx = K.T("", 14);
+            tx.Inlines.Add(new Run(nome));
+            tx.Inlines.Add(alterado);
+            var atalho = K.T((p.Atalho ?? "").Replace("+", " "), 12, P.Apagado);
+            var bt = new Botao { Height = P.E(36), CornerRadius = new CornerRadius(P.RaioBotao), Padding = new Thickness(10, 0, 10, 0), Child = K.Grade("* auto", 8, tx, atalho), Background = Brushes.Transparent };
+            bt.Margin = new Thickness(0, 0, 0, 2);
+            bt.Clique += (_, _) => { PintarPerfis(nome, false); _ = App.Lig.Pedir("perfil.aplicar", Ligacao.Args(("nome", nome), ("origem", "ícone da bandeja"))); };
+            perfis.Add((nome, bt, tx, alterado, atalho));
+            listaPerfis.Children.Add(bt);
+        }
+    }
+
+    void PintarPerfis(string? ativo, bool alteradoAtivo)
+    {
+        var P = K.P;
+        foreach (var (nome, b, tx, alterado, atalho) in perfis)
+        {
+            bool on = nome == ativo;
+            b.Fundo(on ? P.Selecao : Brushes.Transparent);
+            b.FundoSobre = on ? P.Selecao : P.Poco;
+            tx.Foreground = on ? P.TextoSelecao : P.Texto; tx.FontWeight = on ? FontWeights.SemiBold : FontWeights.Normal;
+            alterado.Text = on && alteradoAtivo ? "  alterado" : "";
+            alterado.Foreground = P.SubSel; alterado.FontWeight = FontWeights.Normal;
+            atalho.Foreground = on ? P.SubSel : P.Apagado;
+        }
     }
 
     void PreencherMenu(Estado? e)
     {
         var P = K.P;
-        if (tCpu is null || menu is null) return;
-        tCpu.Text = e?.Cpu.TempMaisQuente is double ct ? $"{ct:0}°" : "–";
-        tGpu!.Text = e?.Gpu.TempMaisQuente is double gt ? $"{gt:0}°" : "–";
-        double? w = e is null ? null : (e.Cpu.Consumo ?? 0) + (e.Gpu.ConsumoTotal ?? e.Gpu.Consumo ?? 0);
-        tW!.Text = w is double ww && ww > 0 ? $"{ww:0} W" : "–";
-        if (e is not null) { tCpu.Foreground = P.CalorCpu(e.Cpu.TempMaisQuente, App.Lig.Config); tGpu.Foreground = P.CalorGpu(e.Gpu.TempMaisQuente, App.Lig.Config); }
-        var ativo = e?.Perfil ?? App.Lig.Config?.PerfilAtivo;
-        foreach (var (nome, b) in perfis)
+        if (menu is null || avisoTexto is null || planoLuz is null) return;
+        var c = App.Lig.Config;
+        MontarPerfis(c);
+
+        bool alerta = e?.Alertas.Count > 0;
+        string? texto = alerta ? string.Join("\n", e!.Alertas.Select(a => a.Texto)) : e?.Jogo is string jogo ? $"{jogo} aberto" : null;
+        avisoTexto.Text = texto ?? "";
+        avisoTexto.Foreground = alerta ? P.Quente : P.Texto;
+        aviso!.Visibility = texto is null ? Visibility.Collapsed : Visibility.Visible;
+
+        bool temperaturas = c is not null && !c.Aparencia.TemperaturasNaBandeja;
+        leituras!.Visibility = temperaturas ? Visibility.Visible : Visibility.Collapsed;
+        if (temperaturas && e is not null)
         {
-            bool on = nome == ativo;
-            b.Fundo(on ? P.Selecao : Brushes.Transparent);
-            b.FundoSobre = on ? P.Selecao : P.Poco;
-            var g = (Grid)b.Child;
-            var ts = g.Children.OfType<TextBlock>().ToList();
-            ts[0].Foreground = on ? P.TextoSelecao : P.Texto; ts[0].FontWeight = on ? FontWeights.SemiBold : FontWeights.Normal;
-            ts[1].Foreground = on ? P.SubSel : P.Apagado;
+            tCpu!.Text = Formato.Temp(e.Cpu.TempMaisQuente); tCpu.Foreground = P.CalorCpu(e.Cpu.TempMaisQuente, c);
+            tGpu!.Text = Formato.Temp(e.Gpu.TempMaisQuente); tGpu.Foreground = P.CalorGpu(e.Gpu.TempMaisQuente, c);
+            nCpu!.Text = $"alerta em {Formato.Temp(Paleta.LimitesCpu(c).quente)}";
+            nGpu!.Text = $"alerta em {Formato.Temp(Paleta.LimitesGpu(c).quente)}";
         }
-        if (luz is not null && e is not null) luz.Ligada = e.Luz.Ligada;
+
+        PintarPerfis(e?.Perfil ?? c?.PerfilAtivo, e?.PerfilAlterado == true);
+
+        var planos = c?.Luz.Planos.Select(p => (p.Nome, p.Nome)).ToList() ?? new List<(string, string)>();
+        var plano = e?.Luz.Plano ?? c?.Luz.Plano;
+        if (plano == "personalizado") planos.Add(("personalizado", "Personalizado"));
+        var chave = string.Join("|", planos.Select(x => x.Item1)) + "#" + plano;
+        if (chave != chaveLuz) { planoLuz.Opcoes(planos, plano); chaveLuz = chave; }
+        bool controlador = e?.Luz.Disponivel != false;
+        planoLuz.IsEnabled = controlador; luz!.IsEnabled = controlador;
+        if (e is not null) luz.Ligada = e.Luz.Ligada;
     }
 }

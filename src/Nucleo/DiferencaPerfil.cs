@@ -5,7 +5,7 @@ public static class DiferencaPerfil
 {
     static readonly Dictionary<string, Func<Perfil, Config, bool>> Diferente = new()
     {
-        ["ventoinhas"] = (p, c) => p.Ventoinhas is not null && (CurvasVentoinhas(p.Ventoinhas) != CurvasVentoinhas(c.Ventoinhas)),
+        ["ventoinhas"] = (p, c) => p.Ventoinhas is not null && CurvasVentoinhas(VentoinhasDoPerfil(p, c)) != CurvasVentoinhas(c.Ventoinhas),
         ["luz"] = (p, c) => p.Luz is not null && (p.Luz.Plano != c.Luz.Plano || p.Luz.Ligada != c.Luz.Ligada),
         ["processador"] = (p, c) => p.Processador is not null && Json.Texto(p.Processador) != Json.Texto(c.Processador),
         ["placaDeVideo"] = (p, c) => p.PlacaDeVideo is not null && Json.Texto(p.PlacaDeVideo) != Json.Texto(c.PlacaDeVideo),
@@ -19,6 +19,15 @@ public static class DiferencaPerfil
         string.Join("|", v.Saidas.OrderBy(s => s.Id).Select(s =>
             $"{s.Id}:{s.Modo}:{s.Fixo}:{string.Join(",", s.Fontes)}:{s.Combinar}:{string.Join(",", s.Curva.Select(p => $"{p.T}/{p.P}"))}:{s.Suavizacao}:{s.Histerese}:{s.PararAbaixo}"))
         + "|" + Json.Texto(v.Gpu);
+
+    // Com nível guardado, aplicar o perfil usa o nível e não a cópia de curvas que o perfil guarda.
+    static ConfigVentoinhas VentoinhasDoPerfil(Perfil p, Config c)
+    {
+        if (!c.NiveisVentoinhas.ContainsKey(p.Ventoinhas!.Nivel)) return p.Ventoinhas;
+        var v = Json.Copia(c.Ventoinhas);
+        Padroes.AplicarNivel(c, v, p.Ventoinhas.Nivel, v.Saidas.Select(s => s.Id).Append("gpu"));
+        return v;
+    }
 
     public static bool Area(Perfil p, Config c, string area) => Diferente.TryGetValue(area, out var f) && f(p, c);
 
