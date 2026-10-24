@@ -12,6 +12,7 @@ sealed partial class Motor
     string? perfilAntesDoJogo;
     string? perfilAutomatico;
     string? perfilAntesAutomatico;
+    string? perfilAntesHorario;
     string ultimoMinuto = "";
     readonly Dictionary<string, long> alertaDesde = new();
     readonly HashSet<string> alertasAvisados = new();
@@ -174,14 +175,13 @@ sealed partial class Motor
             var partes = p.Horario.Split('-', StringSplitOptions.TrimEntries);
             if (partes[0] == minuto && c.PerfilAtivo != p.Nome && jogoAtual is null)
             {
-                perfilAntesAutomatico = c.PerfilAtivo;
-                perfilAutomatico = p.Nome;
+                perfilAntesHorario = c.PerfilAtivo;
                 _ = Task.Run(() => AplicarPerfil(p.Nome, $"horário {minuto}"));
             }
-            else if (partes.Length > 1 && partes[1] == minuto && c.PerfilAtivo == p.Nome && perfilAntesAutomatico is not null)
+            else if (partes.Length > 1 && partes[1] == minuto && c.PerfilAtivo == p.Nome && perfilAntesHorario is not null)
             {
-                var volta = perfilAntesAutomatico;
-                perfilAntesAutomatico = null; perfilAutomatico = null;
+                var volta = perfilAntesHorario;
+                perfilAntesHorario = null;
                 _ = Task.Run(() => AplicarPerfil(volta, $"fim do horário de {p.Nome}"));
             }
         }

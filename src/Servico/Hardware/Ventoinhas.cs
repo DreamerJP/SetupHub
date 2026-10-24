@@ -272,11 +272,11 @@ sealed class Ventoinhas
                 foreach (var p in passos)
                 {
                     ct.ThrowIfCancellationRequested();
-                    if (tempCpu() > 85) throw new ErroSetupHub("Processador acima de 85 °C: calibração interrompida e ventoinhas na curva da BIOS.");
+                    ConferirTemperatura(tempCpu);
                     progresso($"{(sentido == "sobe" ? "Subindo" : "Descendo")}: {p}%", (double)feito++ / total);
                     var falhas = chip.Gravar(saidas.ToDictionary(s => s.Id, s => s.Id == "cpu" ? Math.Max(p, 0) : p));
                     if (falhas.Count > 0) throw new ErroSetupHub("O chip não aceitou a gravação de " + string.Join(", ", falhas));
-                    var r = await Estabilizar(saidas, p, ct);
+                    var r = await Estabilizar(saidas, p, tempCpu, ct);
                     foreach (var s in saidas)
                     {
                         var t = tabela[s.Id];
@@ -287,7 +287,7 @@ sealed class Ventoinhas
             }
             progresso("Tempo de resposta: de 30% a 100%", (double)feito++ / total);
             chip.Gravar(saidas.ToDictionary(s => s.Id, _ => 30));
-            await Estabilizar(saidas, 30, ct);
+            await Estabilizar(saidas, 30, tempCpu, ct);
             var alvoRpm = saidas.ToDictionary(s => s.Id, s => tabela[s.Id].TryGetValue(100, out var x) ? Math.Max(x.sobe, x.desce) * 0.95 : 0);
             chip.Gravar(saidas.ToDictionary(s => s.Id, _ => 100));
             var relogio = System.Diagnostics.Stopwatch.StartNew();
@@ -295,6 +295,7 @@ sealed class Ventoinhas
             while (relogio.Elapsed.TotalSeconds < 120 && chegou.Count < saidas.Count)
             {
                 await Task.Delay(250, ct);
+                ConferirTemperatura(tempCpu);
                 AtualizarSensores?.Invoke();
                 foreach (var s in saidas)
                     if (!chegou.ContainsKey(s.Id) && (chip.Rpm(s) ?? 0) >= alvoRpm[s.Id] && alvoRpm[s.Id] > 0) chegou[s.Id] = relogio.Elapsed.TotalSeconds;
@@ -324,7 +325,13 @@ sealed class Ventoinhas
 
     public Action? AtualizarSensores;
 
-    async Task<Dictionary<string, int>> Estabilizar(List<ChipVentoinhas.Saida> saidas, int pedido, CancellationToken ct)
+    // Um passo pode durar até 130 s com a ventoinha do processador parada.
+    static void ConferirTemperatura(Func<double?> tempCpu)
+    {
+        if (tempCpu() > 85) throw new ErroSetupHub("Processador acima de 85 °C: calibração interrompida e ventoinhas na curva da BIOS.");
+    }
+
+    async Task<Dictionary<string, int>> Estabilizar(List<ChipVentoinhas.Saida> saidas, int pedido, Func<double?> tempCpu, CancellationToken ct)
     {
         var relogio = System.Diagnostics.Stopwatch.StartNew();
         var hist = saidas.ToDictionary(s => s.Id, _ => new List<double>());
@@ -333,6 +340,7 @@ sealed class Ventoinhas
         while (relogio.Elapsed.TotalSeconds < 130 && pronto.Count < saidas.Count)
         {
             await Task.Delay(500, ct);
+            ConferirTemperatura(tempCpu);
             AtualizarSensores?.Invoke();
             foreach (var s in saidas)
             {

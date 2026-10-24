@@ -19,6 +19,7 @@ public static class Caminhos
     public static string Instalado => Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles), Produto.Nome);
     public static string Dados => Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData), Produto.Nome);
     public static string Config => Path.Combine(Dados, "config.json");
+    public static string ConfigComErro => Path.Combine(Dados, "config-com-erro.json");
     public static string EstadoMaquina => Path.Combine(Dados, "estado.json");
     public static string Faixas => Path.Combine(Dados, "faixas.json");
     public static string Historico => Path.Combine(Dados, "historico.bin");

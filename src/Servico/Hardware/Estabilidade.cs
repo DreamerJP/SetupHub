@@ -151,9 +151,10 @@ sealed class Estabilidade
                 progresso($"Núcleo {n}: aprovado até {estavel}, gravado {gravar} (clock sob carga {clockBase:0} → {clockFinal:0} MHz)", (double)++i / nucleos.Count);
             }
         }
-        catch (OperationCanceledException)
+        catch
         {
-            foreach (var (n, v) in originais) await cpu.CoNucleo(n, v);
+            // Qualquer falha devolve o valor de antes: o último testado pode ser instável.
+            foreach (var (n, v) in originais) { try { await cpu.CoNucleo(n, v); } catch { } }
             throw;
         }
         return res;

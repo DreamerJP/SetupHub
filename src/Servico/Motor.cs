@@ -251,12 +251,15 @@ sealed partial class Motor
                 avisoConfig = "O arquivo de configuração tinha erros e não foi usado: " + string.Join(" ", erros.Take(3));
             }
             catch (Exception e) { avisoConfig = "O arquivo de configuração não pôde ser lido e não foi usado: " + e.Message; }
+            // O padrão gravado a seguir apagaria perfis, curvas e jogos: o arquivo recusado sai do caminho antes.
+            try { File.Move(Caminhos.Config, Caminhos.ConfigComErro, true); avisoConfig += $" O arquivo recusado foi guardado em {Caminhos.ConfigComErro}."; }
+            catch (Exception e) { avisoConfig += " O arquivo recusado não pôde ser guardado e continua no lugar: " + e.Message; }
             Registro.Aviso(avisoConfig);
         }
         config = Padroes.Config();
         Padroes.AjustarAoHardware(config, faixas);
         Padroes.AjustarMinimoCpu(config, MinimoCpu());
-        GravarConfig(config);
+        if (!File.Exists(Caminhos.Config)) GravarConfig(config);
     }
 
     int MinimoCpu() { lock (travaMaquina) return Padroes.MinimoCpu(maquina.Calibracao.GetValueOrDefault("cpu")); }
