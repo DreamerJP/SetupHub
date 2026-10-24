@@ -44,15 +44,12 @@ sealed class Aparencia : Tela
         var titulo = K.Titulo("Cores e tamanho");
         titulo.Height = 34;
         titulo.Padding = new Thickness(0, 7, 0, 0);
-        var nota = K.Nota("Temperaturas ficam vermelhas no valor do alerta e amarelas 15 °C antes.");
-        nota.Margin = new Thickness(0, 6, 0, 0);
         return K.Cartao(K.Col(0, titulo,
             K.LinhaAjuste("Tema", tema, 270, 46),
             K.LinhaAjuste("Espaçamento", densidade, 270, 46),
             K.LinhaAjuste("Cor do processador nos gráficos", corCpu, 270, 46),
             K.LinhaAjuste("Cor da placa de vídeo nos gráficos", corGpu, 270, 46),
-            K.LinhaAjuste("Tamanho do texto", K.Grade("* 46", 10, texto, textoValor), 270, 46),
-            nota), new Thickness(16, 12, 16, 10));
+            K.LinhaAjuste("Tamanho do texto", K.Grade("* 46", 10, texto, textoValor), 270, 46)), new Thickness(16, 12, 16, 10));
     }
 
     Border MontarQuadros()

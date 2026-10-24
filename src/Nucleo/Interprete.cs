@@ -527,7 +527,27 @@ public sealed class Interprete
     void Ajuda()
     {
         if (json) { o.WriteLine(JsonSerializer.Serialize(Comandos.Lista, SetupHubJson.Default.ListComandoInfo)); return; }
-        o.WriteLine("SetupHub: controle de ventoinhas, luz, processador, placa de vídeo, telas e energia pelo terminal.\n");
-        foreach (var c in Comandos.Lista) o.WriteLine($"  {c.Uso}\n      {c.Descricao}");
+        o.WriteLine("No terminal: setuphub <comando>. Leituras aceitam --json.");
+        foreach (var g in Comandos.Lista.GroupBy(c => c.Grupo))
+        {
+            o.WriteLine();
+            o.WriteLine(g.Key);
+            foreach (var c in g) o.WriteLine(c.Descricao.Length == 0 ? $"  {c.Uso}" : $"  {c.Uso.PadRight(34)}{c.Descricao}");
+        }
+        o.WriteLine();
+        o.WriteLine("Valores");
+        foreach (var (nome, valores) in Comandos.Valores)
+        {
+            o.WriteLine($"  {nome}");
+            var linha = "  ";
+            foreach (var v in valores)
+            {
+                if (linha.Length + 2 + v.Length > 70) { o.WriteLine(linha); linha = "  "; }
+                linha += "  " + v;
+            }
+            o.WriteLine(linha);
+        }
+        o.WriteLine();
+        o.WriteLine("Código de saída: 0 certo, 1 recusado, 2 sem conexão, 3 área não conferida.");
     }
 }
