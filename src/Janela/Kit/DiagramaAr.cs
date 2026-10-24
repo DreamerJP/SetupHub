@@ -26,7 +26,8 @@ sealed class DiagramaAr : Viewbox
         public string Lado = "direita";
     }
 
-    readonly Canvas tela = new() { Width = 480, Height = 380 };
+    public const double Largura = 480, Altura = 380;
+    readonly Canvas tela = new() { Width = Largura, Height = Altura };
     readonly Dictionary<string, Fan> fans = new();
     readonly List<RotateTransform> girosGpu = new();
     double durGpu = -1;

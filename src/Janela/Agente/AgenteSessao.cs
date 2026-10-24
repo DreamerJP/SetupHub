@@ -35,6 +35,14 @@ sealed class AgenteSessao : IDisposable
         relogioAtualizacoes = new Timer(_ => _ = AtualizacoesDoDia(), null, TimeSpan.FromMinutes(3), TimeSpan.FromHours(6));
         lig.AoConfig += c => App.Interface(() => DefinirAtalhos(c));
         lig.AoAviso += (tipo, texto) => { if (tipo == "jogo" && lig.Config?.Windows.NaoPerturbeEmJogo == true) WindowsUsuario.NaoPerturbe(texto.StartsWith("aberto:")); };
+        lig.AoEstado += ConferirNaoPerturbe;
+    }
+
+    // Janela reaberta sem jogo aberto devolve as notificações que ficaram desligadas.
+    void ConferirNaoPerturbe(Estado e)
+    {
+        lig.AoEstado -= ConferirNaoPerturbe;
+        if (e.Jogo is null) WindowsUsuario.NaoPerturbe(false);
     }
 
     int voltas;

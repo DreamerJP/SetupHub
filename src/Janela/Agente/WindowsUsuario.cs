@@ -1,3 +1,4 @@
+using System.IO;
 using System.Runtime.InteropServices;
 using SetupHub.Nucleo;
 using Microsoft.Win32;
@@ -121,25 +122,35 @@ static class WindowsUsuario
         finally { Marshal.FreeHGlobal(buf); }
     }
 
-    static int? notificacoesAntes;
+    // O valor anterior fica em arquivo: se a janela cair durante o jogo, a próxima abertura ainda sabe o que devolver.
+    static string ArquivoNotificacoes => Path.Combine(Caminhos.Usuario, "notificacoes.txt");
+    static readonly object travaNotificacoes = new();
+
     public static void NaoPerturbe(bool jogo)
     {
         const string chave = @"Software\Microsoft\Windows\CurrentVersion\PushNotifications";
-        try
+        lock (travaNotificacoes)
         {
-            using var k = Registry.CurrentUser.CreateSubKey(chave);
-            if (jogo)
+            try
             {
-                notificacoesAntes ??= k.GetValue("ToastEnabled") as int? ?? 1;
-                k.SetValue("ToastEnabled", 0, RegistryValueKind.DWord);
+                using var k = Registry.CurrentUser.CreateSubKey(chave);
+                if (jogo)
+                {
+                    if (!File.Exists(ArquivoNotificacoes))
+                    {
+                        Directory.CreateDirectory(Caminhos.Usuario);
+                        File.WriteAllText(ArquivoNotificacoes, (k.GetValue("ToastEnabled") as int? ?? 1).ToString());
+                    }
+                    k.SetValue("ToastEnabled", 0, RegistryValueKind.DWord);
+                }
+                else if (File.Exists(ArquivoNotificacoes))
+                {
+                    k.SetValue("ToastEnabled", int.TryParse(File.ReadAllText(ArquivoNotificacoes), out var antes) ? antes : 1, RegistryValueKind.DWord);
+                    File.Delete(ArquivoNotificacoes);
+                }
             }
-            else if (notificacoesAntes is int antes)
-            {
-                k.SetValue("ToastEnabled", antes, RegistryValueKind.DWord);
-                notificacoesAntes = null;
-            }
+            catch { }
         }
-        catch { }
     }
 
     [StructLayout(LayoutKind.Sequential)] struct UltimaEntrada { public uint Tamanho; public uint Tempo; }

@@ -65,9 +65,10 @@ sealed class Inicio : Tela
                 if (diagrama is null || string.Join(",", ids) != idsDiagrama)
                 {
                     diagrama?.Parar();
-                    diagrama = new DiagramaAr(ids, Cfg?.Aparencia.PosicaoFluxo) { MaxHeight = 330 };
+                    diagrama = new DiagramaAr(ids, Cfg?.Aparencia.PosicaoFluxo) { Height = 330, Width = 330 * DiagramaAr.Largura / DiagramaAr.Altura };
                     idsDiagrama = string.Join(",", ids);
-                    porTipo["fluxoDeAr"] = Fluxo.Item(Cartao("Fluxo de ar", diagrama), 420, 2);
+                    // Largura do desenho mais a margem e a borda do cartão.
+                    porTipo["fluxoDeAr"] = Fluxo.Item(Cartao("Fluxo de ar", diagrama), diagrama.Width + 34, 0);
                 }
             }
             if (porTipo.TryGetValue(q.Tipo, out var e)) { if (e.Parent is Panel pai) pai.Children.Remove(e); quadros.Children.Add(e); }
