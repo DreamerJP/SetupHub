@@ -38,7 +38,6 @@ sealed class AgenteSessao : IDisposable
         lig.AoEstado += ConferirNaoPerturbe;
     }
 
-    // Janela reaberta sem jogo aberto devolve as notificações que ficaram desligadas.
     void ConferirNaoPerturbe(Estado e)
     {
         lig.AoEstado -= ConferirNaoPerturbe;

@@ -183,6 +183,59 @@ static class Instalador
         foreach (var nome in new[] { Path.GetFileNameWithoutExtension(Produto.ExePainel), Produto.Comando })
             foreach (var p in Process.GetProcessesByName(nome)) { try { p.Kill(true); p.WaitForExit(5000); } catch { } }
         PararRtss();
+        EsperarProcessosDaPasta();
+    }
+
+    // Ferramentas abertas pelo serviço a partir da pasta a seguram até terminar; sem esperar, a troca da pasta falha.
+    static void EsperarProcessosDaPasta()
+    {
+        var limite = Stopwatch.StartNew();
+        while (true)
+        {
+            var restantes = ProcessosDaPasta();
+            if (restantes.Count == 0) return;
+            bool fechar = limite.Elapsed.TotalSeconds >= 5;
+            foreach (var p in restantes)
+            {
+                if (fechar) { try { p.Kill(true); p.WaitForExit(5000); Log($"{p.ProcessName} fechado: ainda rodava da pasta do programa."); } catch { } }
+                p.Dispose();
+            }
+            if (fechar) return;
+            Thread.Sleep(100);
+        }
+    }
+
+    static List<Process> ProcessosDaPasta()
+    {
+        var prefixo = Path.GetFullPath(Destino).TrimEnd('\\') + "\\";
+        var r = new List<Process>();
+        foreach (var p in Process.GetProcesses())
+        {
+            if (p.Id != Environment.ProcessId && CaminhoDoProcesso(p.Id) is string f && f.StartsWith(prefixo, StringComparison.OrdinalIgnoreCase)) r.Add(p);
+            else p.Dispose();
+        }
+        return r;
+    }
+
+    [System.Runtime.InteropServices.DllImport("kernel32.dll", SetLastError = true)]
+    static extern IntPtr OpenProcess(int acesso, bool herdar, int id);
+    [System.Runtime.InteropServices.DllImport("kernel32.dll", CharSet = System.Runtime.InteropServices.CharSet.Unicode, SetLastError = true)]
+    static extern bool QueryFullProcessImageNameW(IntPtr processo, int formato, System.Text.StringBuilder nome, ref int tamanho);
+    [System.Runtime.InteropServices.DllImport("kernel32.dll")]
+    static extern bool CloseHandle(IntPtr h);
+
+    // Ler os módulos de cada processo custa segundos.
+    static string? CaminhoDoProcesso(int id)
+    {
+        var h = OpenProcess(0x1000, false, id);
+        if (h == IntPtr.Zero) return null;
+        try
+        {
+            var nome = new System.Text.StringBuilder(1024);
+            int tamanho = nome.Capacity;
+            return QueryFullProcessImageNameW(h, 0, nome, ref tamanho) ? nome.ToString(0, tamanho) : null;
+        }
+        finally { CloseHandle(h); }
     }
 
     static EstadoServico EstadoDoServico(string nome)
