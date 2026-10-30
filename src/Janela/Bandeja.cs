@@ -246,10 +246,11 @@ sealed class Bandeja
     Run? tCpu, tGpu;
     TextBlock? nCpu, nGpu;
     StackPanel? listaPerfis;
-    string chavePerfis = "", chaveLuz = "";
+    string chavePerfis = "";
     readonly List<(string nome, Botao b, TextBlock texto, Run alterado, TextBlock atalho)> perfis = new();
-    Escolha? planoLuz;
-    Chave? luz;
+    Chave? luz, sobreposicao;
+    TextBlock? atalhoSobreposicao;
+    Border? linhaSobreposicao;
 
     void AbrirMenu()
     {
@@ -276,14 +277,14 @@ sealed class Bandeja
         var P = K.P;
         menu = new Window
         {
-            Width = 320, SizeToContent = SizeToContent.Height, WindowStyle = WindowStyle.None, ResizeMode = ResizeMode.NoResize, ShowInTaskbar = false, Topmost = true,
+            Width = 264, SizeToContent = SizeToContent.Height, WindowStyle = WindowStyle.None, ResizeMode = ResizeMode.NoResize, ShowInTaskbar = false, Topmost = true,
             AllowsTransparency = true, Background = Brushes.Transparent, Title = Produto.Nome,
         };
         menu.Deactivated += (_, _) => menu?.Hide();
         menu.KeyDown += (_, e) => { if (e.Key == Key.Escape) menu?.Hide(); };
         menu.SizeChanged += (_, _) => Posicionar();
         perfis.Clear();
-        chavePerfis = chaveLuz = "";
+        chavePerfis = "";
 
         avisoTexto = K.T("", 13);
         avisoTexto.TextWrapping = TextWrapping.Wrap; avisoTexto.TextTrimming = TextTrimming.None;
@@ -305,14 +306,20 @@ sealed class Bandeja
         rotuloPerfil.Margin = new Thickness(10, 0, 0, 4);
         listaPerfis = new StackPanel();
 
-        planoLuz = new Escolha(Array.Empty<(string, string)>(), null, 32);
-        planoLuz.Escolheu += v => { if (v != "personalizado") _ = App.Lig.Pedir("luz.plano", Ligacao.Args(("nome", v))); };
         luz = new Chave();
         luz.Mudou += on => _ = App.Lig.Pedir("luz.ligar", Ligacao.Args(("ligada", on)));
         var linhaLuz = new Border
         {
-            Child = K.Grade("* 156 40", 10, K.T("Luz"), planoLuz, luz), Padding = new Thickness(10, 10, 10, 0),
+            Child = K.Grade("* 40 64", 8, K.T("Luz"), luz, null), Padding = new Thickness(10, 10, 10, 0),
             BorderBrush = P.Linha, BorderThickness = new Thickness(0, 1, 0, 0), Margin = new Thickness(0, 8, 0, 0),
+        };
+        sobreposicao = new Chave();
+        sobreposicao.Mudou += on => _ = App.Lig.Definir("jogos.sobreposicao.ligada", on ? "true" : "false");
+        atalhoSobreposicao = K.T("", 12, P.Apagado);
+        atalhoSobreposicao.HorizontalAlignment = HorizontalAlignment.Right;
+        linhaSobreposicao = new Border
+        {
+            Child = K.Grade("* 40 64", 8, K.T("Sobreposição"), sobreposicao, atalhoSobreposicao), Padding = new Thickness(10, 10, 10, 0),
         };
 
         var abrir = Botao.Contorno("Abrir o SetupHub", () => { menu?.Hide(); App.Mostrar(); }, 38);
@@ -331,7 +338,7 @@ sealed class Bandeja
 
         menu.Content = new Border
         {
-            Child = K.Col(0, aviso, leituras, rotuloPerfil, listaPerfis, linhaLuz, rodape), Background = P.Painel, BorderBrush = P.BordaForte, BorderThickness = new Thickness(1),
+            Child = K.Col(0, aviso, leituras, rotuloPerfil, listaPerfis, linhaLuz, linhaSobreposicao, rodape), Background = P.Painel, BorderBrush = P.BordaForte, BorderThickness = new Thickness(1),
             CornerRadius = new CornerRadius(P.RaioCartao), Padding = new Thickness(12),
         };
         TextElement.SetFontFamily(menu, P.Corpo);
@@ -382,7 +389,7 @@ sealed class Bandeja
     void PreencherMenu(Estado? e)
     {
         var P = K.P;
-        if (menu is null || avisoTexto is null || planoLuz is null) return;
+        if (menu is null || avisoTexto is null || luz is null) return;
         var c = App.Lig.Config;
         MontarPerfis(c);
 
@@ -404,13 +411,14 @@ sealed class Bandeja
 
         PintarPerfis(e?.Perfil ?? c?.PerfilAtivo, e?.PerfilAlterado == true);
 
-        var planos = c?.Luz.Planos.Select(p => (p.Nome, p.Nome)).ToList() ?? new List<(string, string)>();
-        var plano = e?.Luz.Plano ?? c?.Luz.Plano;
-        if (plano == "personalizado") planos.Add(("personalizado", "Personalizado"));
-        var chave = string.Join("|", planos.Select(x => x.Item1)) + "#" + plano;
-        if (chave != chaveLuz) { planoLuz.Opcoes(planos, plano); chaveLuz = chave; }
-        bool controlador = e?.Luz.Disponivel != false;
-        planoLuz.IsEnabled = controlador; luz!.IsEnabled = controlador;
+        luz!.IsEnabled = e?.Luz.Disponivel != false;
         if (e is not null) luz.Ligada = e.Luz.Ligada;
+
+        var s = c?.Jogos.Sobreposicao;
+        bool rivaTuner = App.Lig.Faixas?.RivaTuner == true;
+        atalhoSobreposicao!.Text = (s?.Atalho ?? "").Replace("+", " ");
+        sobreposicao!.Ligada = s?.Ligada == true;
+        sobreposicao.IsEnabled = rivaTuner;
+        linhaSobreposicao!.Opacity = rivaTuner ? 1 : 0.38;
     }
 }
