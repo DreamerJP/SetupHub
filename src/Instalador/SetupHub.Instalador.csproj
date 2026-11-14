@@ -22,7 +22,7 @@
     <Resource Include="..\Janela\Recursos\Fontes\Saira*.ttf" Link="Fontes\%(Filename)%(Extension)" />
     <Resource Include="..\Janela\Recursos\setuphub.ico" Link="setuphub.ico" />
   </ItemGroup>
-  <!-- PastaPacote vem do publicar.sh: a pasta do programa pronta vira o pacote embutido. -->
+  <!-- PastaPacote vem do gerar-instalador.sh: a pasta do programa pronta vira o pacote embutido. -->
   <ItemGroup Condition="'$(PastaPacote)' != ''">
     <EmbeddedResource Include="$(Pacote)" LogicalName="pacote.zip" />
   </ItemGroup>
