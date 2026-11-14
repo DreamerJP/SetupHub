@@ -25,9 +25,8 @@ sealed partial class Processador
 
     public void Localizar()
     {
-        var copia = Path.Combine(Caminhos.Kits, "ryzenmaster", "AMDRyzenMasterCLI.exe");
         var kit = @"C:\Program Files\AMD\RyzenMasterSDK\AMDRyzenMasterCLI\bin-prebuilt\AMDRyzenMasterCLI.exe";
-        Ferramenta = File.Exists(copia) ? copia : File.Exists(kit) ? kit : null;
+        Ferramenta = File.Exists(kit) ? kit : null;
         if (Ferramenta is null) Motivo = "o kit AMD Ryzen Master SDK não está instalado";
     }
 

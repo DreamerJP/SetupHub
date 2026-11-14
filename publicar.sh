@@ -11,6 +11,15 @@ if [ ! -f "$FERRAMENTAS/ambiente.sh" ] || [ ! -f "$FERRAMENTAS/dotnet10/dotnet.e
   exit 1
 fi
 source "$FERRAMENTAS/ambiente.sh"
+FALTA=""
+for f in kits/scewin/SCEWIN_64.exe kits/scewin/amifldrv64.sys kits/scewin/amigendrv64.sys kits/AMDRyzenMasterSDK.msi kits/PawnIO_setup.exe kits/rtss/RTSS.exe kits/prime95/prime95.exe; do
+  [ -f "$RAIZ/$f" ] || FALTA="$FALTA $f"
+done
+if [ -n "$FALTA" ]; then
+  for f in $FALTA; do echo "  Falta: $(cygpath -w "$RAIZ/$f")"; done
+  echo "ERRO: ferramenta ausente na pasta kits; nada foi publicado."
+  exit 1
+fi
 COMPILACAO="$RAIZ/_temporario-SetupHub/compilacao"
 SAIDA="$COMPILACAO/pacote"
 SAIDAW=$(cygpath -w "$SAIDA")

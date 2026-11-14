@@ -103,7 +103,7 @@ static class Instalador
             tinhaInstalacao = AtivarNovaPasta(troca);
             trocada = true;
             Log("Arquivos do programa substituídos por uma instalação limpa.");
-            Kits(origem);
+            ConferirBios();
             PawnIo();
             KitAmd();
 
@@ -560,45 +560,9 @@ static class Instalador
         }
     }
 
-    static void Kits(string origem)
+    static void ConferirBios()
     {
-        var kits = Path.Combine(Destino, "kits");
-        Directory.CreateDirectory(kits);
-        var msi = @"C:\Program Files (x86)\MSI\MSI Center\Lib\SCEWIN";
-        var scewin = Path.Combine(kits, "scewin");
-        if (Directory.Exists(msi))
-        {
-            var pasta = Directory.GetDirectories(msi).OrderByDescending(d => d).FirstOrDefault(d => File.Exists(Path.Combine(d, "SCEWIN_64.exe")));
-            if (pasta is not null)
-            {
-                Directory.CreateDirectory(scewin);
-                foreach (var f in new[] { "SCEWIN_64.exe", "amifldrv64.sys", "amigendrv64.sys" })
-                    if (File.Exists(Path.Combine(pasta, f))) File.Copy(Path.Combine(pasta, f), Path.Combine(scewin, f), true);
-                Log("Leitura da BIOS: ferramenta copiada do MSI Center.");
-            }
-        }
-        if (!File.Exists(Path.Combine(scewin, "SCEWIN_64.exe"))) Log("Aviso: a ferramenta de leitura da BIOS não foi encontrada; a tela Sistema fica sem as opções da BIOS.");
-        var cli = @"C:\Program Files\AMD\RyzenMasterSDK\AMDRyzenMasterCLI\bin-prebuilt";
-        if (Directory.Exists(cli))
-        {
-            var rm = Path.Combine(kits, "ryzenmaster");
-            Directory.CreateDirectory(rm);
-            foreach (var f in Directory.GetFiles(cli)) File.Copy(f, Path.Combine(rm, Path.GetFileName(f)), true);
-            Log("Kit da AMD: ferramenta copiada.");
-        }
-        // Instalador do kit da AMD guardado pelo Windows: copiado para reinstalar se o kit sumir.
-        try
-        {
-            using var prods = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\Microsoft\Windows\CurrentVersion\Installer\UserData\S-1-5-18\Products");
-            foreach (var p in prods?.GetSubKeyNames() ?? Array.Empty<string>())
-            {
-                using var ip = prods!.OpenSubKey(p + @"\InstallProperties");
-                if (ip?.GetValue("DisplayName")?.ToString() != "AMD Ryzen Master SDK") continue;
-                var pacote = ip.GetValue("LocalPackage")?.ToString();
-                if (pacote is not null && File.Exists(pacote)) { File.Copy(pacote, Path.Combine(kits, "AMDRyzenMasterSDK.msi"), true); Log("Instalador do kit da AMD guardado."); }
-            }
-        }
-        catch (Exception e) { Log("Aviso: instalador do kit da AMD não copiado: " + e.Message); }
+        if (!File.Exists(Path.Combine(Destino, "kits", "scewin", "SCEWIN_64.exe"))) Log("Aviso: a ferramenta de leitura da BIOS não foi encontrada; a tela Sistema fica sem as opções da BIOS.");
     }
 
     static void PawnIo()
@@ -649,6 +613,8 @@ static class Instalador
         if (m is null) return;
         foreach (var (nome, antes) in m.ServicosLuzMsi)
         {
+            using (var s = ServiceController.GetServices().FirstOrDefault(x => x.ServiceName == nome))
+                if (s is null) { Log($"Serviço {nome} da MSI não existe mais, nada a religar."); continue; }
             var partes = antes.Split(':');
             var tipo = partes[0] switch { "2" => "auto", "3" => "demand", "4" => "disabled", _ => "auto" };
             Rodar("sc.exe", $"config {nome} start= {tipo}");
