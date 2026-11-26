@@ -358,6 +358,11 @@ sealed partial class Motor
                 fpsAgente = double.TryParse(S(a, "fps"), System.Globalization.NumberStyles.Float, System.Globalization.CultureInfo.InvariantCulture, out var fps) && fps > 0 ? fps : null;
                 if (double.TryParse(S(a, "ocioso"), System.Globalization.NumberStyles.Float, System.Globalization.CultureInfo.InvariantCulture, out var oc)) SegundosOcioso = oc;
                 return Ok();
+            // A janela não tem administrador e o RivaTuner roda elevado: quem fecha é o serviço.
+            case "agente.rivatunerFechar":
+                Instalador.PararRtss();
+                Registro.Info("RivaTuner fechado: sobreposição e limite de quadros fora de uso.");
+                return Ok();
             case "agente.som":
                 if (float.TryParse(S(a, "nivel"), System.Globalization.NumberStyles.Float, System.Globalization.CultureInfo.InvariantCulture, out var nv)) somAgenteF = nv;
                 return Ok();

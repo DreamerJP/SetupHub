@@ -107,6 +107,29 @@ static class Rtss
         finally { UnmapViewOfFile(v); CloseHandle(h); }
     }
 
+    // Fechar o RivaTuner com a biblioteca dele dentro de um programa 3D pode derrubar o programa.
+    public static bool EmUso()
+    {
+        var v = Abrir(out var h);
+        if (v == IntPtr.Zero) return false;
+        try
+        {
+            int tam = Marshal.ReadInt32(v, 8), inicio = Marshal.ReadInt32(v, 12), n = Marshal.ReadInt32(v, 16), eu = Environment.ProcessId;
+            for (int i = 0; i < n; i++)
+            {
+                int e = inicio + i * tam, pid = Marshal.ReadInt32(v, e);
+                if (pid == 0 || pid == eu || (Marshal.ReadInt32(v, e + 264) & 0xFFFF) == 0) continue;
+                try { using var p = System.Diagnostics.Process.GetProcessById(pid); if (!p.HasExited) return true; }
+                catch (ArgumentException) { }
+            }
+            return false;
+        }
+        catch { return true; }
+        finally { UnmapViewOfFile(v); CloseHandle(h); }
+    }
+
+    public static bool TelaAberta => System.Diagnostics.Process.GetProcessesByName("RTSS").Any(p => { using (p) return p.MainWindowHandle != IntPtr.Zero; });
+
     // Do jogo que o RivaTuner atualizou por último.
     public static (double? fps, double? ms) Quadros()
     {

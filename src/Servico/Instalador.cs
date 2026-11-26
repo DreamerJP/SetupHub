@@ -135,8 +135,6 @@ static class Instalador
             }
             FinalizarTroca(tinhaInstalacao, troca);
             trocada = false;
-            try { if (File.Exists(Path.Combine(PastaRtss, "RTSS.exe"))) Rodar("schtasks.exe", $"/run /tn \"{Produto.TarefaRivaTuner}\""); }
-            catch (Exception e) { Log("Aviso: RivaTuner não iniciou: " + e.Message); }
             if (abrirPainel) AbrirPainel();
             Log("Instalação concluída.");
             GravarLog("instalacao.txt");
@@ -727,7 +725,7 @@ static class Instalador
     const string ChaveCamadas = @"SOFTWARE\Khronos\Vulkan\ImplicitLayers";
     static readonly string[] ProcessosRtss = { "RTSS", "RTSSHooksLoader", "RTSSHooksLoader64", "EncoderServer", "EncoderServer64", "DesktopOverlayHost", "DesktopOverlayHost64" };
 
-    static void PararRtss()
+    internal static void PararRtss()
     {
         foreach (var n in ProcessosRtss)
             foreach (var p in Process.GetProcessesByName(n)) { try { p.Kill(true); p.WaitForExit(5000); } catch { } finally { p.Dispose(); } }
@@ -764,10 +762,10 @@ static class Instalador
             }
             var conta = new SecurityIdentifier(sid).Translate(typeof(NTAccount)).Value;
             // /h tira o ícone do RivaTuner da bandeja (o mesmo que o Afterburner usa); as configurações abrem pela tela Jogos.
-            Rodar("schtasks.exe", $"/create /f /tn \"{Produto.TarefaRivaTuner}\" /tr \"\\\"{Path.Combine(pasta, "RTSS.exe")}\\\" /h\" /sc onlogon /ru \"{conta}\" /it /rl highest");
+            Rodar("schtasks.exe", $"/create /f /tn \"{Produto.TarefaRivaTuner}\" /tr \"\\\"{Path.Combine(pasta, "RTSS.exe")}\\\" /h\" /sc once /st 00:00 /ru \"{conta}\" /it /rl highest");
             // Só roda quando a janela pede (botão da tela Jogos); a data de início no passado evita execução sozinha.
             Rodar("schtasks.exe", $"/create /f /tn \"{Produto.TarefaTelaRivaTuner}\" /tr \"\\\"{Path.Combine(Destino, Produto.ExeServico)}\\\" rivatuner-tela\" /sc once /st 00:00 /ru \"{conta}\" /it /rl highest");
-            Log($"RivaTuner do {Produto.Nome}: camada Vulkan registrada, perfis liberados para a conta do usuário e abertura no login.");
+            Log($"RivaTuner do {Produto.Nome}: camada Vulkan registrada, perfis liberados para a conta do usuário e abertura só com sobreposição ou limite em uso.");
         }
         catch (Exception e) { Log("Aviso: RivaTuner: " + e.Message); }
     }

@@ -27,8 +27,6 @@ sealed class AgenteSessao : IDisposable
     public void Iniciar()
     {
         lig.Agente = Tratar;
-        // O RivaTuner mede os quadros: fica aberto enquanto a janela existir.
-        Rtss.Abrir();
         _ = Task.Run(() => { adlxPronto = adlx.Abrir(); });
         relogio = new Timer(_ => Ciclo(), null, 1000, 1000);
         relogioSom = new Timer(_ => CicloSom(), null, 1000, 50);
@@ -45,12 +43,21 @@ sealed class AgenteSessao : IDisposable
     }
 
     int voltas;
+    int limite;
+    bool rivaTunerConhecido;
+
+    void ConferirRivaTuner()
+    {
+        if (!rivaTunerConhecido || !Rtss.Instalado) return;
+        if (sobre.Ligada || limite > 0) Rtss.Abrir();
+        else if (Rtss.Rodando && !Rtss.TelaAberta && !Rtss.EmUso()) _ = lig.Pedir("agente.rivatunerFechar", null, 15000);
+    }
 
     void Ciclo()
     {
         try
         {
-            if (voltas++ % 60 == 5) Rtss.Abrir();
+            if (voltas++ % 5 == 0) ConferirRivaTuner();
             var g = new LeituraGpu();
             if (adlxPronto) adlx.Ler(g);
             var (fps, ms) = Rtss.Quadros();
@@ -204,6 +211,7 @@ sealed class AgenteSessao : IDisposable
             // O limite de quadros usa o RivaTuner quando instalado e o da AMD quando não; os dois nunca ficam ligados juntos.
             if (p.LimiteQuadros is int lim)
             {
+                limite = Math.Max(0, lim);
                 if (Rtss.Instalado)
                 {
                     f.AddRange(Rtss.Perfil(new() { ["FramerateLimit"] = Math.Max(0, lim) }));
@@ -235,6 +243,7 @@ sealed class AgenteSessao : IDisposable
         if (p.Sobreposicao is not null)
         {
             sobre = p.Sobreposicao;
+            rivaTunerConhecido = true;
             if (!sobre.Ligada) Rtss.Texto("");
             else if (Rtss.Instalado)
             {
@@ -245,11 +254,11 @@ sealed class AgenteSessao : IDisposable
                     ["BaseColor"] = Rtss.Cor(sobre.Cor), ["EnableBgnd"] = sobre.Fundo ? 1 : 0,
                 }, sobre.Fonte);
                 if (falhasRtss.Count > 0) f.Add("posição da sobreposição: " + string.Join(", ", falhasRtss));
-                if (!Rtss.Rodando) Rtss.Abrir();
             }
             else f.Add("sobreposição indisponível: RivaTuner não instalado");
             App.Interface(() => { if (lig.Config is { } c) DefinirAtalhos(c); });
         }
+        if (p.Sobreposicao is not null || p.LimiteQuadros is not null) ConferirRivaTuner();
         if (p.Windows is not null) f.AddRange(WindowsUsuario.Aplicar(p.Windows));
         return f;
     }
