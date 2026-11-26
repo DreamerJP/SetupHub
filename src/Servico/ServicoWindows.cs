@@ -8,6 +8,25 @@ static unsafe class ServicoWindows
 {
     public const string Nome = Produto.Nome;
 
+    // Conta dona do SetupHub, gravada pelo instalador junto do serviço. Fica fora da pasta de dados:
+    // uma cópia dessa pasta vinda de outro Windows trazia a conta de lá, e o canal recusava a conta daqui.
+    const string ChaveParametros = $@"SYSTEM\CurrentControlSet\Services\{Nome}\Parameters";
+
+    public static string? Usuario
+    {
+        get
+        {
+            using var k = Microsoft.Win32.Registry.LocalMachine.OpenSubKey(ChaveParametros);
+            return k?.GetValue("Usuario") as string;
+        }
+    }
+
+    public static void GravarUsuario(string sid)
+    {
+        using var k = Microsoft.Win32.Registry.LocalMachine.CreateSubKey(ChaveParametros);
+        k.SetValue("Usuario", sid);
+    }
+
     const int SERVICE_WIN32_OWN_PROCESS = 0x10;
     const int SERVICE_RUNNING = 4, SERVICE_STOP_PENDING = 3, SERVICE_STOPPED = 1, SERVICE_START_PENDING = 2;
     const int ACCEPT_STOP = 1, ACCEPT_PRESHUTDOWN = 0x100, ACCEPT_POWEREVENT = 0x40, ACCEPT_SESSIONCHANGE = 0x80;

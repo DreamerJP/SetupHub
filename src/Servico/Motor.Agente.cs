@@ -24,6 +24,7 @@ sealed partial class Motor
             foreach (var a in fg.AreasLidas) if (!faixas.AreasLidas.Contains(a)) faixas.AreasLidas.Add(a);
             faixas.Telas = fg.Telas; faixas.Gpu = fg.Gpu; faixas.AdlxDisponivel = fg.AdlxDisponivel; faixas.RivaTuner = fg.RivaTuner;
             SalvarFaixas();
+            ConferirHardware();
             lock (trava)
             {
                 var antes = Json.Texto(config);

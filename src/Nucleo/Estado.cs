@@ -194,7 +194,6 @@ public sealed class EstadoMaquina
     public ConfigPlacaDeVideo? GpuPendente { get; set; }
     public long PendenteDesde { get; set; }
     public bool DesligouLimpo { get; set; } = true;
-    public string? UsuarioSid { get; set; }
     public bool AbrirPainelNoProximoLogin { get; set; }
     // Valores de partida só valem na mesma sessão do Windows (segundo Unix em que ligou).
     public long PartidaWindows { get; set; }

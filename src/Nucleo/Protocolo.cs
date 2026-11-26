@@ -119,6 +119,7 @@ public sealed class ResultadoAplicar
 {
     public Dictionary<string, string> Areas { get; set; } = new();
     public List<string> Falhas { get; set; } = new();
+    public List<string> Avisos { get; set; } = new();
 }
 
 public sealed class PedidoAgente

@@ -21,7 +21,7 @@ public static class Comandos
         C("Leitura", "ler atualizacoes", "BIOS e drivers da última busca"),
         C("Leitura", "listar <lista>", "listas de referência"),
         C("Configuração", "definir <caminho> <valor>", "\"padrao\" volta ao de fábrica"),
-        C("Configuração", "importar <arquivo.json>", "substitui a configuração inteira"),
+        C("Configuração", "importar <arquivo.json>", "substitui, exceto outro hardware"),
         C("Configuração", "exportar tudo <arquivo.json>", "configuração inteira"),
         C("Configuração", "exportar historico <arq.csv> [h]", "padrão: 24 horas"),
         C("Ventoinhas", "ventoinha <nomes> <valor>", "0-100, bios ou curva"),

@@ -110,7 +110,6 @@ static class Instalador
             Directory.CreateDirectory(Caminhos.Dados);
             var m = Ler<EstadoMaquina>(Caminhos.EstadoMaquina) ?? new EstadoMaquina();
             estadoNova = m;
-            m.UsuarioSid = sid;
             m.AbrirPainelNoProximoLogin = !abrirPainel;
             configuracaoNovaIniciada = true;
             ServicoLuzMsi(m);
@@ -647,6 +646,7 @@ static class Instalador
         // Se cair, o Windows reinicia em 1 s (três vezes; a contagem zera em um dia).
         Rodar("sc.exe", $"failure {ServicoWindows.Nome} reset= 86400 actions= restart/1000/restart/1000/restart/5000");
         Rodar("sc.exe", $"failureflag {ServicoWindows.Nome} 1");
+        ServicoWindows.GravarUsuario(sid);
         using (var k = Registry.LocalMachine.OpenSubKey($@"SYSTEM\CurrentControlSet\Services\{ServicoWindows.Nome}", true))
             k?.SetValue("PreshutdownTimeout", 20000, RegistryValueKind.DWord);
         // A conta do usuário inicia, para e consulta o serviço sem administrador.
@@ -818,10 +818,10 @@ static class Instalador
             }
             Log($"Removendo o {Produto.Nome}.");
             PararTudo();
+            var dono = ServicoWindows.Usuario;
             Rodar("sc.exe", $"delete {ServicoWindows.Nome}");
-            var m = Ler<EstadoMaquina>(Caminhos.EstadoMaquina);
-            DevolverServicosLuz(m);
-            if (m?.UsuarioSid is string sid) AbrirComWindows(sid, false);
+            DevolverServicosLuz(Ler<EstadoMaquina>(Caminhos.EstadoMaquina));
+            if (dono is not null) AbrirComWindows(dono, false);
             Caminho(false);
             Atalho(false);
             Rodar("schtasks.exe", $"/delete /f /tn \"{Produto.TarefaRivaTuner}\"");

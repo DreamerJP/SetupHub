@@ -99,8 +99,10 @@ public sealed class Interprete
     {
         var r = Json.Ler<ResultadoAplicar>(d);
         if (r is null) { o.WriteLine("Feito."); return; }
-        if (r.Areas.Count == 0) { o.WriteLine("Nada mudou."); return; }
+        foreach (var a in r.Avisos) o.WriteLine(a);
+        if (r.Areas.Count == 0 && r.Falhas.Count == 0) { o.WriteLine("Nada mudou."); return; }
         foreach (var (area, sit) in r.Areas) o.WriteLine($"{area}: {sit}");
+        foreach (var f in r.Falhas) o.WriteLine("Falhou: " + f);
     }
 
     async Task<int> Executar(List<string> a)
@@ -215,7 +217,7 @@ public sealed class Interprete
                 Config? cfg;
                 try { cfg = Json.DeTexto<Config>(File.ReadAllText(arq)); }
                 catch (JsonException e) { throw new ErroSetupHub("O arquivo não é uma configuração válida: " + e.Message); }
-                var d = await Pedir("config.gravar", Args(("config", Json.Elemento(cfg!)), ("origem", "importação de " + Path.GetFileName(arq))));
+                var d = await Pedir("config.importar", Args(("config", Json.Elemento(cfg!)), ("origem", "importação de " + Path.GetFileName(arq))), Timeout.Infinite);
                 return Saida(d, () => Resultado(d));
             }
             case "cancelar": { var d = await Pedir("tarefa.cancelar"); return Saida(d, () => o.WriteLine("Cancelamento pedido.")); }

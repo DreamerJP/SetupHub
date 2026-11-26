@@ -224,6 +224,71 @@ public static class Padroes
         }
     }
 
+    // Ajustes de processador e de placa de vídeo (com os gráficos do driver) só valem no hardware em que foram feitos:
+    // noutro, voltam aos da referência. Nome atual vazio é hardware ainda não lido e não troca nada.
+    public static List<string> DescartarDeOutroHardware(Config c, Config referencia, string processador, string placaDeVideo)
+    {
+        var avisos = new List<string>();
+        if (Outro(c.Hardware.Processador, processador))
+        {
+            avisos.Add($"Processador: ajustes feitos no {c.Hardware.Processador}, não aplicados no {processador}.");
+            ManterArea(c, referencia, "processador");
+        }
+        if (Outro(c.Hardware.PlacaDeVideo, placaDeVideo))
+        {
+            avisos.Add($"Placa de vídeo: ajustes feitos na {c.Hardware.PlacaDeVideo}, não aplicados na {placaDeVideo}.");
+            ManterArea(c, referencia, "placaDeVideo");
+            ManterArea(c, referencia, "graficos");
+        }
+        if (processador.Length > 0) c.Hardware.Processador = processador;
+        if (placaDeVideo.Length > 0) c.Hardware.PlacaDeVideo = placaDeVideo;
+        return avisos;
+    }
+
+    // Área sem faixas lidas neste PC não tem como conferir o que veio de fora: fica como estava, em vez de recusar a importação inteira.
+    public static List<string> ManterNaoLidas(Config c, Config referencia, Faixas f)
+    {
+        var avisos = new List<string>();
+        foreach (var (area, nome) in new[] { ("processador", "Processador"), ("placaDeVideo", "Placa de vídeo"), ("graficos", "Ajustes gráficos"), ("telas", "Telas") })
+        {
+            if (f.AreasLidas.Contains(area)) continue;
+            var antes = Json.Texto(c);
+            ManterArea(c, referencia, area);
+            if (Json.Texto(c) != antes) avisos.Add($"{nome}: as faixas deste hardware ainda não foram lidas; os ajustes importados não foram aplicados.");
+        }
+        return avisos;
+    }
+
+    static bool Outro(string feito, string atual) => feito.Length > 0 && atual.Length > 0 && !feito.Equals(atual, StringComparison.OrdinalIgnoreCase);
+
+    // Áreas que dependem do hardware: processador, placaDeVideo, graficos e telas. Perfil e jogo levam o valor do de mesmo nome na referência.
+    public static void ManterArea(Config c, Config referencia, string area)
+    {
+        Perfil? Ref(Perfil p) => referencia.Perfis.FirstOrDefault(x => x.Nome == p.Nome);
+        PerfilJogo? RefJogo(PerfilJogo j) => referencia.Jogos.Lista.FirstOrDefault(x => string.Equals(x.Executavel, j.Executavel, StringComparison.OrdinalIgnoreCase));
+        static T? Copia<T>(T? v) where T : class => v is null ? null : Json.Copia(v);
+        switch (area)
+        {
+            case "processador":
+                c.Processador = Json.Copia(referencia.Processador);
+                foreach (var p in c.Perfis) p.Processador = Copia(Ref(p)?.Processador);
+                foreach (var j in c.Jogos.Lista) j.Processador = Copia(RefJogo(j)?.Processador);
+                break;
+            case "placaDeVideo":
+                c.PlacaDeVideo = Json.Copia(referencia.PlacaDeVideo);
+                foreach (var p in c.Perfis) p.PlacaDeVideo = Copia(Ref(p)?.PlacaDeVideo);
+                break;
+            case "graficos":
+                c.Jogos.Global = Json.Copia(referencia.Jogos.Global);
+                foreach (var p in c.Perfis) p.Graficos = Copia(Ref(p)?.Graficos);
+                foreach (var j in c.Jogos.Lista) j.Graficos = Copia(RefJogo(j)?.Graficos);
+                break;
+            case "telas":
+                c.Telas = Json.Copia(referencia.Telas);
+                break;
+        }
+    }
+
     public static int? Dentro(Faixas f, string chave, int? v)
     {
         if (v is null || !f.Campos.TryGetValue(chave, out var x) || !x.Disponivel) return v;

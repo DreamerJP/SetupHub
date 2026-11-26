@@ -19,6 +19,14 @@ public sealed class Config
     public List<Perfil> Perfis { get; set; } = new();
     public List<Alerta> Alertas { get; set; } = new();
     public ConfigAparencia Aparencia { get; set; } = new();
+    // Gravado pelo serviço: ajuste de processador ou de placa de vídeo levado para outro hardware não é aplicado lá.
+    public HardwareDaConfig Hardware { get; set; } = new();
+}
+
+public sealed class HardwareDaConfig
+{
+    public string Processador { get; set; } = "";
+    public string PlacaDeVideo { get; set; } = "";
 }
 
 public sealed class Ponto

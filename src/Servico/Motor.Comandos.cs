@@ -112,6 +112,11 @@ sealed partial class Motor
                 var cfg = Json.Ler<Config>(E(a, "config")) ?? throw new ErroSetupHub("Configuração vazia.");
                 return Ok(await Trocar(cfg, S(a, "origem") ?? "importação"));
             }
+            case "config.importar":
+            {
+                var cfg = Json.Ler<Config>(E(a, "config")) ?? throw new ErroSetupHub("Configuração vazia.");
+                return Ok(await Importar(cfg, S(a, "origem") ?? "importação"));
+            }
             case "assinar":
                 lock (assinantes) if (!assinantes.Contains(c)) assinantes.Add(c);
                 return Ok(estado);

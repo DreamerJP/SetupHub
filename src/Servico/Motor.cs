@@ -32,12 +32,15 @@ sealed partial class Motor
     readonly long inicio = Environment.TickCount64;
     InfoSistema sistema = new();
     bool parado;
+    string? usuario;
+    readonly TaskCompletionSource hardwareLido = new(TaskCreationOptions.RunContinuationsAsynchronously);
 
     public void Iniciar()
     {
         Directory.CreateDirectory(Caminhos.Dados);
         Registro.Info($"{Produto.Nome} iniciando ({(Environment.IsPrivilegedProcess ? "com" : "sem")} privilégio de administrador, conta {WindowsIdentity.GetCurrent().Name}).");
         maquina = Carregar<EstadoMaquina>(Caminhos.EstadoMaquina) ?? new EstadoMaquina();
+        usuario = ServicoWindows.Usuario;
         ProtegerPasta();
         bool queda = !maquina.DesligouLimpo;
         maquina.DesligouLimpo = false;
@@ -46,7 +49,7 @@ sealed partial class Motor
         ConferirPendentes(queda);
         SalvarMaquina();
 
-        servidor = new Servidor(Tratar, () => maquina.UsuarioSid);
+        servidor = new Servidor(Tratar, () => usuario);
         servidor.AoFechar = c => { if (ReferenceEquals(c, agente)) AgenteSaiu(); lock (assinantes) assinantes.Remove(c); };
         servidor.Iniciar();
 
@@ -87,6 +90,7 @@ sealed partial class Motor
             cpu.Localizar();
             await LerFaixasProcessador();
             SalvarFaixas();
+            ConferirHardware();
             lock (trava)
             {
                 var antes = Json.Texto(config);
@@ -107,6 +111,40 @@ sealed partial class Motor
             else _ = Task.Run(async () => { try { await LerBios(); } catch (Exception e) { Registro.Aviso("Leitura da BIOS: " + e.Message); } });
         }
         catch (Exception e) { Registro.Erro("Preparação", e); }
+        finally { hardwareLido.TrySetResult(); }
+    }
+
+    // Só o nome dado pelo ADLX: é por ele que os ajustes da placa de vídeo são aplicados; sem ADLX nada da placa é aplicado.
+    string PlacaDeVideoAjustavel() => faixas.AdlxDisponivel && faixas.Gpu is { Nome.Length: > 0 } g ? g.Nome : "";
+
+    // Config que veio de outro PC (cópia da pasta de dados) não leva a este os ajustes feitos para outro hardware.
+    void ConferirHardware()
+    {
+        List<string> avisos;
+        lock (trava)
+        {
+            var n = Json.Copia(config);
+            avisos = Padroes.DescartarDeOutroHardware(n, Padroes.Config(), sensores.NomeCpu, PlacaDeVideoAjustavel());
+            if (Json.Texto(n) == Json.Texto(config)) return;
+            config = n;
+            GravarConfig(n);
+        }
+        foreach (var a in avisos) Avisar(a);
+    }
+
+    // A conferência usa as faixas do hardware, que só existem depois da leitura da partida.
+    async Task<ResultadoAplicar> Importar(Config novo, string origem)
+    {
+        await hardwareLido.Task;
+        Config anterior;
+        lock (trava) anterior = config;
+        var avisos = Padroes.DescartarDeOutroHardware(novo, anterior, sensores.NomeCpu, PlacaDeVideoAjustavel());
+        avisos.AddRange(Padroes.ManterNaoLidas(novo, anterior, faixas));
+        Padroes.AjustarAoHardware(novo, faixas);
+        var r = await Trocar(novo, origem);
+        foreach (var a in avisos) Registro.Aviso($"{origem}: {a}");
+        r.Avisos.AddRange(avisos);
+        return r;
     }
 
     // Partida guardada por sessão: serviço que cai e volta não toma o que o SetupHub gravou por valor de fábrica.
@@ -371,8 +409,8 @@ sealed partial class Motor
             s.AddAccessRule(new FileSystemAccessRule(new SecurityIdentifier(WellKnownSidType.LocalSystemSid, null), FileSystemRights.FullControl, herda, PropagationFlags.None, AccessControlType.Allow));
             s.AddAccessRule(new FileSystemAccessRule(new SecurityIdentifier(WellKnownSidType.BuiltinAdministratorsSid, null), FileSystemRights.FullControl, herda, PropagationFlags.None, AccessControlType.Allow));
             s.AddAccessRule(new FileSystemAccessRule(new SecurityIdentifier(WellKnownSidType.BuiltinUsersSid, null), FileSystemRights.ReadAndExecute, herda, PropagationFlags.None, AccessControlType.Allow));
-            if (!string.IsNullOrEmpty(maquina.UsuarioSid))
-                s.AddAccessRule(new FileSystemAccessRule(new SecurityIdentifier(maquina.UsuarioSid), FileSystemRights.Modify, herda, PropagationFlags.None, AccessControlType.Allow));
+            if (!string.IsNullOrEmpty(usuario))
+                s.AddAccessRule(new FileSystemAccessRule(new SecurityIdentifier(usuario), FileSystemRights.Modify, herda, PropagationFlags.None, AccessControlType.Allow));
             di.SetAccessControl(s);
         }
         catch (Exception e) { Registro.Aviso("Permissões da pasta de dados: " + e.Message); }
